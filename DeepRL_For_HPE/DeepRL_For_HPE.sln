@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Core", "Core\Core.pyproj", "{4FDB1A48-0167-440C-9DD4-19DDD0BA34D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Note_Files", "Note_Files", "{92E99DB7-D07C-4D4F-B83C-EA88B2E660B9}"
+	ProjectSection(SolutionItems) = preProject
+		commands.txt = commands.txt
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
