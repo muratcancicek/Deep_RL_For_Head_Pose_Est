@@ -7,9 +7,12 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Core", "Core\Core.pyproj", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Note_Files", "Note_Files", "{92E99DB7-D07C-4D4F-B83C-EA88B2E660B9}"
 	ProjectSection(SolutionItems) = preProject
-		commands.txt = commands.txt
+		Note_Files\commands.txt = Note_Files\commands.txt
 		..\README.md = ..\README.md
+		Note_Files\readmeBIWI.txt = Note_Files\readmeBIWI.txt
 	EndProjectSection
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DatasetHandler", "DatasetHandler\DatasetHandler.pyproj", "{BD151FB4-1388-4255-B0B9-CAF5D20883B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +22,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4FDB1A48-0167-440C-9DD4-19DDD0BA34D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4FDB1A48-0167-440C-9DD4-19DDD0BA34D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD151FB4-1388-4255-B0B9-CAF5D20883B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD151FB4-1388-4255-B0B9-CAF5D20883B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
