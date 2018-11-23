@@ -4,9 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>bd151fb4-1388-4255-b0b9-caf5d20883b4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>DatasetHandler.py</StartupFile>
-    <SearchPath>
-    </SearchPath>
+    <StartupFile>BiwiBrowser.py</StartupFile>
+    <SearchPath>..\..\DeepRL_For_HPE</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>DatasetHandler</Name>
@@ -25,7 +24,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DatasetHandler.py" />
-    <Compile Include="paths.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

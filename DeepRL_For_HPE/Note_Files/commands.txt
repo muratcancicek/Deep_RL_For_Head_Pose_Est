@@ -21,4 +21,5 @@ tmux attach -t
 jupyter notebook --no-browser --port=3400
 
 
-ssh -N -f -L 6677:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu
+ssh -N -f -L 7667:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu
+ssh -L 7667:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu -fN XX.XX.XX.XX
