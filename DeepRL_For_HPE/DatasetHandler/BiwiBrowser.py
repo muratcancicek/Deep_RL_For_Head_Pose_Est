@@ -1,4 +1,5 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
+
 from matplotlib import pyplot
 from os import listdir
 import tarfile
@@ -7,6 +8,8 @@ import numpy
 import png
 import os
 
+from NeighborFolderimporter import importNeighborFolders
+importNeighborFolders()
 from paths import *
 
 #################### Constants ####################

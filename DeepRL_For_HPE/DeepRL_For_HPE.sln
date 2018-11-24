@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Note_Files", "Note_Files", "{92E99DB7-D07C-4D4F-B83C-EA88B2E660B9}"
 	ProjectSection(SolutionItems) = preProject
 		Note_Files\commands.txt = Note_Files\commands.txt
+		paths.py = paths.py
 		..\README.md = ..\README.md
 		Note_Files\readmeBIWI.txt = Note_Files\readmeBIWI.txt
 	EndProjectSection
