@@ -65,14 +65,14 @@ def getAllFramesForSubj(subject, dataFolder = BIWI_Data_folder):
     frames = {}
     print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
     for c, (frameFileName, framePath) in enumerate(frameNamesForSubj):
-        print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be parsed by ' + now())
+        #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be parsed by ' + now())
         arr = pngObjToNpArr(framePath)
-        print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been parsed by ' + now())
+        #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been parsed by ' + now())
         frames[frameFileName] = arr
         if c % 10 == 0 and c > 0:# 
             print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frames have been read by ' + now())
-    print('Subject ' + str(subject).zfill(2) + '\'s frames have been read ' + now())
-    return frames
+        print('Subject ' + str(subject).zfill(2) + '\'s all ' + str(len(frames)) + ' frames have been read by ' + now())
+        return frames
 
 def getSubjectsListFromFolder(dataFolder):
     allNames = [n for n in os.listdir(dataFolder)]
@@ -86,6 +86,7 @@ def getSubjectsListFromFolder(dataFolder):
     return sorted(names)
 
 def readBIWI_Frames(dataFolder = BIWI_Data_folder):
+    print('Frames from ' + str(dataFolder) + ' have been started to read by ' + now())
     biwiFrames = {}
     subjects = getSubjectsListFromFolder(dataFolder)
     for subj in subjects:
@@ -126,6 +127,7 @@ def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_f
     biwi = {}
     for subj, frames in biwiFrames.items():
         biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])
+        print('Frames for ' + str(subj) + ' have been labeled by ' + now())
     return biwi
     
 def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file):
