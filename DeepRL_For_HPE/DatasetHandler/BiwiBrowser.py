@@ -1,5 +1,9 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-
+import os
+if len(os.path.dirname(__file__)) == 0:
+    from NeighborFolderimporter import *
+else:
+    from DatasetHandler.NeighborFolderimporter import *
 from matplotlib import pyplot
 from os import listdir
 import tarfile
@@ -8,7 +12,6 @@ import numpy
 import png
 import os
 
-from NeighborFolderimporter import importNeighborFolders
 importNeighborFolders()
 from paths import *
 
