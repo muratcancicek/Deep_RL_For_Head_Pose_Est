@@ -62,11 +62,8 @@ def getAllFramesForSubj(subject, hpdb = None, tarFile = BIWI_Data_file):
         frames = {}
         print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
         for c, frameName in enumerate(frameNamesForSubj):
-            print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been started to be extracted by ' + now())
             file = hpdb.extractfile(frameName)
-            print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been extracted and started to be parsed by ' + now())
             arr = pngObjToNpArr(file)
-            print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been parsed by ' + now())
             frames[frameName[5:-8]] = arr
             if c % 10 == 0 and c > 0:# 
                 print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frames have been read by ' + now())

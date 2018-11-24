@@ -20,6 +20,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BiwiTarBrowser.py" />
     <Compile Include="BiwiBrowser.py">
       <SubType>Code</SubType>
     </Compile>
