@@ -1,6 +1,7 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 import os
-if len(os.path.dirname(__file__)) == 0:
+#Dirty importing that allows the main author to switch environments easily
+if len(os.path.dirname(__file__)) == 0 or 'D:' in os.path.dirname(__file__):
     from NeighborFolderimporter import *
 else:
     from Core.NeighborFolderimporter import *
