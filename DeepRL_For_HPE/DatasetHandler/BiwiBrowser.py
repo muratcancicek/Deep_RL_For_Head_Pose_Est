@@ -1,13 +1,17 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 import os
 # Dirty importing that allows the main author to switch environments easily
-if len(os.path.dirname(__file__)) == 0 or 'D:' in os.path.dirname(__file__):
+from .NeighborFolderimporter import *
+from .BiwiTarBrowser import *
+"""
+print(os.path.dirname(__file__))
+if __name__ == "__main__":#len(os.path.dirname(__file__)) == 0 or 'D:' in os.path.dirname(__file__):
     from NeighborFolderimporter import *
     from BiwiTarBrowser import *
 else:
     from DatasetHandler.NeighborFolderimporter import *
     from DatasetHandler.BiwiTarBrowser import *
-
+"""
 from keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
 from os import listdir
@@ -61,7 +65,7 @@ def getAllFramesForSubj(subject, dataFolder = BIWI_Data_folder):
     frames = {}
     print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
     for c, (frameFileName, framePath) in enumerate(frameNamesForSubj):
-        print(framePath, 'Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be parsed by ' + now())
+        print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be parsed by ' + now())
         arr = pngObjToNpArr(framePath)
         print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been parsed by ' + now())
         frames[frameFileName] = arr
