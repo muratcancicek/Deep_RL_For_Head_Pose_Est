@@ -97,12 +97,13 @@ def readBIWI_Frames(tarFile = BIWI_Data_file):
 def showSampleFrames(count = 10):
     biwiFrames = readBIWI_Frames(tarFile = BIWI_SnippedData_file)
     for subj, frames in biwiFrames:
+        frames = [(n, f) for name, f in sorted(frames.items(), key=lambda x: x[0])]
         for name, frame in frames[:count]:
             pyplot.imshow(frame)
             pyplot.title(name)
             pyplot.show()
 
-#################### Annotations Reading ####################import struct
+#################### Annotations Reading ####################
 def parseAnno(file):
     floats = struct.unpack('ffffff', file.read(24))
     return numpy.array(floats, dtype = float)
