@@ -62,6 +62,7 @@ def getAllFramesForSubj(subject, hpdb = None, tarFile = BIWI_Data_file):
             file = hpdb.extractfile(frameName)
             arr = pngObjToNpArr(file)
             frames[frameName[5:-8]] = arr
+        print('Subject ' + str(subject).zfill(2) + '\'s frames have been read.')
         return frames
     else:
         with tarfile.open(tarFile) as hpdb:
@@ -113,6 +114,7 @@ def getAllAnnosForSubj(subject, annoDB = None, tarFile = BIWI_Data_file):
             file = annoDB.extractfile(annoName)
             anno = parseAnno(file)
             annos[annoName[:-9]] = anno
+        print('Subject ' + str(subject).zfill(2) + '\'s annotations have been read.')
         return annos
     else:
         with tarfile.open(tarFile) as annoDB:
@@ -121,7 +123,7 @@ def getAllAnnosForSubj(subject, annoDB = None, tarFile = BIWI_Data_file):
 def getSubjectsListFromAnnoTar(tarFile):
     allNames = tarFile.getnames()
     allNames = set([n[:2] for n in allNames])
-    return [int(n) for n in allNames]
+    return sorted([int(n) for n in allNames])
 
 def readBIWI_Annos(tarFile = BIWI_Lebels_file):
     with tarfile.open(tarFile) as annoDB:
