@@ -7,6 +7,7 @@ else:
     from DatasetHandler.NeighborFolderimporter import *
 from matplotlib import pyplot
 from os import listdir
+import datetime
 import tarfile
 import struct
 import numpy
@@ -23,6 +24,7 @@ BIWI_SnippedData_file = pwd + '/BIWI_Files/BIWI_Samples/SnippedBiwi.tgz'.replace
 BIWI_Lebels_file = BIWI_Main_Folder + 'db_annotations.tgz'
 BIWI_Lebels_file_Local = pwd + '/BIWI_Files/db_annotations.tgz'.replace('/', os.path.sep)
 BIWI_Frame_Shape = (480, 640, 3)
+def now(): return str(datetime.datetime.now())
 
 #################### Frame Reading ####################
 def getTarRGBFileName(subject, frame):
@@ -58,11 +60,14 @@ def getAllFramesForSubj(subject, hpdb = None, tarFile = BIWI_Data_file):
         allNames = hpdb.getnames()
         frameNamesForSubj = filterFrameNamesForSubj(subject, allNames)
         frames = {}
-        for frameName in frameNamesForSubj:
+        print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
+        for c, frameName in enumerate(frameNamesForSubj):
             file = hpdb.extractfile(frameName)
             arr = pngObjToNpArr(file)
             frames[frameName[5:-8]] = arr
-        print('Subject ' + str(subject).zfill(2) + '\'s frames have been read.')
+            if c % 10 == 0 and c > 0:# 
+                print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frames have been read by ' + now())
+        print('Subject ' + str(subject).zfill(2) + '\'s frames have been read ' + now())
         return frames
     else:
         with tarfile.open(tarFile) as hpdb:
@@ -72,7 +77,13 @@ def getSubjectsListFromFrameTar(tarFile):
     allNames = tarFile.getnames()
     allNames.remove('hpdb')
     allNames = set([n[:7] for n in allNames])
-    return [int(n[-2:]) for n in allNames]
+    names = []
+    for n in allNames:
+        try:
+            names.append(int(n[-2:]))
+        except ValueError:
+            continue
+    return sorted(names)
 
 def readBIWI_Frames(tarFile = BIWI_Data_file):
     with tarfile.open(tarFile) as hpdb:
@@ -114,7 +125,7 @@ def getAllAnnosForSubj(subject, annoDB = None, tarFile = BIWI_Data_file):
             file = annoDB.extractfile(annoName)
             anno = parseAnno(file)
             annos[annoName[:-9]] = anno
-        print('Subject ' + str(subject).zfill(2) + '\'s annotations have been read.')
+        print('Subject ' + str(subject).zfill(2) + '\'s annotations have been read ' + now())
         return annos
     else:
         with tarfile.open(tarFile) as annoDB:
