@@ -63,16 +63,16 @@ def filterFrameNamesForSubj(subject, dataFolder):
 def getAllFramesForSubj(subject, dataFolder = BIWI_Data_folder):
     frameNamesForSubj = filterFrameNamesForSubj(subject, dataFolder)
     frames = {}
-    print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
+    print('Subject ' + str(subject).zfill(2) + '\'s ' + str(len(frameNamesForSubj)) + ' frames have been started to read ' + now())
     for c, (frameFileName, framePath) in enumerate(frameNamesForSubj):
         #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be parsed by ' + now())
         arr = pngObjToNpArr(framePath)
         #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been parsed by ' + now())
         frames[frameFileName] = arr
-        if c % 10 == 0 and c > 0:# 
+        if c % 100 == 0 and c > 0:# 
             print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frames have been read by ' + now())
-        print('Subject ' + str(subject).zfill(2) + '\'s all ' + str(len(frames)) + ' frames have been read by ' + now())
-        return frames
+    print('Subject ' + str(subject).zfill(2) + '\'s all ' + str(len(frames)) + ' frames have been read by ' + now())
+    return frames
 
 def getSubjectsListFromFolder(dataFolder):
     allNames = [n for n in os.listdir(dataFolder)]
