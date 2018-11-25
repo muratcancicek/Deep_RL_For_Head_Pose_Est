@@ -1,18 +1,15 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 import os
 # Dirty importing that allows the main author to switch environments easily
-from .NeighborFolderimporter import *
-from .BiwiTarBrowser import *
-"""
-print(os.path.dirname(__file__))
-if __name__ == "__main__":#len(os.path.dirname(__file__)) == 0 or 'D:' in os.path.dirname(__file__):
+""""""
+if 'D:' in os.path.dirname(__file__):
     from NeighborFolderimporter import *
     from BiwiTarBrowser import *
 else:
-    from DatasetHandler.NeighborFolderimporter import *
-    from DatasetHandler.BiwiTarBrowser import *
-"""
+    from .NeighborFolderimporter import *
+    from .BiwiTarBrowser import *
 from keras.preprocessing.image import img_to_array
+from operator import itemgetter
 from matplotlib import pyplot
 from os import listdir
 import datetime
@@ -106,19 +103,22 @@ def showSampleFrames(count = 10):
 #################### Merging ####################
 
 def labelFramesForSubj(frames, annos):
-    labeledData = []
-    for frameName, frame in frames.items():
-        if frameName in annos.keys():
-            labeledData.append((frame, annos[frameName]))
-    if len(labeledData) == 0:
+    inputMatrix = []
+    labels = []
+    for key in (frames.keys() & annos.keys()):
+        inputMatrix.append(frames[key])
+        labels.append(annos[key])
+    if len(labels) == 0:
         print('Subject has no data')
         return None, None
-    inputMatrix = numpy.zeros((len(labeledData), BIWI_Frame_Shape[0], 
-                               BIWI_Frame_Shape[1], BIWI_Frame_Shape[2]))
-    labels = numpy.zeros((len(labeledData), len(labeledData[0][1])))
-    for i, (frame, anno) in enumerate(labeledData):
-        inputMatrix[i] = frame
-        labels[i] = anno
+    inputMatrix = numpy.dstack(inputMatrix)
+    labels = numpy.dstack(inputMatrix)
+    #inputMatrix = numpy.zeros((len(labeledData), BIWI_Frame_Shape[0], 
+    #                           BIWI_Frame_Shape[1], BIWI_Frame_Shape[2]))
+    #labels = numpy.zeros((len(labeledData), len(labeledData[0][1])))
+    #for i, (frame, anno) in enumerate(labeledData):
+    #    inputMatrix[i] = frame
+    #    labels[i] = anno
     return inputMatrix, labels
 
 def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
@@ -131,8 +131,8 @@ def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_f
         print('Frames for ' + str(subj) + ' have been labeled by ' + now())
     return biwi
     
-def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file):
-    biwi = readBIWIDataset(dataFolder, labelsTarFile)
+def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
+    biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList = subjectList)
     for subj, (inputMatrix, labels) in biwi.items():
         print(subj, inputMatrix.shape, labels.shape)
 
@@ -142,7 +142,9 @@ def main():
     #showSampleFrames(1)
     #printSampleAnnos(count = -1)
     #printSampleAnnosForSubj(1, count = -1)
-    printSamplesFromBIWIDataset(dataFolder = BIWI_SnippedData_folder, labelsTarFile = BIWI_Lebels_file_Local)
+    printSamplesFromBIWIDataset(dataFolder = BIWI_SnippedData_folder, 
+                                labelsTarFile = BIWI_Lebels_file_Local, 
+                                subjectList = [1])
    # readBIWIDataset(dataFolder = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
    
 if __name__ == "__main__":
