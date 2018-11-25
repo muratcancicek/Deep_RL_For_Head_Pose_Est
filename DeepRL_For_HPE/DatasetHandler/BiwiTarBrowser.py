@@ -8,6 +8,7 @@ else:
     from .NeighborFolderimporter import *
 from keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
+from operator import itemgetter
 from os import listdir
 import datetime
 import tarfile
@@ -166,24 +167,13 @@ def printSampleAnnos(count = 10):
             print(anno)
     
 #################### Merging ####################
-
 def labelFramesForSubj(frames, annos):
-    labeledData = []
-    for frameName, frame in frames.items():
-        if frameName in annos.keys():
-            labeledData.append((frame, annos[frameName]))
-    if len(labeledData) == 0:
-        print('Subject has no data')
-        return None, None
-    inputMatrix = numpy.zeros((len(labeledData), BIWI_Frame_Shape[0], 
-                               BIWI_Frame_Shape[1], BIWI_Frame_Shape[2]))
-    labels = numpy.zeros((len(labeledData), len(labeledData[0][1])))
-    for i, (frame, anno) in enumerate(labeledData):
-        inputMatrix[i] = frame
-        labels[i] = anno
+    keys = sorted(frames.keys() & annos.keys())
+    inputMatrix = numpy.stack(itemgetter(*keys)(frames))
+    labels = numpy.stack(itemgetter(*keys)(annos))
     return inputMatrix, labels
 
-def readBIWIDataset(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file, subjectList = None):
+def readBIWIDatasetTar(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file, subjectList = None):
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(tarFile = frameTarFile, subjectList = subjectList)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
@@ -192,18 +182,19 @@ def readBIWIDataset(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_f
         biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])
     return biwi
     
-def printSamplesFromBIWIDataset(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file):
-    biwi = readBIWIDataset(frameTarFile, labelsTarFile)
+def printSamplesFromBIWIDatasetTar(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file, subjectList = None):
+    biwi = readBIWIDatasetTar(frameTarFile, labelsTarFile, subjectList = subjectList)
     for subj, (inputMatrix, labels) in biwi.items():
         print(subj, inputMatrix.shape, labels.shape)
-
 
 #################### Testing ####################
 def main():
     #showSampleFrames(1)
     #printSampleAnnos(count = -1)
     #printSampleAnnosForSubj(1, count = -1)
-    printSamplesFromBIWIDataset(frameTarFile = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
+    printSamplesFromBIWIDatasetTar(frameTarFile = BIWI_SnippedData_file, 
+                                labelsTarFile = BIWI_Lebels_file_Local, 
+                                subjectList = [1])
    # readBIWIDataset(frameTarFile = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
    
 if __name__ == "__main__":

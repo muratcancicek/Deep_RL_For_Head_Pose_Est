@@ -9,7 +9,6 @@ else:
     from .NeighborFolderimporter import *
     from .BiwiTarBrowser import *
 from keras.preprocessing.image import img_to_array
-from operator import itemgetter
 from matplotlib import pyplot
 from os import listdir
 import datetime
@@ -101,26 +100,6 @@ def showSampleFrames(count = 10):
             pyplot.show()
                 
 #################### Merging ####################
-
-def labelFramesForSubj(frames, annos):
-    inputMatrix = []
-    labels = []
-    for key in (frames.keys() & annos.keys()):
-        inputMatrix.append(frames[key])
-        labels.append(annos[key])
-    if len(labels) == 0:
-        print('Subject has no data')
-        return None, None
-    inputMatrix = numpy.dstack(inputMatrix)
-    labels = numpy.dstack(inputMatrix)
-    #inputMatrix = numpy.zeros((len(labeledData), BIWI_Frame_Shape[0], 
-    #                           BIWI_Frame_Shape[1], BIWI_Frame_Shape[2]))
-    #labels = numpy.zeros((len(labeledData), len(labeledData[0][1])))
-    #for i, (frame, anno) in enumerate(labeledData):
-    #    inputMatrix[i] = frame
-    #    labels[i] = anno
-    return inputMatrix, labels
-
 def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList)
@@ -135,7 +114,6 @@ def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = B
     biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList = subjectList)
     for subj, (inputMatrix, labels) in biwi.items():
         print(subj, inputMatrix.shape, labels.shape)
-
 
 #################### Testing ####################
 def main():
