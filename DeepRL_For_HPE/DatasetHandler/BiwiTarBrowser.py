@@ -95,12 +95,12 @@ def getSubjectsListFromFrameTar(tarFile):
             continue
     return sorted(names)
 
-def readBIWI_Frames(tarFile = BIWI_Data_file):
+def readBIWI_Frames(tarFile = BIWI_Data_file, subjectList = None):
     print(str(tarFile) + ' has been started to read by ' + now())
     with tarfile.open(tarFile) as hpdb:
-        subjects = getSubjectsListFromFrameTar(hpdb)
+        if subjectList == None: subjectList = getSubjectsListFromFrameTar(hpdb)
         biwiFrames = {}
-        for subj in subjects:
+        for subj in subjectList:
             frames = getAllFramesForSubj(subj, hpdb, tarFile)
             biwiFrames[subj] = frames
         return biwiFrames
@@ -147,12 +147,12 @@ def getSubjectsListFromAnnoTar(tarFile):
     allNames = set([n[:2] for n in allNames])
     return sorted([int(n) for n in allNames])
 
-def readBIWI_Annos(tarFile = BIWI_Lebels_file):
+def readBIWI_Annos(tarFile = BIWI_Lebels_file, subjectList = None):
     print(str(tarFile) + ' has been started to read by ' + now())
     with tarfile.open(tarFile) as annoDB:
-        subjects = getSubjectsListFromAnnoTar(annoDB)
+        if subjectList == None: subjectList = getSubjectsListFromAnnoTar(annoDB)
         biwiAnnos = {}
-        for subj in subjects:
+        for subj in subjectList:
             annos = getAllAnnosForSubj(subj, annoDB, tarFile)
             biwiAnnos[subj] = annos
         print(len(biwiAnnos), 'annotations have been read by ' + now())
@@ -188,9 +188,10 @@ def labelFramesForSubj(frames, annos):
         labels[i] = anno
     return inputMatrix, labels
 
-def readBIWIDataset(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file):
-    biwiFrames = readBIWI_Frames(tarFile = frameTarFile)
-    biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile)
+def readBIWIDataset(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file, subjectList = None):
+    if subjectList == None: subjectList = [s for s in range(1, 25)]
+    biwiFrames = readBIWI_Frames(tarFile = frameTarFile, subjectList = subjectList)
+    biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
     biwi = {}
     for subj, frames in biwiFrames.items():
         biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])

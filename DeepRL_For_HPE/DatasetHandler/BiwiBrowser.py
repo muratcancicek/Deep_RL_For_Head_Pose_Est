@@ -85,11 +85,11 @@ def getSubjectsListFromFolder(dataFolder):
             continue
     return sorted(names)
 
-def readBIWI_Frames(dataFolder = BIWI_Data_folder):
+def readBIWI_Frames(dataFolder = BIWI_Data_folder, subjectList = None):
     print('Frames from ' + str(dataFolder) + ' have been started to read by ' + now())
     biwiFrames = {}
-    subjects = getSubjectsListFromFolder(dataFolder)
-    for subj in subjects:
+    if subjectList == None: subjectList = getSubjectsListFromFolder(dataFolder)
+    for subj in subjectList:
         frames = getAllFramesForSubj(subj, dataFolder)
         biwiFrames[subj] = frames
     return biwiFrames
@@ -121,9 +121,10 @@ def labelFramesForSubj(frames, annos):
         labels[i] = anno
     return inputMatrix, labels
 
-def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file):
-    biwiFrames = readBIWI_Frames(dataFolder = dataFolder)
-    biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile)
+def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
+    if subjectList == None: subjectList = [s for s in range(1, 25)]
+    biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList)
+    biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
     biwi = {}
     for subj, frames in biwiFrames.items():
         biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])
