@@ -43,31 +43,20 @@ def getBIWIFrameAsNpArr(subject, frame, dataFolder = BIWI_Data_folder):
     imagePath = dataFolder + getRGBpngFileName(subject, frame)
     return pngObjToNpArr(imagePath)
 
-def isFrameForSubj(fileName, subject):
-    isFrame = '_rgb.png' in fileName
-    return isFrame 
-
 def filterFrameNamesForSubj(subject, dataFolder):
     subjectFolder = str(subject).zfill(2) + os.path.sep
-    allNames = [n for n in os.listdir(dataFolder + subjectFolder)]
-    frameNamesForSubj = filter(lambda fn: isFrameForSubj(fn, subject), allNames)
+    allNames = os.listdir(dataFolder + subjectFolder)
+    frameNamesForSubj = (fn for fn in allNames if '_rgb.png' in fn)
     frameKey = lambda n: str(subject).zfill(2) + '/' + n[:-8]
     absolutePath = lambda n: dataFolder + subjectFolder + n
-    frameNamesForSubj = [(frameKey(n), absolutePath(n)) for n in sorted(frameNamesForSubj)]
+    frameNamesForSubj = ((frameKey(n), absolutePath(n)) for n in sorted(frameNamesForSubj))
     return frameNamesForSubj
 
 def getAllFramesForSubj(subject, dataFolder = BIWI_Data_folder):
     frameNamesForSubj = filterFrameNamesForSubj(subject, dataFolder)
-    frames = {}
-    print('Subject ' + str(subject).zfill(2) + '\'s ' + str(len(frameNamesForSubj)) + ' frames have been started to read ' + now())
-    for c, (frameFileName, framePath) in enumerate(frameNamesForSubj):
-        #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be parsed by ' + now())
-        arr = pngObjToNpArr(framePath)
-        #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have been parsed by ' + now())
-        frames[frameFileName] = arr
-        if c % 100 == 0 and c > 0:# 
-            print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frames have been read by ' + now())
-    print('Subject ' + str(subject).zfill(2) + '\'s all ' + str(len(frames)) + ' frames have been read by ' + now())
+    print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
+    frames = ((n, pngObjToNpArr(framePath)) for n, framePath in frameNamesForSubj)
+    print('Subject ' + str(subject).zfill(2) + '\'s all frames have been read by ' + now())
     return frames
 
 def getSubjectsListFromFolder(dataFolder):
@@ -98,8 +87,15 @@ def showSampleFrames(count = 10):
             pyplot.imshow(frame)
             pyplot.title(name)
             pyplot.show()
-                
+    
 #################### Merging ####################
+def labelFramesForSubj(frames, annos):
+    frames = {n: f for n, f in frames}
+    keys = sorted(frames & annos.keys())
+    inputMatrix = numpy.stack(itemgetter(*keys)(frames))
+    labels = numpy.stack(itemgetter(*keys)(annos))
+    return inputMatrix, labels
+
 def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList)
