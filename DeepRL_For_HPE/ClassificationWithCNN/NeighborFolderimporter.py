@@ -5,6 +5,5 @@ def importNeighborFolders():
     module_path = os.path.abspath(os.path.dirname(__file__)[:-lenOfcurrentFolderName])
     if module_path not in sys.path:
         sys.path.append(module_path)
-        sys.path.append(os.path.dirname(__file__))
 
 importNeighborFolders()

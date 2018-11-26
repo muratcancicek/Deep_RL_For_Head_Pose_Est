@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Note_Files", "Note_Files", 
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DatasetHandler", "DatasetHandler\DatasetHandler.pyproj", "{BD151FB4-1388-4255-B0B9-CAF5D20883B4}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ClassificationWithCNN", "ClassificationWithCNN\ClassificationWithCNN.pyproj", "{7A0BA1F7-AF4B-477F-86AC-CC0E0E3507DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,8 @@ Global
 		{4FDB1A48-0167-440C-9DD4-19DDD0BA34D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD151FB4-1388-4255-B0B9-CAF5D20883B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BD151FB4-1388-4255-B0B9-CAF5D20883B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A0BA1F7-AF4B-477F-86AC-CC0E0E3507DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A0BA1F7-AF4B-477F-86AC-CC0E0E3507DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

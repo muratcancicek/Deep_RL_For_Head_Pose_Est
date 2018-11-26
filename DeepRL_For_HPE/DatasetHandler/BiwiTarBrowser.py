@@ -1,11 +1,11 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 import os
 # Dirty importing that allows the main author to switch environments easilyos.path.dirname()
-""""""
-if 'D:' in os.path.dirname(__file__):#len(os.path.dirname(__file__)) == 0 or:__name__ == "__main__" 
-    from NeighborFolderimporter import *
+if '.' in __name__: 
+    from DatasetHandler.NeighborFolderimporter import *
 else:
-    from .NeighborFolderimporter import *
+    from NeighborFolderimporter import *
+
 from keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
 from operator import itemgetter

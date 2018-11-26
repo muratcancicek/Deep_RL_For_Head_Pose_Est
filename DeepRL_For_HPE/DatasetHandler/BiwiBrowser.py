@@ -1,13 +1,12 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 import os
 # Dirty importing that allows the main author to switch environments easily
-""""""
-if 'D:' in os.path.dirname(__file__):
+if '.' in __name__:
+    from DatasetHandler.NeighborFolderimporter import *
+    from DatasetHandler.BiwiTarBrowser import *
+else:
     from NeighborFolderimporter import *
     from BiwiTarBrowser import *
-else:
-    from .NeighborFolderimporter import *
-    from .BiwiTarBrowser import *
 from keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
 from os import listdir

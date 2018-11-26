@@ -6,5 +6,7 @@ def importNeighborFolders():
     #print(module_path)
     if module_path not in sys.path:
         sys.path.append(module_path)
+        sys.path.append(os.path.dirname(__file__))
+        #for o
 
-#importNeighborFolders()
+importNeighborFolders()
