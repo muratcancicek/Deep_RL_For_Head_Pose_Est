@@ -56,13 +56,20 @@ def isFrameForSubj(fileName, subject):
     return isFrame and isForSubj
 
 def filterFrameNamesForSubj(subject, allNames):
-    frameNamesForSubj = filter(lambda fn: isFrameForSubj(fn, subject), allNames)
+    frameNamesForSubj = (fn for fn in allNames if isFrameForSubj(fn, subject))
     return sorted(frameNamesForSubj)
+
+def extractPNG(hpdb, frameName):
+    hpdb.extractfile(frameName)
+    return pngObjToNpArr(framePath)
 
 def getAllFramesForSubj(subject, hpdb = None, tarFile = BIWI_Data_file):
     if hpdb != None:
         allNames = hpdb.getnames()
         frameNamesForSubj = filterFrameNamesForSubj(subject, allNames)
+        #print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read by ' + now())
+        #frames = ((n, extractPNG(hpdb, n)) for n in frameNamesForSubj)
+        #print('Subject ' + str(subject).zfill(2) + '\'s all frames have been read by ' + now())
         frames = {}
         print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read by ' + now())
         for c, frameName in enumerate(frameNamesForSubj):
@@ -177,15 +184,16 @@ def readBIWIDatasetTar(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebel
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(tarFile = frameTarFile, subjectList = subjectList)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
-    biwi = {}
-    for subj, frames in biwiFrames.items():
-        biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])
+    biwi = (labelFramesForSubj(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
+    #biwi = {}
+    #for subj, frames in biwiFrames.items():
+    #    biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])
     return biwi
     
 def printSamplesFromBIWIDatasetTar(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file, subjectList = None):
     biwi = readBIWIDatasetTar(frameTarFile, labelsTarFile, subjectList = subjectList)
-    for subj, (inputMatrix, labels) in biwi.items():
-        print(subj, inputMatrix.shape, labels.shape)
+    for subj, (inputMatrix, labels) in enumerate(biwi):
+        print(subj+1, inputMatrix.shape, labels.shape)
 
 #################### Testing ####################
 def main():

@@ -101,15 +101,12 @@ def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_f
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
     biwi = (labelFramesForSubj(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
-    #for subj, frames in biwiFrames.items():
-    #    biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])
-    #    print('Frames for ' + str(subj) + ' have been labeled by ' + now())
     return biwi
     
 def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
     biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList = subjectList)
-    for subj, (inputMatrix, labels) in biwi.items():
-        print(subj, inputMatrix.shape, labels.shape)
+    for subj, (inputMatrix, labels) in enumerate(biwi):
+        print(subj+1, inputMatrix.shape, labels.shape)
 
 #################### Testing ####################
 def main():
