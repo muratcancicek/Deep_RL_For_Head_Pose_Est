@@ -101,11 +101,26 @@ def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_f
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
     biwi = (labelFramesForSubj(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
     return biwi
-    
+   
+def reshaper(m, l, timesteps = 10):
+    wasted = (m.shape[0] % timesteps)
+    m, l = m[wasted:], l[wasted:]
+    print(l.shape)
+    m = m.reshape((int(m.shape[0]/timesteps), timesteps, m.shape[1], m.shape[2], m.shape[3]))
+    l = l.reshape((int(l.shape[0]/timesteps), timesteps, l.shape[1]))
+    print(l.shape)
+    print(l)
+    l = l[:, -1, :]
+    print(l.shape)
+    print(l)
+    return m, l
+
 def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
     biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList = subjectList)
     for subj, (inputMatrix, labels) in enumerate(biwi):
         print(subj+1, inputMatrix.shape, labels.shape)
+        m, l = reshaper(inputMatrix, labels, timesteps = 3)
+        print(subj+1, m.shape, l.shape)
 
 #################### Testing ####################
 def main():
