@@ -1,12 +1,18 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 import os
 # Dirty importing that allows the main author to switch environments easily
+
+if 'COMPUTERNAME' in os.environ:
+    os.environ['KERAS_BACKEND'] = 'theano'
+    os.environ['MKL_THREADING_LAYER'] = 'GNU'
+
 if '.' in __name__:
     from DatasetHandler.NeighborFolderimporter import *
     from DatasetHandler.BiwiTarBrowser import *
 else:
     from NeighborFolderimporter import *
     from BiwiTarBrowser import *
+
 from keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
 from os import listdir
@@ -53,9 +59,9 @@ def filterFrameNamesForSubj(subject, dataFolder):
 
 def getAllFramesForSubj(subject, dataFolder = BIWI_Data_folder):
     frameNamesForSubj = filterFrameNamesForSubj(subject, dataFolder)
-    print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
+    #print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read ' + now())
     frames = ((n, pngObjToNpArr(framePath)) for n, framePath in frameNamesForSubj)
-    print('Subject ' + str(subject).zfill(2) + '\'s all frames have been read by ' + now())
+    #print('Subject ' + str(subject).zfill(2) + '\'s all frames have been read by ' + now())
     return frames
 
 def getSubjectsListFromFolder(dataFolder):
@@ -70,7 +76,7 @@ def getSubjectsListFromFolder(dataFolder):
     return sorted(names)
 
 def readBIWI_Frames(dataFolder = BIWI_Data_folder, subjectList = None):
-    print('Frames from ' + str(dataFolder) + ' have been started to read by ' + now())
+    #print('Frames from ' + str(dataFolder) + ' have been started to read by ' + now())
     biwiFrames = {}
     if subjectList == None: subjectList = getSubjectsListFromFolder(dataFolder)
     for subj in subjectList:
@@ -100,19 +106,15 @@ def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_f
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
     biwi = (labelFramesForSubj(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
+    print('All frames annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
     return biwi
    
 def reshaper(m, l, timesteps = 10):
     wasted = (m.shape[0] % timesteps)
     m, l = m[wasted:], l[wasted:]
-    print(l.shape)
     m = m.reshape((int(m.shape[0]/timesteps), timesteps, m.shape[1], m.shape[2], m.shape[3]))
     l = l.reshape((int(l.shape[0]/timesteps), timesteps, l.shape[1]))
-    print(l.shape)
-    print(l)
     l = l[:, -1, :]
-    print(l.shape)
-    print(l)
     return m, l
 
 def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
@@ -133,5 +135,5 @@ def main():
    # readBIWIDataset(dataFolder = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
    
 if __name__ == "__main__":
-    main()
+    #main()
     print('Done')

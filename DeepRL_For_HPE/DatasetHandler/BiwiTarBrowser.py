@@ -71,16 +71,16 @@ def getAllFramesForSubj(subject, hpdb = None, tarFile = BIWI_Data_file):
         #frames = ((n, extractPNG(hpdb, n)) for n in frameNamesForSubj)
         #print('Subject ' + str(subject).zfill(2) + '\'s all frames have been read by ' + now())
         frames = {}
-        print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read by ' + now())
+        #print('Subject ' + str(subject).zfill(2) + '\'s frames have been started to read by ' + now())
         for c, frameName in enumerate(frameNamesForSubj):
             #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be extracted by ' + now())
             file = hpdb.extractfile(frameName)
             #print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frame have started to be parsed by ' + now())
             arr = pngObjToNpArr(file)
             frames[frameName[5:-8]] = arr
-            if c % 10 == 0 and c > 0:#
-                print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frames have been read by ' + now())
-        print('Subject ' + str(subject).zfill(2) + '\'s all ' + str(len(frames)) + ' frames have been read by ' + now())
+        #    if c % 10 == 0 and c > 0:#
+        #        print('Subject ' + str(subject).zfill(2) + '\'s first ' + str(c).zfill(5) + ' frames have been read by ' + now())
+        #print('Subject ' + str(subject).zfill(2) + '\'s all ' + str(len(frames)) + ' frames have been read by ' + now())
         return frames
     else:
         with tarfile.open(tarFile) as hpdb:
@@ -151,14 +151,14 @@ def getSubjectsListFromAnnoTar(tarFile):
     return sorted([int(n) for n in allNames])
 
 def readBIWI_Annos(tarFile = BIWI_Lebels_file, subjectList = None):
-    print(str(tarFile) + ' has been started to read by ' + now())
+    #print(str(tarFile) + ' has been started to read by ' + now())
     with tarfile.open(tarFile) as annoDB:
         if subjectList == None: subjectList = getSubjectsListFromAnnoTar(annoDB)
         biwiAnnos = {}
         for subj in subjectList:
             annos = getAllAnnosForSubj(subj, annoDB, tarFile)
             biwiAnnos[subj] = annos
-        print(len(biwiAnnos), 'annotations have been read by ' + now())
+        #print(len(biwiAnnos), 'annotations have been read by ' + now())
         return biwiAnnos
 
 def printSampleAnnosForSubj(subjective, count = 10):
