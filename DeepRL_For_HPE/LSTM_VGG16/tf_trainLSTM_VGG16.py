@@ -8,9 +8,6 @@ else:
 
 from DatasetHandler.BiwiBrowser import *
 
-os.environ['THEANO_FLAGS'] = "device=cuda,force_device=True,floatX=float32"
-import theano
-
 import keras
 import numpy as np
 #from keras import Model 
@@ -49,9 +46,9 @@ def getFinalModel(num_outputs = num_outputs):
     dense_layer_1 = 1#int((patch_size[0] * patch_size[1]) / 1)0010#00000None, batch_size = timesteps
     dense_layer_2 = 8
     inp = BIWI_Frame_Shape
-    vgg_model = VGG16(weights='imagenet', include_top=False, input_shape = (inp[2], inp[0], inp[1]))
+    vgg_model = VGG16(weights='imagenet', include_top=False, input_shape = BIWI_Frame_Shape)
     rnn = Sequential()
-    rnn.add(TimeDistributed(vgg_model, input_shape=(timesteps, inp[2], inp[0], inp[1])))#
+    rnn.add(TimeDistributed(vgg_model, input_shape=(timesteps, inp[0], inp[1], inp[2])))
     
     rnn.add(TimeDistributed(Flatten()))
     rnn.add(LSTM(1)) # , stateful=True, dropout=0.2, recurrent_dropout=0.2, activation='relu',input_shape=(timesteps, inp[0], inp[1], inp[2])
@@ -69,9 +66,6 @@ def test():
     c = 0
     frames, labelsList = [], []
     for inputMatrix, labels in biwi:
-        print(inputMatrix.shape)
-        inputMatrix = np.moveaxis(inputMatrix, -1, 2)
-        print(inputMatrix.shape)
         if c < num_datasets-1:
             full_model.fit(inputMatrix, labels[:, :num_outputs], batch_size = timesteps, nb_epoch=1, verbose=2, shuffle=False) #
             full_model.reset_states()

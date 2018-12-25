@@ -23,4 +23,7 @@ jupyter notebook --no-browser --port=3400
 ssh cicekm@citrisdance.soe.ucsc.edu
 
 ssh -N -f -L 7667:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu
+
+cvlab
+
 ssh -L 7667:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu -fN XX.XX.XX.XX
