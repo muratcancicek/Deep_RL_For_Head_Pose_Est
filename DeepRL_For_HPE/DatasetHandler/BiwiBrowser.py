@@ -14,6 +14,7 @@ else:
     from BiwiTarBrowser import *
 
 from keras.preprocessing.image import img_to_array
+from sklearn.preprocessing import MinMaxScaler, scale
 from matplotlib import pyplot
 from os import listdir
 import datetime
@@ -94,46 +95,64 @@ def showSampleFrames(count = 10):
             pyplot.show()
     
 #################### Merging ####################
-def labelFramesForSubj(frames, annos):
+def scale(arr):
+    #scaler = MinMaxScaler(feature_range=(0, 1))
+    #scaler = scaler.fit(arr)
+    ## normalize the dataset and printscaler, 
+    #normalized = scaler.transform(arr)
+    new_arr = arr * 1/255
+    return new_arr
+
+def rolling_window(m, timesteps):
+    shape = (m.shape[0] - timesteps + 1, timesteps) + m.shape[1:]
+    strides = (m.strides[0],) + m.strides
+    return numpy.lib.stride_tricks.as_strided(m, shape=shape, strides=strides)
+
+def reshaper(m, l, timesteps, overlapping):
+    m, l = scale(m), scale(l)
+    if overlapping:
+        m= rolling_window(m, timesteps)
+        l = l[timesteps-1:]
+    else:
+        wasted = (m.shape[0] % timesteps)
+        m, l = m[wasted:], l[wasted:]
+        m = m.reshape((int(m.shape[0]/timesteps), timesteps, m.shape[1], m.shape[2], m.shape[3]))
+        l = l.reshape((int(l.shape[0]/timesteps), timesteps, l.shape[1]))
+        l = l[:, -1, :]
+    return m, l
+
+def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False):
     frames = {n: f for n, f in frames}
     keys = sorted(frames & annos.keys())
     inputMatrix = numpy.stack(itemgetter(*keys)(frames))
     labels = numpy.stack(itemgetter(*keys)(annos))
+    if timesteps != None:
+        inputMatrix, labels = reshaper(inputMatrix, labels, timesteps, overlapping)
     return inputMatrix, labels
 
-def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
+def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False):
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
-    biwi = (labelFramesForSubj(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
+    labeledFrames = lambda frames, labels: labelFramesForSubj(frames, labels, timesteps, overlapping)
+    biwi = (labeledFrames(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
     print('All frames annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
     return biwi
    
-def reshaper(m, l, timesteps = 10):
-    wasted = (m.shape[0] % timesteps)
-    m, l = m[wasted:], l[wasted:]
-    m = m.reshape((int(m.shape[0]/timesteps), timesteps, m.shape[1], m.shape[2], m.shape[3]))
-    l = l.reshape((int(l.shape[0]/timesteps), timesteps, l.shape[1]))
-    l = l[:, -1, :]
-    return m, l
 
 def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None):
-    biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList = subjectList)
+    biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList = subjectList, timesteps = 10, overlapping = True)
     for subj, (inputMatrix, labels) in enumerate(biwi):
         print(subj+1, inputMatrix.shape, labels.shape)
-        m, l = reshaper(inputMatrix, labels, timesteps = 3)
-        print(subj+1, m.shape, l.shape)
 
 #################### Testing ####################
 def main():
     #showSampleFrames(1)
     #printSampleAnnos(count = -1)
     #printSampleAnnosForSubj(1, count = -1)
-    printSamplesFromBIWIDataset(dataFolder = BIWI_SnippedData_folder, 
-                                labelsTarFile = BIWI_Lebels_file_Local, 
-                                subjectList = [1])
+    printSamplesFromBIWIDataset(subjectList = [1])
    # readBIWIDataset(dataFolder = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
    
 if __name__ == "__main__":
-    #main()
+    main()
     print('Done')

@@ -7,6 +7,10 @@ else:
     from NeighborFolderimporter import *
 
 from DatasetHandler.BiwiBrowser import *
+
+os.environ['THEANO_FLAGS'] = "device=cuda,force_device=True,floatX=float32"
+import theano
+
 import keras
 import numpy as np
 #from keras import Model 
@@ -16,20 +20,12 @@ from keras.optimizers import SGD
 from keras.models import Sequential
 from keras.constraints import maxnorm
 from keras.applications.vgg16 import VGG16
-from sklearn.preprocessing import MinMaxScaler
 from keras.preprocessing.image import load_img
 from keras.preprocessing.image import img_to_array
 from keras.layers.convolutional import MaxPooling2D
 from keras.layers.convolutional import Convolution2D
 from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
-
-def scale(arr):
-    scaler = MinMaxScaler(feature_range=(-1, 1))
-    scaler = scaler.fit(arr)
-    # normalize the dataset and printscaler, 
-    normalized = scaler.transform(arr)
-    return normalized 
 
 def reshaper(m, l, timesteps = 1):
     wasted = (m.shape[0] % timesteps)
@@ -44,7 +40,9 @@ num_datasets = 2
 
 num_outputs = 1
 
-timesteps = 1
+timesteps = 10
+
+overlapping = True
 
 #keras.backend.clear_session()
 def getFinalModel(num_outputs = num_outputs):
@@ -59,7 +57,6 @@ def getFinalModel(num_outputs = num_outputs):
     rnn.add(LSTM(64)) # , stateful=True, dropout=0.2, recurrent_dropout=0.2, activation='relu'
 #    rnn.add(TimeDistributed(Dropout(0.2)))
     rnn.add(Dense(num_outputs))
-    print('WARNING')
 
     for layer in rnn.layers[:15]:
         layer.trainable = False
@@ -68,19 +65,18 @@ def getFinalModel(num_outputs = num_outputs):
 
 def test():
     full_model = getFinalModel(num_outputs = num_outputs)
-    biwi = readBIWIDataset(subjectList = [s for s in range(1, num_datasets+1)])#
+    biwi = readBIWIDataset(subjectList = [s for s in range(1, num_datasets+1)], timesteps = timesteps, overlapping = overlapping)#
     c = 0
     frames, labelsList = [], []
     for inputMatrix, labels in biwi:
-        inputMatrix, labels = reshaper(inputMatrix, labels, timesteps = timesteps)
         if c < num_datasets-1:
             full_model.fit(inputMatrix, labels[:, :num_outputs], batch_size = timesteps, nb_epoch=1, verbose=2, shuffle=False) #
             full_model.reset_states()
             frames.append(inputMatrix)
-            labelsList.append(scale(labels))
+            labelsList.append(labels)
         else:
             frames.append(inputMatrix)
-            labelsList.append(scale(labels))
+            labelsList.append(labels)
         c += 1
         print('Batch %d done!' % c)
 
