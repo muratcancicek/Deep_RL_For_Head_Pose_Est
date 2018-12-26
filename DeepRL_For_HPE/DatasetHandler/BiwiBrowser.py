@@ -109,7 +109,6 @@ def rolling_window(m, timesteps):
     return numpy.lib.stride_tricks.as_strided(m, shape=shape, strides=strides)
 
 def reshaper(m, l, timesteps, overlapping):
-    m, l = scale(m), scale(l)
     if overlapping:
         m= rolling_window(m, timesteps)
         l = l[timesteps-1:]
@@ -126,6 +125,7 @@ def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False):
     keys = sorted(frames & annos.keys())
     inputMatrix = numpy.stack(itemgetter(*keys)(frames))
     labels = numpy.stack(itemgetter(*keys)(annos))
+    inputMatrix, labels = scale(inputMatrix), scale(labels)
     if timesteps != None:
         inputMatrix, labels = reshaper(inputMatrix, labels, timesteps, overlapping)
     return inputMatrix, labels
@@ -136,7 +136,7 @@ def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_f
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
     labeledFrames = lambda frames, labels: labelFramesForSubj(frames, labels, timesteps, overlapping)
     biwi = (labeledFrames(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
-    print('All frames annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
+    print('All frames and annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
     return biwi
    
 
