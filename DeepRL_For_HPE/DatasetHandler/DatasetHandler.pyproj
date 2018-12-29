@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>bd151fb4-1388-4255-b0b9-caf5d20883b4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>BiwiBrowser.py</StartupFile>
+    <StartupFile>DatasetVisualizer.py</StartupFile>
     <SearchPath>..\..\DeepRL_For_HPE</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -24,7 +24,7 @@
     <Compile Include="BiwiBrowser.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DatasetHandler.py" />
+    <Compile Include="DatasetVisualizer.py" />
     <Compile Include="NeighborFolderimporter.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

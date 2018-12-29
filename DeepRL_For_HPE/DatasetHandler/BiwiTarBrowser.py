@@ -160,6 +160,14 @@ def readBIWI_Annos(tarFile = BIWI_Lebels_file, subjectList = None):
             biwiAnnos[subj] = annos
         #print(len(biwiAnnos), 'annotations have been read by ' + now())
         return biwiAnnos
+    
+def readBIWI_AnnosAsMatrix(tarFile = BIWI_Lebels_file, subjectList = None):
+    biwiAnnos = readBIWI_Annos(tarFile, subjectList)
+    labelSets = []
+    for subj, annos in biwiAnnos.items():
+        indices = sorted([i for i in annos])
+        labelSets.append(numpy.stack([annos[i] for i in indices]))
+    return (l for l in labelSets)
 
 def printSampleAnnosForSubj(subjective, count = 10):
     annos = getAllAnnosForSubj(1, tarFile = BIWI_Lebels_file_Local)

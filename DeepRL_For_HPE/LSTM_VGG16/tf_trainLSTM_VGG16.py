@@ -67,7 +67,7 @@ def test():
     frames, labelsList = [], []
     for inputMatrix, labels in biwi:
         if c < num_datasets-1:
-            full_model.fit(inputMatrix, labels[:, :num_outputs], batch_size = timesteps, nb_epoch=1, verbose=2, shuffle=False) #
+            full_model.fit(inputMatrix, labels[:, :num_outputs], batch_size = timesteps, epochs=1, verbose=2, shuffle=False) #
             full_model.reset_states()
             frames.append(inputMatrix)
             labelsList.append(labels)
