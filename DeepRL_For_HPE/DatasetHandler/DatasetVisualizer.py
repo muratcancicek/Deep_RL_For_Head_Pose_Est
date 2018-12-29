@@ -27,11 +27,13 @@ def drawSingleDataset(labels):
     plt.setp([a.get_yticklabels() for a in f.axes[1:]], visible=False)#
     plt.show()
 
-def drawPlots(labelSets, subjectIDs):
+def drawPlots(labelSets, subjectIDs, sets = None):
     colors = ['r', 'b', 'g']
     titles = ['Pitch', 'Yaw', 'Roll']
-    f, rows = plt.subplots(num_datasets, 3, sharex=True, sharey=True, figsize=(19, 2*num_datasets))
-    print(len(rows))
+    red = (1.0, 0.95, 0.95)
+    blue = (0.95, 0.95, 1.0)
+    if sets == None: sets = [i for i in range(len(labelSets))]
+    f, rows = plt.subplots(len(labelSets), 3, sharey=True,  sharex=True,figsize=(21, 4*len(labelSets)))
     for col in range(len(rows[0])):
         rows[0][col].set_title(titles[col])
 
@@ -40,9 +42,9 @@ def drawPlots(labelSets, subjectIDs):
     #for row in range(len(rows)):
         for col in range(len(rows[row])):
             rows[row][col].plot(labels[:, num_outputs+col], colors[col])
-            rows[row][0].set_ylabel('%d. %s %d' % (row, subjectIDs[row], labels.shape[0]))
+            rows[row][col].set_facecolor(red if 'F' in subjectIDs[row] else blue)
+            rows[row][0].set_ylabel('Set: %d, Subj: %s, Len: %d' % (sets[row]+1, subjectIDs[row], labels.shape[0]))
         row += 1
-
 
     f.subplots_adjust(hspace=0, wspace=0)
     #plt.setp([a.get_yticklabels() for a in f.axes[1:]], visible=False)
