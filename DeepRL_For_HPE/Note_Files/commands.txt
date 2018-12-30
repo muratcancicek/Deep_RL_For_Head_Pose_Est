@@ -18,7 +18,7 @@ vi ~/.jupyter/jupyter_notebook_config.py
 
 http://localhost:1268
 tmux attach -t 
-jupyter notebook --no-browser --port=3400
+jupyter notebook --no-browser --port=3900
 
 ssh cicekm@citrisdance.soe.ucsc.edu
 
