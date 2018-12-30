@@ -120,21 +120,22 @@ def reshaper(m, l, timesteps, overlapping):
         l = l[:, -1, :]
     return m, l
 
-def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False):
+def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False, scaling = True):
     frames = {n: f for n, f in frames}
     keys = sorted(frames & annos.keys())
     inputMatrix = numpy.stack(itemgetter(*keys)(frames))
     labels = numpy.stack(itemgetter(*keys)(annos))
-    inputMatrix, labels = scale(inputMatrix), scale(labels)
+    if scaling:
+        inputMatrix, labels = scale(inputMatrix), scale(labels)
     if timesteps != None:
         inputMatrix, labels = reshaper(inputMatrix, labels, timesteps, overlapping)
     return inputMatrix, labels
 
-def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False):
+def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False, scaling = True):
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
-    labeledFrames = lambda frames, labels: labelFramesForSubj(frames, labels, timesteps, overlapping)
+    labeledFrames = lambda frames, labels: labelFramesForSubj(frames, labels, timesteps, overlapping, scaling)
     biwi = (labeledFrames(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
     print('All frames and annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
     return biwi
