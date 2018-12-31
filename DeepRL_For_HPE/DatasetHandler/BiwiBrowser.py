@@ -44,10 +44,8 @@ def getRGBpngFileName(subject, frame):
     return str(subject).zfill(2) + '/frame_' + str(frame).zfill(5) + '_rgb.png'
 
 def pngObjToNpArr(imagePath):
-    #image = cv2.imread(imagePath)
     img = image.load_img(imagePath, target_size=BIWI_Frame_Shape)
     x = image.img_to_array(img)
-    #x = np.expand_dims(x, axis=0)
     x = preprocess_input(x)
     return x
 
@@ -106,7 +104,7 @@ def scaleX(arr):
     return new_arr
 
 def scaleY(arr):
-    new_arr = arr/90
+    new_arr = arr/90#
     return new_arr
 
 def rolling_window(m, timesteps):
