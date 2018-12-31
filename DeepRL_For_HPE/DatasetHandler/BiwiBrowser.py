@@ -88,9 +88,10 @@ def readBIWI_Frames(dataFolder = BIWI_Data_folder, subjectList = None):
 def showSampleFrames(count = 10):
     biwiFrames = readBIWI_Frames(dataFolder = BIWI_SnippedData_folder)
     for subj, frames in biwiFrames.items():
-        frames = [(n, f) for n, f in sorted(frames.items(), key=lambda x: x[0])]
+        frames = [(n, f) for n, f in sorted(frames, key=lambda x: x[0])]
         for name, frame in frames[:count]:
-            pyplot.imshow(frame)
+            print(frame.shape)
+            pyplot.imshow(numpy.rollaxis(frame, 0, 3))
             pyplot.title(name)
             pyplot.show()
     
@@ -148,10 +149,10 @@ def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = B
 
 #################### Testing ####################
 def main():
-    #showSampleFrames(1)
+    showSampleFrames(1)
     #printSampleAnnos(count = -1)
     #printSampleAnnosForSubj(1, count = -1)
-    printSamplesFromBIWIDataset(subjectList = [1])
+    #printSamplesFromBIWIDataset(subjectList = [1])
    # readBIWIDataset(dataFolder = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
    
 if __name__ == "__main__":
