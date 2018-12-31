@@ -36,22 +36,22 @@ def trainOnSets(model, set_gen, timesteps, output_begin, num_outputs, batch_size
         c += 1
     return model
 
-def trainForEpochs(model, epochs, subjectList, testSubjects, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1):
+def trainForEpochs(model, epochs, subjectList, testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
     trainingSubjects = [s for s in subjectList if s not in testSubjects]
     for e in range(epochs):
-        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) 
+        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, timesteps = timesteps, overlapping = overlapping
         model = trainOnSets(model, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
         print('Epoch %d completed!' % (e+1))
     return model
 
-def getTestBiwi(testSubjects, timesteps, output_begin, num_outputs, batch_size):
+def getTestBiwi(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size):
     test_generators, test_labelSets = [], [] 
-    testBiwi = readBIWIDataset(subjectList = testSubjects) 
+    testBiwi = readBIWIDataset(subjectList = testSubjects) #, timesteps = timesteps, overlapping = overlapping
     for inputMatrix, labels in testBiwi:
         labels = labels[:, output_begin:output_begin+num_outputs]
         data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
         test_generators.append(data_gen)
-        test_labelSets.append(labels[:, 4:5])
+        test_labelSets.append(labels)
     return test_generators, test_labelSets
 
 if __name__ == "__main__":
