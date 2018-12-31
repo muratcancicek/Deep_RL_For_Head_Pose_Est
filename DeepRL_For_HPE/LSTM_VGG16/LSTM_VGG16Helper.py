@@ -51,7 +51,7 @@ def getTestBiwi(testSubjects, timesteps, output_begin, num_outputs, batch_size):
         labels = labels[:, output_begin:output_begin+num_outputs]
         data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
         test_generators.append(data_gen)
-        test_labelSets.append(labels[:, 4:5])
+        test_labelSets.append(labels)
     return test_generators, test_labelSets
 
 if __name__ == "__main__":
