@@ -13,8 +13,10 @@ else:
     from NeighborFolderimporter import *
     from BiwiTarBrowser import *
 
-from keras.preprocessing.image import img_to_array
+from keras.applications.vgg16 import preprocess_input
 from sklearn.preprocessing import MinMaxScaler, scale
+from keras.preprocessing.image import img_to_array
+from keras.preprocessing import image
 from matplotlib import pyplot
 from os import listdir
 import datetime
@@ -42,8 +44,12 @@ def getRGBpngFileName(subject, frame):
     return str(subject).zfill(2) + '/frame_' + str(frame).zfill(5) + '_rgb.png'
 
 def pngObjToNpArr(imagePath):
-    image = cv2.imread(imagePath)
-    return img_to_array(image)
+    #image = cv2.imread(imagePath)
+    img = image.load_img(imagePath, target_size=BIWI_Frame_Shape)
+    x = image.img_to_array(img)
+    #x = np.expand_dims(x, axis=0)
+    x = preprocess_input(x)
+    return x
 
 def getBIWIFrameAsNpArr(subject, frame, dataFolder = BIWI_Data_folder):
     imagePath = dataFolder + getRGBpngFileName(subject, frame)
@@ -96,12 +102,11 @@ def showSampleFrames(count = 10):
             pyplot.show()
     
 #################### Merging ####################
-def scale(arr):
-    #scaler = MinMaxScaler(feature_range=(0, 1))
-    #scaler = scaler.fit(arr)
-    ## normalize the dataset and printscaler, 
-    #normalized = scaler.transform(arr)
-    new_arr = arr * 1/255
+def scaleX(arr):
+    return new_arr
+
+def scaleY(arr):
+    new_arr = arr/90
     return new_arr
 
 def rolling_window(m, timesteps):
@@ -126,8 +131,8 @@ def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False, sca
     keys = sorted(frames & annos.keys())
     inputMatrix = numpy.stack(itemgetter(*keys)(frames))
     labels = numpy.stack(itemgetter(*keys)(annos))
-    if scaling:
-        inputMatrix, labels = scale(inputMatrix), scale(labels)
+    if scaling: # scaleX()
+        inputMatrix, labels = inputMatrix, scaleY(labels)
     if timesteps != None:
         inputMatrix, labels = reshaper(inputMatrix, labels, timesteps, overlapping)
     return inputMatrix, labels
