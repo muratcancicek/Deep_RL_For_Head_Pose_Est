@@ -9,10 +9,10 @@ else:
 from DatasetHandler.BiwiBrowser import *
 
 import keras
+import random 
 import numpy as np
-#from keras import Model 
+from keras import Model 
 from keras.layers import *
-from random import shuffle
 import matplotlib.pyplot as plt
 from keras.optimizers import SGD
 from keras.models import Sequential
@@ -27,7 +27,7 @@ from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
 from keras.preprocessing.sequence import TimeseriesGenerator
 
-def trainOnSets(trainingSubjects, epochs, model, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1):
+def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1):
     c = 0
     for inputMatrix, labels in set_gen:
         print('%d. set (Dataset %d) being trained for epoch %d!' % (c+1, trainingSubjects[c], epoch+1))
@@ -37,21 +37,83 @@ def trainOnSets(trainingSubjects, epochs, model, set_gen, timesteps, output_begi
         c += 1
     return model
 
-def trainForEpochs(model, epochs, subjectList, testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
-    trainingSubjects = [s for s in subjectList if s not in testSubjects]
+def trainImageModelForEpochs(model, epochs, trainingSubjects, testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
     for e in range(epochs):
-        shuffle(trainingSubjects)
+        random.Random(4).shuffle(trainingSubjects)
         trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, timesteps = timesteps, overlapping = overlapping
-        model = trainOnSets(model, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
+        model = trainImageModelgeOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
         print('Epoch %d completed!' % (e+1))
     return model
 
-def getTestBiwi(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size):
+def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size):
     test_generators, test_labelSets = [], [] 
     testBiwi = readBIWIDataset(subjectList = testSubjects) #, timesteps = timesteps, overlapping = overlapping
     for inputMatrix, labels in testBiwi:
         labels = labels[:, output_begin:output_begin+num_outputs]
         data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
+        test_generators.append(data_gen)
+        test_labelSets.append(labels)
+    return test_generators, test_labelSets
+
+def trainAngleModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1):
+    c = 0
+    for inputMatrix, labels in set_gen:
+        print('%d. set (Dataset %d) being trained for epoch %d!' % (c+1, trainingSubjects[c], epoch+1))
+        labels = labels[:, output_begin:output_begin+num_outputs]
+        data_gen = TimeseriesGenerator(labels, labels, length=timesteps, batch_size=batch_size)
+        model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
+        c += 1
+    return model
+
+def trainAngleModelForEpochs(model, epochs, trainingSubjects, testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
+    for e in range(epochs):
+        random.Random(4).shuffle(trainingSubjects)
+        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, timesteps = timesteps, overlapping = overlapping
+        model = trainAngleModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
+        print('Epoch %d completed!' % (e+1))
+    return model
+
+def getTestBiwiForAngleModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size):
+    test_generators, test_labelSets = [], [] 
+    testBiwi = readBIWIDataset(subjectList = testSubjects) #, timesteps = timesteps, overlapping = overlapping
+    for inputMatrix, labels in testBiwi:
+        labels = labels[:, output_begin:output_begin+num_outputs]
+        data_gen = TimeseriesGenerator(labels, labels, length=timesteps, batch_size=batch_size)
+        test_generators.append(data_gen)
+        test_labelSets.append(labels)
+    return test_generators, test_labelSets
+
+def combined_generator(inputMatrix, labels, timesteps, batch_size):
+    img_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
+    ang_gen = TimeseriesGenerator(labels, labels, length=timesteps, batch_size=batch_size)
+    for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
+            yield [inputMatrix, inputLabels], outputLabels
+            
+
+def trainFinalModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1):
+    c = 0
+    for inputMatrix, labels in set_gen:
+        print('%d. set (Dataset %d) being trained for epoch %d!' % (c+1, trainingSubjects[c], epoch+1))
+        labels = labels[:, output_begin:output_begin+num_outputs]
+        data_gen = combined_generator(inputMatrix, labels, timesteps, batch_size)
+        model.fit_generator(data_gen, steps_per_epoch=len(labels), epochs=in_epochs, verbose=1) 
+        c += 1
+    return model
+
+def trainFinalModelForEpochs(model, epochs, trainingSubjects, testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
+    for e in range(epochs):
+        random.Random(4).shuffle(trainingSubjects)
+        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, timesteps = timesteps, overlapping = overlapping
+        model = trainFinalModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
+        print('Epoch %d completed!' % (e+1))
+    return model
+
+def getTestBiwiForFinalModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size):
+    test_generators, test_labelSets = [], [] 
+    testBiwi = readBIWIDataset(subjectList = testSubjects) #, timesteps = timesteps, overlapping = overlapping
+    for inputMatrix, labels in testBiwi:
+        labels = labels[:, output_begin:output_begin+num_outputs]
+        data_gen = combined_generator(inputMatrix, labels, timesteps, batch_size)
         test_generators.append(data_gen)
         test_labelSets.append(labels)
     return test_generators, test_labelSets
