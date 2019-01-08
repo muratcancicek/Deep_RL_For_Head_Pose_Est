@@ -18,12 +18,59 @@ vi ~/.jupyter/jupyter_notebook_config.py
 
 http://localhost:1268
 tmux attach -t 
-jupyter notebook --no-browser --port=3900
+jupyter notebook --port=3900 --no-browser
 
 ssh cicekm@citrisdance.soe.ucsc.edu
 
-ssh -N -f -L 7667:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu
+ssh mcicek@cvlabgpu.soe.ucsc.edu
+
+ssh -N -f -L 7677:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu
 
 cvlab
 
 ssh -L 7667:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu -fN XX.XX.XX.XX
+
+Xpra attach ssh:mcicek@cvlabgpu.soe.ucsc.edu:100
+
+xpra start :100
+export DISPLAY=:100
+firefox& 
+
+
+conda create -n tf36 pip python=3.6 
+pip install --upgrade tensorflow-gpu
+export PATH=/usr/local/cuda-9.0/bin:$PATH
+
+sudo ssh -i /home/muratcan/.ssh/gc_rsa mcicek@104.197.54.212 
+sudo ssh -N -f -L 7667:localhost:3900 -i /home/muratcan/.ssh/gc_rsa mcicek@35.202.54.195 
+sudo ssh -N -f -L 7667:localhost:3900 -i D:\private_key.txt mcicek@104.197.54.212 
+
+
+emoai.p4gpu
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDa8QgTKkwHQgq4g9jlQ5rq43yh1Zoaerl2AVQETdhHwQpu2dwmjlR3nu0y4RYZepTNcRczy23De32i+7hFiPHx1sQaV8QIXTyb/y74RuSOI7831SYIB9oGvlvp/8yCq63cN0XkLdMbluKONHuHZ0URGctm1GUvaOpgXoPLOo2c3RWM6d/kgSLHnYpVAETyO85O/cjYiT96kVHMQgqjOnOSQcmoFDkdk+m2mVgvjaqUSOtq/GBhrGEULRG6tYgA5xtEVDxEXVFbvixJcOOY0D5i9PX7xs/bS9H+GBo7jvy2yw1dbBu8kmiEchIdhPLj4gLDrA+aYifwOAwl/dsFSIWr mcicek
+
+  mcicek@35.202.54.195 
+gcloud compute ssh --zone us-central1-c emoai --ssh-key-file D:\private_key.ppk -- -N -P 22 -D localhost:5000 
+gcloud compute ssh --zone us-central1-c emoai --ssh-key-file /home/muratcan/.ssh/gc_rsa -- -N -P 22 -D localhost:5000 
+gcloud compute ssh --zone us-central1-c emoai1 -- -L 7667:localhost:3900 -- -i D:\private_key.txt mcicek@104.197.54.212 
+sudo poweroff
+gcloud compute ssh emoai1 --project emoai-startproject --zone us-central1-c -- -L 7667:localhost:3900
+
+python -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
+
+python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
+
+wget https://developer.nvidia.com/compute/cuda/9.0/Prod/local_installers/cuda_9.0.176_384.130_linux-run
+
+https://104.197.54.212:3900
+
+conda install -c aaronzs tensorflow-gpu
+conda install -c anaconda cudatoolkit
+conda install -c anaconda cudnn
+conda install keras-gpu
+
+virtualenv --system-site-packages -p python3 ./tf36
+
+pip install cudatoolkit
+
+C:\cStorage\Program_Files\python_envs\tf36\Scripts\activate
