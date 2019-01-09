@@ -32,8 +32,11 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
     for inputMatrix, labels in set_gen:
         print('%d. set (Dataset %d) being trained for epoch %d!' % (c+1, trainingSubjects[c], epoch+1))
         labels = labels[:, output_begin:output_begin+num_outputs]
-        data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
-        model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
+        if timesteps == None:
+            model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
+        else:
+            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
+            model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
         c += 1
     return model
 
@@ -41,7 +44,7 @@ def trainImageModelForEpochs(model, epochs, trainingSubjects, testSubjects, time
     for e in range(epochs):
         random.Random(4).shuffle(trainingSubjects)
         trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, timesteps = timesteps, overlapping = overlapping
-        model = trainImageModelgeOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
+        model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
         print('Epoch %d completed!' % (e+1))
     return model
 
@@ -50,8 +53,11 @@ def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin,
     testBiwi = readBIWIDataset(subjectList = testSubjects) #, timesteps = timesteps, overlapping = overlapping
     for inputMatrix, labels in testBiwi:
         labels = labels[:, output_begin:output_begin+num_outputs]
-        data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
-        test_generators.append(data_gen)
+        if timesteps == None:
+            test_generators.append((inputMatrix, labels))
+        else:
+            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
+            test_generators.append(data_gen)
         test_labelSets.append(labels)
     return test_generators, test_labelSets
 
@@ -87,7 +93,7 @@ def combined_generator(inputMatrix, labels, timesteps, batch_size):
     img_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
     ang_gen = TimeseriesGenerator(labels, labels, length=timesteps, batch_size=batch_size)
     for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
-            yield [inputMatrix, inputLabels], outputLabels
+        yield [inputMatrix, inputLabels], outputLabels
             
 
 def trainFinalModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1):

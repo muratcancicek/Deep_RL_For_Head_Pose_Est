@@ -74,3 +74,5 @@ virtualenv --system-site-packages -p python3 ./tf36
 pip install cudatoolkit
 
 C:\cStorage\Program_Files\python_envs\tf36\Scripts\activate
+
+python -c "import tensorflow as tf; print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
