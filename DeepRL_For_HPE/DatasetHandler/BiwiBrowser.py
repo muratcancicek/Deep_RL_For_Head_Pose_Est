@@ -36,7 +36,7 @@ BIWI_Data_folder = BIWI_Main_Folder + 'hpdb/'
 BIWI_SnippedData_folder = pwd + '/BIWI_Files/BIWI_Samples/hpdb/'.replace('/', os.path.sep)
 BIWI_Lebels_file = BIWI_Main_Folder + 'db_annotations.tgz'
 BIWI_Lebels_file_Local = pwd + '/BIWI_Files/db_annotations.tgz'.replace('/', os.path.sep)
-BIWI_Frame_Shape = (480, 640, 3)
+BIWI_Frame_Shape = (240, 320, 3)
 def now(): return str(datetime.datetime.now())
 
 #################### Frame Reading ####################
@@ -45,7 +45,7 @@ def getRGBpngFileName(subject, frame):
 
 def pngObjToNpArr(imagePath):
     img = image.load_img(imagePath, target_size=BIWI_Frame_Shape)
-    x = image.img_to_array(img)
+    x = image.img_to_array(img)[8:-8, 48:-48, :]
     x = preprocess_input(x)
     return x
 
