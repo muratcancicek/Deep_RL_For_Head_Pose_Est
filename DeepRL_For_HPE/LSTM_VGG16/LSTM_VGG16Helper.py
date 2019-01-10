@@ -13,6 +13,7 @@ import random
 import numpy as np
 from keras import Model 
 from keras.layers import *
+from keras import optimizers
 import matplotlib.pyplot as plt
 from keras.optimizers import SGD
 from keras.models import Sequential
