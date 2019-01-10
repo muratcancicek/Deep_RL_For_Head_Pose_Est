@@ -43,14 +43,14 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
 def trainImageModelForEpochs(model, epochs, trainingSubjects, testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
     for e in range(epochs):
         random.Random(4).shuffle(trainingSubjects)
-        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, timesteps = timesteps, overlapping = overlapping
+        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, scaling = False, timesteps = timesteps, overlapping = overlapping
         model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs)
         print('Epoch %d completed!' % (e+1))
     return model
 
 def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size):
     test_generators, test_labelSets = [], [] 
-    testBiwi = readBIWIDataset(subjectList = testSubjects) #, timesteps = timesteps, overlapping = overlapping
+    testBiwi = readBIWIDataset(subjectList = testSubjects) #, scaling = False, timesteps = timesteps, overlapping = overlapping
     for inputMatrix, labels in testBiwi:
         labels = labels[:, output_begin:output_begin+num_outputs]
         if timesteps == None:
