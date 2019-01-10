@@ -3,8 +3,9 @@ import os
 # Dirty importing that allows the main author to switch environments easily
 
 if 'COMPUTERNAME' in os.environ:
-    os.environ['KERAS_BACKEND'] = 'theano'
-    os.environ['MKL_THREADING_LAYER'] = 'GNU'
+    if os.environ['COMPUTERNAME'] == "MSI2":
+        os.environ['KERAS_BACKEND'] = 'theano'
+        os.environ['MKL_THREADING_LAYER'] = 'GNU'
 
 if '.' in __name__:
     from DatasetHandler.NeighborFolderimporter import *
