@@ -3,7 +3,7 @@ import os
 # Dirty importing that allows the main author to switch environments easily
 
 if 'COMPUTERNAME' in os.environ:
-    if os.environ['COMPUTERNAME'] == "MSI2":
+    if os.environ['COMPUTERNAME'] == "MSI3":
         os.environ['KERAS_BACKEND'] = 'theano'
         os.environ['MKL_THREADING_LAYER'] = 'GNU'
 
