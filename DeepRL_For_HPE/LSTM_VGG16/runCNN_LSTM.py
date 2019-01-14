@@ -1,5 +1,14 @@
+# Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
+import os
+#Dirty importing that allows the main author to switch environments easily
+if '.' in __name__:
+    from Core.NeighborFolderimporter import *
+    from LSTM_VGG16.LSTM_VGG16Helper import *
+else:
+    from NeighborFolderimporter import *
+    from LSTM_VGG16Helper import *
+
 from DatasetHandler.BiwiBrowser import *
-from LSTM_VGG16Helper import *
 
 
 output_begin = 4
@@ -14,7 +23,7 @@ test_batch_size = 10
 
 subjectList = [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] #9[i for i in range(1, 9)] + [i for i in range(10, 25)] except [6, 13, 10, ]
 testSubjects = [9]
-trainingSubjects = [s for s in trainingSubjects if not s in testSubjects]
+trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
@@ -24,6 +33,8 @@ lstm_recurrent_dropout=0.25
 num_outputs = num_outputs
 lr=0.0001
 include_vgg_top = False
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
 
 def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
                   lstm_recurrent_dropout = lstm_recurrent_dropout, num_outputs = num_outputs, 
@@ -66,14 +77,15 @@ def trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, 
                                           in_epochs = in_epochs)
     return full_model
 
-def evaluateSubject(subject, test_gen, test_labels, timesteps, num_outputs, angles):
+def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles):
+    if num_outputs == 1: angles = ['Yaw']
     predictions = full_model.predict_generator(test_gen, verbose = 1)
     #kerasEval = full_model.evaluate_generator(test_gen)
     predictions = predictions * label_rescaling_factor
     test_labels = test_labels * label_rescaling_factor
     outputs = []
-    print('For the Subject %d:' % subject)
-    for i in num_outputs:
+    print('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]))
+    for i in range(num_outputs):
         matrix = numpy.concatenate((test_labels[timesteps:, i:i+1], predictions[:, i:i+1]), axis=1)
         differences = (test_labels[timesteps:, i:i+1] - predictions[:, i:i+1])
         absolute_mean_error = np.abs(differences).mean()
@@ -81,65 +93,66 @@ def evaluateSubject(subject, test_gen, test_labels, timesteps, num_outputs, angl
         outputs.append((matrix, absolute_mean_error))
     return outputs
 
-def evaluateAverage(results):
+def evaluateAverage(results, angles = angles, num_outputs = num_outputs):
     num_testSubjects = len(results)
-    sums = [0, 0, 0]
+    sums = [0] * num_outputs
     for subject, outputs in results:
         for an, (matrix, absolute_mean_error) in enumerate(outputs):
             sums[an] += absolute_mean_error
     means = [s/num_testSubjects for s in sums]
     print('On average in %d test subjects:' % num_testSubjects)
-    for avg in means:
+    for i, avg in enumerate(means):
         print("\tThe absolute mean error on %s angle estimations: %.2f Degree" % (angles[i], avg))
     return means
 
 def evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                    num_outputs = num_outputs, batch_size = test_batch_size):
+                     num_outputs = num_outputs, batch_size = test_batch_size, angles = angles):
+    if num_outputs == 1: angles = ['Yaw']
     test_generators, test_labelSets = getTestBiwiForImageModel(testSubjects, timesteps, False, 
                                             output_begin, num_outputs, batch_size = test_batch_size)
     results = []
-    angles = ['Pitch', 'Yaw', 'Roll'] if num_outputs > 1 else ['Yaw']
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
-        outputs = evaluateSubject(subject, test_gen, test_labels, timesteps, num_outputs, angles)
+        outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles)
         results.append((subject, outputs))
-    means = evaluateAverage(results)
+    means = evaluateAverage(results, angles, num_outputs)
     return means, results 
 
-
-def drawPlotsForSubj(outputs, subj, subjID, num_outputs = num_outputs):
-    colors, angles = ['r', 'b', 'g'], ['Pitch', 'Yaw', 'Roll'] if num_outputs > 1 else ['Yaw']
-    titles[0] = 'Estimations for the Subject %d (SubjID: %s, Total length: %d\n)' % (subj, subjectIDs[row], labels.shape[0])
+def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, angles = angles, save = False):
+    if num_outputs == 1: angles = ['Yaw']
+    colors = ['#FFAA00', '#00AA00', '#0000AA', '#AA0000'] 
+    title = 'Estimations for the Subject %d (Subject ID: %s, Total length: %d)\nby the Model %s' % (subj, subjID, outputs[0][0].shape[0], modelID)
     red, blue = (1.0, 0.95, 0.95), (0.95, 0.95, 1.0)
-    f, rows = plt.subplots(num_outputs, 1, sharex=True, figsize=(16, 4*num_outputs))
-    for col in range(num_outputs):
+    f, rows = plt.subplots(num_outputs, 1, sharey=True, sharex=True, figsize=(16, 3*num_outputs))
+    f.suptitle(title)
+    for i, (matrix, absolute_mean_error) in enumerate(outputs):
         cell = rows
-        if len(labelSets) > 1: cell = rows[row][col] if num_cols > 1 else rows[row]
-        cell.plot(labels[:, num_outputs+col+cs], colors[col+cs])
-        cell.set_facecolor(red if 'F' in subjectIDs[row] else blue)
-        cell.set_xlim([0, 1000])
-        cell.set_ylim([-90, 90])
-        if len(labelSets) > 1: left_cell = rows[row][0] if num_cols > 1 else rows[row]
-        left_cell.set_ylabel()
-    row += 1
+        if num_outputs > 1: cell = rows[i]
+        l1 = cell.plot(matrix[:, 0], colors[i], label='Ground-truth')
+        l2 = cell.plot(matrix[:, 1], colors[-1], label='Estimation')
+        cell.set_facecolor(red if 'F' in subjID else blue)
+        #cell.set_xlim([0, 1000])
+        cell.set_ylim([-label_rescaling_factor, label_rescaling_factor])
+        cell.set_ylabel('%s Angle\nAbsolute Mean Error: %.2f' % (angles[i], absolute_mean_error))
+    f.subplots_adjust(top=0.93, hspace=0, wspace=0)
+    if save:
+        plt.savefig('foo.png', bbox_inches='tight')
 
-
-    f.subplots_adjust(hspace=0, wspace=0)
-    #plt.setp([a.get_yticklabels() for a in f.axes[1:]], visible=False)
-
-def evaluate(results, num_outputs = num_outputs):
-    #for labels in labelSets:
+def drawResults(outputs, modelID, num_outputs = num_outputs, angles = angles, save = False):
     for subject, outputs in results:
-        p
-
-    plt.figure(figsize=(17,5*num_outputs))
-    plt.plot(output1)
+        drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelID, angles = angles, save = False)
 
 def main():
     vgg_model, full_model = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
                       lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
 
+    full_model = trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
+                  batch_size = train_batch_size, in_epochs = in_epochs)
+    
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size)
+
+    drawResults(outputs, modelID, num_outputs = num_outputs, angles = angles, save = True)
+    

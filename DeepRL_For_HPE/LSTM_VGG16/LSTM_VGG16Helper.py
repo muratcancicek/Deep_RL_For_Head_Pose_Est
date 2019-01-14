@@ -31,7 +31,8 @@ from keras.preprocessing.sequence import TimeseriesGenerator
 def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1):
     c = 0
     for inputMatrix, labels in set_gen:
-        print('%d. set (Dataset %d) being trained for epoch %d!' % (c+1, trainingSubjects[c], epoch+1))
+        subj = trainingSubjects[c]
+        print('%d. set (Subject %d, %s) being trained for epoch %d!' % (c+1, subj, BIWI_Subject_IDs[subj], epoch+1))
         labels = labels[:, output_begin:output_begin+num_outputs]
         if timesteps == None:
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
