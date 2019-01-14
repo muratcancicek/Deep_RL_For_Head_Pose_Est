@@ -41,7 +41,7 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
         c += 1
     return model
 
-def trainImageModelForEpochs(model, epochs, trainingSubjects, testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
+def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1):
     for e in range(epochs):
         random.Random(4).shuffle(trainingSubjects)
         trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, scaling = False, timesteps = timesteps, overlapping = overlapping

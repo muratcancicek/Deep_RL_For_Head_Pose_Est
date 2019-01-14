@@ -21,6 +21,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="LSTM_VGG16Helper.py" />
+    <Compile Include="runCNN_LSTM.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tf_trainLSTM_VGG16.py" />
     <Compile Include="trainLSTM_VGG16.py" />
     <Compile Include="NeighborFolderimporter.py" />
