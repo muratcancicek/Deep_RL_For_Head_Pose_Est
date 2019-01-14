@@ -39,10 +39,12 @@ angles = ['Pitch', 'Yaw', 'Roll']
 def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
                   lstm_recurrent_dropout = lstm_recurrent_dropout, num_outputs = num_outputs, 
                   lr = learning_rate, include_vgg_top = include_vgg_top):
+    modelID = 'VGG16' 
     inp = (224, 224, 3)
     vgg_model = VGG16(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
     
     if include_vgg_top:
+        modelID = modelID + '_inc_top'
         vgg_model.layers.pop()
         vgg_model.outputs = [vgg_model.layers[-1].output]
         vgg_model.output_layers = [vgg_model.layers[-1]] 
@@ -62,13 +64,18 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     """
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout))
+    modelID = modelID + 'lstm%d' % lstm_nodes
     rnn.add(Dense(num_outputs))
+    
+    modelID = modelID + '_output%d' % num_outputs
 
     for layer in rnn.layers[:1]: 
         layer.trainable = False
     adam = optimizers.Adam(lr=lr)
+    modelID = modelID + '_AdamOpt(lr=%d)' % lr
     rnn.compile(optimizer=adam, loss='mean_squared_error', metrics=['mae'])
-    return vgg_model, rnn
+    modelID = modelID + '_%s' % now().replace(' ', '_').replace(':', '-')
+    return vgg_model, rnn, modelID
 
 def trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs):
@@ -136,17 +143,18 @@ def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, 
         cell.set_ylabel('%s Angle\nAbsolute Mean Error: %.2f' % (angles[i], absolute_mean_error))
     f.subplots_adjust(top=0.93, hspace=0, wspace=0)
     if save:
-        plt.savefig('foo.png', bbox_inches='tight')
+        plt.savefig( os.sep + modelID +'subject%d.png' % subj, bbox_inches='tight')
 
 def drawResults(outputs, modelID, num_outputs = num_outputs, angles = angles, save = False):
     for subject, outputs in results:
         drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelID, angles = angles, save = False)
 
 def main():
-    vgg_model, full_model = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
+    vgg_model, full_model, modelID = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
                       lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
-
+    print('Evaluating model %s' % modelID)
+    os.mkdir('.' + os.sep + modelID)
     full_model = trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs)
     
@@ -156,3 +164,6 @@ def main():
 
     drawResults(outputs, modelID, num_outputs = num_outputs, angles = angles, save = True)
     
+if __name__ == "__main__":
+    main()
+    print('Done')
