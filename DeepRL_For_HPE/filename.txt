@@ -1,0 +1,1839 @@
+146/146 [==============================] - 57s 389ms/step - loss: 0.0092 - mean_absolute_error: 0.0746
+13. set (Subject 20, F02) being trained for epoch 21!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0104 - mean_absolute_error: 0.0757
+14. set (Subject 4, F05) being trained for epoch 21!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0071 - mean_absolute_error: 0.0666
+15. set (Subject 2, F03) being trained for epoch 21!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0072 - mean_absolute_error: 0.0637
+16. set (Subject 17, F05) being trained for epoch 21!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0099 - mean_absolute_error: 0.0722
+17. set (Subject 1, F02) being trained for epoch 21!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0134 - mean_absolute_error: 0.0907
+18. set (Subject 14, F03) being trained for epoch 21!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0154 - mean_absolute_error: 0.0965
+19. set (Subject 11, M06) being trained for epoch 21!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0091 - mean_absolute_error: 0.0722
+20. set (Subject 3, F04) being trained for epoch 21!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0077 - mean_absolute_error: 0.0664
+Epoch 21 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 10:35:50.847558
+1. set (Subject 14, F03) being trained for epoch 22!
+Epoch 1/1
+157/157 [==============================] - 61s 386ms/step - loss: 0.0152 - mean_absolute_error: 0.0951
+2. set (Subject 3, F04) being trained for epoch 22!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0071 - mean_absolute_error: 0.0634
+3. set (Subject 8, M03) being trained for epoch 22!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0110 - mean_absolute_error: 0.0814
+4. set (Subject 2, F03) being trained for epoch 22!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0095 - mean_absolute_error: 0.0717
+5. set (Subject 22, M13) being trained for epoch 22!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0117 - mean_absolute_error: 0.0786
+6. set (Subject 11, M06) being trained for epoch 22!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0059 - mean_absolute_error: 0.0568
+7. set (Subject 1, F02) being trained for epoch 22!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0109 - mean_absolute_error: 0.0831
+8. set (Subject 7, M02) being trained for epoch 22!
+Epoch 1/1
+146/146 [==============================] - 57s 391ms/step - loss: 0.0108 - mean_absolute_error: 0.0804
+9. set (Subject 6, M01) being trained for epoch 22!
+Epoch 1/1
+106/106 [==============================] - 41s 389ms/step - loss: 0.0234 - mean_absolute_error: 0.1119
+10. set (Subject 5, F06) being trained for epoch 22!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0075 - mean_absolute_error: 0.0661
+11. set (Subject 13, M08) being trained for epoch 22!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0085 - mean_absolute_error: 0.0680
+12. set (Subject 19, M12) being trained for epoch 22!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0101 - mean_absolute_error: 0.0725
+13. set (Subject 4, F05) being trained for epoch 22!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0095 - mean_absolute_error: 0.0729
+14. set (Subject 16, M10) being trained for epoch 22!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0109 - mean_absolute_error: 0.0775
+15. set (Subject 23, M14) being trained for epoch 22!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0236 - mean_absolute_error: 0.1206
+16. set (Subject 17, F05) being trained for epoch 22!
+Epoch 1/1
+76/76 [==============================] - 30s 391ms/step - loss: 0.0094 - mean_absolute_error: 0.0738
+17. set (Subject 20, F02) being trained for epoch 22!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0085 - mean_absolute_error: 0.0711
+18. set (Subject 15, M09) being trained for epoch 22!
+Epoch 1/1
+128/128 [==============================] - 50s 390ms/step - loss: 0.0162 - mean_absolute_error: 0.0923
+19. set (Subject 10, M05) being trained for epoch 22!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0072 - mean_absolute_error: 0.0649
+20. set (Subject 12, M07) being trained for epoch 22!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0073 - mean_absolute_error: 0.0637
+Epoch 22 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 10:54:39.236041
+1. set (Subject 15, M09) being trained for epoch 23!
+Epoch 1/1
+128/128 [==============================] - 49s 387ms/step - loss: 0.0148 - mean_absolute_error: 0.0883
+2. set (Subject 12, M07) being trained for epoch 23!
+Epoch 1/1
+144/144 [==============================] - 56s 389ms/step - loss: 0.0056 - mean_absolute_error: 0.0571
+3. set (Subject 13, M08) being trained for epoch 23!
+Epoch 1/1
+94/94 [==============================] - 37s 390ms/step - loss: 0.0096 - mean_absolute_error: 0.0714
+4. set (Subject 23, M14) being trained for epoch 23!
+Epoch 1/1
+111/111 [==============================] - 43s 391ms/step - loss: 0.0222 - mean_absolute_error: 0.1169
+5. set (Subject 11, M06) being trained for epoch 23!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0064 - mean_absolute_error: 0.0614
+6. set (Subject 10, M05) being trained for epoch 23!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0065 - mean_absolute_error: 0.0592
+7. set (Subject 20, F02) being trained for epoch 23!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0087 - mean_absolute_error: 0.0693
+8. set (Subject 19, M12) being trained for epoch 23!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0073 - mean_absolute_error: 0.0630
+9. set (Subject 22, M13) being trained for epoch 23!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0066 - mean_absolute_error: 0.0591
+10. set (Subject 6, M01) being trained for epoch 23!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0211 - mean_absolute_error: 0.1051
+11. set (Subject 1, F02) being trained for epoch 23!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0107 - mean_absolute_error: 0.0801
+12. set (Subject 14, F03) being trained for epoch 23!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0139 - mean_absolute_error: 0.0914
+13. set (Subject 16, M10) being trained for epoch 23!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0101 - mean_absolute_error: 0.0738
+14. set (Subject 3, F04) being trained for epoch 23!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0092 - mean_absolute_error: 0.0734
+15. set (Subject 8, M03) being trained for epoch 23!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0097 - mean_absolute_error: 0.0757
+16. set (Subject 17, F05) being trained for epoch 23!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0113 - mean_absolute_error: 0.0786
+17. set (Subject 4, F05) being trained for epoch 23!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0075 - mean_absolute_error: 0.0677
+18. set (Subject 2, F03) being trained for epoch 23!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0073 - mean_absolute_error: 0.0647
+19. set (Subject 5, F06) being trained for epoch 23!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0067 - mean_absolute_error: 0.0615
+20. set (Subject 7, M02) being trained for epoch 23!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0082 - mean_absolute_error: 0.0718
+Epoch 23 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 11:13:27.413831
+1. set (Subject 2, F03) being trained for epoch 24!
+Epoch 1/1
+99/99 [==============================] - 38s 387ms/step - loss: 0.0063 - mean_absolute_error: 0.0600
+2. set (Subject 7, M02) being trained for epoch 24!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0084 - mean_absolute_error: 0.0719
+3. set (Subject 1, F02) being trained for epoch 24!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0101 - mean_absolute_error: 0.0793
+4. set (Subject 8, M03) being trained for epoch 24!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0085 - mean_absolute_error: 0.0723
+5. set (Subject 10, M05) being trained for epoch 24!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0071 - mean_absolute_error: 0.0651
+6. set (Subject 5, F06) being trained for epoch 24!
+Epoch 1/1
+186/186 [==============================] - 73s 391ms/step - loss: 0.0058 - mean_absolute_error: 0.0579
+7. set (Subject 4, F05) being trained for epoch 24!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0076 - mean_absolute_error: 0.0660
+8. set (Subject 14, F03) being trained for epoch 24!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0140 - mean_absolute_error: 0.0946
+9. set (Subject 11, M06) being trained for epoch 24!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0063 - mean_absolute_error: 0.0609
+10. set (Subject 22, M13) being trained for epoch 24!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0069 - mean_absolute_error: 0.0608
+11. set (Subject 20, F02) being trained for epoch 24!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0094 - mean_absolute_error: 0.0713
+12. set (Subject 15, M09) being trained for epoch 24!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0161 - mean_absolute_error: 0.0950
+13. set (Subject 3, F04) being trained for epoch 24!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0089 - mean_absolute_error: 0.0721
+14. set (Subject 12, M07) being trained for epoch 24!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0076 - mean_absolute_error: 0.0681
+15. set (Subject 13, M08) being trained for epoch 24!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0102 - mean_absolute_error: 0.0741
+16. set (Subject 17, F05) being trained for epoch 24!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0098 - mean_absolute_error: 0.0743
+17. set (Subject 16, M10) being trained for epoch 24!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0096 - mean_absolute_error: 0.0744
+18. set (Subject 23, M14) being trained for epoch 24!
+Epoch 1/1
+111/111 [==============================] - 43s 390ms/step - loss: 0.0204 - mean_absolute_error: 0.1111
+19. set (Subject 6, M01) being trained for epoch 24!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0244 - mean_absolute_error: 0.1102
+20. set (Subject 19, M12) being trained for epoch 24!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0079 - mean_absolute_error: 0.0657
+Epoch 24 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 11:32:15.283789
+1. set (Subject 23, M14) being trained for epoch 25!
+Epoch 1/1
+111/111 [==============================] - 43s 385ms/step - loss: 0.0197 - mean_absolute_error: 0.1113
+2. set (Subject 19, M12) being trained for epoch 25!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0075 - mean_absolute_error: 0.0642
+3. set (Subject 20, F02) being trained for epoch 25!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0080 - mean_absolute_error: 0.0669
+4. set (Subject 13, M08) being trained for epoch 25!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0100 - mean_absolute_error: 0.0724
+5. set (Subject 5, F06) being trained for epoch 25!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0093 - mean_absolute_error: 0.0727
+6. set (Subject 6, M01) being trained for epoch 25!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0250 - mean_absolute_error: 0.1148
+7. set (Subject 16, M10) being trained for epoch 25!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0098 - mean_absolute_error: 0.0759
+8. set (Subject 15, M09) being trained for epoch 25!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0143 - mean_absolute_error: 0.0876
+9. set (Subject 10, M05) being trained for epoch 25!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0073 - mean_absolute_error: 0.0642
+10. set (Subject 11, M06) being trained for epoch 25!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0052 - mean_absolute_error: 0.0558
+11. set (Subject 4, F05) being trained for epoch 25!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0077 - mean_absolute_error: 0.0684
+12. set (Subject 2, F03) being trained for epoch 25!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0080 - mean_absolute_error: 0.0688
+13. set (Subject 12, M07) being trained for epoch 25!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0070 - mean_absolute_error: 0.0635
+14. set (Subject 7, M02) being trained for epoch 25!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0104 - mean_absolute_error: 0.0806
+15. set (Subject 1, F02) being trained for epoch 25!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0110 - mean_absolute_error: 0.0799
+16. set (Subject 17, F05) being trained for epoch 25!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0096 - mean_absolute_error: 0.0716
+17. set (Subject 3, F04) being trained for epoch 25!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0088 - mean_absolute_error: 0.0723
+18. set (Subject 8, M03) being trained for epoch 25!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0100 - mean_absolute_error: 0.0773
+19. set (Subject 22, M13) being trained for epoch 25!
+Epoch 1/1
+130/130 [==============================] - 51s 390ms/step - loss: 0.0071 - mean_absolute_error: 0.0632
+20. set (Subject 14, F03) being trained for epoch 25!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0154 - mean_absolute_error: 0.0975
+Epoch 25 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 11:51:03.268535
+1. set (Subject 8, M03) being trained for epoch 26!
+Epoch 1/1
+152/152 [==============================] - 59s 386ms/step - loss: 0.0100 - mean_absolute_error: 0.0780
+2. set (Subject 14, F03) being trained for epoch 26!
+Epoch 1/1
+157/157 [==============================] - 61s 390ms/step - loss: 0.0128 - mean_absolute_error: 0.0885
+3. set (Subject 4, F05) being trained for epoch 26!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0087 - mean_absolute_error: 0.0717
+4. set (Subject 1, F02) being trained for epoch 26!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0090 - mean_absolute_error: 0.0740
+5. set (Subject 6, M01) being trained for epoch 26!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0248 - mean_absolute_error: 0.1112
+6. set (Subject 22, M13) being trained for epoch 26!
+Epoch 1/1
+130/130 [==============================] - 51s 390ms/step - loss: 0.0075 - mean_absolute_error: 0.0648
+7. set (Subject 3, F04) being trained for epoch 26!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0087 - mean_absolute_error: 0.0710
+8. set (Subject 2, F03) being trained for epoch 26!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0067 - mean_absolute_error: 0.0619
+9. set (Subject 5, F06) being trained for epoch 26!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0077 - mean_absolute_error: 0.0674
+10. set (Subject 10, M05) being trained for epoch 26!
+Epoch 1/1
+142/142 [==============================] - 55s 391ms/step - loss: 0.0067 - mean_absolute_error: 0.0613
+11. set (Subject 16, M10) being trained for epoch 26!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0096 - mean_absolute_error: 0.0719
+12. set (Subject 23, M14) being trained for epoch 26!
+Epoch 1/1
+111/111 [==============================] - 43s 390ms/step - loss: 0.0281 - mean_absolute_error: 0.1281
+13. set (Subject 7, M02) being trained for epoch 26!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0123 - mean_absolute_error: 0.0882
+14. set (Subject 19, M12) being trained for epoch 26!
+Epoch 1/1
+98/98 [==============================] - 38s 389ms/step - loss: 0.0119 - mean_absolute_error: 0.0767
+15. set (Subject 20, F02) being trained for epoch 26!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0109 - mean_absolute_error: 0.0784
+16. set (Subject 17, F05) being trained for epoch 26!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0140 - mean_absolute_error: 0.0915
+17. set (Subject 12, M07) being trained for epoch 26!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0063 - mean_absolute_error: 0.0614
+18. set (Subject 13, M08) being trained for epoch 26!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0091 - mean_absolute_error: 0.0682
+19. set (Subject 11, M06) being trained for epoch 26!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0047 - mean_absolute_error: 0.0511
+20. set (Subject 15, M09) being trained for epoch 26!
+Epoch 1/1
+128/128 [==============================] - 50s 390ms/step - loss: 0.0140 - mean_absolute_error: 0.0878
+Epoch 26 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 12:09:51.834366
+1. set (Subject 13, M08) being trained for epoch 27!
+Epoch 1/1
+94/94 [==============================] - 36s 386ms/step - loss: 0.0088 - mean_absolute_error: 0.0695
+2. set (Subject 15, M09) being trained for epoch 27!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0133 - mean_absolute_error: 0.0832
+3. set (Subject 16, M10) being trained for epoch 27!
+Epoch 1/1
+180/180 [==============================] - 70s 391ms/step - loss: 0.0114 - mean_absolute_error: 0.0795
+4. set (Subject 20, F02) being trained for epoch 27!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0098 - mean_absolute_error: 0.0725
+5. set (Subject 22, M13) being trained for epoch 27!
+Epoch 1/1
+130/130 [==============================] - 51s 390ms/step - loss: 0.0059 - mean_absolute_error: 0.0560
+6. set (Subject 11, M06) being trained for epoch 27!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0045 - mean_absolute_error: 0.0501
+7. set (Subject 12, M07) being trained for epoch 27!
+Epoch 1/1
+144/144 [==============================] - 56s 389ms/step - loss: 0.0059 - mean_absolute_error: 0.0572
+8. set (Subject 23, M14) being trained for epoch 27!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0203 - mean_absolute_error: 0.1087
+9. set (Subject 6, M01) being trained for epoch 27!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0258 - mean_absolute_error: 0.1147
+10. set (Subject 5, F06) being trained for epoch 27!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0070 - mean_absolute_error: 0.0636
+11. set (Subject 3, F04) being trained for epoch 27!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0077 - mean_absolute_error: 0.0666
+12. set (Subject 8, M03) being trained for epoch 27!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0101 - mean_absolute_error: 0.0778
+13. set (Subject 19, M12) being trained for epoch 27!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0087 - mean_absolute_error: 0.0689
+14. set (Subject 14, F03) being trained for epoch 27!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0149 - mean_absolute_error: 0.0949
+15. set (Subject 4, F05) being trained for epoch 27!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0075 - mean_absolute_error: 0.0678
+16. set (Subject 17, F05) being trained for epoch 27!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0095 - mean_absolute_error: 0.0757
+17. set (Subject 7, M02) being trained for epoch 27!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0119 - mean_absolute_error: 0.0881
+18. set (Subject 1, F02) being trained for epoch 27!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0109 - mean_absolute_error: 0.0807
+19. set (Subject 10, M05) being trained for epoch 27!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0067 - mean_absolute_error: 0.0612
+20. set (Subject 2, F03) being trained for epoch 27!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0059 - mean_absolute_error: 0.0559
+Epoch 27 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 12:28:40.005744
+1. set (Subject 1, F02) being trained for epoch 28!
+Epoch 1/1
+97/97 [==============================] - 37s 384ms/step - loss: 0.0093 - mean_absolute_error: 0.0739
+2. set (Subject 2, F03) being trained for epoch 28!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0076 - mean_absolute_error: 0.0624
+3. set (Subject 3, F04) being trained for epoch 28!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0069 - mean_absolute_error: 0.0630
+4. set (Subject 4, F05) being trained for epoch 28!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0061 - mean_absolute_error: 0.0616
+5. set (Subject 11, M06) being trained for epoch 28!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0043 - mean_absolute_error: 0.0516
+6. set (Subject 10, M05) being trained for epoch 28!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0058 - mean_absolute_error: 0.0571
+7. set (Subject 7, M02) being trained for epoch 28!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0086 - mean_absolute_error: 0.0745
+8. set (Subject 8, M03) being trained for epoch 28!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0073 - mean_absolute_error: 0.0664
+9. set (Subject 22, M13) being trained for epoch 28!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0086 - mean_absolute_error: 0.0689
+10. set (Subject 6, M01) being trained for epoch 28!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0268 - mean_absolute_error: 0.1174
+11. set (Subject 12, M07) being trained for epoch 28!
+Epoch 1/1
+144/144 [==============================] - 56s 389ms/step - loss: 0.0053 - mean_absolute_error: 0.0555
+12. set (Subject 13, M08) being trained for epoch 28!
+Epoch 1/1
+94/94 [==============================] - 37s 388ms/step - loss: 0.0086 - mean_absolute_error: 0.0691
+13. set (Subject 14, F03) being trained for epoch 28!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0139 - mean_absolute_error: 0.0909
+14. set (Subject 15, M09) being trained for epoch 28!
+Epoch 1/1
+128/128 [==============================] - 50s 388ms/step - loss: 0.0139 - mean_absolute_error: 0.0866
+15. set (Subject 16, M10) being trained for epoch 28!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0109 - mean_absolute_error: 0.0791
+16. set (Subject 17, F05) being trained for epoch 28!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0120 - mean_absolute_error: 0.0847
+17. set (Subject 19, M12) being trained for epoch 28!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0079 - mean_absolute_error: 0.0628
+18. set (Subject 20, F02) being trained for epoch 28!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0087 - mean_absolute_error: 0.0680
+19. set (Subject 5, F06) being trained for epoch 28!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0078 - mean_absolute_error: 0.0684
+20. set (Subject 23, M14) being trained for epoch 28!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0204 - mean_absolute_error: 0.1089
+Epoch 28 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 12:47:27.146659
+1. set (Subject 20, F02) being trained for epoch 29!
+Epoch 1/1
+108/108 [==============================] - 42s 387ms/step - loss: 0.0099 - mean_absolute_error: 0.0766
+2. set (Subject 23, M14) being trained for epoch 29!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0201 - mean_absolute_error: 0.1094
+3. set (Subject 12, M07) being trained for epoch 29!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0061 - mean_absolute_error: 0.0587
+4. set (Subject 16, M10) being trained for epoch 29!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0094 - mean_absolute_error: 0.0726
+5. set (Subject 10, M05) being trained for epoch 29!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0062 - mean_absolute_error: 0.0584
+6. set (Subject 5, F06) being trained for epoch 29!
+Epoch 1/1
+186/186 [==============================] - 72s 389ms/step - loss: 0.0075 - mean_absolute_error: 0.0656
+7. set (Subject 19, M12) being trained for epoch 29!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0082 - mean_absolute_error: 0.0674
+8. set (Subject 13, M08) being trained for epoch 29!
+Epoch 1/1
+94/94 [==============================] - 37s 388ms/step - loss: 0.0094 - mean_absolute_error: 0.0679
+9. set (Subject 11, M06) being trained for epoch 29!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0054 - mean_absolute_error: 0.0546
+10. set (Subject 22, M13) being trained for epoch 29!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0074 - mean_absolute_error: 0.0635
+11. set (Subject 7, M02) being trained for epoch 29!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0092 - mean_absolute_error: 0.0754
+12. set (Subject 1, F02) being trained for epoch 29!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0116 - mean_absolute_error: 0.0804
+13. set (Subject 15, M09) being trained for epoch 29!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0127 - mean_absolute_error: 0.0829
+14. set (Subject 2, F03) being trained for epoch 29!
+Epoch 1/1
+99/99 [==============================] - 39s 391ms/step - loss: 0.0067 - mean_absolute_error: 0.0610
+15. set (Subject 3, F04) being trained for epoch 29!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0086 - mean_absolute_error: 0.0694
+16. set (Subject 17, F05) being trained for epoch 29!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0088 - mean_absolute_error: 0.0740
+17. set (Subject 14, F03) being trained for epoch 29!
+Epoch 1/1
+157/157 [==============================] - 61s 389ms/step - loss: 0.0136 - mean_absolute_error: 0.0902
+18. set (Subject 4, F05) being trained for epoch 29!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0080 - mean_absolute_error: 0.0670
+19. set (Subject 6, M01) being trained for epoch 29!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0227 - mean_absolute_error: 0.1062
+20. set (Subject 8, M03) being trained for epoch 29!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0092 - mean_absolute_error: 0.0750
+Epoch 29 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 13:06:14.613784
+1. set (Subject 4, F05) being trained for epoch 30!
+Epoch 1/1
+146/146 [==============================] - 56s 386ms/step - loss: 0.0068 - mean_absolute_error: 0.0631
+2. set (Subject 8, M03) being trained for epoch 30!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0083 - mean_absolute_error: 0.0716
+3. set (Subject 7, M02) being trained for epoch 30!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0079 - mean_absolute_error: 0.0680
+4. set (Subject 3, F04) being trained for epoch 30!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0073 - mean_absolute_error: 0.0671
+5. set (Subject 5, F06) being trained for epoch 30!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0068 - mean_absolute_error: 0.0617
+6. set (Subject 6, M01) being trained for epoch 30!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0240 - mean_absolute_error: 0.1113
+7. set (Subject 14, F03) being trained for epoch 30!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0110 - mean_absolute_error: 0.0811
+8. set (Subject 1, F02) being trained for epoch 30!
+Epoch 1/1
+97/97 [==============================] - 38s 389ms/step - loss: 0.0100 - mean_absolute_error: 0.0750
+9. set (Subject 10, M05) being trained for epoch 30!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0087 - mean_absolute_error: 0.0705
+10. set (Subject 11, M06) being trained for epoch 30!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0074 - mean_absolute_error: 0.0649
+11. set (Subject 19, M12) being trained for epoch 30!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0080 - mean_absolute_error: 0.0646
+12. set (Subject 20, F02) being trained for epoch 30!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0085 - mean_absolute_error: 0.0702
+13. set (Subject 2, F03) being trained for epoch 30!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0084 - mean_absolute_error: 0.0687
+14. set (Subject 23, M14) being trained for epoch 30!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0204 - mean_absolute_error: 0.1101
+15. set (Subject 12, M07) being trained for epoch 30!
+Epoch 1/1
+144/144 [==============================] - 56s 387ms/step - loss: 0.0064 - mean_absolute_error: 0.0606
+16. set (Subject 17, F05) being trained for epoch 30!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0087 - mean_absolute_error: 0.0731
+17. set (Subject 15, M09) being trained for epoch 30!
+Epoch 1/1
+128/128 [==============================] - 50s 388ms/step - loss: 0.0121 - mean_absolute_error: 0.0821
+18. set (Subject 16, M10) being trained for epoch 30!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0096 - mean_absolute_error: 0.0741
+19. set (Subject 22, M13) being trained for epoch 30!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0080 - mean_absolute_error: 0.0636
+20. set (Subject 13, M08) being trained for epoch 30!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0105 - mean_absolute_error: 0.0728
+Epoch 30 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 13:25:02.256502
+1. set (Subject 16, M10) being trained for epoch 31!
+Epoch 1/1
+180/180 [==============================] - 70s 388ms/step - loss: 0.0101 - mean_absolute_error: 0.0737
+2. set (Subject 13, M08) being trained for epoch 31!
+Epoch 1/1
+94/94 [==============================] - 37s 390ms/step - loss: 0.0082 - mean_absolute_error: 0.0639
+3. set (Subject 19, M12) being trained for epoch 31!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0089 - mean_absolute_error: 0.0691
+4. set (Subject 12, M07) being trained for epoch 31!
+Epoch 1/1
+144/144 [==============================] - 56s 387ms/step - loss: 0.0051 - mean_absolute_error: 0.0562
+5. set (Subject 6, M01) being trained for epoch 31!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0221 - mean_absolute_error: 0.1069
+6. set (Subject 22, M13) being trained for epoch 31!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0070 - mean_absolute_error: 0.0608
+7. set (Subject 15, M09) being trained for epoch 31!
+Epoch 1/1
+128/128 [==============================] - 50s 388ms/step - loss: 0.0133 - mean_absolute_error: 0.0879
+8. set (Subject 20, F02) being trained for epoch 31!
+Epoch 1/1
+108/108 [==============================] - 42s 389ms/step - loss: 0.0087 - mean_absolute_error: 0.0688
+9. set (Subject 5, F06) being trained for epoch 31!
+Epoch 1/1
+186/186 [==============================] - 73s 391ms/step - loss: 0.0066 - mean_absolute_error: 0.0636
+10. set (Subject 10, M05) being trained for epoch 31!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0068 - mean_absolute_error: 0.0638
+11. set (Subject 14, F03) being trained for epoch 31!
+Epoch 1/1
+157/157 [==============================] - 61s 389ms/step - loss: 0.0134 - mean_absolute_error: 0.0925
+12. set (Subject 4, F05) being trained for epoch 31!
+Epoch 1/1
+146/146 [==============================] - 57s 388ms/step - loss: 0.0063 - mean_absolute_error: 0.0601
+13. set (Subject 23, M14) being trained for epoch 31!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0203 - mean_absolute_error: 0.1109
+14. set (Subject 8, M03) being trained for epoch 31!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0079 - mean_absolute_error: 0.0690
+15. set (Subject 7, M02) being trained for epoch 31!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0087 - mean_absolute_error: 0.0737
+16. set (Subject 17, F05) being trained for epoch 31!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0081 - mean_absolute_error: 0.0675
+17. set (Subject 2, F03) being trained for epoch 31!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0065 - mean_absolute_error: 0.0592
+18. set (Subject 3, F04) being trained for epoch 31!
+Epoch 1/1
+143/143 [==============================] - 56s 388ms/step - loss: 0.0074 - mean_absolute_error: 0.0645
+19. set (Subject 11, M06) being trained for epoch 31!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0058 - mean_absolute_error: 0.0580
+20. set (Subject 1, F02) being trained for epoch 31!
+Epoch 1/1
+97/97 [==============================] - 38s 387ms/step - loss: 0.0102 - mean_absolute_error: 0.0772
+Epoch 31 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 13:43:49.514533
+1. set (Subject 3, F04) being trained for epoch 32!
+Epoch 1/1
+143/143 [==============================] - 55s 387ms/step - loss: 0.0071 - mean_absolute_error: 0.0622
+2. set (Subject 1, F02) being trained for epoch 32!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0118 - mean_absolute_error: 0.0827
+3. set (Subject 14, F03) being trained for epoch 32!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0130 - mean_absolute_error: 0.0901
+4. set (Subject 7, M02) being trained for epoch 32!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0086 - mean_absolute_error: 0.0712
+5. set (Subject 22, M13) being trained for epoch 32!
+Epoch 1/1
+130/130 [==============================] - 51s 390ms/step - loss: 0.0080 - mean_absolute_error: 0.0661
+6. set (Subject 11, M06) being trained for epoch 32!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0073 - mean_absolute_error: 0.0640
+7. set (Subject 2, F03) being trained for epoch 32!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0068 - mean_absolute_error: 0.0627
+8. set (Subject 4, F05) being trained for epoch 32!
+Epoch 1/1
+146/146 [==============================] - 57s 388ms/step - loss: 0.0071 - mean_absolute_error: 0.0659
+9. set (Subject 6, M01) being trained for epoch 32!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0237 - mean_absolute_error: 0.1105
+10. set (Subject 5, F06) being trained for epoch 32!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0076 - mean_absolute_error: 0.0660
+11. set (Subject 15, M09) being trained for epoch 32!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0128 - mean_absolute_error: 0.0851
+12. set (Subject 16, M10) being trained for epoch 32!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0094 - mean_absolute_error: 0.0697
+13. set (Subject 8, M03) being trained for epoch 32!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0102 - mean_absolute_error: 0.0773
+14. set (Subject 13, M08) being trained for epoch 32!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0079 - mean_absolute_error: 0.0637
+15. set (Subject 19, M12) being trained for epoch 32!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0137 - mean_absolute_error: 0.0860
+16. set (Subject 17, F05) being trained for epoch 32!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0102 - mean_absolute_error: 0.0757
+17. set (Subject 23, M14) being trained for epoch 32!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0184 - mean_absolute_error: 0.1064
+18. set (Subject 12, M07) being trained for epoch 32!
+Epoch 1/1
+144/144 [==============================] - 56s 389ms/step - loss: 0.0062 - mean_absolute_error: 0.0585
+19. set (Subject 10, M05) being trained for epoch 32!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0070 - mean_absolute_error: 0.0643
+20. set (Subject 20, F02) being trained for epoch 32!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0110 - mean_absolute_error: 0.0778
+Epoch 32 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 14:02:36.938098
+1. set (Subject 12, M07) being trained for epoch 33!
+Epoch 1/1
+144/144 [==============================] - 56s 386ms/step - loss: 0.0051 - mean_absolute_error: 0.0533
+2. set (Subject 20, F02) being trained for epoch 33!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0089 - mean_absolute_error: 0.0681
+3. set (Subject 15, M09) being trained for epoch 33!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0111 - mean_absolute_error: 0.0795
+4. set (Subject 19, M12) being trained for epoch 33!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0160 - mean_absolute_error: 0.0907
+5. set (Subject 11, M06) being trained for epoch 33!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0056 - mean_absolute_error: 0.0547
+6. set (Subject 10, M05) being trained for epoch 33!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0063 - mean_absolute_error: 0.0598
+7. set (Subject 23, M14) being trained for epoch 33!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0201 - mean_absolute_error: 0.1121
+8. set (Subject 16, M10) being trained for epoch 33!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0097 - mean_absolute_error: 0.0725
+9. set (Subject 22, M13) being trained for epoch 33!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0065 - mean_absolute_error: 0.0595
+10. set (Subject 6, M01) being trained for epoch 33!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0205 - mean_absolute_error: 0.1031
+11. set (Subject 2, F03) being trained for epoch 33!
+Epoch 1/1
+99/99 [==============================] - 39s 389ms/step - loss: 0.0070 - mean_absolute_error: 0.0645
+12. set (Subject 3, F04) being trained for epoch 33!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0066 - mean_absolute_error: 0.0624
+13. set (Subject 13, M08) being trained for epoch 33!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0083 - mean_absolute_error: 0.0693
+14. set (Subject 1, F02) being trained for epoch 33!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0104 - mean_absolute_error: 0.0766
+15. set (Subject 14, F03) being trained for epoch 33!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0126 - mean_absolute_error: 0.0892
+16. set (Subject 17, F05) being trained for epoch 33!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0092 - mean_absolute_error: 0.0733
+17. set (Subject 8, M03) being trained for epoch 33!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0108 - mean_absolute_error: 0.0801
+18. set (Subject 7, M02) being trained for epoch 33!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0128 - mean_absolute_error: 0.0879
+19. set (Subject 5, F06) being trained for epoch 33!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0071 - mean_absolute_error: 0.0640
+20. set (Subject 4, F05) being trained for epoch 33!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0072 - mean_absolute_error: 0.0640
+Epoch 33 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 14:21:24.970268
+1. set (Subject 7, M02) being trained for epoch 34!
+Epoch 1/1
+146/146 [==============================] - 57s 387ms/step - loss: 0.0094 - mean_absolute_error: 0.0768
+2. set (Subject 4, F05) being trained for epoch 34!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0061 - mean_absolute_error: 0.0607
+3. set (Subject 2, F03) being trained for epoch 34!
+Epoch 1/1
+99/99 [==============================] - 39s 389ms/step - loss: 0.0068 - mean_absolute_error: 0.0599
+4. set (Subject 14, F03) being trained for epoch 34!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0128 - mean_absolute_error: 0.0897
+5. set (Subject 10, M05) being trained for epoch 34!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0063 - mean_absolute_error: 0.0602
+6. set (Subject 5, F06) being trained for epoch 34!
+Epoch 1/1
+186/186 [==============================] - 72s 389ms/step - loss: 0.0065 - mean_absolute_error: 0.0621
+7. set (Subject 8, M03) being trained for epoch 34!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0098 - mean_absolute_error: 0.0771
+8. set (Subject 3, F04) being trained for epoch 34!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0074 - mean_absolute_error: 0.0656
+9. set (Subject 11, M06) being trained for epoch 34!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0049 - mean_absolute_error: 0.0556
+10. set (Subject 22, M13) being trained for epoch 34!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0080 - mean_absolute_error: 0.0640
+11. set (Subject 23, M14) being trained for epoch 34!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0196 - mean_absolute_error: 0.1085
+12. set (Subject 12, M07) being trained for epoch 34!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0065 - mean_absolute_error: 0.0596
+13. set (Subject 1, F02) being trained for epoch 34!
+Epoch 1/1
+97/97 [==============================] - 38s 387ms/step - loss: 0.0110 - mean_absolute_error: 0.0795
+14. set (Subject 20, F02) being trained for epoch 34!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0099 - mean_absolute_error: 0.0722
+15. set (Subject 15, M09) being trained for epoch 34!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0124 - mean_absolute_error: 0.0843
+16. set (Subject 17, F05) being trained for epoch 34!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0095 - mean_absolute_error: 0.0754
+17. set (Subject 13, M08) being trained for epoch 34!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0072 - mean_absolute_error: 0.0614
+18. set (Subject 19, M12) being trained for epoch 34!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0101 - mean_absolute_error: 0.0711
+19. set (Subject 6, M01) being trained for epoch 34!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0219 - mean_absolute_error: 0.1039
+20. set (Subject 16, M10) being trained for epoch 34!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0101 - mean_absolute_error: 0.0738
+Epoch 34 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 14:40:12.161196
+1. set (Subject 19, M12) being trained for epoch 35!
+Epoch 1/1
+98/98 [==============================] - 38s 384ms/step - loss: 0.0074 - mean_absolute_error: 0.0609
+2. set (Subject 16, M10) being trained for epoch 35!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0100 - mean_absolute_error: 0.0728
+3. set (Subject 23, M14) being trained for epoch 35!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0186 - mean_absolute_error: 0.1065
+4. set (Subject 15, M09) being trained for epoch 35!
+Epoch 1/1
+128/128 [==============================] - 50s 388ms/step - loss: 0.0112 - mean_absolute_error: 0.0796
+5. set (Subject 5, F06) being trained for epoch 35!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0072 - mean_absolute_error: 0.0635
+6. set (Subject 6, M01) being trained for epoch 35!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0209 - mean_absolute_error: 0.1033
+7. set (Subject 13, M08) being trained for epoch 35!
+Epoch 1/1
+94/94 [==============================] - 37s 390ms/step - loss: 0.0084 - mean_absolute_error: 0.0670
+8. set (Subject 12, M07) being trained for epoch 35!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0051 - mean_absolute_error: 0.0543
+9. set (Subject 10, M05) being trained for epoch 35!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0063 - mean_absolute_error: 0.0590
+10. set (Subject 11, M06) being trained for epoch 35!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0043 - mean_absolute_error: 0.0498
+11. set (Subject 8, M03) being trained for epoch 35!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0096 - mean_absolute_error: 0.0762
+12. set (Subject 7, M02) being trained for epoch 35!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0114 - mean_absolute_error: 0.0850
+13. set (Subject 20, F02) being trained for epoch 35!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0118 - mean_absolute_error: 0.0786
+14. set (Subject 4, F05) being trained for epoch 35!
+Epoch 1/1
+146/146 [==============================] - 57s 388ms/step - loss: 0.0076 - mean_absolute_error: 0.0675
+15. set (Subject 2, F03) being trained for epoch 35!
+Epoch 1/1
+99/99 [==============================] - 39s 389ms/step - loss: 0.0074 - mean_absolute_error: 0.0620
+16. set (Subject 17, F05) being trained for epoch 35!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0093 - mean_absolute_error: 0.0718
+17. set (Subject 1, F02) being trained for epoch 35!
+Epoch 1/1
+97/97 [==============================] - 38s 387ms/step - loss: 0.0087 - mean_absolute_error: 0.0706
+18. set (Subject 14, F03) being trained for epoch 35!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0130 - mean_absolute_error: 0.0885
+19. set (Subject 22, M13) being trained for epoch 35!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0072 - mean_absolute_error: 0.0640
+20. set (Subject 3, F04) being trained for epoch 35!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0082 - mean_absolute_error: 0.0665
+Epoch 35 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 14:58:59.466443
+1. set (Subject 14, F03) being trained for epoch 36!
+Epoch 1/1
+157/157 [==============================] - 61s 386ms/step - loss: 0.0119 - mean_absolute_error: 0.0858
+2. set (Subject 3, F04) being trained for epoch 36!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0073 - mean_absolute_error: 0.0628
+3. set (Subject 8, M03) being trained for epoch 36!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0099 - mean_absolute_error: 0.0775
+4. set (Subject 2, F03) being trained for epoch 36!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0070 - mean_absolute_error: 0.0625
+5. set (Subject 6, M01) being trained for epoch 36!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0222 - mean_absolute_error: 0.1065
+6. set (Subject 22, M13) being trained for epoch 36!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0070 - mean_absolute_error: 0.0602
+7. set (Subject 1, F02) being trained for epoch 36!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0106 - mean_absolute_error: 0.0749
+8. set (Subject 7, M02) being trained for epoch 36!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0213 - mean_absolute_error: 0.1137
+9. set (Subject 5, F06) being trained for epoch 36!
+Epoch 1/1
+186/186 [==============================] - 73s 391ms/step - loss: 0.0054 - mean_absolute_error: 0.0559
+10. set (Subject 10, M05) being trained for epoch 36!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0048 - mean_absolute_error: 0.0516
+11. set (Subject 13, M08) being trained for epoch 36!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0074 - mean_absolute_error: 0.0641
+12. set (Subject 19, M12) being trained for epoch 36!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0096 - mean_absolute_error: 0.0711
+13. set (Subject 4, F05) being trained for epoch 36!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0060 - mean_absolute_error: 0.0604
+14. set (Subject 16, M10) being trained for epoch 36!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0113 - mean_absolute_error: 0.0773
+15. set (Subject 23, M14) being trained for epoch 36!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0230 - mean_absolute_error: 0.1191
+16. set (Subject 17, F05) being trained for epoch 36!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0090 - mean_absolute_error: 0.0720
+17. set (Subject 20, F02) being trained for epoch 36!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0111 - mean_absolute_error: 0.0812
+18. set (Subject 15, M09) being trained for epoch 36!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0108 - mean_absolute_error: 0.0767
+19. set (Subject 11, M06) being trained for epoch 36!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0045 - mean_absolute_error: 0.0506
+20. set (Subject 12, M07) being trained for epoch 36!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0057 - mean_absolute_error: 0.0563
+Epoch 36 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 15:17:47.217501
+1. set (Subject 15, M09) being trained for epoch 37!
+Epoch 1/1
+128/128 [==============================] - 50s 387ms/step - loss: 0.0117 - mean_absolute_error: 0.0790
+2. set (Subject 12, M07) being trained for epoch 37!
+Epoch 1/1
+144/144 [==============================] - 56s 389ms/step - loss: 0.0049 - mean_absolute_error: 0.0525
+3. set (Subject 13, M08) being trained for epoch 37!
+Epoch 1/1
+94/94 [==============================] - 37s 390ms/step - loss: 0.0077 - mean_absolute_error: 0.0636
+4. set (Subject 23, M14) being trained for epoch 37!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0179 - mean_absolute_error: 0.1057
+5. set (Subject 22, M13) being trained for epoch 37!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0072 - mean_absolute_error: 0.0620
+6. set (Subject 11, M06) being trained for epoch 37!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0041 - mean_absolute_error: 0.0480
+7. set (Subject 20, F02) being trained for epoch 37!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0100 - mean_absolute_error: 0.0755
+8. set (Subject 19, M12) being trained for epoch 37!
+Epoch 1/1
+98/98 [==============================] - 38s 386ms/step - loss: 0.0111 - mean_absolute_error: 0.0788
+9. set (Subject 6, M01) being trained for epoch 37!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0217 - mean_absolute_error: 0.1024
+10. set (Subject 5, F06) being trained for epoch 37!
+Epoch 1/1
+186/186 [==============================] - 72s 389ms/step - loss: 0.0059 - mean_absolute_error: 0.0585
+11. set (Subject 1, F02) being trained for epoch 37!
+Epoch 1/1
+97/97 [==============================] - 38s 389ms/step - loss: 0.0089 - mean_absolute_error: 0.0712
+12. set (Subject 14, F03) being trained for epoch 37!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0107 - mean_absolute_error: 0.0807
+13. set (Subject 16, M10) being trained for epoch 37!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0094 - mean_absolute_error: 0.0703
+14. set (Subject 3, F04) being trained for epoch 37!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0080 - mean_absolute_error: 0.0674
+15. set (Subject 8, M03) being trained for epoch 37!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0086 - mean_absolute_error: 0.0748
+16. set (Subject 17, F05) being trained for epoch 37!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0084 - mean_absolute_error: 0.0703
+17. set (Subject 4, F05) being trained for epoch 37!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0066 - mean_absolute_error: 0.0615
+18. set (Subject 2, F03) being trained for epoch 37!
+Epoch 1/1
+99/99 [==============================] - 39s 389ms/step - loss: 0.0066 - mean_absolute_error: 0.0610
+19. set (Subject 10, M05) being trained for epoch 37!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0054 - mean_absolute_error: 0.0551
+20. set (Subject 7, M02) being trained for epoch 37!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0157 - mean_absolute_error: 0.0974
+Epoch 37 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 15:36:34.273382
+1. set (Subject 2, F03) being trained for epoch 38!
+Epoch 1/1
+99/99 [==============================] - 38s 386ms/step - loss: 0.0067 - mean_absolute_error: 0.0650
+2. set (Subject 7, M02) being trained for epoch 38!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0098 - mean_absolute_error: 0.0773
+3. set (Subject 1, F02) being trained for epoch 38!
+Epoch 1/1
+97/97 [==============================] - 38s 387ms/step - loss: 0.0092 - mean_absolute_error: 0.0705
+4. set (Subject 8, M03) being trained for epoch 38!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0085 - mean_absolute_error: 0.0737
+5. set (Subject 11, M06) being trained for epoch 38!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0048 - mean_absolute_error: 0.0530
+6. set (Subject 10, M05) being trained for epoch 38!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0060 - mean_absolute_error: 0.0568
+7. set (Subject 4, F05) being trained for epoch 38!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0078 - mean_absolute_error: 0.0663
+8. set (Subject 14, F03) being trained for epoch 38!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0103 - mean_absolute_error: 0.0796
+9. set (Subject 22, M13) being trained for epoch 38!
+Epoch 1/1
+130/130 [==============================] - 51s 390ms/step - loss: 0.0066 - mean_absolute_error: 0.0589
+10. set (Subject 6, M01) being trained for epoch 38!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0201 - mean_absolute_error: 0.1005
+11. set (Subject 20, F02) being trained for epoch 38!
+Epoch 1/1
+108/108 [==============================] - 42s 389ms/step - loss: 0.0097 - mean_absolute_error: 0.0730
+12. set (Subject 15, M09) being trained for epoch 38!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0111 - mean_absolute_error: 0.0777
+13. set (Subject 3, F04) being trained for epoch 38!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0087 - mean_absolute_error: 0.0708
+14. set (Subject 12, M07) being trained for epoch 38!
+Epoch 1/1
+144/144 [==============================] - 56s 387ms/step - loss: 0.0068 - mean_absolute_error: 0.0623
+15. set (Subject 13, M08) being trained for epoch 38!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0086 - mean_absolute_error: 0.0684
+16. set (Subject 17, F05) being trained for epoch 38!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0083 - mean_absolute_error: 0.0700
+17. set (Subject 16, M10) being trained for epoch 38!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0092 - mean_absolute_error: 0.0691
+18. set (Subject 23, M14) being trained for epoch 38!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0182 - mean_absolute_error: 0.1076
+19. set (Subject 5, F06) being trained for epoch 38!
+Epoch 1/1
+186/186 [==============================] - 72s 389ms/step - loss: 0.0066 - mean_absolute_error: 0.0615
+20. set (Subject 19, M12) being trained for epoch 38!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0069 - mean_absolute_error: 0.0617
+Epoch 38 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 15:55:21.846516
+1. set (Subject 23, M14) being trained for epoch 39!
+Epoch 1/1
+111/111 [==============================] - 43s 385ms/step - loss: 0.0179 - mean_absolute_error: 0.1060
+2. set (Subject 19, M12) being trained for epoch 39!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0111 - mean_absolute_error: 0.0796
+3. set (Subject 20, F02) being trained for epoch 39!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0101 - mean_absolute_error: 0.0744
+4. set (Subject 13, M08) being trained for epoch 39!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0083 - mean_absolute_error: 0.0682
+5. set (Subject 10, M05) being trained for epoch 39!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0061 - mean_absolute_error: 0.0566
+6. set (Subject 5, F06) being trained for epoch 39!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0063 - mean_absolute_error: 0.0611
+7. set (Subject 16, M10) being trained for epoch 39!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0088 - mean_absolute_error: 0.0664
+8. set (Subject 15, M09) being trained for epoch 39!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0101 - mean_absolute_error: 0.0749
+9. set (Subject 11, M06) being trained for epoch 39!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0048 - mean_absolute_error: 0.0519
+10. set (Subject 22, M13) being trained for epoch 39!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0061 - mean_absolute_error: 0.0566
+11. set (Subject 4, F05) being trained for epoch 39!
+Epoch 1/1
+146/146 [==============================] - 57s 388ms/step - loss: 0.0080 - mean_absolute_error: 0.0674
+12. set (Subject 2, F03) being trained for epoch 39!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0074 - mean_absolute_error: 0.0658
+13. set (Subject 12, M07) being trained for epoch 39!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0054 - mean_absolute_error: 0.0554
+14. set (Subject 7, M02) being trained for epoch 39!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0114 - mean_absolute_error: 0.0803
+15. set (Subject 1, F02) being trained for epoch 39!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0089 - mean_absolute_error: 0.0712
+16. set (Subject 17, F05) being trained for epoch 39!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0085 - mean_absolute_error: 0.0716
+17. set (Subject 3, F04) being trained for epoch 39!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0073 - mean_absolute_error: 0.0640
+18. set (Subject 8, M03) being trained for epoch 39!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0097 - mean_absolute_error: 0.0780
+19. set (Subject 6, M01) being trained for epoch 39!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0195 - mean_absolute_error: 0.0985
+20. set (Subject 14, F03) being trained for epoch 39!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0107 - mean_absolute_error: 0.0807
+Epoch 39 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 16:14:09.014656
+1. set (Subject 8, M03) being trained for epoch 40!
+Epoch 1/1
+152/152 [==============================] - 59s 387ms/step - loss: 0.0085 - mean_absolute_error: 0.0721
+2. set (Subject 14, F03) being trained for epoch 40!
+Epoch 1/1
+157/157 [==============================] - 61s 389ms/step - loss: 0.0113 - mean_absolute_error: 0.0826
+3. set (Subject 4, F05) being trained for epoch 40!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0082 - mean_absolute_error: 0.0687
+4. set (Subject 1, F02) being trained for epoch 40!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0100 - mean_absolute_error: 0.0759
+5. set (Subject 5, F06) being trained for epoch 40!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0061 - mean_absolute_error: 0.0616
+6. set (Subject 6, M01) being trained for epoch 40!
+Epoch 1/1
+106/106 [==============================] - 41s 389ms/step - loss: 0.0238 - mean_absolute_error: 0.1089
+7. set (Subject 3, F04) being trained for epoch 40!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0075 - mean_absolute_error: 0.0647
+8. set (Subject 2, F03) being trained for epoch 40!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0073 - mean_absolute_error: 0.0644
+9. set (Subject 10, M05) being trained for epoch 40!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0064 - mean_absolute_error: 0.0623
+10. set (Subject 11, M06) being trained for epoch 40!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0052 - mean_absolute_error: 0.0548
+11. set (Subject 16, M10) being trained for epoch 40!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0088 - mean_absolute_error: 0.0676
+12. set (Subject 23, M14) being trained for epoch 40!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0176 - mean_absolute_error: 0.1034
+13. set (Subject 7, M02) being trained for epoch 40!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0112 - mean_absolute_error: 0.0809
+14. set (Subject 19, M12) being trained for epoch 40!
+Epoch 1/1
+98/98 [==============================] - 38s 389ms/step - loss: 0.0070 - mean_absolute_error: 0.0601
+15. set (Subject 20, F02) being trained for epoch 40!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0087 - mean_absolute_error: 0.0708
+16. set (Subject 17, F05) being trained for epoch 40!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0096 - mean_absolute_error: 0.0763
+17. set (Subject 12, M07) being trained for epoch 40!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0050 - mean_absolute_error: 0.0530
+18. set (Subject 13, M08) being trained for epoch 40!
+Epoch 1/1
+94/94 [==============================] - 37s 390ms/step - loss: 0.0086 - mean_absolute_error: 0.0671
+19. set (Subject 22, M13) being trained for epoch 40!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0068 - mean_absolute_error: 0.0590
+20. set (Subject 15, M09) being trained for epoch 40!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0107 - mean_absolute_error: 0.0770
+Epoch 40 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 16:32:57.208594
+1. set (Subject 13, M08) being trained for epoch 41!
+Epoch 1/1
+94/94 [==============================] - 36s 386ms/step - loss: 0.0078 - mean_absolute_error: 0.0655
+2. set (Subject 15, M09) being trained for epoch 41!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0099 - mean_absolute_error: 0.0736
+3. set (Subject 16, M10) being trained for epoch 41!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0083 - mean_absolute_error: 0.0660
+4. set (Subject 20, F02) being trained for epoch 41!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0091 - mean_absolute_error: 0.0724
+5. set (Subject 6, M01) being trained for epoch 41!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0214 - mean_absolute_error: 0.1035
+6. set (Subject 22, M13) being trained for epoch 41!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0062 - mean_absolute_error: 0.0570
+7. set (Subject 12, M07) being trained for epoch 41!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0052 - mean_absolute_error: 0.0542
+8. set (Subject 23, M14) being trained for epoch 41!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0150 - mean_absolute_error: 0.0950
+9. set (Subject 5, F06) being trained for epoch 41!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0066 - mean_absolute_error: 0.0639
+10. set (Subject 10, M05) being trained for epoch 41!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0057 - mean_absolute_error: 0.0569
+11. set (Subject 3, F04) being trained for epoch 41!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0056 - mean_absolute_error: 0.0563
+12. set (Subject 8, M03) being trained for epoch 41!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0083 - mean_absolute_error: 0.0725
+13. set (Subject 19, M12) being trained for epoch 41!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0089 - mean_absolute_error: 0.0665
+14. set (Subject 14, F03) being trained for epoch 41!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0113 - mean_absolute_error: 0.0832
+15. set (Subject 4, F05) being trained for epoch 41!
+Epoch 1/1
+146/146 [==============================] - 57s 388ms/step - loss: 0.0076 - mean_absolute_error: 0.0669
+16. set (Subject 17, F05) being trained for epoch 41!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0089 - mean_absolute_error: 0.0694
+17. set (Subject 7, M02) being trained for epoch 41!
+Epoch 1/1
+146/146 [==============================] - 57s 388ms/step - loss: 0.0077 - mean_absolute_error: 0.0686
+18. set (Subject 1, F02) being trained for epoch 41!
+Epoch 1/1
+97/97 [==============================] - 38s 387ms/step - loss: 0.0113 - mean_absolute_error: 0.0792
+19. set (Subject 11, M06) being trained for epoch 41!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0050 - mean_absolute_error: 0.0498
+20. set (Subject 2, F03) being trained for epoch 41!
+Epoch 1/1
+99/99 [==============================] - 39s 389ms/step - loss: 0.0065 - mean_absolute_error: 0.0627
+Epoch 41 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 16:51:44.011992
+1. set (Subject 1, F02) being trained for epoch 42!
+Epoch 1/1
+97/97 [==============================] - 37s 383ms/step - loss: 0.0095 - mean_absolute_error: 0.0738
+2. set (Subject 2, F03) being trained for epoch 42!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0061 - mean_absolute_error: 0.0607
+3. set (Subject 3, F04) being trained for epoch 42!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0070 - mean_absolute_error: 0.0641
+4. set (Subject 4, F05) being trained for epoch 42!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0065 - mean_absolute_error: 0.0607
+5. set (Subject 22, M13) being trained for epoch 42!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0066 - mean_absolute_error: 0.0602
+6. set (Subject 11, M06) being trained for epoch 42!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0048 - mean_absolute_error: 0.0525
+7. set (Subject 7, M02) being trained for epoch 42!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0079 - mean_absolute_error: 0.0690
+8. set (Subject 8, M03) being trained for epoch 42!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0071 - mean_absolute_error: 0.0663
+9. set (Subject 6, M01) being trained for epoch 42!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0196 - mean_absolute_error: 0.0981
+10. set (Subject 5, F06) being trained for epoch 42!
+Epoch 1/1
+186/186 [==============================] - 72s 389ms/step - loss: 0.0056 - mean_absolute_error: 0.0585
+11. set (Subject 12, M07) being trained for epoch 42!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0048 - mean_absolute_error: 0.0522
+12. set (Subject 13, M08) being trained for epoch 42!
+Epoch 1/1
+94/94 [==============================] - 37s 390ms/step - loss: 0.0066 - mean_absolute_error: 0.0586
+13. set (Subject 14, F03) being trained for epoch 42!
+Epoch 1/1
+157/157 [==============================] - 61s 389ms/step - loss: 0.0116 - mean_absolute_error: 0.0822
+14. set (Subject 15, M09) being trained for epoch 42!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0116 - mean_absolute_error: 0.0778
+15. set (Subject 16, M10) being trained for epoch 42!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0110 - mean_absolute_error: 0.0781
+16. set (Subject 17, F05) being trained for epoch 42!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0090 - mean_absolute_error: 0.0707
+17. set (Subject 19, M12) being trained for epoch 42!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0074 - mean_absolute_error: 0.0634
+18. set (Subject 20, F02) being trained for epoch 42!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0092 - mean_absolute_error: 0.0718
+19. set (Subject 10, M05) being trained for epoch 42!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0075 - mean_absolute_error: 0.0638
+20. set (Subject 23, M14) being trained for epoch 42!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0154 - mean_absolute_error: 0.0946
+Epoch 42 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 17:10:31.560483
+1. set (Subject 20, F02) being trained for epoch 43!
+Epoch 1/1
+108/108 [==============================] - 42s 387ms/step - loss: 0.0082 - mean_absolute_error: 0.0679
+2. set (Subject 23, M14) being trained for epoch 43!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0147 - mean_absolute_error: 0.0941
+3. set (Subject 12, M07) being trained for epoch 43!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0047 - mean_absolute_error: 0.0508
+4. set (Subject 16, M10) being trained for epoch 43!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0084 - mean_absolute_error: 0.0691
+5. set (Subject 11, M06) being trained for epoch 43!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0053 - mean_absolute_error: 0.0558
+6. set (Subject 10, M05) being trained for epoch 43!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0068 - mean_absolute_error: 0.0645
+7. set (Subject 19, M12) being trained for epoch 43!
+Epoch 1/1
+98/98 [==============================] - 38s 389ms/step - loss: 0.0077 - mean_absolute_error: 0.0654
+8. set (Subject 13, M08) being trained for epoch 43!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0083 - mean_absolute_error: 0.0712
+9. set (Subject 22, M13) being trained for epoch 43!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0063 - mean_absolute_error: 0.0588
+10. set (Subject 6, M01) being trained for epoch 43!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0195 - mean_absolute_error: 0.0975
+11. set (Subject 7, M02) being trained for epoch 43!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0114 - mean_absolute_error: 0.0831
+12. set (Subject 1, F02) being trained for epoch 43!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0078 - mean_absolute_error: 0.0686
+13. set (Subject 15, M09) being trained for epoch 43!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0100 - mean_absolute_error: 0.0746
+14. set (Subject 2, F03) being trained for epoch 43!
+Epoch 1/1
+99/99 [==============================] - 39s 391ms/step - loss: 0.0057 - mean_absolute_error: 0.0590
+15. set (Subject 3, F04) being trained for epoch 43!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0067 - mean_absolute_error: 0.0611
+16. set (Subject 17, F05) being trained for epoch 43!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0074 - mean_absolute_error: 0.0651
+17. set (Subject 14, F03) being trained for epoch 43!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0113 - mean_absolute_error: 0.0835
+18. set (Subject 4, F05) being trained for epoch 43!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0075 - mean_absolute_error: 0.0667
+19. set (Subject 5, F06) being trained for epoch 43!
+Epoch 1/1
+186/186 [==============================] - 73s 391ms/step - loss: 0.0061 - mean_absolute_error: 0.0600
+20. set (Subject 8, M03) being trained for epoch 43!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0078 - mean_absolute_error: 0.0693
+Epoch 43 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 17:29:19.513828
+1. set (Subject 4, F05) being trained for epoch 44!
+Epoch 1/1
+146/146 [==============================] - 57s 387ms/step - loss: 0.0063 - mean_absolute_error: 0.0626
+2. set (Subject 8, M03) being trained for epoch 44!
+Epoch 1/1
+152/152 [==============================] - 59s 390ms/step - loss: 0.0070 - mean_absolute_error: 0.0663
+3. set (Subject 7, M02) being trained for epoch 44!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0083 - mean_absolute_error: 0.0709
+4. set (Subject 3, F04) being trained for epoch 44!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0063 - mean_absolute_error: 0.0617
+5. set (Subject 10, M05) being trained for epoch 44!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0056 - mean_absolute_error: 0.0552
+6. set (Subject 5, F06) being trained for epoch 44!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0055 - mean_absolute_error: 0.0565
+7. set (Subject 14, F03) being trained for epoch 44!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0090 - mean_absolute_error: 0.0737
+8. set (Subject 1, F02) being trained for epoch 44!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0079 - mean_absolute_error: 0.0681
+9. set (Subject 11, M06) being trained for epoch 44!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0046 - mean_absolute_error: 0.0501
+10. set (Subject 22, M13) being trained for epoch 44!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0058 - mean_absolute_error: 0.0558
+11. set (Subject 19, M12) being trained for epoch 44!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0076 - mean_absolute_error: 0.0632
+12. set (Subject 20, F02) being trained for epoch 44!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0081 - mean_absolute_error: 0.0670
+13. set (Subject 2, F03) being trained for epoch 44!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0068 - mean_absolute_error: 0.0628
+14. set (Subject 23, M14) being trained for epoch 44!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0265 - mean_absolute_error: 0.1277
+15. set (Subject 12, M07) being trained for epoch 44!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0045 - mean_absolute_error: 0.0504
+16. set (Subject 17, F05) being trained for epoch 44!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0128 - mean_absolute_error: 0.0874
+17. set (Subject 15, M09) being trained for epoch 44!
+Epoch 1/1
+128/128 [==============================] - 50s 388ms/step - loss: 0.0231 - mean_absolute_error: 0.1147
+18. set (Subject 16, M10) being trained for epoch 44!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0208 - mean_absolute_error: 0.1167
+19. set (Subject 6, M01) being trained for epoch 44!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0281 - mean_absolute_error: 0.1200
+20. set (Subject 13, M08) being trained for epoch 44!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0056 - mean_absolute_error: 0.0535
+Epoch 44 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 17:48:07.545962
+1. set (Subject 16, M10) being trained for epoch 45!
+Epoch 1/1
+180/180 [==============================] - 70s 387ms/step - loss: 0.0185 - mean_absolute_error: 0.1130
+2. set (Subject 13, M08) being trained for epoch 45!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0061 - mean_absolute_error: 0.0557
+3. set (Subject 19, M12) being trained for epoch 45!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0156 - mean_absolute_error: 0.0960
+4. set (Subject 12, M07) being trained for epoch 45!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0046 - mean_absolute_error: 0.0531
+5. set (Subject 5, F06) being trained for epoch 45!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0057 - mean_absolute_error: 0.0585
+6. set (Subject 6, M01) being trained for epoch 45!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0280 - mean_absolute_error: 0.1192
+7. set (Subject 15, M09) being trained for epoch 45!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0215 - mean_absolute_error: 0.1092
+8. set (Subject 20, F02) being trained for epoch 45!
+Epoch 1/1
+108/108 [==============================] - 42s 389ms/step - loss: 0.0152 - mean_absolute_error: 0.1018
+9. set (Subject 10, M05) being trained for epoch 45!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0064 - mean_absolute_error: 0.0607
+10. set (Subject 11, M06) being trained for epoch 45!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0041 - mean_absolute_error: 0.0470
+11. set (Subject 14, F03) being trained for epoch 45!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0095 - mean_absolute_error: 0.0760
+12. set (Subject 4, F05) being trained for epoch 45!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0076 - mean_absolute_error: 0.0656
+13. set (Subject 23, M14) being trained for epoch 45!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0232 - mean_absolute_error: 0.1201
+14. set (Subject 8, M03) being trained for epoch 45!
+Epoch 1/1
+152/152 [==============================] - 59s 387ms/step - loss: 0.0077 - mean_absolute_error: 0.0703
+15. set (Subject 7, M02) being trained for epoch 45!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0081 - mean_absolute_error: 0.0714
+16. set (Subject 17, F05) being trained for epoch 45!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0112 - mean_absolute_error: 0.0845
+17. set (Subject 2, F03) being trained for epoch 45!
+Epoch 1/1
+99/99 [==============================] - 39s 389ms/step - loss: 0.0065 - mean_absolute_error: 0.0624
+18. set (Subject 3, F04) being trained for epoch 45!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0076 - mean_absolute_error: 0.0650
+19. set (Subject 22, M13) being trained for epoch 45!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0131 - mean_absolute_error: 0.0922
+20. set (Subject 1, F02) being trained for epoch 45!
+Epoch 1/1
+97/97 [==============================] - 38s 389ms/step - loss: 0.0106 - mean_absolute_error: 0.0790
+Epoch 45 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 18:06:54.635351
+1. set (Subject 3, F04) being trained for epoch 46!
+Epoch 1/1
+143/143 [==============================] - 55s 388ms/step - loss: 0.0082 - mean_absolute_error: 0.0681
+2. set (Subject 1, F02) being trained for epoch 46!
+Epoch 1/1
+97/97 [==============================] - 38s 389ms/step - loss: 0.0099 - mean_absolute_error: 0.0770
+3. set (Subject 14, F03) being trained for epoch 46!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0092 - mean_absolute_error: 0.0744
+4. set (Subject 7, M02) being trained for epoch 46!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0110 - mean_absolute_error: 0.0843
+5. set (Subject 6, M01) being trained for epoch 46!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0279 - mean_absolute_error: 0.1214
+6. set (Subject 22, M13) being trained for epoch 46!
+Epoch 1/1
+130/130 [==============================] - 50s 388ms/step - loss: 0.0114 - mean_absolute_error: 0.0838
+7. set (Subject 2, F03) being trained for epoch 46!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0072 - mean_absolute_error: 0.0657
+8. set (Subject 4, F05) being trained for epoch 46!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0067 - mean_absolute_error: 0.0633
+9. set (Subject 5, F06) being trained for epoch 46!
+Epoch 1/1
+186/186 [==============================] - 72s 389ms/step - loss: 0.0073 - mean_absolute_error: 0.0652
+10. set (Subject 10, M05) being trained for epoch 46!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0052 - mean_absolute_error: 0.0531
+11. set (Subject 15, M09) being trained for epoch 46!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0172 - mean_absolute_error: 0.0953
+12. set (Subject 16, M10) being trained for epoch 46!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0128 - mean_absolute_error: 0.0877
+13. set (Subject 8, M03) being trained for epoch 46!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0076 - mean_absolute_error: 0.0696
+14. set (Subject 13, M08) being trained for epoch 46!
+Epoch 1/1
+94/94 [==============================] - 36s 388ms/step - loss: 0.0074 - mean_absolute_error: 0.0655
+15. set (Subject 19, M12) being trained for epoch 46!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0108 - mean_absolute_error: 0.0779
+16. set (Subject 17, F05) being trained for epoch 46!
+Epoch 1/1
+76/76 [==============================] - 30s 390ms/step - loss: 0.0110 - mean_absolute_error: 0.0796
+17. set (Subject 23, M14) being trained for epoch 46!
+Epoch 1/1
+111/111 [==============================] - 43s 390ms/step - loss: 0.0210 - mean_absolute_error: 0.1133
+18. set (Subject 12, M07) being trained for epoch 46!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0051 - mean_absolute_error: 0.0549
+19. set (Subject 11, M06) being trained for epoch 46!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0061 - mean_absolute_error: 0.0599
+20. set (Subject 20, F02) being trained for epoch 46!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0136 - mean_absolute_error: 0.0932
+Epoch 46 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 18:25:41.625441
+1. set (Subject 12, M07) being trained for epoch 47!
+Epoch 1/1
+144/144 [==============================] - 56s 386ms/step - loss: 0.0051 - mean_absolute_error: 0.0546
+2. set (Subject 20, F02) being trained for epoch 47!
+Epoch 1/1
+108/108 [==============================] - 42s 391ms/step - loss: 0.0128 - mean_absolute_error: 0.0910
+3. set (Subject 15, M09) being trained for epoch 47!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0169 - mean_absolute_error: 0.0968
+4. set (Subject 19, M12) being trained for epoch 47!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0095 - mean_absolute_error: 0.0727
+5. set (Subject 22, M13) being trained for epoch 47!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0095 - mean_absolute_error: 0.0746
+6. set (Subject 11, M06) being trained for epoch 47!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0042 - mean_absolute_error: 0.0487
+7. set (Subject 23, M14) being trained for epoch 47!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0203 - mean_absolute_error: 0.1121
+8. set (Subject 16, M10) being trained for epoch 47!
+Epoch 1/1
+180/180 [==============================] - 68s 379ms/step - loss: 0.0101 - mean_absolute_error: 0.0771
+9. set (Subject 6, M01) being trained for epoch 47!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0229 - mean_absolute_error: 0.1078
+10. set (Subject 5, F06) being trained for epoch 47!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0051 - mean_absolute_error: 0.0544
+11. set (Subject 2, F03) being trained for epoch 47!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0062 - mean_absolute_error: 0.0593
+12. set (Subject 3, F04) being trained for epoch 47!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0065 - mean_absolute_error: 0.0600
+13. set (Subject 13, M08) being trained for epoch 47!
+Epoch 1/1
+94/94 [==============================] - 37s 390ms/step - loss: 0.0107 - mean_absolute_error: 0.0770
+14. set (Subject 1, F02) being trained for epoch 47!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0130 - mean_absolute_error: 0.0847
+15. set (Subject 14, F03) being trained for epoch 47!
+Epoch 1/1
+157/157 [==============================] - 61s 388ms/step - loss: 0.0091 - mean_absolute_error: 0.0747
+16. set (Subject 17, F05) being trained for epoch 47!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0079 - mean_absolute_error: 0.0689
+17. set (Subject 8, M03) being trained for epoch 47!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0088 - mean_absolute_error: 0.0728
+18. set (Subject 7, M02) being trained for epoch 47!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0127 - mean_absolute_error: 0.0847
+19. set (Subject 10, M05) being trained for epoch 47!
+Epoch 1/1
+142/142 [==============================] - 55s 390ms/step - loss: 0.0056 - mean_absolute_error: 0.0583
+20. set (Subject 4, F05) being trained for epoch 47!
+Epoch 1/1
+146/146 [==============================] - 57s 388ms/step - loss: 0.0070 - mean_absolute_error: 0.0629
+Epoch 47 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 18:44:27.096816
+1. set (Subject 7, M02) being trained for epoch 48!
+Epoch 1/1
+146/146 [==============================] - 57s 387ms/step - loss: 0.0100 - mean_absolute_error: 0.0785
+2. set (Subject 4, F05) being trained for epoch 48!
+Epoch 1/1
+146/146 [==============================] - 57s 391ms/step - loss: 0.0062 - mean_absolute_error: 0.0605
+3. set (Subject 2, F03) being trained for epoch 48!
+Epoch 1/1
+99/99 [==============================] - 39s 389ms/step - loss: 0.0061 - mean_absolute_error: 0.0588
+4. set (Subject 14, F03) being trained for epoch 48!
+Epoch 1/1
+157/157 [==============================] - 61s 389ms/step - loss: 0.0089 - mean_absolute_error: 0.0734
+5. set (Subject 11, M06) being trained for epoch 48!
+Epoch 1/1
+112/112 [==============================] - 43s 387ms/step - loss: 0.0048 - mean_absolute_error: 0.0541
+6. set (Subject 10, M05) being trained for epoch 48!
+Epoch 1/1
+142/142 [==============================] - 55s 391ms/step - loss: 0.0065 - mean_absolute_error: 0.0595
+7. set (Subject 8, M03) being trained for epoch 48!
+Epoch 1/1
+152/152 [==============================] - 59s 388ms/step - loss: 0.0070 - mean_absolute_error: 0.0662
+8. set (Subject 3, F04) being trained for epoch 48!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0076 - mean_absolute_error: 0.0667
+9. set (Subject 22, M13) being trained for epoch 48!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0099 - mean_absolute_error: 0.0752
+10. set (Subject 6, M01) being trained for epoch 48!
+Epoch 1/1
+106/106 [==============================] - 41s 388ms/step - loss: 0.0216 - mean_absolute_error: 0.1031
+11. set (Subject 23, M14) being trained for epoch 48!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0217 - mean_absolute_error: 0.1144
+12. set (Subject 12, M07) being trained for epoch 48!
+Epoch 1/1
+144/144 [==============================] - 56s 389ms/step - loss: 0.0061 - mean_absolute_error: 0.0605
+13. set (Subject 1, F02) being trained for epoch 48!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0095 - mean_absolute_error: 0.0752
+14. set (Subject 20, F02) being trained for epoch 48!
+Epoch 1/1
+108/108 [==============================] - 42s 389ms/step - loss: 0.0145 - mean_absolute_error: 0.0933
+15. set (Subject 15, M09) being trained for epoch 48!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0129 - mean_absolute_error: 0.0841
+16. set (Subject 17, F05) being trained for epoch 48!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0104 - mean_absolute_error: 0.0798
+17. set (Subject 13, M08) being trained for epoch 48!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0068 - mean_absolute_error: 0.0600
+18. set (Subject 19, M12) being trained for epoch 48!
+Epoch 1/1
+98/98 [==============================] - 38s 388ms/step - loss: 0.0098 - mean_absolute_error: 0.0732
+19. set (Subject 5, F06) being trained for epoch 48!
+Epoch 1/1
+186/186 [==============================] - 72s 389ms/step - loss: 0.0056 - mean_absolute_error: 0.0573
+20. set (Subject 16, M10) being trained for epoch 48!
+Epoch 1/1
+180/180 [==============================] - 70s 389ms/step - loss: 0.0094 - mean_absolute_error: 0.0721
+Epoch 48 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 19:03:14.955983
+1. set (Subject 19, M12) being trained for epoch 49!
+Epoch 1/1
+98/98 [==============================] - 38s 384ms/step - loss: 0.0083 - mean_absolute_error: 0.0658
+2. set (Subject 16, M10) being trained for epoch 49!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0093 - mean_absolute_error: 0.0713
+3. set (Subject 23, M14) being trained for epoch 49!
+Epoch 1/1
+111/111 [==============================] - 43s 389ms/step - loss: 0.0176 - mean_absolute_error: 0.1045
+4. set (Subject 15, M09) being trained for epoch 49!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0124 - mean_absolute_error: 0.0838
+5. set (Subject 10, M05) being trained for epoch 49!
+Epoch 1/1
+142/142 [==============================] - 55s 389ms/step - loss: 0.0050 - mean_absolute_error: 0.0540
+6. set (Subject 5, F06) being trained for epoch 49!
+Epoch 1/1
+186/186 [==============================] - 72s 390ms/step - loss: 0.0053 - mean_absolute_error: 0.0551
+7. set (Subject 13, M08) being trained for epoch 49!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0071 - mean_absolute_error: 0.0620
+8. set (Subject 12, M07) being trained for epoch 49!
+Epoch 1/1
+144/144 [==============================] - 56s 389ms/step - loss: 0.0054 - mean_absolute_error: 0.0546
+9. set (Subject 11, M06) being trained for epoch 49!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0054 - mean_absolute_error: 0.0520
+10. set (Subject 22, M13) being trained for epoch 49!
+Epoch 1/1
+130/130 [==============================] - 51s 390ms/step - loss: 0.0089 - mean_absolute_error: 0.0674
+11. set (Subject 8, M03) being trained for epoch 49!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0079 - mean_absolute_error: 0.0698
+12. set (Subject 7, M02) being trained for epoch 49!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0091 - mean_absolute_error: 0.0751
+13. set (Subject 20, F02) being trained for epoch 49!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0110 - mean_absolute_error: 0.0744
+14. set (Subject 4, F05) being trained for epoch 49!
+Epoch 1/1
+146/146 [==============================] - 57s 390ms/step - loss: 0.0069 - mean_absolute_error: 0.0649
+15. set (Subject 2, F03) being trained for epoch 49!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0055 - mean_absolute_error: 0.0567
+16. set (Subject 17, F05) being trained for epoch 49!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0091 - mean_absolute_error: 0.0737
+17. set (Subject 1, F02) being trained for epoch 49!
+Epoch 1/1
+97/97 [==============================] - 38s 387ms/step - loss: 0.0090 - mean_absolute_error: 0.0730
+18. set (Subject 14, F03) being trained for epoch 49!
+Epoch 1/1
+157/157 [==============================] - 61s 389ms/step - loss: 0.0101 - mean_absolute_error: 0.0764
+19. set (Subject 6, M01) being trained for epoch 49!
+Epoch 1/1
+106/106 [==============================] - 41s 387ms/step - loss: 0.0206 - mean_absolute_error: 0.1008
+20. set (Subject 3, F04) being trained for epoch 49!
+Epoch 1/1
+143/143 [==============================] - 56s 390ms/step - loss: 0.0069 - mean_absolute_error: 0.0627
+Epoch 49 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-14 19:22:02.982314
+1. set (Subject 14, F03) being trained for epoch 50!
+Epoch 1/1
+157/157 [==============================] - 61s 386ms/step - loss: 0.0086 - mean_absolute_error: 0.0719
+2. set (Subject 3, F04) being trained for epoch 50!
+Epoch 1/1
+143/143 [==============================] - 56s 389ms/step - loss: 0.0068 - mean_absolute_error: 0.0634
+3. set (Subject 8, M03) being trained for epoch 50!
+Epoch 1/1
+152/152 [==============================] - 59s 389ms/step - loss: 0.0078 - mean_absolute_error: 0.0703
+4. set (Subject 2, F03) being trained for epoch 50!
+Epoch 1/1
+99/99 [==============================] - 39s 390ms/step - loss: 0.0074 - mean_absolute_error: 0.0683
+5. set (Subject 5, F06) being trained for epoch 50!
+Epoch 1/1
+186/186 [==============================] - 73s 390ms/step - loss: 0.0045 - mean_absolute_error: 0.0511
+6. set (Subject 6, M01) being trained for epoch 50!
+Epoch 1/1
+106/106 [==============================] - 41s 389ms/step - loss: 0.0227 - mean_absolute_error: 0.1109
+7. set (Subject 1, F02) being trained for epoch 50!
+Epoch 1/1
+97/97 [==============================] - 38s 388ms/step - loss: 0.0098 - mean_absolute_error: 0.0762
+8. set (Subject 7, M02) being trained for epoch 50!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0087 - mean_absolute_error: 0.0728
+9. set (Subject 10, M05) being trained for epoch 50!
+Epoch 1/1
+142/142 [==============================] - 55s 391ms/step - loss: 0.0064 - mean_absolute_error: 0.0610
+10. set (Subject 11, M06) being trained for epoch 50!
+Epoch 1/1
+112/112 [==============================] - 43s 388ms/step - loss: 0.0043 - mean_absolute_error: 0.0497
+11. set (Subject 13, M08) being trained for epoch 50!
+Epoch 1/1
+94/94 [==============================] - 37s 389ms/step - loss: 0.0069 - mean_absolute_error: 0.0620
+12. set (Subject 19, M12) being trained for epoch 50!
+Epoch 1/1
+98/98 [==============================] - 38s 387ms/step - loss: 0.0080 - mean_absolute_error: 0.0643
+13. set (Subject 4, F05) being trained for epoch 50!
+Epoch 1/1
+146/146 [==============================] - 57s 389ms/step - loss: 0.0058 - mean_absolute_error: 0.0600
+14. set (Subject 16, M10) being trained for epoch 50!
+Epoch 1/1
+180/180 [==============================] - 70s 390ms/step - loss: 0.0094 - mean_absolute_error: 0.0723
+15. set (Subject 23, M14) being trained for epoch 50!
+Epoch 1/1
+111/111 [==============================] - 43s 388ms/step - loss: 0.0197 - mean_absolute_error: 0.1092
+16. set (Subject 17, F05) being trained for epoch 50!
+Epoch 1/1
+76/76 [==============================] - 30s 389ms/step - loss: 0.0076 - mean_absolute_error: 0.0694
+17. set (Subject 20, F02) being trained for epoch 50!
+Epoch 1/1
+108/108 [==============================] - 42s 390ms/step - loss: 0.0107 - mean_absolute_error: 0.0754
+18. set (Subject 15, M09) being trained for epoch 50!
+Epoch 1/1
+128/128 [==============================] - 50s 389ms/step - loss: 0.0113 - mean_absolute_error: 0.0780
+19. set (Subject 22, M13) being trained for epoch 50!
+Epoch 1/1
+130/130 [==============================] - 51s 389ms/step - loss: 0.0073 - mean_absolute_error: 0.0631
+20. set (Subject 12, M07) being trained for epoch 50!
+Epoch 1/1
+144/144 [==============================] - 56s 388ms/step - loss: 0.0041 - mean_absolute_error: 0.0489
+Epoch 50 completed!
+Traceback (most recent call last):
+  File "runCNN_LSTM.py", line 179, in <module>
+    main()
+  File "runCNN_LSTM.py", line 163, in main
+    print('The subjects are trained:', [(s, BIWI_Subject_IDs[subject]) for s in trainingSubjects])
+  File "runCNN_LSTM.py", line 163, in <listcomp>
+    print('The subjects are trained:', [(s, BIWI_Subject_IDs[subject]) for s in trainingSubjects])
+NameError: name 'subject' is not defined
+mcicek@harsimran:~/Projects/deep_rl_for_head_pose_est/DeepRL_For_HPE/LSTM_VGG16$ ls
+LSTM_VGG16Helper.py  NeighborFolderimporter.py  results         tf_trainLSTM_VGG16.py  VGG_model.txt
+LSTM_VGG16.pyproj    __pycache__                runCNN_LSTM.py  trainLSTM_VGG16.py
+mcicek@harsimran:~/Projects/deep_rl_for_head_pose_est/DeepRL_For_HPE/LSTM_VGG16$ ls
+LSTM_VGG16Helper.py  NeighborFolderimporter.py  results         tf_trainLSTM_VGG16.py  VGG_model.txt
+LSTM_VGG16.pyproj    __pycache__                runCNN_LSTM.py  trainLSTM_VGG16.py
+mcicek@harsimran:~/Projects/deep_rl_for_head_pose_est/DeepRL_For_HPE/LSTM_VGG16$

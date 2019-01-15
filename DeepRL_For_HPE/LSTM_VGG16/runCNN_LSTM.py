@@ -10,19 +10,18 @@ else:
 
 from DatasetHandler.BiwiBrowser import *
 
-
-output_begin = 4
-num_outputs = 1
+output_begin = 3
+num_outputs = 3
 
 timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 7
-train_batch_size = 10
-test_batch_size = 10
+out_epochs = 50
+train_batch_size = 5
+test_batch_size = 4
 
-subjectList = [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] #9[i for i in range(1, 9)] + [i for i in range(10, 25)] except [6, 13, 10, ]
-testSubjects = [9]
+subjectList = [i for i in range(1, 25)] #[9][1, 2, 3, 4, 5, 7, 8, 11, 12, 14][9]#9[i for i in range(1, 9)] +  except [6, 13, 10, ]
+testSubjects = [9, 18, 21, 24]
 trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
@@ -64,7 +63,8 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     """
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout))
-    modelID = modelID + 'lstm%d' % lstm_nodes
+    modelID = modelID + '_seqLen%d' % timesteps
+    modelID = modelID + '_lstm%d' % lstm_nodes
     rnn.add(Dense(num_outputs))
     
     modelID = modelID + '_output%d' % num_outputs
@@ -72,9 +72,9 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     for layer in rnn.layers[:1]: 
         layer.trainable = False
     adam = optimizers.Adam(lr=lr)
-    modelID = modelID + '_AdamOpt(lr=%d)' % lr
+    modelID = modelID + '_AdamOpt(lr=%f)' % lr
     rnn.compile(optimizer=adam, loss='mean_squared_error', metrics=['mae'])
-    modelID = modelID + '_%s' % now().replace(' ', '_').replace(':', '-')
+    modelID = modelID + '_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
     return vgg_model, rnn, modelID
 
 def trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
@@ -86,12 +86,12 @@ def trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, 
 
 def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles):
     if num_outputs == 1: angles = ['Yaw']
+    print('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]))
     predictions = full_model.predict_generator(test_gen, verbose = 1)
     #kerasEval = full_model.evaluate_generator(test_gen)
     predictions = predictions * label_rescaling_factor
     test_labels = test_labels * label_rescaling_factor
     outputs = []
-    print('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]))
     for i in range(num_outputs):
         matrix = numpy.concatenate((test_labels[timesteps:, i:i+1], predictions[:, i:i+1]), axis=1)
         differences = (test_labels[timesteps:, i:i+1] - predictions[:, i:i+1])
@@ -142,27 +142,38 @@ def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, 
         cell.set_ylim([-label_rescaling_factor, label_rescaling_factor])
         cell.set_ylabel('%s Angle\nAbsolute Mean Error: %.2f' % (angles[i], absolute_mean_error))
     f.subplots_adjust(top=0.93, hspace=0, wspace=0)
-    if save:
-        plt.savefig( os.sep + modelID +'subject%d.png' % subj, bbox_inches='tight')
+    return f
 
-def drawResults(outputs, modelID, num_outputs = num_outputs, angles = angles, save = False):
+def drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = False):
+    figures = []
     for subject, outputs in results:
-        drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelID, angles = angles, save = False)
+        f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelID, angles = angles, save = False)
+        figures.append((f, subject))
+    return figures
 
 def main():
     vgg_model, full_model, modelID = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
                       lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
-    print('Evaluating model %s' % modelID)
-    os.mkdir('.' + os.sep + modelID)
-    full_model = trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
+    print(vgg_model.summary())
+    print(full_model.summary())
+    print('Training model %s' % modelID)
+    full_model = trainCNN_LSTM(full_model, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs)
-    
+    print('The subjects are trained:', [(s, BIWI_Subject_IDs[subject]) for s in trainingSubjects])
+    print('Evaluating model %s' % modelID)
+    print('The subjects will be tested:', [(s, BIWI_Subject_IDs[subject]) for s in trainingSubjects])
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size)
 
-    drawResults(outputs, modelID, num_outputs = num_outputs, angles = angles, save = True)
+    figures = drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = True)
+    
+    os.mkdir('.' + os.sep + 'results' + os.sep + modelID)
+    for f, subj in figures:
+        fileName = 'subject%d_%s.png' % (subj, modelID)
+        f.savefig('.' + os.sep + 'results' + os.sep + modelID + os.sep + fileName, bbox_inches='tight')
+        print(fileName, 'has been saved by %s.' % now())
     
 if __name__ == "__main__":
     main()

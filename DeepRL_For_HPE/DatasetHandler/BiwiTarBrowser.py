@@ -6,6 +6,9 @@ if '.' in __name__:
 else:
     from NeighborFolderimporter import *
 
+import matplotlib
+matplotlib.use('agg')
+
 from keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
 from operator import itemgetter
