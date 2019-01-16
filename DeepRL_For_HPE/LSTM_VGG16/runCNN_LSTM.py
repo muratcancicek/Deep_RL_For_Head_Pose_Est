@@ -175,6 +175,9 @@ def runCNN_LSTM(record = False):
     startRecording(modelID, record = record)
     printLog(get_model_summary(vgg_model), record = record)
     printLog(get_model_summary(full_model), record = record)
+    if record:
+        fileName = '%s.h5' % (modelID)
+        full_model.save(addModelFolder(CURRENT_MODEL, fileName))
     print('Training model %s' % modelID)
     full_model = trainCNN_LSTM(full_model, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs, record = record)

@@ -29,6 +29,11 @@ def saveLast_Model(last_Model):
         tempName = last_Model + '_'
         saveLast_Model(tempName)
         os.rename(last_Model, tempName)
+        
+def saveKerasModel(modelID, record = True):
+    if record:
+        fileName = '%s.h5' % (modelID)
+        full_model.save(addModelFolder(CURRENT_MODEL, fileName))
 
 def startRecording(modelID, record = True):
     if record:
