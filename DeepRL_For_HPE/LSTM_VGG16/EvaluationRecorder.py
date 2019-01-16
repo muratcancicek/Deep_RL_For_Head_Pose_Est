@@ -5,11 +5,9 @@ import io
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
     from LSTM_VGG16.LSTM_VGG16Helper import *
-    from LSTM_VGG16.EvaluationRecorder import *
 else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
-    from EvaluationRecorder import *
     
 import shutil
 import os
@@ -45,6 +43,20 @@ def saveLast_Model(last_Model):
         tempName = last_Model + '_'
         saveLast_Model(tempName)
         os.rename(last_Model, tempName)
+        
+def saveKerasModel(model, modelID, record = True):
+    if record:
+        fileName = '%s.h5' % (modelID)
+        model.save(Keras_Models_Folder + sep + fileName)
+        printLog('%s has been saved.' % fileName, record = record)
+        
+from keras.models import load_model
+def loadKerasModel(modelID, record = True):
+    fileName = '%s.h5' % (modelID)
+    model = load_model(Keras_Models_Folder + fileName)
+    printLog('%s has been saved.' % fileName, record = record)
+    return model
+
 
 def startRecording(modelID, record = True):
     if record:
@@ -52,8 +64,9 @@ def startRecording(modelID, record = True):
         saveLast_Model(last_Model)
     printLog('Model %s has been started to be evaluated.' % modelID, record = record)
         
-def completeRecording(modelID, record = True):
-    printLog('Model %s has been evaluated successfully.' % modelID, record = record)
+def completeRecording(modelID, record = True, interrupt = False):
+    if not interrupt:
+        printLog('Model %s has been evaluated successfully.' % modelID, record = record)
     if record:
         fName = addModelFolder(CURRENT_MODEL, 'output_%s.txt' % CURRENT_MODEL, create = False)
         newName = addModelFolder(CURRENT_MODEL, 'output_%s.txt' % modelID, create = False)

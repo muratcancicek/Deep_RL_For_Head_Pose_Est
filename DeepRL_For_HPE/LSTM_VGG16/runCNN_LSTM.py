@@ -19,20 +19,20 @@ RECORD = True # False #
 output_begin = 3
 num_outputs = 3
 
-timesteps = 1 # TimeseriesGenerator Handles overlapping
+timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 1
+out_epochs = 15
 train_batch_size = 5
 test_batch_size = 4
 
-subjectList = [9]#[i for i in range(1, 25)] [1, 2, 3, 4, 5, 7, 8, 11, 12, 14][9]#9[i for i in range(1, 9)] +  except [6, 13, 10, ]
-testSubjects = [1]# [9, 18, 21, 24]
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # [9] # 
+testSubjects = [9, 18, 21, 24] # [1] #
 trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 26
+lstm_nodes = 256
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
 num_outputs = num_outputs
@@ -82,6 +82,9 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     
     modelID = modelID + '_output%d' % num_outputs
 
+    modelID = modelID + '_inEpochs%d' % in_epochs
+    modelID = modelID + '_outEpochs%d' % out_epochs
+    
     for layer in rnn.layers[:1]: 
         layer.trainable = False
     adam = optimizers.Adam(lr=lr)
@@ -90,11 +93,22 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     modelID = modelID + '_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
     return vgg_model, rnn, modelID
 
-def trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
+def interruptSmoothly(full_model, modelID, record = True):
+    print()
+    printLog('Model %s has been interrupted.' % modelID, record = record)
+    saveKerasModel(full_model, modelID, record = record)
+    completeRecording(modelID, record = record, interrupt = True)
+    printLog('Terminating...', record = record)
+    exit()
+    
+def trainCNN_LSTM(full_model, modelID, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs, record = False):
-    full_model = trainImageModelForEpochs(full_model, out_epochs, subjectList, timesteps, False, 
+    try:
+        full_model = trainImageModelForEpochs(full_model, out_epochs, subjectList, timesteps, False, 
                                           output_begin, num_outputs, batch_size = batch_size, 
                                           in_epochs = in_epochs, record = record)
+    except KeyboardInterrupt:
+        interruptSmoothly(full_model, modelID, record = record)
     return full_model
 
 def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles, record = False):
@@ -135,7 +149,7 @@ def evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
         outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, record = record)
         results.append((subject, outputs))
-    means = evaluateAverage(results, angles, num_outputs)
+    means = evaluateAverage(results, angles, num_outputs, record = record)
     return means, results 
 
 def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, angles = angles, save = False):
@@ -173,21 +187,26 @@ def runCNN_LSTM(record = False):
     vgg_model, full_model, modelID = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
                       lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
+    
     startRecording(modelID, record = record)
     printLog(get_model_summary(vgg_model), record = record)
     printLog(get_model_summary(full_model), record = record)
+    
     print('Training model %s' % modelID)
-    full_model = trainCNN_LSTM(full_model, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
+    full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs, record = record)
+    if not ((out_epochs + in_epochs + num_datasets) < 10):
+        saveKerasModel(full_model, modelID, record = record)
+        
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
+    
     printLog('Evaluating model %s' % modelID, record = record)
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size, record = record)
 
-    figures = drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = record)
-    
+    figures = drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = record)    
 
     completeRecording(modelID, record = record)
 
