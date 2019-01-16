@@ -16,7 +16,7 @@ num_outputs = 3
 timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 50
+out_epochs = 10
 train_batch_size = 5
 test_batch_size = 4
 
@@ -160,9 +160,9 @@ def main():
     print('Training model %s' % modelID)
     full_model = trainCNN_LSTM(full_model, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs)
-    print('The subjects are trained:', [(s, BIWI_Subject_IDs[subject]) for s in trainingSubjects])
+    print('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects])
     print('Evaluating model %s' % modelID)
-    print('The subjects will be tested:', [(s, BIWI_Subject_IDs[subject]) for s in trainingSubjects])
+    print('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects])
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size)
