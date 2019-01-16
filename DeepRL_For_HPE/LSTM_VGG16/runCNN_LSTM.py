@@ -13,6 +13,8 @@ else:
 
 from DatasetHandler.BiwiBrowser import *
 
+RECORD = True # False #
+
 output_begin = 3
 num_outputs = 3
 
@@ -159,23 +161,23 @@ def drawResults(results, modelID, num_outputs = num_outputs, angles = angles, sa
     for subject, outputs in results:
         f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelID, angles = angles, save = False)
         figures.append((f, subject))
-    if record:
+    if save:
         for f, subj in figures:
             fileName = 'subject%d_%s.png' % (subj, modelID)
-            f.savefig(addModelFolder(modelID, fileName), bbox_inches='tight')
-            printLog(fileName, 'has been saved by %s.' % now(), record = record)
+            f.savefig(addModelFolder(CURRENT_MODEL, fileName), bbox_inches='tight')
+            printLog(fileName, 'has been saved by %s.' % now(), record = save)
     return figures
 
 def runCNN_LSTM(record = False):
     vgg_model, full_model, modelID = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
                       lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
-    print('Training model %s' % modelID)
-    full_model = trainCNN_LSTM(full_model, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                  batch_size = train_batch_size, in_epochs = in_epochs, record = record)
     startRecording(modelID, record = record)
     printLog(get_model_summary(vgg_model), record = record)
     printLog(get_model_summary(full_model), record = record)
+    print('Training model %s' % modelID)
+    full_model = trainCNN_LSTM(full_model, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
+                  batch_size = train_batch_size, in_epochs = in_epochs, record = record)
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     printLog('Evaluating model %s' % modelID, record = record)
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
@@ -189,7 +191,7 @@ def runCNN_LSTM(record = False):
     completeRecording(modelID, record = record)
 
 def main():
-    runCNN_LSTM(record = False)
+    runCNN_LSTM(record = RECORD)
 
 if __name__ == "__main__":
     main()

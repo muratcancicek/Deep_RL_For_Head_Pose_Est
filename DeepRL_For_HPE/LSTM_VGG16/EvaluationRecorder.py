@@ -1,3 +1,4 @@
+import shutil
 import os
 
 sep = os.sep # '/' # 
@@ -10,7 +11,8 @@ def getModelFolder(modelID, create = True):
         os.mkdir(modelID)
     return modelID
 
-addModelFolder = lambda modelID, name: getModelFolder(modelID) + sep + name
+def addModelFolder(modelID, name, create = True): 
+    return getModelFolder(modelID, create) + sep + name
 
 CURRENT_MODEL = 'Last_Model' 
 
@@ -37,8 +39,9 @@ def startRecording(modelID, record = True):
 def completeRecording(modelID, record = True):
     printLog('Model %s has been evaluated successfully.' % modelID, record = record)
     if record:
-        fName = addModelFolder(CURRENT_MODEL, 'output_%s.txt' % CURRENT_MODEL)
-        fName = addModelFolder(CURRENT_MODEL, 'output_%s.txt' % CURRENT_MODEL)
+        fName = addModelFolder(CURRENT_MODEL, 'output_%s.txt' % CURRENT_MODEL, create = False)
+        newName = addModelFolder(CURRENT_MODEL, 'output_%s.txt' % modelID, create = False)
+        os.rename(fName, newName)
         os.rename(getModelFolder(CURRENT_MODEL, create = False), getModelFolder(modelID, False))
     print('Model %s has been recorded successfully.' % modelID)
     
