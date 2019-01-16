@@ -19,6 +19,7 @@ from keras import optimizers
 import matplotlib.pyplot as plt
 from keras.optimizers import SGD
 from keras.models import Sequential
+from keras.models import load_model
 from keras.constraints import maxnorm
 from keras.applications.vgg16 import VGG16
 from sklearn.preprocessing import MinMaxScaler
