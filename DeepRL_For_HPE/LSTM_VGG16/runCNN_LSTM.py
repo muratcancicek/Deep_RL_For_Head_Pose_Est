@@ -19,20 +19,20 @@ RECORD = True # False #
 output_begin = 3
 num_outputs = 3
 
-timesteps = 1 # TimeseriesGenerator Handles overlapping
+timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
-in_epochs = 7
-out_epochs = 1
+in_epochs = 1
+out_epochs = 15
 train_batch_size = 5
 test_batch_size = 4
 
-subjectList = [9]#[i for i in range(1, 25)] [1, 2, 3, 4, 5, 7, 8, 11, 12, 14][9]#9[i for i in range(1, 9)] +  except [6, 13, 10, ]
-testSubjects = [1]# [9, 18, 21, 24]
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # [9] # 
+testSubjects = [9, 18, 21, 24] # [1] #
 trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 26
+lstm_nodes = 256
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
 num_outputs = num_outputs
@@ -149,7 +149,7 @@ def evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
         outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, record = record)
         results.append((subject, outputs))
-    means = evaluateAverage(results, angles, num_outputs)
+    means = evaluateAverage(results, angles, num_outputs, record = record)
     return means, results 
 
 def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, angles = angles, save = False):
