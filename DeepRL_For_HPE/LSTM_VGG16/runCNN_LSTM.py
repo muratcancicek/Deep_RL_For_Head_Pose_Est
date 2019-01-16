@@ -1,32 +1,35 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 import os
+import io
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
     from LSTM_VGG16.LSTM_VGG16Helper import *
+    from LSTM_VGG16.EvaluationRecorder import *
 else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
+    from EvaluationRecorder import *
 
 from DatasetHandler.BiwiBrowser import *
 
 output_begin = 3
 num_outputs = 3
 
-timesteps = 16 # TimeseriesGenerator Handles overlapping
+timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 10
+out_epochs = 1
 train_batch_size = 5
 test_batch_size = 4
 
-subjectList = [i for i in range(1, 25)] #[9][1, 2, 3, 4, 5, 7, 8, 11, 12, 14][9]#9[i for i in range(1, 9)] +  except [6, 13, 10, ]
-testSubjects = [9, 18, 21, 24]
+subjectList = [9]#[i for i in range(1, 25)] [1, 2, 3, 4, 5, 7, 8, 11, 12, 14][9]#9[i for i in range(1, 9)] +  except [6, 13, 10, ]
+testSubjects = [1]# [9, 18, 21, 24]
 trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 256
+lstm_nodes = 26
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
 num_outputs = num_outputs
@@ -34,6 +37,13 @@ lr=0.0001
 include_vgg_top = False
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
+
+def get_model_summary(model):
+    stream = io.StringIO()
+    model.summary(print_fn=lambda x: stream.write(x + '\n'))
+    summary_string = stream.getvalue()
+    stream.close()
+    return summary_string
 
 def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
                   lstm_recurrent_dropout = lstm_recurrent_dropout, num_outputs = num_outputs, 
@@ -78,15 +88,15 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     return vgg_model, rnn, modelID
 
 def trainCNN_LSTM(full_model, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
-                  batch_size = train_batch_size, in_epochs = in_epochs):
+                  batch_size = train_batch_size, in_epochs = in_epochs, record = False):
     full_model = trainImageModelForEpochs(full_model, out_epochs, subjectList, timesteps, False, 
                                           output_begin, num_outputs, batch_size = batch_size, 
-                                          in_epochs = in_epochs)
+                                          in_epochs = in_epochs, record = record)
     return full_model
 
-def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles):
+def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles, record = False):
     if num_outputs == 1: angles = ['Yaw']
-    print('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]))
+    printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
     predictions = full_model.predict_generator(test_gen, verbose = 1)
     #kerasEval = full_model.evaluate_generator(test_gen)
     predictions = predictions * label_rescaling_factor
@@ -96,31 +106,31 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_o
         matrix = numpy.concatenate((test_labels[timesteps:, i:i+1], predictions[:, i:i+1]), axis=1)
         differences = (test_labels[timesteps:, i:i+1] - predictions[:, i:i+1])
         absolute_mean_error = np.abs(differences).mean()
-        print("\tThe absolute mean error on %s angle estimation: %.2f Degree" % (angles[i], absolute_mean_error))
+        printLog("\tThe absolute mean error on %s angle estimation: %.2f Degree" % (angles[i], absolute_mean_error), record = record)
         outputs.append((matrix, absolute_mean_error))
     return outputs
 
-def evaluateAverage(results, angles = angles, num_outputs = num_outputs):
+def evaluateAverage(results, angles = angles, num_outputs = num_outputs, record = False):
     num_testSubjects = len(results)
     sums = [0] * num_outputs
     for subject, outputs in results:
         for an, (matrix, absolute_mean_error) in enumerate(outputs):
             sums[an] += absolute_mean_error
     means = [s/num_testSubjects for s in sums]
-    print('On average in %d test subjects:' % num_testSubjects)
+    printLog('On average in %d test subjects:' % num_testSubjects, record = record)
     for i, avg in enumerate(means):
-        print("\tThe absolute mean error on %s angle estimations: %.2f Degree" % (angles[i], avg))
+        printLog("\tThe absolute mean error on %s angle estimations: %.2f Degree" % (angles[i], avg), record = record)
     return means
 
 def evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                     num_outputs = num_outputs, batch_size = test_batch_size, angles = angles):
+                     num_outputs = num_outputs, batch_size = test_batch_size, angles = angles, record = False):
     if num_outputs == 1: angles = ['Yaw']
     test_generators, test_labelSets = getTestBiwiForImageModel(testSubjects, timesteps, False, 
-                                            output_begin, num_outputs, batch_size = test_batch_size)
+                                            output_begin, num_outputs, batch_size = test_batch_size, record = record)
     results = []
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
-        outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles)
+        outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, record = record)
         results.append((subject, outputs))
     means = evaluateAverage(results, angles, num_outputs)
     return means, results 
@@ -149,32 +159,38 @@ def drawResults(results, modelID, num_outputs = num_outputs, angles = angles, sa
     for subject, outputs in results:
         f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelID, angles = angles, save = False)
         figures.append((f, subject))
+    if record:
+        for f, subj in figures:
+            fileName = 'subject%d_%s.png' % (subj, modelID)
+            f.savefig(addModelFolder(modelID, fileName), bbox_inches='tight')
+            printLog(fileName, 'has been saved by %s.' % now(), record = record)
     return figures
 
-def main():
+def runCNN_LSTM(record = False):
     vgg_model, full_model, modelID = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
                       lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
-    print(vgg_model.summary())
-    print(full_model.summary())
     print('Training model %s' % modelID)
     full_model = trainCNN_LSTM(full_model, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                  batch_size = train_batch_size, in_epochs = in_epochs)
-    print('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects])
-    print('Evaluating model %s' % modelID)
-    print('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects])
+                  batch_size = train_batch_size, in_epochs = in_epochs, record = record)
+    startRecording(modelID, record = record)
+    printLog(get_model_summary(vgg_model), record = record)
+    printLog(get_model_summary(full_model), record = record)
+    printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
+    printLog('Evaluating model %s' % modelID, record = record)
+    printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                    num_outputs = num_outputs, batch_size = test_batch_size)
+                    num_outputs = num_outputs, batch_size = test_batch_size, record = record)
 
-    figures = drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = True)
+    figures = drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = record)
     
-    os.mkdir('.' + os.sep + 'results' + os.sep + modelID)
-    for f, subj in figures:
-        fileName = 'subject%d_%s.png' % (subj, modelID)
-        f.savefig('.' + os.sep + 'results' + os.sep + modelID + os.sep + fileName, bbox_inches='tight')
-        print(fileName, 'has been saved by %s.' % now())
-    
+
+    completeRecording(modelID, record = record)
+
+def main():
+    runCNN_LSTM(record = False)
+
 if __name__ == "__main__":
     main()
     print('Done')

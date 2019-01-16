@@ -20,6 +20,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EvaluationRecorder.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="LSTM_VGG16Helper.py" />
     <Compile Include="runCNN_LSTM.py">
       <SubType>Code</SubType>
