@@ -1,5 +1,21 @@
+# Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
+import os
+import io
+#Dirty importing that allows the main author to switch environments easily
+if '.' in __name__:
+    from Core.NeighborFolderimporter import *
+    from LSTM_VGG16.LSTM_VGG16Helper import *
+    from LSTM_VGG16.EvaluationRecorder import *
+else:
+    from NeighborFolderimporter import *
+    from LSTM_VGG16Helper import *
+    from EvaluationRecorder import *
+    
 import shutil
 import os
+
+importNeighborFolders()
+from DatasetHandler.BiwiBrowser import *
 
 sep = os.sep # '/' # 
 dir_path = os.path.dirname(os.path.realpath(__file__))
