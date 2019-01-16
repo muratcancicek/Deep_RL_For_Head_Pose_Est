@@ -11,6 +11,7 @@ else:
     from LSTM_VGG16Helper import *
     from EvaluationRecorder import *
 
+importNeighborFolders()
 from DatasetHandler.BiwiBrowser import *
 
 RECORD = True # False #
