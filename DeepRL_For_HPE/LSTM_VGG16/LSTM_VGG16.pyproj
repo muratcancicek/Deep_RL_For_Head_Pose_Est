@@ -20,6 +20,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CNN_LSTM_Configuration.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="EvaluationRecorder.py">
       <SubType>Code</SubType>
     </Compile>

@@ -51,6 +51,7 @@ def saveKerasModel(model, modelID, record = True):
         printLog('%s has been saved.' % fileName, record = record)
         
 from keras.models import load_model
+
 def loadKerasModel(modelID, record = True):
     fileName = '%s.h5' % (modelID)
     model = load_model(Keras_Models_Folder + fileName)
