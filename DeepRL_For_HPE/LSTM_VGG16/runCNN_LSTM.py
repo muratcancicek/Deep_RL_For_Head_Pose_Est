@@ -101,10 +101,10 @@ def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, 
     f.subplots_adjust(top=0.93, hspace=0, wspace=0)
     return f
 
-def drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = False):
+def drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = False):
     figures = []
     for subject, outputs in results:
-        f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelID, angles = angles, save = False)
+        f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelStr, angles = angles, save = False)
         figures.append((f, subject))
     if save:
         for f, subj in figures:
@@ -118,12 +118,12 @@ def runCNN_LSTM(record = False):
                       lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
     modelStr = modelID
-    modelID = modelID[-17:]
+    modelID = 'Exp' + modelID[-19:]
     startRecording(modelID, record = record)
     printLog(get_model_summary(vgg_model), record = record)
     printLog(get_model_summary(full_model), record = record)
     
-    print('Training model %s' % modelID)
+    print('Training model %s' % modelStr)
     full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs, record = record)
     if not ((out_epochs + in_epochs + num_datasets) < 10):
@@ -131,13 +131,13 @@ def runCNN_LSTM(record = False):
         
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     
-    printLog('Evaluating model %s' % modelID, record = record)
-    printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
+    printLog('Evaluating model %s' % modelStr, record = record)
+    printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size, record = record)
 
-    figures = drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = record)    
+    figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)    
 
     completeRecording(modelID, record = record)
 

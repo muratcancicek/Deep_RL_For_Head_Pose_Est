@@ -28,26 +28,30 @@ out_epochs = 1
 
 def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     full_model = loadKerasModel(modelID, record = record) 
-    modelID = modelID + '_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
+    modelStr = modelID
+    modelID = 'Exp' + modelID[-19:]
+    extension = '_and_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
+    modelID = modelID + extension
+    modelStr = modelStr + extension
     
-    startRecording(modelID, record = record)
     printLog(get_model_summary(full_model), record = record)
     
-    print('Training model %s' % modelID)
-    full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                  batch_size = train_batch_size, in_epochs = in_epochs, record = record)
-    if not ((out_epochs + in_epochs + num_datasets) < 10):
-        saveKerasModel(full_model, modelID, record = record)
+    if False:
+        print('Training model %s' % modelStr)
+        full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
+                      batch_size = train_batch_size, in_epochs = in_epochs, record = record)
+        if not ((out_epochs + in_epochs + num_datasets) < 10):
+            saveKerasModel(full_model, modelID, record = record)
         
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     
-    printLog('Evaluating model %s' % modelID, record = record)
-    printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
+    printLog('Evaluating model %s' % modelStr, record = record)
+    printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size, record = record)
 
-    figures = drawResults(results, modelID, num_outputs = num_outputs, angles = angles, save = record)
+    figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)    
     
     completeRecording(modelID, record = record)
 

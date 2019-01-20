@@ -16,17 +16,17 @@ num_outputs = 3
 timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 15
+out_epochs = 1
 train_batch_size = 5
 test_batch_size = 4
 
-subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # [9] # 
+subjectList = [i for i in range(1, 25)] # [9] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
 testSubjects = [9, 18, 21, 24] # [1] #
 trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 256
+lstm_nodes = 2
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
 num_outputs = num_outputs
@@ -76,7 +76,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     for layer in rnn.layers[:1]: 
         layer.trainable = False
     adam = optimizers.Adam(lr=lr)
-    modelID = modelID + '_AdamOpt(lr=%f)' % lr
+    modelID = modelID + '_AdamOpt_lr-%f_' % lr
     rnn.compile(optimizer=adam, loss='mean_squared_error', metrics=['mae'])
     modelID = modelID + '_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
     return vgg_model, rnn, modelID
