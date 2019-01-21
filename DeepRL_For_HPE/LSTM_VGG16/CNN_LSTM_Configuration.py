@@ -14,11 +14,11 @@ output_begin = 3
 num_outputs = 3
 
 timesteps = 16 # TimeseriesGenerator Handles overlapping
-learning_rate = 0.0001
+learning_rate = 0.00001
 in_epochs = 1
-out_epochs = 20
-train_batch_size = 5
-test_batch_size = 4
+out_epochs = 5
+train_batch_size = 1
+test_batch_size = 1
 
 subjectList = [i for i in range(1, 25)] # [9] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
 testSubjects = [9, 18, 21, 24] # [1] #
@@ -26,11 +26,9 @@ trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 10
+lstm_nodes = 32
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
-num_outputs = num_outputs
-lr=0.0001
 include_vgg_top = False
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
