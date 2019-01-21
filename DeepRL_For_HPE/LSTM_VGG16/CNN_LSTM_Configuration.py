@@ -16,7 +16,7 @@ num_outputs = 3
 timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 1
+out_epochs = 20
 train_batch_size = 5
 test_batch_size = 4
 
@@ -26,7 +26,7 @@ trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 2
+lstm_nodes = 10
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
 num_outputs = num_outputs
@@ -53,7 +53,6 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn = Sequential()
     rnn.add(TimeDistributed(vgg_model, input_shape=(timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) 
     rnn.add(TimeDistributed(Flatten()))
-    """
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc1024'))#, activation='relu'
     rnn.add(TimeDistributed(Dropout(0.25)))#
@@ -61,6 +60,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc10'))#
     rnn.add(TimeDistributed(Dropout(0.25)))
+    """
     """
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout))
