@@ -1,1 +1,0 @@
-VGG16_seqLen16_lstm256_output3_AdamOpt(lr=0.000100)_

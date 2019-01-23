@@ -1,1 +1,0 @@
-VGG16_seqLen1_lstm26_output3_inEpochs1_outEpochs1_AdamOpt(lr=0.000100)_
