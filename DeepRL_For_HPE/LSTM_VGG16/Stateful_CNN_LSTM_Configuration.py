@@ -8,7 +8,7 @@ else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
 
-RECORD = False # True # 
+RECORD = True # False # 
 
 output_begin = 3
 num_outputs = 3
@@ -16,9 +16,9 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 20
-train_batch_size = 5
-test_batch_size = 4
+out_epochs = 1
+train_batch_size = 1
+test_batch_size = 1
 
 subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
 testSubjects = [9] # [9, 18, 21, 24] # 
@@ -48,8 +48,9 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
         vgg_model.output_layers = [vgg_model.layers[-1]] 
         vgg_model.layers[-1].outbound_nodes = []
 
+    #vgg_model.summary()
     rnn = Sequential()
-    rnn.add(TimeDistributed(vgg_model, batch_input_shape=(inp[0], inp[1], inp[2]), name = 'tdVGG16')) #timesteps, input_shape
+    rnn.add(TimeDistributed(vgg_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) #timesteps, input_shape
     rnn.add(TimeDistributed(Flatten()))
     """
     rnn.add(TimeDistributed(Dropout(0.25)))#

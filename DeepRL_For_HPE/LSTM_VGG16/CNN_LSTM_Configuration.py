@@ -63,7 +63,6 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))
     modelID = modelID + '_seqLen%d' % timesteps
-    modelID = modelID + '_stateful'
     modelID = modelID + '_lstm%d' % lstm_nodes
     rnn.add(Dense(num_outputs))
     

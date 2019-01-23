@@ -125,8 +125,8 @@ def runCNN_LSTM(record = False):
     modelStr = modelID
     modelID = 'Exp' + modelID[-19:]
     startRecording(modelID, record = record)
-    printLog(get_model_summary(vgg_model), record = record)
-    printLog(get_model_summary(full_model), record = record)
+    #printLog(get_model_summary(vgg_model), record = record)
+    #printLog(get_model_summary(full_model), record = record)
     
     print('Training model %s' % modelStr)
     full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 

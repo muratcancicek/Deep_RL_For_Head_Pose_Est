@@ -73,7 +73,7 @@ def completeRecording(modelID, record = True, interrupt = False):
         newName = addModelFolder(CURRENT_MODEL, 'output_%s.txt' % modelID, create = False)
         os.rename(fName, newName)
         os.rename(getModelFolder(CURRENT_MODEL, create = False), getModelFolder(modelID, False))
-    print('Model %s has been recorded successfully.' % modelID)
+        print('Model %s has been recorded successfully.' % modelID)
     
 if __name__ == "__main__":
     startRecording('modelID')
