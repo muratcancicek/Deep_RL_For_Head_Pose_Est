@@ -8,7 +8,7 @@ else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
 
-RECORD = True # False # 
+RECORD = False # True # 
 
 output_begin = 3
 num_outputs = 3
@@ -16,7 +16,7 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 10
+out_epochs = 1
 train_batch_size = 1
 test_batch_size = 1
 
@@ -29,7 +29,7 @@ num_datasets = len(subjectList)
 lstm_nodes = 320
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
-include_vgg_top = False
+include_vgg_top = True 
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
 
@@ -51,6 +51,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     #vgg_model.summary()
     rnn = Sequential()
     rnn.add(TimeDistributed(vgg_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) #timesteps, input_shape
+    """
     rnn.add(TimeDistributed(Flatten()))
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc1024'))#, activation='relu'
@@ -58,7 +59,6 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc104'))   # 
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc10'))#
-    """
     """
     rnn.add(TimeDistributed(Dropout(0.25)))
 
