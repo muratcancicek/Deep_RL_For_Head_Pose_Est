@@ -8,21 +8,21 @@ else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
 
-RECORD = True # False #
+RECORD = False # True # 
 
 output_begin = 3
 num_outputs = 3
 
-timesteps = 16 # TimeseriesGenerator Handles overlapping
+timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
 out_epochs = 20
 train_batch_size = 5
 test_batch_size = 4
 
-subjectList = [i for i in range(1, 25)] # [9] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
-testSubjects = [9, 18, 21, 24] # [9] # 
-trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
+testSubjects = [9] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] #
 
 num_datasets = len(subjectList)
 
@@ -49,7 +49,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
         vgg_model.layers[-1].outbound_nodes = []
 
     rnn = Sequential()
-    rnn.add(TimeDistributed(vgg_model, input_shape=(timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) 
+    rnn.add(TimeDistributed(vgg_model, batch_input_shape=(inp[0], inp[1], inp[2]), name = 'tdVGG16')) #timesteps, input_shape
     rnn.add(TimeDistributed(Flatten()))
     """
     rnn.add(TimeDistributed(Dropout(0.25)))#

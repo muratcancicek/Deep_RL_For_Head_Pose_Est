@@ -1,17 +1,22 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-import os
-import io
+STATEFUL = True
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
     from LSTM_VGG16.LSTM_VGG16Helper import *
     from LSTM_VGG16.EvaluationRecorder import *
-    from LSTM_VGG16.CNN_LSTM_Configuration import *
+    if STATEFUL:
+        from LSTM_VGG16.Stateful_CNN_LSTM_Configuration import *
+    else:
+        from LSTM_VGG16.CNN_LSTM_Configuration import *
 else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
     from EvaluationRecorder import *
-    from CNN_LSTM_Configuration import *
+    if STATEFUL:
+        from Stateful_CNN_LSTM_Configuration import *
+    else:
+        from CNN_LSTM_Configuration import *
 
 importNeighborFolders()
 from DatasetHandler.BiwiBrowser import *
