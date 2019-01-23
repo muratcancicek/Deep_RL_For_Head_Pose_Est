@@ -29,8 +29,8 @@ if len(sys.argv) != 2:
     
 modelID = sys.argv[1]
 
-in_epochs = 7
-out_epochs = 1
+in_epochs = 1
+out_epochs = 5
 
 def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     full_model = loadKerasModel(modelID, record = record) 
@@ -42,7 +42,7 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     
     printLog(get_model_summary(full_model), record = record)
     
-    if False:
+    if True:
         print('Training model %s' % modelStr)
         full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                       batch_size = train_batch_size, in_epochs = in_epochs, record = record)
