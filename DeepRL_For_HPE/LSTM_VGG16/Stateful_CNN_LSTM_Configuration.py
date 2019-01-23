@@ -8,7 +8,7 @@ else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
 
-RECORD = False # True # 
+RECORD = True # False # 
 
 output_begin = 3
 num_outputs = 3
@@ -16,7 +16,7 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 1
+out_epochs = 5
 train_batch_size = 1
 test_batch_size = 1
 
@@ -57,9 +57,9 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc1024'))#, activation='relu'
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc104'))   # 
+    """
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc10'))#
-    """
     rnn.add(TimeDistributed(Dropout(0.25)))
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))
