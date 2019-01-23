@@ -35,13 +35,12 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
     c = 0
     for inputMatrix, labels in set_gen:
         subj = trainingSubjects[c]
-        printLog('%d. set (Subject %d, %s) being trained for epoch %d!' % (c+1, subj, BIWI_Subject_IDs[subj], epoch+1), record = record)
+        printLog('%d. set (Dataset %d) being trained for epoch %d! by %s.' % (c+1, trainingSubjects[c], epoch+1, now()), record = record)
         labels = labels[:, output_begin:output_begin+num_outputs]
         if timesteps == None:
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
         else:
-            if stateful:
-                start_index = (inputMatrix.shape[0] % batch_size) - 1
+            start_index = (inputMatrix.shape[0] % batch_size) - 1 if stateful else 0                
             data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
             model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
         if stateful:
@@ -77,7 +76,7 @@ def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin,
 def trainAngleModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, record = False):
     c = 0
     for inputMatrix, labels in set_gen:
-        printLog('%d. set (Dataset %d) being trained for epoch %d!' % (c+1, trainingSubjects[c], epoch+1), record = record)
+        printLog('%d. set (Dataset %d) being trained for epoch %d! by %s' % (c+1, trainingSubjects[c], epoch+1, now()), record = record)
         labels = labels[:, output_begin:output_begin+num_outputs]
         data_gen = TimeseriesGenerator(labels, labels, length=timesteps, batch_size=batch_size)
         model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 

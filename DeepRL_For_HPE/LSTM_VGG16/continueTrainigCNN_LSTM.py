@@ -45,7 +45,7 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     if True:
         print('Training model %s' % modelStr)
         full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                      batch_size = train_batch_size, in_epochs = in_epochs, record = record)
+                      batch_size = train_batch_size, in_epochs = in_epochs, stateful = STATEFUL, record = record)
         if not ((out_epochs + in_epochs + num_datasets) < 10):
             saveKerasModel(full_model, modelID, record = record)
         
