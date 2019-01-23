@@ -82,7 +82,7 @@ def evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor
     means = evaluateAverage(results, angles, num_outputs, record = record)
     return means, results 
 
-def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, angles = angles, save = False):
+def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, angles = angles):
     if num_outputs == 1: angles = ['Yaw']
     colors = ['#FFAA00', '#00AA00', '#0000AA', '#AA0000'] 
     title = 'Estimations for the Subject %d (Subject ID: %s, Total length: %d)\nby the Model %s' % (subj, subjID, outputs[0][0].shape[0], modelID)
@@ -104,7 +104,7 @@ def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, 
 def drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = False):
     figures = []
     for subject, outputs in results:
-        f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelStr, angles = angles, save = False)
+        f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelStr, angles = angles)
         figures.append((f, subject))
     if save:
         for f, subj in figures:

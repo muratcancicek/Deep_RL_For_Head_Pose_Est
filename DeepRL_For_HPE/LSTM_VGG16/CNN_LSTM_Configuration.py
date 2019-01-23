@@ -8,7 +8,7 @@ else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
 
-RECORD = True # False #
+RECORD = False # True # 
 
 output_begin = 3
 num_outputs = 3
@@ -20,9 +20,9 @@ out_epochs = 20
 train_batch_size = 5
 test_batch_size = 4
 
-subjectList = [i for i in range(1, 25)] # [9] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
-testSubjects = [9, 18, 21, 24] # [1] #
-trainingSubjects = [s for s in subjectList if not s in testSubjects]
+subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
+testSubjects = [9] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] #
 
 num_datasets = len(subjectList)
 
@@ -61,8 +61,9 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     """
     rnn.add(TimeDistributed(Dropout(0.25)))
 
-    rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout))
+    rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))
     modelID = modelID + '_seqLen%d' % timesteps
+    modelID = modelID + '_stateful'
     modelID = modelID + '_lstm%d' % lstm_nodes
     rnn.add(Dense(num_outputs))
     
@@ -74,7 +75,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     for layer in rnn.layers[:1]: 
         layer.trainable = False
     adam = optimizers.Adam(lr=lr)
-    modelID = modelID + '_AdamOpt_lr-%f_' % lr
+    modelID = modelID + '_AdamOpt_lr-%f' % lr
     rnn.compile(optimizer=adam, loss='mean_squared_error', metrics=['mae'])
     modelID = modelID + '_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
     return vgg_model, rnn, modelID
