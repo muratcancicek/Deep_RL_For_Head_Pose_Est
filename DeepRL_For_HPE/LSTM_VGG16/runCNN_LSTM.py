@@ -37,26 +37,32 @@ def interruptSmoothly(full_model, modelID, record = True):
     exit()
     
 def trainCNN_LSTM(full_model, modelID, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
-                  batch_size = train_batch_size, in_epochs = in_epochs, record = False):
+                  batch_size = train_batch_size, in_epochs = in_epochs, stateful = False, record = False):
     try:
         full_model = trainImageModelForEpochs(full_model, out_epochs, subjectList, timesteps, False, 
                                           output_begin, num_outputs, batch_size = batch_size, 
-                                          in_epochs = in_epochs, record = record)
+                                          in_epochs = in_epochs, stateful = stateful, record = record)
     except KeyboardInterrupt:
         interruptSmoothly(full_model, modelID, record = record)
     return full_model
 
-def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles, record = False):
+def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles, batch_size = test_batch_size, stateful = False, record = False):
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
-    predictions = full_model.predict_generator(test_gen, verbose = 1)
+    print(int(len(test_labels)/batch_size))
+    predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
     #kerasEval = full_model.evaluate_generator(test_gen)
     predictions = predictions * label_rescaling_factor
     test_labels = test_labels * label_rescaling_factor
     outputs = []
     for i in range(num_outputs):
-        matrix = numpy.concatenate((test_labels[timesteps:, i:i+1], predictions[:, i:i+1]), axis=1)
-        differences = (test_labels[timesteps:, i:i+1] - predictions[:, i:i+1])
+        if stateful:
+            start_index = (test_labels.shape[0] % batch_size) if batch_size > 1 else 0
+            matrix = numpy.concatenate((test_labels[start_index:, i:i+1], predictions[:, i:i+1]), axis=1)
+            differences = (test_labels[start_index:, i:i+1] - predictions[:, i:i+1])
+        else:
+            matrix = numpy.concatenate((test_labels[timesteps:, i:i+1], predictions[:, i:i+1]), axis=1)
+            differences = (test_labels[timesteps:, i:i+1] - predictions[:, i:i+1])
         absolute_mean_error = np.abs(differences).mean()
         printLog("\tThe absolute mean error on %s angle estimation: %.2f Degree" % (angles[i], absolute_mean_error), record = record)
         outputs.append((matrix, absolute_mean_error))
@@ -76,13 +82,13 @@ def evaluateAverage(results, angles = angles, num_outputs = num_outputs, record 
 
 def evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                     num_outputs = num_outputs, batch_size = test_batch_size, angles = angles, record = False):
+                     num_outputs = num_outputs, batch_size = test_batch_size, angles = angles, stateful = False, record = False):
     if num_outputs == 1: angles = ['Yaw']
     test_generators, test_labelSets = getTestBiwiForImageModel(testSubjects, timesteps, False, 
-                                            output_begin, num_outputs, batch_size = test_batch_size, record = record)
+                                            output_begin, num_outputs, batch_size = test_batch_size, stateful = stateful, record = record)
     results = []
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
-        outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, record = record)
+        outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)
         results.append((subject, outputs))
     means = evaluateAverage(results, angles, num_outputs, record = record)
     return means, results 
@@ -97,6 +103,7 @@ def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs = num_outputs, 
     for i, (matrix, absolute_mean_error) in enumerate(outputs):
         cell = rows
         if num_outputs > 1: cell = rows[i]
+        start_index = 0
         l1 = cell.plot(matrix[:, 0], colors[i], label='Ground-truth')
         l2 = cell.plot(matrix[:, 1], colors[-1], label='Estimation')
         cell.set_facecolor(red if 'F' in subjID else blue)
@@ -125,12 +132,12 @@ def runCNN_LSTM(record = False):
     modelStr = modelID
     modelID = 'Exp' + modelID[-19:]
     startRecording(modelID, record = record)
-    #printLog(get_model_summary(vgg_model), record = record)
-    #printLog(get_model_summary(full_model), record = record)
+    printLog(get_model_summary(vgg_model), record = record)
+    printLog(get_model_summary(full_model), record = record)
     
     print('Training model %s' % modelStr)
     full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                  batch_size = train_batch_size, in_epochs = in_epochs, record = record)
+                  batch_size = train_batch_size, in_epochs = in_epochs, stateful = STATEFUL, record = record)
     if not ((out_epochs + in_epochs + num_datasets) < 10):
         saveKerasModel(full_model, modelID, record = record)
         
@@ -140,7 +147,7 @@ def runCNN_LSTM(record = False):
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                    num_outputs = num_outputs, batch_size = test_batch_size, record = record)
+                    num_outputs = num_outputs, batch_size = test_batch_size, stateful = STATEFUL, record = record)
 
     figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)    
 

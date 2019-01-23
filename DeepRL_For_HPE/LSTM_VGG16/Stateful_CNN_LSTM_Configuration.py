@@ -16,7 +16,7 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 1
+out_epochs = 10
 train_batch_size = 1
 test_batch_size = 1
 
@@ -52,13 +52,13 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn = Sequential()
     rnn.add(TimeDistributed(vgg_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) #timesteps, input_shape
     rnn.add(TimeDistributed(Flatten()))
-    """
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc1024'))#, activation='relu'
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc104'))   # 
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc10'))#
+    """
     """
     rnn.add(TimeDistributed(Dropout(0.25)))
 
@@ -70,6 +70,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     
     modelID = modelID + '_output%d' % num_outputs
 
+    modelID = modelID + '_BatchSize%d' % train_batch_size
     modelID = modelID + '_inEpochs%d' % in_epochs
     modelID = modelID + '_outEpochs%d' % out_epochs
     

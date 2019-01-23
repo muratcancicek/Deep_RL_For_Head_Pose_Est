@@ -1,18 +1,24 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-import os
-import sys
-import io
+STATEFUL = True
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
     from LSTM_VGG16.LSTM_VGG16Helper import *
     from LSTM_VGG16.EvaluationRecorder import *
     from LSTM_VGG16.runCNN_LSTM import *
+    if STATEFUL:
+        from LSTM_VGG16.Stateful_CNN_LSTM_Configuration import *
+    else:
+        from LSTM_VGG16.CNN_LSTM_Configuration import *
 else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
     from EvaluationRecorder import *
-    from LSTM_VGG16.runCNN_LSTM import *
+    from runCNN_LSTM import *
+    if STATEFUL:
+        from Stateful_CNN_LSTM_Configuration import *
+    else:
+        from CNN_LSTM_Configuration import *
 
 importNeighborFolders()
 from DatasetHandler.BiwiBrowser import *
@@ -49,7 +55,7 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
     means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                    num_outputs = num_outputs, batch_size = test_batch_size, record = record)
+                    num_outputs = num_outputs, batch_size = test_batch_size, stateful = STATEFUL, record = record)
 
     figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)    
     

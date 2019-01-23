@@ -31,7 +31,7 @@ from keras.applications.vgg16 import preprocess_input
 from keras.applications.vgg16 import decode_predictions
 from keras.preprocessing.sequence import TimeseriesGenerator
 
-def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, record = False):
+def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, record = False):
     c = 0
     for inputMatrix, labels in set_gen:
         subj = trainingSubjects[c]
@@ -40,20 +40,24 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
         if timesteps == None:
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
         else:
-            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
+            if stateful:
+                start_index = (inputMatrix.shape[0] % batch_size) - 1
+            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
             model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
+        if stateful:
+            model.reset_states()
         c += 1
     return model
 
-def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1, record = False):
+def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, record = False):
     for e in range(epochs):
         random.Random(4).shuffle(trainingSubjects)
         trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, scaling = False, timesteps = timesteps, overlapping = overlapping
-        model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs, record = record)
+        model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs, stateful = stateful, record = record)
         printLog('Epoch %d completed!' % (e+1), record = record)
     return model
 
-def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, record = False):
+def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, stateful = False, record = False):
     test_generators, test_labelSets = [], [] 
     testBiwi = readBIWIDataset(subjectList = testSubjects) #, scaling = False, timesteps = timesteps, overlapping = overlapping
     for inputMatrix, labels in testBiwi:
@@ -61,8 +65,12 @@ def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin,
         if timesteps == None:
             test_generators.append((inputMatrix, labels))
         else:
-            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size)
+            if stateful:
+                start_index = (inputMatrix.shape[0] % batch_size) - 1 if batch_size > 1 else 0
+            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
             test_generators.append(data_gen)
+            if stateful:
+                labels = labels[start_index:]
         test_labelSets.append(labels)
     return test_generators, test_labelSets
 
