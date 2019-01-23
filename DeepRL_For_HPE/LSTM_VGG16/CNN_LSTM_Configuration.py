@@ -26,7 +26,7 @@ trainingSubjects = [s for s in subjectList if not s in testSubjects]
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 32
+lstm_nodes = 320
 lstm_dropout=0.25
 lstm_recurrent_dropout=0.25
 include_vgg_top = False
@@ -56,9 +56,9 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc1024'))#, activation='relu'
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc104'))   # 
-    """
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc10'))#
+    """
     rnn.add(TimeDistributed(Dropout(0.25)))
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout))
