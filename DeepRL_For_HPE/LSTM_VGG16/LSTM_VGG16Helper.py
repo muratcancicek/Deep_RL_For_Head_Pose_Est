@@ -35,7 +35,7 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
     c = 0
     for inputMatrix, labels in set_gen:
         subj = trainingSubjects[c]
-        printLog('%d. set (Dataset %d) being trained for epoch %d! by %s.' % (c+1, trainingSubjects[c], epoch+1, now()), record = record)
+        printLog('%d. set (Dataset %d) being trained for epoch %d by %s!' % (c+1, trainingSubjects[c], epoch+1, now()), record = record)
         labels = labels[:, output_begin:output_begin+num_outputs]
         if timesteps == None:
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 

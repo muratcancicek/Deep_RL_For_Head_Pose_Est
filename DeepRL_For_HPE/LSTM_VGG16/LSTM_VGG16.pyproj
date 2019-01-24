@@ -20,6 +20,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="continueTrainigCNN_LSTM.py" />
     <Compile Include="Stateful_CNN_LSTM_Configuration.py" />
     <Compile Include="CNN_LSTM_Configuration.py">
       <SubType>Code</SubType>

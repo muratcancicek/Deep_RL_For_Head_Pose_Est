@@ -23,18 +23,17 @@ else:
 importNeighborFolders()
 from DatasetHandler.BiwiBrowser import *
 
-if not len(sys.argv) != [2, 3]:
+if not len(sys.argv) in [2, 3]:
     print('Needs modelID argument. Try again...')
     exit()
-    
-if not sys.argv[2] in ['trainMore', 'evaluateOnly']:
-    print('Incorrect argument for method. Try again...')
-    exit()   
-    
+      
 modelID = sys.argv[1]
 trainMore = True
 if len(sys.argv) == 2:
     trainMore = False
+elif not sys.argv[2] in ['trainMore', 'evaluateOnly']:
+    print('Incorrect argument for method. Try again...')
+    exit()   
 elif sys.argv[2] == 'evaluateOnly':
     trainMore = False
     

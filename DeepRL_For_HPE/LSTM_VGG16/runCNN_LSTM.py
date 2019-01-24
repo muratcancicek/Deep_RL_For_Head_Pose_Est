@@ -134,11 +134,12 @@ def runCNN_LSTM(record = False):
     startRecording(modelID, record = record)
     printLog(get_model_summary(vgg_model), record = record)
     printLog(get_model_summary(full_model), record = record)
+    saveConfiguration(confFile = confFile, record = record)
     
     print('Training model %s' % modelStr)
     full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs, stateful = STATEFUL, record = record)
-    if not ((out_epochs + in_epochs + num_datasets) < 10) or True:
+    if not ((out_epochs + in_epochs + num_datasets) < 10):
         saveKerasModel(full_model, modelID, record = record)
         
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)

@@ -58,6 +58,19 @@ def loadKerasModel(modelID, record = True):
     printLog('%s has been saved.' % fileName, record = record)
     return model
 
+def saveConfiguration(confFile = None, record = True):
+    if confFile == None: confFile = 'Stateful_CNN_LSTM_Configuration.py'
+    with open(confFile, 'r') as conf:
+        save = False
+        for line in conf:
+            line = line[:-1]
+            if line == '######## CONF_Begins_Here ##########':
+                save = True
+            if save:
+                printLog(line, record = record)
+            if line == '######### CONF_ends_Here ###########':
+                save = False
+
 
 def startRecording(modelID, record = True):
     if record:
@@ -77,4 +90,5 @@ def completeRecording(modelID, record = True, interrupt = False):
     
 if __name__ == "__main__":
     startRecording('modelID')
+    saveConfiguration()
     completeRecording('modelID', True)

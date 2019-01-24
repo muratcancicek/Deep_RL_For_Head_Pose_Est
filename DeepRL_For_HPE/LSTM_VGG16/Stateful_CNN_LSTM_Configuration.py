@@ -8,6 +8,8 @@ else:
     from NeighborFolderimporter import *
     from LSTM_VGG16Helper import *
 
+######## CONF_Begins_Here ##########
+confFile = 'Stateful_CNN_LSTM_Configuration.py'
 RECORD = True # False # 
 
 output_begin = 3
@@ -27,12 +29,12 @@ trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectLi
 num_datasets = len(subjectList)
 
 lstm_nodes = 320
-lstm_dropout=0.25
-lstm_recurrent_dropout=0.25
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
 include_vgg_top = True 
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
-
+######### CONF_ends_Here ###########
 
 def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
                   lstm_recurrent_dropout = lstm_recurrent_dropout, num_outputs = num_outputs, 
@@ -51,9 +53,9 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     #vgg_model.summary()
     rnn = Sequential()
     rnn.add(TimeDistributed(vgg_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) 
-    #rnn.add(TimeDistributed(Dropout(0.25)))
+    #rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025_conv'))
     #rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc10'))
-    rnn.add(TimeDistributed(Dropout(0.25)))
+    rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025'))
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))
     modelID = modelID + '_seqLen%d' % timesteps
