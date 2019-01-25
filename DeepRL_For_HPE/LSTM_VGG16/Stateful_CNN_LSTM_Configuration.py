@@ -18,7 +18,7 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
 in_epochs = 1
-out_epochs = 10
+out_epochs = 1
 train_batch_size = 1
 test_batch_size = 1
 

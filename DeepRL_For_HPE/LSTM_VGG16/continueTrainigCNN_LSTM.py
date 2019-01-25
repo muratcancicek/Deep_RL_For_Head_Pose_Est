@@ -38,7 +38,7 @@ elif sys.argv[2] == 'evaluateOnly':
     trainMore = False
     
 in_epochs = 1
-out_epochs = 10
+out_epochs = 20
 
 def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     full_model = loadKerasModel(modelID, record = record) 
