@@ -18,17 +18,17 @@ num_outputs = 3
 timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 20
-train_batch_size = 5
-test_batch_size = 4
+out_epochs = 1
+train_batch_size = 1
+test_batch_size = 1
 
-subjectList = [i for i in range(1, 25)] # [9] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
-testSubjects = [9, 18, 21, 24] # [9] # 
-trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
+testSubjects = [9] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 320
+lstm_nodes = 32
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
 include_vgg_top = False
@@ -38,20 +38,25 @@ angles = ['Pitch', 'Yaw', 'Roll']
 
 def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
                   lstm_recurrent_dropout = lstm_recurrent_dropout, num_outputs = num_outputs, 
-                  lr = learning_rate, include_vgg_top = include_vgg_top):
-    modelID = 'VGG16' 
-    inp = (224, 224, 3)
-    vgg_model = VGG16(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
-    
+                  lr = learning_rate, include_vgg_top = include_vgg_top, vgg16 = False):
+    if vgg16:
+        inp = (224, 224, 3)
+        cnn_model = VGG16(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
+        modelID = 'VGG16' 
+    else:
+        inp = (331, 331, 3)
+        cnn_model = NASNetLarge(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
+        modelID = 'NASNetLarge' 
+        
     if include_vgg_top:
         modelID = modelID + '_inc_top'
-        vgg_model.layers.pop()
-        vgg_model.outputs = [vgg_model.layers[-1].output]
-        vgg_model.output_layers = [vgg_model.layers[-1]] 
-        vgg_model.layers[-1].outbound_nodes = []
+        cnn_model.layers.pop()
+        cnn_model.outputs = [cnn_model.layers[-1].output]
+        cnn_model.output_layers = [cnn_model.layers[-1]] 
+        cnn_model.layers[-1].outbound_nodes = []
 
     rnn = Sequential()
-    rnn.add(TimeDistributed(vgg_model, input_shape=(timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) 
+    rnn.add(TimeDistributed(cnn_model, input_shape=(timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) 
     rnn.add(TimeDistributed(Flatten()))
     """
     rnn.add(TimeDistributed(Dropout(0.25)))#
@@ -63,7 +68,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     """
     rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025'))
 
-    rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))
+    rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout))
     modelID = modelID + '_seqLen%d' % timesteps
     modelID = modelID + '_lstm%d' % lstm_nodes
     rnn.add(Dense(num_outputs))
@@ -79,4 +84,4 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     modelID = modelID + '_AdamOpt_lr-%f' % lr
     rnn.compile(optimizer=adam, loss='mean_squared_error', metrics=['mae'])
     modelID = modelID + '_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
-    return vgg_model, rnn, modelID
+    return cnn_model, rnn, modelID

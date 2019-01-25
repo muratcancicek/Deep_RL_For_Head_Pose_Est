@@ -21,6 +21,7 @@ from keras.optimizers import SGD
 from keras.models import Sequential
 from keras.models import load_model
 from keras.constraints import maxnorm
+from keras.applications.nasnet import NASNetLarge
 from keras.applications.vgg16 import VGG16
 from sklearn.preprocessing import MinMaxScaler
 from keras.preprocessing.image import load_img
@@ -64,6 +65,7 @@ def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin,
         if timesteps == None:
             test_generators.append((inputMatrix, labels))
         else:
+            start_index = 0
             if stateful:
                 start_index = (inputMatrix.shape[0] % batch_size) - 1 if batch_size > 1 else 0
             data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)

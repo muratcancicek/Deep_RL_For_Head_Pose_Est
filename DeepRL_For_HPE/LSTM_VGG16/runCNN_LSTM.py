@@ -1,5 +1,5 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-STATEFUL = True
+STATEFUL = True # False # 
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
@@ -49,7 +49,6 @@ def trainCNN_LSTM(full_model, modelID, out_epochs, subjectList, timesteps, outpu
 def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles, batch_size = test_batch_size, stateful = False, record = False):
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
-    print(int(len(test_labels)/batch_size))
     predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
     #kerasEval = full_model.evaluate_generator(test_gen)
     predictions = predictions * label_rescaling_factor

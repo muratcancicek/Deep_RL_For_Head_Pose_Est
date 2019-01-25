@@ -14,6 +14,7 @@ else:
     from NeighborFolderimporter import *
     from BiwiTarBrowser import *
 
+from keras.applications.nasnet import preprocess_input
 from keras.applications.vgg16 import preprocess_input
 from sklearn.preprocessing import MinMaxScaler, scale
 from keras.preprocessing.image import img_to_array
@@ -37,6 +38,7 @@ BIWI_Data_folder = BIWI_Main_Folder + 'hpdb/'
 BIWI_SnippedData_folder = pwd + '/BIWI_Files/BIWI_Samples/hpdb/'.replace('/', os.path.sep)
 BIWI_Lebels_file = BIWI_Main_Folder + 'db_annotations.tgz'
 BIWI_Lebels_file_Local = pwd + '/BIWI_Files/db_annotations.tgz'.replace('/', os.path.sep)
+BIWI_Frame_Shape = (360, 480, 3)
 BIWI_Frame_Shape = (240, 320, 3)
 def now(): return str(datetime.datetime.now())
 label_rescaling_factor = 90
@@ -47,6 +49,7 @@ def getRGBpngFileName(subject, frame):
 
 def pngObjToNpArr(imagePath):
     img = image.load_img(imagePath, target_size=BIWI_Frame_Shape)
+    #x = image.img_to_array(img)[14:-15, 74:-75, :]
     x = image.img_to_array(img)[8:-8, 48:-48, :]
     x = preprocess_input(x)
     return x
