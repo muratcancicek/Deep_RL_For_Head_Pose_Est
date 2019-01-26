@@ -1,0 +1,194 @@
+Model Exp2019-01-25_21-16-36 has been started to be evaluated.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+fc1 (Dense)                  (None, 4096)              102764544 
+_________________________________________________________________
+fc2 (Dense)                  (None, 4096)              16781312  
+=================================================================
+Total params: 134,260,544
+Trainable params: 0
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdCNN (TimeDistributed)      (1, 1, 4096)              134260544 
+_________________________________________________________________
+dropout025_conv (TimeDistrib (1, 1, 4096)              0         
+_________________________________________________________________
+fc1024 (TimeDistributed)     (1, 1, 1024)              4195328   
+_________________________________________________________________
+dropout025 (TimeDistributed) (1, 1, 1024)              0         
+_________________________________________________________________
+fc3 (TimeDistributed)        (1, 1, 3)                 3075      
+_________________________________________________________________
+lstm_1 (LSTM)                (1, 10)                   560       
+_________________________________________________________________
+dense_3 (Dense)              (1, 3)                    33        
+=================================================================
+Total params: 138,459,540
+Trainable params: 4,198,996
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateful_CNN_LSTM_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 1 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.00001
+in_epochs = 1
+out_epochs = 3
+train_batch_size = 1
+test_batch_size = 1
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [1] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 10
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+######### CONF_ends_Here ###########
+1. set (Dataset 22) being trained for epoch 1 by 2019-01-25 21:16:47.604799!
+2. set (Dataset 24) being trained for epoch 1 by 2019-01-25 21:17:10.789603!
+3. set (Dataset 15) being trained for epoch 1 by 2019-01-25 21:17:29.207964!
+4. set (Dataset 19) being trained for epoch 1 by 2019-01-25 21:17:50.533495!
+5. set (Dataset 8) being trained for epoch 1 by 2019-01-25 21:18:10.963529!
+6. set (Dataset 23) being trained for epoch 1 by 2019-01-25 21:18:35.733518!
+7. set (Dataset 21) being trained for epoch 1 by 2019-01-25 21:18:56.109214!
+8. set (Dataset 16) being trained for epoch 1 by 2019-01-25 21:19:20.477033!
+9. set (Dataset 7) being trained for epoch 1 by 2019-01-25 21:19:51.150242!
+10. set (Dataset 12) being trained for epoch 1 by 2019-01-25 21:20:17.277450!
+11. set (Dataset 10) being trained for epoch 1 by 2019-01-25 21:20:43.045608!
+12. set (Dataset 1) being trained for epoch 1 by 2019-01-25 21:21:06.316051!
+13. set (Dataset 18) being trained for epoch 1 by 2019-01-25 21:21:24.713538!
+14. set (Dataset 2) being trained for epoch 1 by 2019-01-25 21:21:45.400497!
+15. set (Dataset 4) being trained for epoch 1 by 2019-01-25 21:22:05.549894!
+16. set (Dataset 20) being trained for epoch 1 by 2019-01-25 21:22:29.605328!
+17. set (Dataset 17) being trained for epoch 1 by 2019-01-25 21:22:47.750536!
+18. set (Dataset 6) being trained for epoch 1 by 2019-01-25 21:23:02.904529!
+19. set (Dataset 13) being trained for epoch 1 by 2019-01-25 21:23:21.384257!
+20. set (Dataset 11) being trained for epoch 1 by 2019-01-25 21:23:39.488155!
+Epoch 1 completed!
+1. set (Dataset 6) being trained for epoch 2 by 2019-01-25 21:24:03.130997!
+2. set (Dataset 11) being trained for epoch 2 by 2019-01-25 21:24:22.665649!
+3. set (Dataset 10) being trained for epoch 2 by 2019-01-25 21:24:44.297650!
+4. set (Dataset 4) being trained for epoch 2 by 2019-01-25 21:25:10.482302!
+5. set (Dataset 23) being trained for epoch 2 by 2019-01-25 21:25:34.804892!
+6. set (Dataset 13) being trained for epoch 2 by 2019-01-25 21:25:53.776504!
+7. set (Dataset 17) being trained for epoch 2 by 2019-01-25 21:26:10.332711!
+8. set (Dataset 1) being trained for epoch 2 by 2019-01-25 21:26:25.098666!
+9. set (Dataset 8) being trained for epoch 2 by 2019-01-25 21:26:45.617723!
+10. set (Dataset 7) being trained for epoch 2 by 2019-01-25 21:27:12.652208!
+11. set (Dataset 21) being trained for epoch 2 by 2019-01-25 21:32:05.538803!
+12. set (Dataset 22) being trained for epoch 2 by 2019-01-25 21:32:27.815278!
+13. set (Dataset 2) being trained for epoch 2 by 2019-01-25 21:32:49.340874!
+14. set (Dataset 24) being trained for epoch 2 by 2019-01-25 21:33:07.149618!
+15. set (Dataset 15) being trained for epoch 2 by 2019-01-25 21:33:26.324381!
+16. set (Dataset 20) being trained for epoch 2 by 2019-01-25 21:33:48.015391!
+17. set (Dataset 18) being trained for epoch 2 by 2019-01-25 21:34:08.304271!
+18. set (Dataset 19) being trained for epoch 2 by 2019-01-25 21:34:27.976188!
+19. set (Dataset 12) being trained for epoch 2 by 2019-01-25 21:34:47.731945!
+20. set (Dataset 16) being trained for epoch 2 by 2019-01-25 21:35:14.863557!
+Epoch 2 completed!
+1. set (Dataset 19) being trained for epoch 3 by 2019-01-25 21:35:47.081226!
+2. set (Dataset 16) being trained for epoch 3 by 2019-01-25 21:36:08.492940!
+3. set (Dataset 21) being trained for epoch 3 by 2019-01-25 21:36:37.252151!
+4. set (Dataset 15) being trained for epoch 3 by 2019-01-25 21:36:59.577983!
+5. set (Dataset 13) being trained for epoch 3 by 2019-01-25 21:37:21.047623!
+6. set (Dataset 12) being trained for epoch 3 by 2019-01-25 21:37:40.922420!
+7. set (Dataset 18) being trained for epoch 3 by 2019-01-25 21:38:05.315966!
+8. set (Dataset 22) being trained for epoch 3 by 2019-01-25 21:38:27.350732!
+9. set (Dataset 23) being trained for epoch 3 by 2019-01-25 21:38:49.306848!
+10. set (Dataset 8) being trained for epoch 3 by 2019-01-25 21:39:11.388628!
+11. set (Dataset 17) being trained for epoch 3 by 2019-01-25 21:39:35.061663!
+12. set (Dataset 6) being trained for epoch 3 by 2019-01-25 21:39:50.505633!
+13. set (Dataset 24) being trained for epoch 3 by 2019-01-25 21:40:08.536982!
+14. set (Dataset 11) being trained for epoch 3 by 2019-01-25 21:40:27.274785!
+15. set (Dataset 10) being trained for epoch 3 by 2019-01-25 21:40:49.139868!
+16. set (Dataset 20) being trained for epoch 3 by 2019-01-25 21:41:12.575648!
+17. set (Dataset 2) being trained for epoch 3 by 2019-01-25 21:41:31.985709!
+18. set (Dataset 4) being trained for epoch 3 by 2019-01-25 21:41:52.610471!
+19. set (Dataset 7) being trained for epoch 3 by 2019-01-25 21:42:18.663241!
+20. set (Dataset 1) being trained for epoch 3 by 2019-01-25 21:42:42.760509!
+Epoch 3 completed!
+Exp2019-01-25_21-16-36.h5 has been saved.
+The subjects are trained: [(19, 'M11'), (16, 'M09'), (21, 'F02'), (15, 'F03'), (13, 'M07'), (12, 'M06'), (18, 'F05'), (22, 'M01'), (23, 'M13'), (8, 'M02'), (17, 'M10'), (6, 'F06'), (24, 'M14'), (11, 'M05'), (10, 'M04'), (20, 'M12'), (2, 'F02'), (4, 'F04'), (7, 'M01'), (1, 'F01')]
+Evaluating model VGG16_inc_top_seqLen1_stateful_lstm10_output3_BatchSize1_inEpochs1_outEpochs3_AdamOpt_lr-0.000010_2019-01-25_21-16-36
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 16.47 Degree
+	The absolute mean error on Yaw angle estimation: 32.07 Degree
+	The absolute mean error on Roll angle estimation: 6.68 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 19.86 Degree
+	The absolute mean error on Yaw angle estimation: 29.75 Degree
+	The absolute mean error on Roll angle estimation: 3.34 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 18.48 Degree
+	The absolute mean error on Yaw angle estimation: 26.16 Degree
+	The absolute mean error on Roll angle estimation: 7.43 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 24.46 Degree
+	The absolute mean error on Yaw angle estimation: 34.62 Degree
+	The absolute mean error on Roll angle estimation: 14.31 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 19.82 Degree
+	The absolute mean error on Yaw angle estimations: 30.65 Degree
+	The absolute mean error on Roll angle estimations: 7.94 Degree
+subject3_Exp2019-01-25_21-16-36.png has been saved by 2019-01-25 21:44:21.848924.
+subject5_Exp2019-01-25_21-16-36.png has been saved by 2019-01-25 21:44:22.038883.
+subject9_Exp2019-01-25_21-16-36.png has been saved by 2019-01-25 21:44:22.228643.
+subject14_Exp2019-01-25_21-16-36.png has been saved by 2019-01-25 21:44:22.437772.
+Model Exp2019-01-25_21-16-36 has been evaluated successfully.
