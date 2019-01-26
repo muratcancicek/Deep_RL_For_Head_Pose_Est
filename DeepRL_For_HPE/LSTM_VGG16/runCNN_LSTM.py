@@ -42,7 +42,7 @@ def runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs, r
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
     full_model, means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                    num_outputs = num_outputs, batch_size = test_batch_size, stateful = STATEFUL, record = record)
+                    num_outputs = num_outputs, batch_size = test_batch_size, angles = angles, stateful = STATEFUL, record = record)
     return full_model, means, results
 
 def runCNN_LSTM(record = False):
@@ -56,13 +56,16 @@ def runCNN_LSTM(record = False):
     printLog(get_model_summary(full_model), record = record)
     saveConfiguration(confFile = confFile, record = record)
 
-    num_experiments = int(out_epochs / eva_epoch)
+    num_experiments = int(out_epochs / eva_epoch) if out_epochs > eva_epoch else 1
     for exp in range(1, num_experiments+1):
         modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
         full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, eva_epoch, record = False)
-    if out_epochs % eveva_epoch > 0:
+        printLog('%s completed!' % (modelID), record = record)
+        
+    if out_epochs % eva_epoch > 0 and num_experiments > 1:
         modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
-        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs % eveva_epoch, record = False)
+        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs % eva_epoch, record = False)
+        printLog('%s completed!' % (modelID), record = record)
    
     figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)         
     modelID = 'Exp' + modelStr[-19:]

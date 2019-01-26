@@ -1,4 +1,4 @@
-Model Exp2019-01-25_23-18-18 has been started to be evaluated.
+Model Exp2019-01-25_23-20-22 has been started to be evaluated.
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -97,3 +97,8 @@ include_vgg_top = True
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
 ######### CONF_ends_Here ###########
+Exp2019-01-25_23-20-22_part1 completed!
+Exp2019-01-25_23-20-22_part2 completed!
+Exp2019-01-25_23-20-22_part2 completed!
+subject1_Exp2019-01-25_23-20-22_part2.png has been saved by 2019-01-25 23:23:15.593821.
+Model Exp2019-01-25_23-20-22 has been evaluated successfully.

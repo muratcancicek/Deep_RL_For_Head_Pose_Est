@@ -8,6 +8,7 @@ else:
     from EvaluationRecorder import *
 
 importNeighborFolders()
+import matplotlib.pyplot as plt
 from DatasetHandler.BiwiBrowser import *
 
 def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs, angles):
@@ -33,7 +34,7 @@ def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs, angles):
 def drawResults(results, modelStr, modelID, num_outputs, angles, save = False):
     figures = []
     for subject, outputs in results:
-        f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelStr, angles = angles)
+        f = drawPlotsForSubj(outputs, subject, BIWI_Subject_IDs[subject], modelStr, num_outputs, angles = angles)
         figures.append((f, subject))
     if save:
         for f, subj in figures:

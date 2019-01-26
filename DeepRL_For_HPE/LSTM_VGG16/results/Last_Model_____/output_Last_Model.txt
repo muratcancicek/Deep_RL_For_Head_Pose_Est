@@ -1,4 +1,4 @@
-Model Exp2019-01-25_23-18-18 has been started to be evaluated.
+Model Exp2019-01-25_22-59-57 has been started to be evaluated.
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -56,16 +56,20 @@ Layer (type)                 Output Shape              Param #
 =================================================================
 tdCNN (TimeDistributed)      (1, 1, 4096)              134260544 
 _________________________________________________________________
+dropout025_conv (TimeDistrib (1, 1, 4096)              0         
+_________________________________________________________________
 fc1024 (TimeDistributed)     (1, 1, 1024)              4195328   
+_________________________________________________________________
+dropout025 (TimeDistributed) (1, 1, 1024)              0         
 _________________________________________________________________
 fc3 (TimeDistributed)        (1, 1, 3)                 3075      
 _________________________________________________________________
-lstm_1 (LSTM)                (1, 64)                   17408     
+lstm_1 (LSTM)                (1, 10)                   560       
 _________________________________________________________________
-dense_3 (Dense)              (1, 3)                    195       
+dense_3 (Dense)              (1, 3)                    33        
 =================================================================
-Total params: 138,476,550
-Trainable params: 4,216,006
+Total params: 138,459,540
+Trainable params: 4,198,996
 Non-trainable params: 134,260,544
 _________________________________________________________________
 
@@ -77,7 +81,7 @@ output_begin = 3
 num_outputs = 3
 
 timesteps = 1 # TimeseriesGenerator Handles overlapping
-learning_rate =  0.0001
+learning_rate =  0.001
 in_epochs = 1
 out_epochs = 5
 eva_epoch = 2
@@ -90,7 +94,7 @@ trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectLi
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 64
+lstm_nodes = 10
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
 include_vgg_top = True 

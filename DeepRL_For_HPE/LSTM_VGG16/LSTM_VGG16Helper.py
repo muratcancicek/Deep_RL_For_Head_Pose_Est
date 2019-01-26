@@ -137,7 +137,7 @@ def evaluateCNN_LSTM(full_model, label_rescaling_factor, testSubjects, timesteps
                                             output_begin, num_outputs, batch_size = batch_size, stateful = stateful, record = record)
     results = []
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
-        outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)
+        full_model, outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)
         results.append((subject, outputs))
     means = evaluateAverage(results, angles, num_outputs, record = record)
     return full_model, means, results 
