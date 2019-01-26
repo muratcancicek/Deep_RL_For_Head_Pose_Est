@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>d6c55e4e-27d2-4a3a-aa2d-cdc7eb42ae0c</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>trainLSTM_VGG16.py</StartupFile>
+    <StartupFile>Quick_Scripts\trainLSTM_VGG16.py</StartupFile>
     <SearchPath>..\..\DeepRL_For_HPE</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,6 +21,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="continueTrainigCNN_LSTM.py" />
+    <Compile Include="EstimationPlotter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LSTM_VGG16Helper.py" />
     <Compile Include="Stateful_CNN_LSTM_Configuration.py" />
     <Compile Include="CNN_LSTM_Configuration.py">
       <SubType>Code</SubType>
@@ -28,16 +32,19 @@
     <Compile Include="EvaluationRecorder.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="LSTM_VGG16Helper.py" />
+    <Compile Include="Quick_Scripts\LSTM_VGG16Helper.py" />
     <Compile Include="runCNN_LSTM.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tf_trainLSTM_VGG16.py" />
-    <Compile Include="trainLSTM_VGG16.py" />
+    <Compile Include="Quick_Scripts\tf_trainLSTM_VGG16.py" />
+    <Compile Include="Quick_Scripts\trainLSTM_VGG16.py" />
     <Compile Include="NeighborFolderimporter.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="VGG_model.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Quick_Scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
