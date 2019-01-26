@@ -37,9 +37,6 @@ elif not sys.argv[2] in ['trainMore', 'evaluateOnly']:
 elif sys.argv[2] == 'evaluateOnly':
     trainMore = False
     
-in_epochs = 1
-out_epochs = 20
-
 def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     full_model = loadKerasModel(modelID, record = record) 
     modelStr = modelID
@@ -49,6 +46,7 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     modelStr = modelStr + extension
     
     printLog(get_model_summary(full_model), record = record)
+    saveConfiguration(confFile = confFile, record = record)
     
     if trainMore:
         print('Training model %s' % modelStr)

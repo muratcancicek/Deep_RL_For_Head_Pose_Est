@@ -1,0 +1,851 @@
+Model Exp2019-01-25_03-13-09 has been started to be evaluated.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+fc1 (Dense)                  (None, 4096)              102764544 
+_________________________________________________________________
+fc2 (Dense)                  (None, 4096)              16781312  
+=================================================================
+Total params: 134,260,544
+Trainable params: 0
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdVGG16 (TimeDistributed)    (None, 16, 4096)          134260544 
+_________________________________________________________________
+time_distributed_1 (TimeDist (None, 16, 4096)          0         
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 10)                164280    
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 33        
+=================================================================
+Total params: 134,424,857
+Trainable params: 164,313
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'CNN_LSTM_Configuration.py'
+RECORD = True # False #
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 16 # TimeseriesGenerator Handles overlapping
+learning_rate = 0.0001
+in_epochs = 1
+out_epochs = 30
+train_batch_size = 1
+test_batch_size = 1
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [1] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 10
+lstm_dropout = 0.0
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+######### CONF_ends_Here ###########
+1. set (Dataset 22) being trained for epoch 1 by 2019-01-25 03:13:20.964032!
+2. set (Dataset 24) being trained for epoch 1 by 2019-01-25 03:14:40.740873!
+3. set (Dataset 15) being trained for epoch 1 by 2019-01-25 03:15:41.777563!
+4. set (Dataset 19) being trained for epoch 1 by 2019-01-25 03:17:00.152913!
+5. set (Dataset 8) being trained for epoch 1 by 2019-01-25 03:18:01.498297!
+6. set (Dataset 23) being trained for epoch 1 by 2019-01-25 03:19:34.119709!
+7. set (Dataset 21) being trained for epoch 1 by 2019-01-25 03:20:43.214424!
+8. set (Dataset 16) being trained for epoch 1 by 2019-01-25 03:22:03.164688!
+9. set (Dataset 7) being trained for epoch 1 by 2019-01-25 03:23:54.606329!
+10. set (Dataset 12) being trained for epoch 1 by 2019-01-25 03:25:25.734644!
+11. set (Dataset 10) being trained for epoch 1 by 2019-01-25 03:26:55.527346!
+12. set (Dataset 1) being trained for epoch 1 by 2019-01-25 03:28:22.959048!
+13. set (Dataset 18) being trained for epoch 1 by 2019-01-25 03:29:24.239933!
+14. set (Dataset 2) being trained for epoch 1 by 2019-01-25 03:30:37.850131!
+15. set (Dataset 4) being trained for epoch 1 by 2019-01-25 03:31:42.006450!
+16. set (Dataset 20) being trained for epoch 1 by 2019-01-25 03:33:10.674054!
+17. set (Dataset 17) being trained for epoch 1 by 2019-01-25 03:34:16.050225!
+18. set (Dataset 6) being trained for epoch 1 by 2019-01-25 03:35:04.482325!
+19. set (Dataset 13) being trained for epoch 1 by 2019-01-25 03:36:10.155844!
+20. set (Dataset 11) being trained for epoch 1 by 2019-01-25 03:37:09.422316!
+Epoch 1 completed!
+1. set (Dataset 6) being trained for epoch 2 by 2019-01-25 03:38:23.380867!
+2. set (Dataset 11) being trained for epoch 2 by 2019-01-25 03:39:29.388008!
+3. set (Dataset 10) being trained for epoch 2 by 2019-01-25 03:40:40.731229!
+4. set (Dataset 4) being trained for epoch 2 by 2019-01-25 03:42:09.447691!
+5. set (Dataset 23) being trained for epoch 2 by 2019-01-25 03:43:39.036245!
+6. set (Dataset 13) being trained for epoch 2 by 2019-01-25 03:44:47.355355!
+7. set (Dataset 17) being trained for epoch 2 by 2019-01-25 03:45:45.233891!
+8. set (Dataset 1) being trained for epoch 2 by 2019-01-25 03:46:34.108431!
+9. set (Dataset 8) being trained for epoch 2 by 2019-01-25 03:47:37.240830!
+10. set (Dataset 7) being trained for epoch 2 by 2019-01-25 03:49:12.263351!
+11. set (Dataset 21) being trained for epoch 2 by 2019-01-25 03:50:42.022780!
+12. set (Dataset 22) being trained for epoch 2 by 2019-01-25 03:51:59.376502!
+13. set (Dataset 2) being trained for epoch 2 by 2019-01-25 03:53:19.428875!
+14. set (Dataset 24) being trained for epoch 2 by 2019-01-25 03:54:21.292802!
+15. set (Dataset 15) being trained for epoch 2 by 2019-01-25 03:55:22.366499!
+16. set (Dataset 20) being trained for epoch 2 by 2019-01-25 03:56:41.146458!
+17. set (Dataset 18) being trained for epoch 2 by 2019-01-25 03:57:49.216291!
+18. set (Dataset 19) being trained for epoch 2 by 2019-01-25 03:59:03.244914!
+19. set (Dataset 12) being trained for epoch 2 by 2019-01-25 04:00:06.091143!
+20. set (Dataset 16) being trained for epoch 2 by 2019-01-25 04:01:37.252081!
+Epoch 2 completed!
+1. set (Dataset 19) being trained for epoch 3 by 2019-01-25 04:03:30.706489!
+2. set (Dataset 16) being trained for epoch 3 by 2019-01-25 04:04:35.315890!
+3. set (Dataset 21) being trained for epoch 3 by 2019-01-25 04:06:25.237913!
+4. set (Dataset 15) being trained for epoch 3 by 2019-01-25 04:07:42.942466!
+5. set (Dataset 13) being trained for epoch 3 by 2019-01-25 04:09:01.437423!
+6. set (Dataset 12) being trained for epoch 3 by 2019-01-25 04:10:02.420805!
+7. set (Dataset 18) being trained for epoch 3 by 2019-01-25 04:11:31.228681!
+8. set (Dataset 22) being trained for epoch 3 by 2019-01-25 04:12:46.705986!
+9. set (Dataset 23) being trained for epoch 3 by 2019-01-25 04:14:07.014994!
+10. set (Dataset 8) being trained for epoch 3 by 2019-01-25 04:15:18.629271!
+11. set (Dataset 17) being trained for epoch 3 by 2019-01-25 04:16:49.680360!
+12. set (Dataset 6) being trained for epoch 3 by 2019-01-25 04:17:38.495457!
+13. set (Dataset 24) being trained for epoch 3 by 2019-01-25 04:18:43.700641!
+14. set (Dataset 11) being trained for epoch 3 by 2019-01-25 04:19:43.872019!
+15. set (Dataset 10) being trained for epoch 3 by 2019-01-25 04:20:55.078060!
+16. set (Dataset 20) being trained for epoch 3 by 2019-01-25 04:22:22.610709!
+17. set (Dataset 2) being trained for epoch 3 by 2019-01-25 04:23:30.095010!
+18. set (Dataset 4) being trained for epoch 3 by 2019-01-25 04:24:34.283487!
+19. set (Dataset 7) being trained for epoch 3 by 2019-01-25 04:26:05.816694!
+20. set (Dataset 1) being trained for epoch 3 by 2019-01-25 04:27:35.151616!
+Epoch 3 completed!
+1. set (Dataset 4) being trained for epoch 4 by 2019-01-25 04:28:42.544250!
+2. set (Dataset 1) being trained for epoch 4 by 2019-01-25 04:30:11.466470!
+3. set (Dataset 17) being trained for epoch 4 by 2019-01-25 04:31:11.018194!
+4. set (Dataset 10) being trained for epoch 4 by 2019-01-25 04:32:01.940779!
+5. set (Dataset 12) being trained for epoch 4 by 2019-01-25 04:33:31.305485!
+6. set (Dataset 7) being trained for epoch 4 by 2019-01-25 04:35:00.919340!
+7. set (Dataset 2) being trained for epoch 4 by 2019-01-25 04:36:30.382903!
+8. set (Dataset 6) being trained for epoch 4 by 2019-01-25 04:37:32.742502!
+9. set (Dataset 13) being trained for epoch 4 by 2019-01-25 04:38:38.331509!
+10. set (Dataset 23) being trained for epoch 4 by 2019-01-25 04:39:38.214586!
+11. set (Dataset 18) being trained for epoch 4 by 2019-01-25 04:40:47.578129!
+12. set (Dataset 19) being trained for epoch 4 by 2019-01-25 04:42:01.496165!
+13. set (Dataset 11) being trained for epoch 4 by 2019-01-25 04:43:03.280135!
+14. set (Dataset 16) being trained for epoch 4 by 2019-01-25 04:44:16.091410!
+15. set (Dataset 21) being trained for epoch 4 by 2019-01-25 04:46:05.698047!
+16. set (Dataset 20) being trained for epoch 4 by 2019-01-25 04:47:22.051526!
+17. set (Dataset 24) being trained for epoch 4 by 2019-01-25 04:48:29.061246!
+18. set (Dataset 15) being trained for epoch 4 by 2019-01-25 04:49:30.271704!
+19. set (Dataset 8) being trained for epoch 4 by 2019-01-25 04:50:51.311105!
+20. set (Dataset 22) being trained for epoch 4 by 2019-01-25 04:52:25.251437!
+Epoch 4 completed!
+1. set (Dataset 15) being trained for epoch 5 by 2019-01-25 04:53:51.164478!
+2. set (Dataset 22) being trained for epoch 5 by 2019-01-25 04:55:11.167831!
+3. set (Dataset 18) being trained for epoch 5 by 2019-01-25 04:56:32.019542!
+4. set (Dataset 21) being trained for epoch 5 by 2019-01-25 04:57:46.750575!
+5. set (Dataset 7) being trained for epoch 5 by 2019-01-25 04:59:05.990993!
+6. set (Dataset 8) being trained for epoch 5 by 2019-01-25 05:00:36.699851!
+7. set (Dataset 24) being trained for epoch 5 by 2019-01-25 05:02:08.829980!
+8. set (Dataset 19) being trained for epoch 5 by 2019-01-25 05:03:08.864158!
+9. set (Dataset 12) being trained for epoch 5 by 2019-01-25 05:04:11.565900!
+10. set (Dataset 13) being trained for epoch 5 by 2019-01-25 05:05:37.930692!
+11. set (Dataset 2) being trained for epoch 5 by 2019-01-25 05:06:37.230851!
+12. set (Dataset 4) being trained for epoch 5 by 2019-01-25 05:07:41.675958!
+13. set (Dataset 16) being trained for epoch 5 by 2019-01-25 05:09:13.529605!
+14. set (Dataset 1) being trained for epoch 5 by 2019-01-25 05:11:02.113196!
+15. set (Dataset 17) being trained for epoch 5 by 2019-01-25 05:12:01.446164!
+16. set (Dataset 20) being trained for epoch 5 by 2019-01-25 05:12:49.779214!
+17. set (Dataset 11) being trained for epoch 5 by 2019-01-25 05:13:57.128651!
+18. set (Dataset 10) being trained for epoch 5 by 2019-01-25 05:15:08.288585!
+19. set (Dataset 23) being trained for epoch 5 by 2019-01-25 05:16:35.820042!
+20. set (Dataset 6) being trained for epoch 5 by 2019-01-25 05:17:44.854213!
+Epoch 5 completed!
+1. set (Dataset 10) being trained for epoch 6 by 2019-01-25 05:18:57.559426!
+2. set (Dataset 6) being trained for epoch 6 by 2019-01-25 05:20:24.659609!
+3. set (Dataset 2) being trained for epoch 6 by 2019-01-25 05:21:30.353343!
+4. set (Dataset 17) being trained for epoch 6 by 2019-01-25 05:22:30.869749!
+5. set (Dataset 8) being trained for epoch 6 by 2019-01-25 05:23:22.484626!
+6. set (Dataset 23) being trained for epoch 6 by 2019-01-25 05:24:54.170075!
+7. set (Dataset 11) being trained for epoch 6 by 2019-01-25 05:26:03.291543!
+8. set (Dataset 4) being trained for epoch 6 by 2019-01-25 05:27:14.985129!
+9. set (Dataset 7) being trained for epoch 6 by 2019-01-25 05:28:46.529751!
+10. set (Dataset 12) being trained for epoch 6 by 2019-01-25 05:30:17.387747!
+11. set (Dataset 24) being trained for epoch 6 by 2019-01-25 05:31:44.365423!
+12. set (Dataset 15) being trained for epoch 6 by 2019-01-25 05:32:45.891892!
+13. set (Dataset 1) being trained for epoch 6 by 2019-01-25 05:34:04.434924!
+14. set (Dataset 22) being trained for epoch 6 by 2019-01-25 05:35:05.663887!
+15. set (Dataset 18) being trained for epoch 6 by 2019-01-25 05:36:26.618235!
+16. set (Dataset 20) being trained for epoch 6 by 2019-01-25 05:37:40.568557!
+17. set (Dataset 16) being trained for epoch 6 by 2019-01-25 05:38:51.946749!
+18. set (Dataset 21) being trained for epoch 6 by 2019-01-25 05:40:41.665538!
+19. set (Dataset 13) being trained for epoch 6 by 2019-01-25 05:41:57.704049!
+20. set (Dataset 19) being trained for epoch 6 by 2019-01-25 05:42:56.748620!
+Epoch 6 completed!
+1. set (Dataset 21) being trained for epoch 7 by 2019-01-25 05:44:02.989414!
+2. set (Dataset 19) being trained for epoch 7 by 2019-01-25 05:45:19.073200!
+3. set (Dataset 24) being trained for epoch 7 by 2019-01-25 05:46:20.105819!
+4. set (Dataset 18) being trained for epoch 7 by 2019-01-25 05:47:21.124712!
+5. set (Dataset 23) being trained for epoch 7 by 2019-01-25 05:48:35.181038!
+6. set (Dataset 13) being trained for epoch 7 by 2019-01-25 05:49:43.747498!
+7. set (Dataset 16) being trained for epoch 7 by 2019-01-25 05:50:46.353165!
+8. set (Dataset 15) being trained for epoch 7 by 2019-01-25 05:52:36.988009!
+9. set (Dataset 8) being trained for epoch 7 by 2019-01-25 05:53:57.883057!
+10. set (Dataset 7) being trained for epoch 7 by 2019-01-25 05:55:32.602353!
+11. set (Dataset 11) being trained for epoch 7 by 2019-01-25 05:57:02.676229!
+12. set (Dataset 10) being trained for epoch 7 by 2019-01-25 05:58:13.976323!
+13. set (Dataset 22) being trained for epoch 7 by 2019-01-25 05:59:42.304586!
+14. set (Dataset 6) being trained for epoch 7 by 2019-01-25 06:01:02.556756!
+15. set (Dataset 2) being trained for epoch 7 by 2019-01-25 06:02:08.549625!
+16. set (Dataset 20) being trained for epoch 7 by 2019-01-25 06:03:10.454356!
+17. set (Dataset 1) being trained for epoch 7 by 2019-01-25 06:04:18.023141!
+18. set (Dataset 17) being trained for epoch 7 by 2019-01-25 06:05:17.241427!
+19. set (Dataset 12) being trained for epoch 7 by 2019-01-25 06:06:08.261729!
+20. set (Dataset 4) being trained for epoch 7 by 2019-01-25 06:07:38.621725!
+Epoch 7 completed!
+1. set (Dataset 17) being trained for epoch 8 by 2019-01-25 06:09:11.092456!
+2. set (Dataset 4) being trained for epoch 8 by 2019-01-25 06:10:01.328228!
+3. set (Dataset 11) being trained for epoch 8 by 2019-01-25 06:11:31.336999!
+4. set (Dataset 2) being trained for epoch 8 by 2019-01-25 06:12:40.680931!
+5. set (Dataset 13) being trained for epoch 8 by 2019-01-25 06:13:42.638526!
+6. set (Dataset 12) being trained for epoch 8 by 2019-01-25 06:14:44.053263!
+7. set (Dataset 1) being trained for epoch 8 by 2019-01-25 06:16:12.109012!
+8. set (Dataset 10) being trained for epoch 8 by 2019-01-25 06:17:14.475750!
+9. set (Dataset 23) being trained for epoch 8 by 2019-01-25 06:18:42.149353!
+10. set (Dataset 8) being trained for epoch 8 by 2019-01-25 06:19:53.123280!
+11. set (Dataset 16) being trained for epoch 8 by 2019-01-25 06:21:29.807886!
+12. set (Dataset 21) being trained for epoch 8 by 2019-01-25 06:23:19.679043!
+13. set (Dataset 6) being trained for epoch 8 by 2019-01-25 06:24:36.579383!
+14. set (Dataset 19) being trained for epoch 8 by 2019-01-25 06:25:42.269063!
+15. set (Dataset 24) being trained for epoch 8 by 2019-01-25 06:26:42.954554!
+16. set (Dataset 20) being trained for epoch 8 by 2019-01-25 06:27:43.656239!
+17. set (Dataset 22) being trained for epoch 8 by 2019-01-25 06:28:52.309134!
+18. set (Dataset 18) being trained for epoch 8 by 2019-01-25 06:30:13.202744!
+19. set (Dataset 7) being trained for epoch 8 by 2019-01-25 06:31:29.661479!
+20. set (Dataset 15) being trained for epoch 8 by 2019-01-25 06:33:00.164058!
+Epoch 8 completed!
+1. set (Dataset 18) being trained for epoch 9 by 2019-01-25 06:34:24.602686!
+2. set (Dataset 15) being trained for epoch 9 by 2019-01-25 06:35:39.833239!
+3. set (Dataset 16) being trained for epoch 9 by 2019-01-25 06:37:01.588998!
+4. set (Dataset 24) being trained for epoch 9 by 2019-01-25 06:38:47.395016!
+5. set (Dataset 12) being trained for epoch 9 by 2019-01-25 06:39:49.140893!
+6. set (Dataset 7) being trained for epoch 9 by 2019-01-25 06:41:17.749837!
+7. set (Dataset 22) being trained for epoch 9 by 2019-01-25 06:42:48.429202!
+8. set (Dataset 21) being trained for epoch 9 by 2019-01-25 06:44:09.476106!
+9. set (Dataset 13) being trained for epoch 9 by 2019-01-25 06:45:25.431824!
+10. set (Dataset 23) being trained for epoch 9 by 2019-01-25 06:46:24.905210!
+11. set (Dataset 1) being trained for epoch 9 by 2019-01-25 06:47:33.999368!
+12. set (Dataset 17) being trained for epoch 9 by 2019-01-25 06:48:33.277144!
+13. set (Dataset 19) being trained for epoch 9 by 2019-01-25 06:49:21.746411!
+14. set (Dataset 4) being trained for epoch 9 by 2019-01-25 06:50:25.091449!
+15. set (Dataset 11) being trained for epoch 9 by 2019-01-25 06:51:54.931773!
+16. set (Dataset 20) being trained for epoch 9 by 2019-01-25 06:53:04.694506!
+17. set (Dataset 6) being trained for epoch 9 by 2019-01-25 06:54:12.366303!
+18. set (Dataset 2) being trained for epoch 9 by 2019-01-25 06:55:18.114693!
+19. set (Dataset 8) being trained for epoch 9 by 2019-01-25 06:56:23.370787!
+20. set (Dataset 10) being trained for epoch 9 by 2019-01-25 06:57:58.189085!
+Epoch 9 completed!
+1. set (Dataset 2) being trained for epoch 10 by 2019-01-25 06:59:29.998270!
+2. set (Dataset 10) being trained for epoch 10 by 2019-01-25 07:00:33.913363!
+3. set (Dataset 1) being trained for epoch 10 by 2019-01-25 07:02:01.260385!
+4. set (Dataset 11) being trained for epoch 10 by 2019-01-25 07:03:02.898795!
+5. set (Dataset 7) being trained for epoch 10 by 2019-01-25 07:04:14.747722!
+6. set (Dataset 8) being trained for epoch 10 by 2019-01-25 07:05:46.409161!
+7. set (Dataset 6) being trained for epoch 10 by 2019-01-25 07:07:19.202118!
+8. set (Dataset 17) being trained for epoch 10 by 2019-01-25 07:08:23.629313!
+9. set (Dataset 12) being trained for epoch 10 by 2019-01-25 07:09:14.950259!
+10. set (Dataset 13) being trained for epoch 10 by 2019-01-25 07:10:42.303964!
+11. set (Dataset 22) being trained for epoch 10 by 2019-01-25 07:11:42.767739!
+12. set (Dataset 18) being trained for epoch 10 by 2019-01-25 07:13:03.704729!
+13. set (Dataset 4) being trained for epoch 10 by 2019-01-25 07:14:19.936637!
+14. set (Dataset 15) being trained for epoch 10 by 2019-01-25 07:15:50.258759!
+15. set (Dataset 16) being trained for epoch 10 by 2019-01-25 07:17:12.693500!
+16. set (Dataset 20) being trained for epoch 10 by 2019-01-25 07:19:02.034861!
+17. set (Dataset 19) being trained for epoch 10 by 2019-01-25 07:20:09.497007!
+18. set (Dataset 24) being trained for epoch 10 by 2019-01-25 07:21:10.156542!
+19. set (Dataset 23) being trained for epoch 10 by 2019-01-25 07:22:10.370804!
+20. set (Dataset 21) being trained for epoch 10 by 2019-01-25 07:23:20.030617!
+Epoch 10 completed!
+1. set (Dataset 24) being trained for epoch 11 by 2019-01-25 07:24:40.716363!
+2. set (Dataset 21) being trained for epoch 11 by 2019-01-25 07:25:41.014369!
+3. set (Dataset 22) being trained for epoch 11 by 2019-01-25 07:26:58.816052!
+4. set (Dataset 16) being trained for epoch 11 by 2019-01-25 07:28:22.716712!
+5. set (Dataset 8) being trained for epoch 11 by 2019-01-25 07:30:13.805087!
+6. set (Dataset 23) being trained for epoch 11 by 2019-01-25 07:31:46.503453!
+7. set (Dataset 19) being trained for epoch 11 by 2019-01-25 07:32:55.320908!
+8. set (Dataset 18) being trained for epoch 11 by 2019-01-25 07:33:57.265282!
+9. set (Dataset 7) being trained for epoch 11 by 2019-01-25 07:35:12.827655!
+10. set (Dataset 12) being trained for epoch 11 by 2019-01-25 07:36:44.399533!
+11. set (Dataset 6) being trained for epoch 11 by 2019-01-25 07:38:12.349595!
+12. set (Dataset 2) being trained for epoch 11 by 2019-01-25 07:39:17.981386!
+13. set (Dataset 15) being trained for epoch 11 by 2019-01-25 07:40:21.074686!
+14. set (Dataset 10) being trained for epoch 11 by 2019-01-25 07:41:41.966109!
+15. set (Dataset 1) being trained for epoch 11 by 2019-01-25 07:43:08.710458!
+16. set (Dataset 20) being trained for epoch 11 by 2019-01-25 07:44:09.566497!
+17. set (Dataset 4) being trained for epoch 11 by 2019-01-25 07:45:19.029743!
+18. set (Dataset 11) being trained for epoch 11 by 2019-01-25 07:46:49.015890!
+19. set (Dataset 13) being trained for epoch 11 by 2019-01-25 07:47:57.449080!
+20. set (Dataset 17) being trained for epoch 11 by 2019-01-25 07:48:55.352417!
+Epoch 11 completed!
+1. set (Dataset 11) being trained for epoch 12 by 2019-01-25 07:49:48.972897!
+2. set (Dataset 17) being trained for epoch 12 by 2019-01-25 07:50:57.079793!
+3. set (Dataset 6) being trained for epoch 12 by 2019-01-25 07:51:45.771123!
+4. set (Dataset 1) being trained for epoch 12 by 2019-01-25 07:52:51.389333!
+5. set (Dataset 23) being trained for epoch 12 by 2019-01-25 07:53:52.230751!
+6. set (Dataset 13) being trained for epoch 12 by 2019-01-25 07:55:00.737404!
+7. set (Dataset 4) being trained for epoch 12 by 2019-01-25 07:56:01.551397!
+8. set (Dataset 2) being trained for epoch 12 by 2019-01-25 07:57:30.487948!
+9. set (Dataset 8) being trained for epoch 12 by 2019-01-25 07:58:35.227787!
+10. set (Dataset 7) being trained for epoch 12 by 2019-01-25 08:00:09.674241!
+11. set (Dataset 19) being trained for epoch 12 by 2019-01-25 08:01:37.591508!
+12. set (Dataset 24) being trained for epoch 12 by 2019-01-25 08:02:38.408290!
+13. set (Dataset 10) being trained for epoch 12 by 2019-01-25 08:03:40.605342!
+14. set (Dataset 21) being trained for epoch 12 by 2019-01-25 08:05:08.113655!
+15. set (Dataset 22) being trained for epoch 12 by 2019-01-25 08:06:25.895263!
+16. set (Dataset 20) being trained for epoch 12 by 2019-01-25 08:07:46.141325!
+17. set (Dataset 15) being trained for epoch 12 by 2019-01-25 08:08:54.638602!
+18. set (Dataset 16) being trained for epoch 12 by 2019-01-25 08:10:17.188756!
+19. set (Dataset 12) being trained for epoch 12 by 2019-01-25 08:12:08.015432!
+20. set (Dataset 18) being trained for epoch 12 by 2019-01-25 08:13:36.726064!
+Epoch 12 completed!
+1. set (Dataset 16) being trained for epoch 13 by 2019-01-25 08:14:58.550052!
+2. set (Dataset 18) being trained for epoch 13 by 2019-01-25 08:16:48.245940!
+3. set (Dataset 19) being trained for epoch 13 by 2019-01-25 08:18:02.026014!
+4. set (Dataset 22) being trained for epoch 13 by 2019-01-25 08:19:04.495784!
+5. set (Dataset 13) being trained for epoch 13 by 2019-01-25 08:20:24.372054!
+6. set (Dataset 12) being trained for epoch 13 by 2019-01-25 08:21:25.615185!
+7. set (Dataset 15) being trained for epoch 13 by 2019-01-25 08:22:54.636723!
+8. set (Dataset 24) being trained for epoch 13 by 2019-01-25 08:24:13.054821!
+9. set (Dataset 23) being trained for epoch 13 by 2019-01-25 08:25:13.189340!
+10. set (Dataset 8) being trained for epoch 13 by 2019-01-25 08:26:24.761220!
+11. set (Dataset 4) being trained for epoch 13 by 2019-01-25 08:27:59.346280!
+12. set (Dataset 11) being trained for epoch 13 by 2019-01-25 08:29:29.083760!
+13. set (Dataset 21) being trained for epoch 13 by 2019-01-25 08:30:39.037453!
+14. set (Dataset 17) being trained for epoch 13 by 2019-01-25 08:31:54.076801!
+15. set (Dataset 6) being trained for epoch 13 by 2019-01-25 08:32:42.986598!
+16. set (Dataset 20) being trained for epoch 13 by 2019-01-25 08:33:49.119167!
+17. set (Dataset 10) being trained for epoch 13 by 2019-01-25 08:34:58.662420!
+18. set (Dataset 1) being trained for epoch 13 by 2019-01-25 08:36:25.608474!
+19. set (Dataset 7) being trained for epoch 13 by 2019-01-25 08:37:28.971167!
+20. set (Dataset 2) being trained for epoch 13 by 2019-01-25 08:38:58.301751!
+Epoch 13 completed!
+1. set (Dataset 1) being trained for epoch 14 by 2019-01-25 08:40:03.816912!
+2. set (Dataset 2) being trained for epoch 14 by 2019-01-25 08:41:04.267605!
+3. set (Dataset 4) being trained for epoch 14 by 2019-01-25 08:42:08.830307!
+4. set (Dataset 6) being trained for epoch 14 by 2019-01-25 08:43:38.141171!
+5. set (Dataset 12) being trained for epoch 14 by 2019-01-25 08:44:46.062107!
+6. set (Dataset 7) being trained for epoch 14 by 2019-01-25 08:46:16.293254!
+7. set (Dataset 10) being trained for epoch 14 by 2019-01-25 08:47:47.928512!
+8. set (Dataset 11) being trained for epoch 14 by 2019-01-25 08:49:15.999187!
+9. set (Dataset 13) being trained for epoch 14 by 2019-01-25 08:50:24.168930!
+10. set (Dataset 23) being trained for epoch 14 by 2019-01-25 08:51:23.712178!
+11. set (Dataset 15) being trained for epoch 14 by 2019-01-25 08:52:33.553082!
+12. set (Dataset 16) being trained for epoch 14 by 2019-01-25 08:53:55.884497!
+13. set (Dataset 17) being trained for epoch 14 by 2019-01-25 08:55:42.952686!
+14. set (Dataset 18) being trained for epoch 14 by 2019-01-25 08:56:32.412064!
+15. set (Dataset 19) being trained for epoch 14 by 2019-01-25 08:57:46.150432!
+16. set (Dataset 20) being trained for epoch 14 by 2019-01-25 08:58:47.627303!
+17. set (Dataset 21) being trained for epoch 14 by 2019-01-25 08:59:55.808107!
+18. set (Dataset 22) being trained for epoch 14 by 2019-01-25 09:01:13.461132!
+19. set (Dataset 8) being trained for epoch 14 by 2019-01-25 09:02:35.867263!
+20. set (Dataset 24) being trained for epoch 14 by 2019-01-25 09:04:08.073063!
+Epoch 14 completed!
+1. set (Dataset 22) being trained for epoch 15 by 2019-01-25 09:05:13.888972!
+2. set (Dataset 24) being trained for epoch 15 by 2019-01-25 09:06:33.343133!
+3. set (Dataset 15) being trained for epoch 15 by 2019-01-25 09:07:34.598989!
+4. set (Dataset 19) being trained for epoch 15 by 2019-01-25 09:08:53.109883!
+5. set (Dataset 7) being trained for epoch 15 by 2019-01-25 09:09:56.613427!
+6. set (Dataset 8) being trained for epoch 15 by 2019-01-25 09:11:28.579902!
+7. set (Dataset 21) being trained for epoch 15 by 2019-01-25 09:13:02.132215!
+8. set (Dataset 16) being trained for epoch 15 by 2019-01-25 09:14:22.376486!
+9. set (Dataset 12) being trained for epoch 15 by 2019-01-25 09:16:12.792506!
+10. set (Dataset 13) being trained for epoch 15 by 2019-01-25 09:17:40.211845!
+11. set (Dataset 10) being trained for epoch 15 by 2019-01-25 09:18:41.553311!
+12. set (Dataset 1) being trained for epoch 15 by 2019-01-25 09:20:08.184233!
+13. set (Dataset 18) being trained for epoch 15 by 2019-01-25 09:21:09.775425!
+14. set (Dataset 2) being trained for epoch 15 by 2019-01-25 09:22:23.675422!
+15. set (Dataset 4) being trained for epoch 15 by 2019-01-25 09:23:28.072654!
+16. set (Dataset 20) being trained for epoch 15 by 2019-01-25 09:24:57.104281!
+17. set (Dataset 17) being trained for epoch 15 by 2019-01-25 09:26:03.341418!
+18. set (Dataset 6) being trained for epoch 15 by 2019-01-25 09:26:52.039266!
+19. set (Dataset 23) being trained for epoch 15 by 2019-01-25 09:27:58.136925!
+20. set (Dataset 11) being trained for epoch 15 by 2019-01-25 09:29:07.420335!
+Epoch 15 completed!
+1. set (Dataset 6) being trained for epoch 16 by 2019-01-25 09:30:20.767676!
+2. set (Dataset 11) being trained for epoch 16 by 2019-01-25 09:31:26.962406!
+3. set (Dataset 10) being trained for epoch 16 by 2019-01-25 09:32:38.656929!
+4. set (Dataset 4) being trained for epoch 16 by 2019-01-25 09:34:07.924941!
+5. set (Dataset 8) being trained for epoch 16 by 2019-01-25 09:35:39.533944!
+6. set (Dataset 23) being trained for epoch 16 by 2019-01-25 09:37:12.305795!
+7. set (Dataset 17) being trained for epoch 16 by 2019-01-25 09:38:19.862143!
+8. set (Dataset 1) being trained for epoch 16 by 2019-01-25 09:39:08.519945!
+9. set (Dataset 7) being trained for epoch 16 by 2019-01-25 09:40:11.380234!
+10. set (Dataset 12) being trained for epoch 16 by 2019-01-25 09:41:42.675581!
+11. set (Dataset 21) being trained for epoch 16 by 2019-01-25 09:43:11.389177!
+12. set (Dataset 22) being trained for epoch 16 by 2019-01-25 09:44:29.320297!
+13. set (Dataset 2) being trained for epoch 16 by 2019-01-25 09:45:48.939320!
+14. set (Dataset 24) being trained for epoch 16 by 2019-01-25 09:46:50.856487!
+15. set (Dataset 15) being trained for epoch 16 by 2019-01-25 09:47:51.841309!
+16. set (Dataset 20) being trained for epoch 16 by 2019-01-25 09:49:10.427560!
+17. set (Dataset 18) being trained for epoch 16 by 2019-01-25 09:50:18.534524!
+18. set (Dataset 19) being trained for epoch 16 by 2019-01-25 09:51:32.224692!
+19. set (Dataset 13) being trained for epoch 16 by 2019-01-25 09:52:33.093581!
+20. set (Dataset 16) being trained for epoch 16 by 2019-01-25 09:53:35.735951!
+Epoch 16 completed!
+1. set (Dataset 19) being trained for epoch 17 by 2019-01-25 09:55:29.018864!
+2. set (Dataset 16) being trained for epoch 17 by 2019-01-25 09:56:33.940654!
+3. set (Dataset 21) being trained for epoch 17 by 2019-01-25 09:58:23.783481!
+4. set (Dataset 15) being trained for epoch 17 by 2019-01-25 09:59:41.601406!
+5. set (Dataset 23) being trained for epoch 17 by 2019-01-25 10:01:00.979321!
+6. set (Dataset 13) being trained for epoch 17 by 2019-01-25 10:02:09.520750!
+7. set (Dataset 18) being trained for epoch 17 by 2019-01-25 10:03:09.568720!
+8. set (Dataset 22) being trained for epoch 17 by 2019-01-25 10:04:24.732220!
+9. set (Dataset 8) being trained for epoch 17 by 2019-01-25 10:05:47.085939!
+10. set (Dataset 7) being trained for epoch 17 by 2019-01-25 10:07:21.455808!
+11. set (Dataset 17) being trained for epoch 17 by 2019-01-25 10:08:49.060130!
+12. set (Dataset 6) being trained for epoch 17 by 2019-01-25 10:09:37.829175!
+13. set (Dataset 24) being trained for epoch 17 by 2019-01-25 10:10:43.273150!
+14. set (Dataset 11) being trained for epoch 17 by 2019-01-25 10:11:44.049388!
+15. set (Dataset 10) being trained for epoch 17 by 2019-01-25 10:12:55.194049!
+16. set (Dataset 20) being trained for epoch 17 by 2019-01-25 10:14:22.064077!
+17. set (Dataset 2) being trained for epoch 17 by 2019-01-25 10:15:29.128969!
+18. set (Dataset 4) being trained for epoch 17 by 2019-01-25 10:16:33.385696!
+19. set (Dataset 12) being trained for epoch 17 by 2019-01-25 10:18:04.434930!
+20. set (Dataset 1) being trained for epoch 17 by 2019-01-25 10:19:32.704104!
+Epoch 17 completed!
+1. set (Dataset 4) being trained for epoch 18 by 2019-01-25 10:20:40.023054!
+2. set (Dataset 1) being trained for epoch 18 by 2019-01-25 10:22:09.306192!
+3. set (Dataset 17) being trained for epoch 18 by 2019-01-25 10:23:09.012457!
+4. set (Dataset 10) being trained for epoch 18 by 2019-01-25 10:23:59.922709!
+5. set (Dataset 13) being trained for epoch 18 by 2019-01-25 10:25:26.681188!
+6. set (Dataset 12) being trained for epoch 18 by 2019-01-25 10:26:28.142768!
+7. set (Dataset 2) being trained for epoch 18 by 2019-01-25 10:27:56.266078!
+8. set (Dataset 6) being trained for epoch 18 by 2019-01-25 10:28:58.513922!
+9. set (Dataset 23) being trained for epoch 18 by 2019-01-25 10:30:04.178852!
+10. set (Dataset 8) being trained for epoch 18 by 2019-01-25 10:31:15.558346!
+11. set (Dataset 18) being trained for epoch 18 by 2019-01-25 10:32:48.647116!
+12. set (Dataset 19) being trained for epoch 18 by 2019-01-25 10:34:02.806950!
+13. set (Dataset 11) being trained for epoch 18 by 2019-01-25 10:35:04.022553!
+14. set (Dataset 16) being trained for epoch 18 by 2019-01-25 10:36:17.175634!
+15. set (Dataset 21) being trained for epoch 18 by 2019-01-25 10:38:06.653294!
+16. set (Dataset 20) being trained for epoch 18 by 2019-01-25 10:39:23.553748!
+17. set (Dataset 24) being trained for epoch 18 by 2019-01-25 10:40:30.141739!
+18. set (Dataset 15) being trained for epoch 18 by 2019-01-25 10:41:31.376286!
+19. set (Dataset 7) being trained for epoch 18 by 2019-01-25 10:42:52.662798!
+20. set (Dataset 22) being trained for epoch 18 by 2019-01-25 10:44:23.417866!
+Epoch 18 completed!
+1. set (Dataset 15) being trained for epoch 19 by 2019-01-25 10:45:49.181746!
+2. set (Dataset 22) being trained for epoch 19 by 2019-01-25 10:47:09.035415!
+3. set (Dataset 18) being trained for epoch 19 by 2019-01-25 10:48:30.215602!
+4. set (Dataset 21) being trained for epoch 19 by 2019-01-25 10:49:44.964286!
+5. set (Dataset 12) being trained for epoch 19 by 2019-01-25 10:51:03.505670!
+6. set (Dataset 7) being trained for epoch 19 by 2019-01-25 10:52:33.998025!
+7. set (Dataset 24) being trained for epoch 19 by 2019-01-25 10:54:02.904844!
+8. set (Dataset 19) being trained for epoch 19 by 2019-01-25 10:55:02.637530!
+9. set (Dataset 13) being trained for epoch 19 by 2019-01-25 10:56:03.458368!
+10. set (Dataset 23) being trained for epoch 19 by 2019-01-25 10:57:02.999732!
+11. set (Dataset 2) being trained for epoch 19 by 2019-01-25 10:58:12.054826!
+12. set (Dataset 4) being trained for epoch 19 by 2019-01-25 10:59:16.471863!
+13. set (Dataset 16) being trained for epoch 19 by 2019-01-25 11:00:49.200519!
+14. set (Dataset 1) being trained for epoch 19 by 2019-01-25 11:02:37.955096!
+15. set (Dataset 17) being trained for epoch 19 by 2019-01-25 11:03:37.161194!
+16. set (Dataset 20) being trained for epoch 19 by 2019-01-25 11:04:26.236149!
+17. set (Dataset 11) being trained for epoch 19 by 2019-01-25 11:05:33.898984!
+18. set (Dataset 10) being trained for epoch 19 by 2019-01-25 11:06:45.101789!
+19. set (Dataset 8) being trained for epoch 19 by 2019-01-25 11:08:14.821798!
+20. set (Dataset 6) being trained for epoch 19 by 2019-01-25 11:09:46.829428!
+Epoch 19 completed!
+1. set (Dataset 10) being trained for epoch 20 by 2019-01-25 11:10:59.405251!
+2. set (Dataset 6) being trained for epoch 20 by 2019-01-25 11:12:26.502949!
+3. set (Dataset 2) being trained for epoch 20 by 2019-01-25 11:13:32.501600!
+4. set (Dataset 17) being trained for epoch 20 by 2019-01-25 11:14:33.611631!
+5. set (Dataset 7) being trained for epoch 20 by 2019-01-25 11:15:24.439087!
+6. set (Dataset 8) being trained for epoch 20 by 2019-01-25 11:16:56.446547!
+7. set (Dataset 11) being trained for epoch 20 by 2019-01-25 11:18:29.298772!
+8. set (Dataset 4) being trained for epoch 20 by 2019-01-25 11:19:40.805248!
+9. set (Dataset 12) being trained for epoch 20 by 2019-01-25 11:21:11.976563!
+10. set (Dataset 13) being trained for epoch 20 by 2019-01-25 11:22:39.533421!
+11. set (Dataset 24) being trained for epoch 20 by 2019-01-25 11:23:38.421937!
+12. set (Dataset 15) being trained for epoch 20 by 2019-01-25 11:24:39.646087!
+13. set (Dataset 1) being trained for epoch 20 by 2019-01-25 11:25:58.247257!
+14. set (Dataset 22) being trained for epoch 20 by 2019-01-25 11:27:00.065087!
+15. set (Dataset 18) being trained for epoch 20 by 2019-01-25 11:28:20.476404!
+16. set (Dataset 20) being trained for epoch 20 by 2019-01-25 11:29:35.000706!
+17. set (Dataset 16) being trained for epoch 20 by 2019-01-25 11:30:46.010262!
+18. set (Dataset 21) being trained for epoch 20 by 2019-01-25 11:32:35.922237!
+19. set (Dataset 23) being trained for epoch 20 by 2019-01-25 11:33:52.516577!
+20. set (Dataset 19) being trained for epoch 20 by 2019-01-25 11:35:00.974617!
+Epoch 20 completed!
+1. set (Dataset 21) being trained for epoch 21 by 2019-01-25 11:36:07.594103!
+2. set (Dataset 19) being trained for epoch 21 by 2019-01-25 11:37:23.468603!
+3. set (Dataset 24) being trained for epoch 21 by 2019-01-25 11:38:24.282319!
+4. set (Dataset 18) being trained for epoch 21 by 2019-01-25 11:39:24.941316!
+5. set (Dataset 8) being trained for epoch 21 by 2019-01-25 11:40:41.293821!
+6. set (Dataset 23) being trained for epoch 21 by 2019-01-25 11:42:13.927153!
+7. set (Dataset 16) being trained for epoch 21 by 2019-01-25 11:43:26.305024!
+8. set (Dataset 15) being trained for epoch 21 by 2019-01-25 11:45:16.758063!
+9. set (Dataset 7) being trained for epoch 21 by 2019-01-25 11:46:37.922403!
+10. set (Dataset 12) being trained for epoch 21 by 2019-01-25 11:48:09.625040!
+11. set (Dataset 11) being trained for epoch 21 by 2019-01-25 11:49:38.244215!
+12. set (Dataset 10) being trained for epoch 21 by 2019-01-25 11:50:49.456274!
+13. set (Dataset 22) being trained for epoch 21 by 2019-01-25 11:52:18.128697!
+14. set (Dataset 6) being trained for epoch 21 by 2019-01-25 11:53:38.448087!
+15. set (Dataset 2) being trained for epoch 21 by 2019-01-25 11:54:43.909716!
+16. set (Dataset 20) being trained for epoch 21 by 2019-01-25 11:55:46.349336!
+17. set (Dataset 1) being trained for epoch 21 by 2019-01-25 11:56:53.724661!
+18. set (Dataset 17) being trained for epoch 21 by 2019-01-25 11:57:53.228370!
+19. set (Dataset 13) being trained for epoch 21 by 2019-01-25 11:58:41.861768!
+20. set (Dataset 4) being trained for epoch 21 by 2019-01-25 11:59:43.175702!
+Epoch 21 completed!
+1. set (Dataset 17) being trained for epoch 22 by 2019-01-25 12:01:15.450446!
+2. set (Dataset 4) being trained for epoch 22 by 2019-01-25 12:02:06.397077!
+3. set (Dataset 11) being trained for epoch 22 by 2019-01-25 12:03:36.279202!
+4. set (Dataset 2) being trained for epoch 22 by 2019-01-25 12:04:45.542184!
+5. set (Dataset 23) being trained for epoch 22 by 2019-01-25 12:05:48.086166!
+6. set (Dataset 13) being trained for epoch 22 by 2019-01-25 12:06:56.901427!
+7. set (Dataset 1) being trained for epoch 22 by 2019-01-25 12:07:56.088144!
+8. set (Dataset 10) being trained for epoch 22 by 2019-01-25 12:08:58.980833!
+9. set (Dataset 8) being trained for epoch 22 by 2019-01-25 12:10:28.479581!
+10. set (Dataset 7) being trained for epoch 22 by 2019-01-25 12:12:03.174133!
+11. set (Dataset 16) being trained for epoch 22 by 2019-01-25 12:13:36.423298!
+12. set (Dataset 21) being trained for epoch 22 by 2019-01-25 12:15:24.866307!
+13. set (Dataset 6) being trained for epoch 22 by 2019-01-25 12:16:41.524042!
+14. set (Dataset 19) being trained for epoch 22 by 2019-01-25 12:17:47.083791!
+15. set (Dataset 24) being trained for epoch 22 by 2019-01-25 12:18:47.808978!
+16. set (Dataset 20) being trained for epoch 22 by 2019-01-25 12:19:48.117756!
+17. set (Dataset 22) being trained for epoch 22 by 2019-01-25 12:20:56.716091!
+18. set (Dataset 18) being trained for epoch 22 by 2019-01-25 12:22:17.911328!
+19. set (Dataset 12) being trained for epoch 22 by 2019-01-25 12:23:34.221899!
+20. set (Dataset 15) being trained for epoch 22 by 2019-01-25 12:25:02.995231!
+Epoch 22 completed!
+1. set (Dataset 18) being trained for epoch 23 by 2019-01-25 12:26:27.129838!
+2. set (Dataset 15) being trained for epoch 23 by 2019-01-25 12:27:42.365553!
+3. set (Dataset 16) being trained for epoch 23 by 2019-01-25 12:29:05.039666!
+4. set (Dataset 24) being trained for epoch 23 by 2019-01-25 12:30:53.425563!
+5. set (Dataset 13) being trained for epoch 23 by 2019-01-25 12:31:53.492956!
+6. set (Dataset 12) being trained for epoch 23 by 2019-01-25 12:32:54.903800!
+7. set (Dataset 22) being trained for epoch 23 by 2019-01-25 12:34:24.058466!
+8. set (Dataset 21) being trained for epoch 23 by 2019-01-25 12:35:44.999950!
+9. set (Dataset 23) being trained for epoch 23 by 2019-01-25 12:37:01.845495!
+10. set (Dataset 8) being trained for epoch 23 by 2019-01-25 12:38:13.022948!
+11. set (Dataset 1) being trained for epoch 23 by 2019-01-25 12:39:45.756769!
+12. set (Dataset 17) being trained for epoch 23 by 2019-01-25 12:40:45.104354!
+13. set (Dataset 19) being trained for epoch 23 by 2019-01-25 12:41:33.832475!
+14. set (Dataset 4) being trained for epoch 23 by 2019-01-25 12:42:37.360181!
+15. set (Dataset 11) being trained for epoch 23 by 2019-01-25 12:44:07.392201!
+16. set (Dataset 20) being trained for epoch 23 by 2019-01-25 12:45:16.567948!
+17. set (Dataset 6) being trained for epoch 23 by 2019-01-25 12:46:24.106571!
+18. set (Dataset 2) being trained for epoch 23 by 2019-01-25 12:47:29.915652!
+19. set (Dataset 7) being trained for epoch 23 by 2019-01-25 12:48:34.558363!
+20. set (Dataset 10) being trained for epoch 23 by 2019-01-25 12:50:06.012437!
+Epoch 23 completed!
+1. set (Dataset 2) being trained for epoch 24 by 2019-01-25 12:51:37.972543!
+2. set (Dataset 10) being trained for epoch 24 by 2019-01-25 12:52:42.040448!
+3. set (Dataset 1) being trained for epoch 24 by 2019-01-25 12:54:09.436560!
+4. set (Dataset 11) being trained for epoch 24 by 2019-01-25 12:55:10.678645!
+5. set (Dataset 12) being trained for epoch 24 by 2019-01-25 12:56:21.745357!
+6. set (Dataset 7) being trained for epoch 24 by 2019-01-25 12:57:52.004758!
+7. set (Dataset 6) being trained for epoch 24 by 2019-01-25 12:59:21.590099!
+8. set (Dataset 17) being trained for epoch 24 by 2019-01-25 13:00:26.094138!
+9. set (Dataset 13) being trained for epoch 24 by 2019-01-25 13:01:14.770815!
+10. set (Dataset 23) being trained for epoch 24 by 2019-01-25 13:02:14.656623!
+11. set (Dataset 22) being trained for epoch 24 by 2019-01-25 13:03:25.291465!
+12. set (Dataset 18) being trained for epoch 24 by 2019-01-25 13:04:46.000228!
+13. set (Dataset 4) being trained for epoch 24 by 2019-01-25 13:06:02.734660!
+14. set (Dataset 15) being trained for epoch 24 by 2019-01-25 13:07:33.189041!
+15. set (Dataset 16) being trained for epoch 24 by 2019-01-25 13:08:55.747201!
+16. set (Dataset 20) being trained for epoch 24 by 2019-01-25 13:10:45.216538!
+17. set (Dataset 19) being trained for epoch 24 by 2019-01-25 13:11:52.800560!
+18. set (Dataset 24) being trained for epoch 24 by 2019-01-25 13:12:53.565325!
+19. set (Dataset 8) being trained for epoch 24 by 2019-01-25 13:13:56.194104!
+20. set (Dataset 21) being trained for epoch 24 by 2019-01-25 13:15:29.378864!
+Epoch 24 completed!
+1. set (Dataset 24) being trained for epoch 25 by 2019-01-25 13:16:50.144733!
+2. set (Dataset 21) being trained for epoch 25 by 2019-01-25 13:17:50.865370!
+3. set (Dataset 22) being trained for epoch 25 by 2019-01-25 13:19:08.610168!
+4. set (Dataset 16) being trained for epoch 25 by 2019-01-25 13:20:32.464948!
+5. set (Dataset 7) being trained for epoch 25 by 2019-01-25 13:22:23.948298!
+6. set (Dataset 8) being trained for epoch 25 by 2019-01-25 13:23:56.154126!
+7. set (Dataset 19) being trained for epoch 25 by 2019-01-25 13:25:28.562698!
+8. set (Dataset 18) being trained for epoch 25 by 2019-01-25 13:26:30.618724!
+9. set (Dataset 12) being trained for epoch 25 by 2019-01-25 13:27:46.998472!
+10. set (Dataset 13) being trained for epoch 25 by 2019-01-25 13:29:14.736980!
+11. set (Dataset 6) being trained for epoch 25 by 2019-01-25 13:30:14.210475!
+12. set (Dataset 2) being trained for epoch 25 by 2019-01-25 13:31:20.130146!
+13. set (Dataset 15) being trained for epoch 25 by 2019-01-25 13:32:23.897677!
+14. set (Dataset 10) being trained for epoch 25 by 2019-01-25 13:33:44.809132!
+15. set (Dataset 1) being trained for epoch 25 by 2019-01-25 13:35:11.486354!
+16. set (Dataset 20) being trained for epoch 25 by 2019-01-25 13:36:12.603405!
+17. set (Dataset 4) being trained for epoch 25 by 2019-01-25 13:37:22.305777!
+18. set (Dataset 11) being trained for epoch 25 by 2019-01-25 13:38:52.041703!
+19. set (Dataset 23) being trained for epoch 25 by 2019-01-25 13:40:01.375886!
+20. set (Dataset 17) being trained for epoch 25 by 2019-01-25 13:41:09.091069!
+Epoch 25 completed!
+1. set (Dataset 11) being trained for epoch 26 by 2019-01-25 13:42:03.118418!
+2. set (Dataset 17) being trained for epoch 26 by 2019-01-25 13:43:11.243074!
+3. set (Dataset 6) being trained for epoch 26 by 2019-01-25 13:44:00.240415!
+4. set (Dataset 1) being trained for epoch 26 by 2019-01-25 13:45:05.674166!
+5. set (Dataset 8) being trained for epoch 26 by 2019-01-25 13:46:08.987598!
+6. set (Dataset 23) being trained for epoch 26 by 2019-01-25 13:47:41.809563!
+7. set (Dataset 4) being trained for epoch 26 by 2019-01-25 13:48:53.032779!
+8. set (Dataset 2) being trained for epoch 26 by 2019-01-25 13:50:22.239929!
+9. set (Dataset 7) being trained for epoch 26 by 2019-01-25 13:51:26.946470!
+10. set (Dataset 12) being trained for epoch 26 by 2019-01-25 13:52:58.563882!
+11. set (Dataset 19) being trained for epoch 26 by 2019-01-25 13:54:26.311494!
+12. set (Dataset 24) being trained for epoch 26 by 2019-01-25 13:55:26.603282!
+13. set (Dataset 10) being trained for epoch 26 by 2019-01-25 13:56:28.823980!
+14. set (Dataset 21) being trained for epoch 26 by 2019-01-25 13:57:56.824156!
+15. set (Dataset 22) being trained for epoch 26 by 2019-01-25 13:59:13.529993!
+16. set (Dataset 20) being trained for epoch 26 by 2019-01-25 14:00:33.707813!
+17. set (Dataset 15) being trained for epoch 26 by 2019-01-25 14:01:42.673514!
+18. set (Dataset 16) being trained for epoch 26 by 2019-01-25 14:03:05.679631!
+19. set (Dataset 13) being trained for epoch 26 by 2019-01-25 14:04:53.200086!
+20. set (Dataset 18) being trained for epoch 26 by 2019-01-25 14:05:53.102697!
+Epoch 26 completed!
+1. set (Dataset 16) being trained for epoch 27 by 2019-01-25 14:07:15.757831!
+2. set (Dataset 18) being trained for epoch 27 by 2019-01-25 14:09:05.904013!
+3. set (Dataset 19) being trained for epoch 27 by 2019-01-25 14:10:19.933587!
+4. set (Dataset 22) being trained for epoch 27 by 2019-01-25 14:11:22.642975!
+5. set (Dataset 23) being trained for epoch 27 by 2019-01-25 14:12:43.172308!
+6. set (Dataset 13) being trained for epoch 27 by 2019-01-25 14:13:51.931701!
+7. set (Dataset 15) being trained for epoch 27 by 2019-01-25 14:14:52.309623!
+8. set (Dataset 24) being trained for epoch 27 by 2019-01-25 14:16:10.736583!
+9. set (Dataset 8) being trained for epoch 27 by 2019-01-25 14:17:13.324854!
+10. set (Dataset 7) being trained for epoch 27 by 2019-01-25 14:18:48.127626!
+11. set (Dataset 4) being trained for epoch 27 by 2019-01-25 14:20:19.819446!
+12. set (Dataset 11) being trained for epoch 27 by 2019-01-25 14:21:49.793027!
+13. set (Dataset 21) being trained for epoch 27 by 2019-01-25 14:23:00.185750!
+14. set (Dataset 17) being trained for epoch 27 by 2019-01-25 14:24:15.451861!
+15. set (Dataset 6) being trained for epoch 27 by 2019-01-25 14:25:04.147020!
+16. set (Dataset 20) being trained for epoch 27 by 2019-01-25 14:26:10.310363!
+17. set (Dataset 10) being trained for epoch 27 by 2019-01-25 14:27:19.924238!
+18. set (Dataset 1) being trained for epoch 27 by 2019-01-25 14:28:46.979922!
+19. set (Dataset 12) being trained for epoch 27 by 2019-01-25 14:29:49.712576!
+20. set (Dataset 2) being trained for epoch 27 by 2019-01-25 14:31:17.527619!
+Epoch 27 completed!
+1. set (Dataset 1) being trained for epoch 28 by 2019-01-25 14:32:24.493825!
+2. set (Dataset 2) being trained for epoch 28 by 2019-01-25 14:33:24.905184!
+3. set (Dataset 4) being trained for epoch 28 by 2019-01-25 14:34:29.588086!
+4. set (Dataset 6) being trained for epoch 28 by 2019-01-25 14:35:58.507228!
+5. set (Dataset 13) being trained for epoch 28 by 2019-01-25 14:37:03.970651!
+6. set (Dataset 12) being trained for epoch 28 by 2019-01-25 14:38:05.596120!
+7. set (Dataset 10) being trained for epoch 28 by 2019-01-25 14:39:35.379681!
+8. set (Dataset 11) being trained for epoch 28 by 2019-01-25 14:41:03.113070!
+9. set (Dataset 23) being trained for epoch 28 by 2019-01-25 14:42:12.840972!
+10. set (Dataset 8) being trained for epoch 28 by 2019-01-25 14:43:24.229647!
+11. set (Dataset 15) being trained for epoch 28 by 2019-01-25 14:44:56.596499!
+12. set (Dataset 16) being trained for epoch 28 by 2019-01-25 14:46:19.203272!
+13. set (Dataset 17) being trained for epoch 28 by 2019-01-25 14:48:06.761387!
+14. set (Dataset 18) being trained for epoch 28 by 2019-01-25 14:48:56.558966!
+15. set (Dataset 19) being trained for epoch 28 by 2019-01-25 14:50:10.730904!
+16. set (Dataset 20) being trained for epoch 28 by 2019-01-25 14:51:12.336956!
+17. set (Dataset 21) being trained for epoch 28 by 2019-01-25 14:52:20.846603!
+18. set (Dataset 22) being trained for epoch 28 by 2019-01-25 14:53:38.388957!
+19. set (Dataset 7) being trained for epoch 28 by 2019-01-25 14:55:00.849419!
+20. set (Dataset 24) being trained for epoch 28 by 2019-01-25 14:56:29.909416!
+Epoch 28 completed!
+1. set (Dataset 22) being trained for epoch 29 by 2019-01-25 14:57:35.965086!
+2. set (Dataset 24) being trained for epoch 29 by 2019-01-25 14:58:55.353063!
+3. set (Dataset 15) being trained for epoch 29 by 2019-01-25 14:59:56.781841!
+4. set (Dataset 19) being trained for epoch 29 by 2019-01-25 15:01:15.400149!
+5. set (Dataset 12) being trained for epoch 29 by 2019-01-25 15:02:19.113440!
+6. set (Dataset 7) being trained for epoch 29 by 2019-01-25 15:03:49.196831!
+7. set (Dataset 21) being trained for epoch 29 by 2019-01-25 15:05:19.410290!
+8. set (Dataset 16) being trained for epoch 29 by 2019-01-25 15:06:39.579456!
+9. set (Dataset 13) being trained for epoch 29 by 2019-01-25 15:08:28.337366!
+10. set (Dataset 23) being trained for epoch 29 by 2019-01-25 15:09:27.921479!
+11. set (Dataset 10) being trained for epoch 29 by 2019-01-25 15:10:38.691178!
+12. set (Dataset 1) being trained for epoch 29 by 2019-01-25 15:12:05.817119!
+13. set (Dataset 18) being trained for epoch 29 by 2019-01-25 15:13:07.417511!
+14. set (Dataset 2) being trained for epoch 29 by 2019-01-25 15:14:21.618955!
+15. set (Dataset 4) being trained for epoch 29 by 2019-01-25 15:15:25.844900!
+16. set (Dataset 20) being trained for epoch 29 by 2019-01-25 15:16:55.402707!
+17. set (Dataset 17) being trained for epoch 29 by 2019-01-25 15:18:01.638888!
+18. set (Dataset 6) being trained for epoch 29 by 2019-01-25 15:18:50.553145!
+19. set (Dataset 8) being trained for epoch 29 by 2019-01-25 15:19:59.147967!
+20. set (Dataset 11) being trained for epoch 29 by 2019-01-25 15:21:32.010380!
+Epoch 29 completed!
+1. set (Dataset 6) being trained for epoch 30 by 2019-01-25 15:22:45.974515!
+2. set (Dataset 11) being trained for epoch 30 by 2019-01-25 15:23:52.382841!
+3. set (Dataset 10) being trained for epoch 30 by 2019-01-25 15:25:03.535759!
+4. set (Dataset 4) being trained for epoch 30 by 2019-01-25 15:26:33.182375!
+5. set (Dataset 7) being trained for epoch 30 by 2019-01-25 15:28:05.047792!
+6. set (Dataset 8) being trained for epoch 30 by 2019-01-25 15:29:37.350748!
+7. set (Dataset 17) being trained for epoch 30 by 2019-01-25 15:31:08.710131!
+8. set (Dataset 1) being trained for epoch 30 by 2019-01-25 15:31:57.522515!
+9. set (Dataset 12) being trained for epoch 30 by 2019-01-25 15:33:00.535678!
+10. set (Dataset 13) being trained for epoch 30 by 2019-01-25 15:34:28.120184!
+11. set (Dataset 21) being trained for epoch 30 by 2019-01-25 15:35:27.922506!
+12. set (Dataset 22) being trained for epoch 30 by 2019-01-25 15:36:45.562926!
+13. set (Dataset 2) being trained for epoch 30 by 2019-01-25 15:38:05.336981!
+14. set (Dataset 24) being trained for epoch 30 by 2019-01-25 15:39:07.192682!
+15. set (Dataset 15) being trained for epoch 30 by 2019-01-25 15:40:08.189776!
+16. set (Dataset 20) being trained for epoch 30 by 2019-01-25 15:41:27.376366!
+17. set (Dataset 18) being trained for epoch 30 by 2019-01-25 15:42:35.443098!
+18. set (Dataset 19) being trained for epoch 30 by 2019-01-25 15:43:49.431142!
+19. set (Dataset 23) being trained for epoch 30 by 2019-01-25 15:44:51.091655!
+20. set (Dataset 16) being trained for epoch 30 by 2019-01-25 15:46:03.451069!
+Epoch 30 completed!
+Exp2019-01-25_03-13-09.h5 has been saved.
+The subjects are trained: [(6, 'F06'), (11, 'M05'), (10, 'M04'), (4, 'F04'), (7, 'M01'), (8, 'M02'), (17, 'M10'), (1, 'F01'), (12, 'M06'), (13, 'M07'), (21, 'F02'), (22, 'M01'), (2, 'F02'), (24, 'M14'), (15, 'F03'), (20, 'M12'), (18, 'F05'), (19, 'M11'), (23, 'M13'), (16, 'M09')]
+Evaluating model VGG16_inc_top_seqLen16_lstm10_output3_inEpochs1_outEpochs30_AdamOpt_lr-0.000100_2019-01-25_03-13-09
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+Exp2019-01-25_03-13-09.h5 has been saved.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdVGG16 (TimeDistributed)    (None, 16, 4096)          134260544 
+_________________________________________________________________
+time_distributed_1 (TimeDist (None, 16, 4096)          0         
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 10)                164280    
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 33        
+=================================================================
+Total params: 134,424,857
+Trainable params: 164,313
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'CNN_LSTM_Configuration.py'
+RECORD = True # False #
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 16 # TimeseriesGenerator Handles overlapping
+learning_rate = 0.0001
+in_epochs = 1
+out_epochs = 30
+train_batch_size = 1
+test_batch_size = 1
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [1] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 10
+lstm_dropout = 0.0
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+######### CONF_ends_Here ###########
+The subjects are trained: [(1, 'F01'), (2, 'F02'), (4, 'F04'), (6, 'F06'), (7, 'M01'), (8, 'M02'), (10, 'M04'), (11, 'M05'), (12, 'M06'), (13, 'M07'), (15, 'F03'), (16, 'M09'), (17, 'M10'), (18, 'F05'), (19, 'M11'), (20, 'M12'), (21, 'F02'), (22, 'M01'), (23, 'M13'), (24, 'M14')]
+Evaluating model Exp2019-01-25_03-13-09_and_2019-01-25_18-17-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+Exp2019-01-25_03-13-09.h5 has been saved.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdVGG16 (TimeDistributed)    (None, 16, 4096)          134260544 
+_________________________________________________________________
+time_distributed_1 (TimeDist (None, 16, 4096)          0         
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 10)                164280    
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 33        
+=================================================================
+Total params: 134,424,857
+Trainable params: 164,313
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'CNN_LSTM_Configuration.py'
+RECORD = True # False #
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 16 # TimeseriesGenerator Handles overlapping
+learning_rate = 0.0001
+in_epochs = 1
+out_epochs = 30
+train_batch_size = 1
+test_batch_size = 1
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [1] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 10
+lstm_dropout = 0.0
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+######### CONF_ends_Here ###########
+The subjects are trained: [(1, 'F01'), (2, 'F02'), (4, 'F04'), (6, 'F06'), (7, 'M01'), (8, 'M02'), (10, 'M04'), (11, 'M05'), (12, 'M06'), (13, 'M07'), (15, 'F03'), (16, 'M09'), (17, 'M10'), (18, 'F05'), (19, 'M11'), (20, 'M12'), (21, 'F02'), (22, 'M01'), (23, 'M13'), (24, 'M14')]
+Evaluating model Exp2019-01-25_03-13-09_and_2019-01-25_18-19-49
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 8.64 Degree
+	The absolute mean error on Yaw angle estimation: 27.16 Degree
+	The absolute mean error on Roll angle estimation: 5.80 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 5.74 Degree
+	The absolute mean error on Yaw angle estimation: 19.72 Degree
+	The absolute mean error on Roll angle estimation: 5.28 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 27.54 Degree
+	The absolute mean error on Yaw angle estimation: 36.32 Degree
+	The absolute mean error on Roll angle estimation: 9.94 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 18.87 Degree
+	The absolute mean error on Yaw angle estimation: 42.55 Degree
+	The absolute mean error on Roll angle estimation: 34.30 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 15.20 Degree
+	The absolute mean error on Yaw angle estimations: 31.44 Degree
+	The absolute mean error on Roll angle estimations: 13.83 Degree
+subject3_Exp2019-01-25_03-13-09_and_2019-01-25_18-19-49.png has been saved by 2019-01-25 18:25:01.643703.
+subject5_Exp2019-01-25_03-13-09_and_2019-01-25_18-19-49.png has been saved by 2019-01-25 18:25:01.840532.
+subject9_Exp2019-01-25_03-13-09_and_2019-01-25_18-19-49.png has been saved by 2019-01-25 18:25:02.040890.
+subject14_Exp2019-01-25_03-13-09_and_2019-01-25_18-19-49.png has been saved by 2019-01-25 18:25:02.257325.
+Model Exp2019-01-25_03-13-09_and_2019-01-25_18-19-49 has been evaluated successfully.

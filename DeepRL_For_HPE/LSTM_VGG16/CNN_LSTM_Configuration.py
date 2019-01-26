@@ -18,27 +18,27 @@ num_outputs = 3
 timesteps = 16 # TimeseriesGenerator Handles overlapping
 learning_rate = 0.0001
 in_epochs = 1
-out_epochs = 1
+out_epochs = 30
 train_batch_size = 1
 test_batch_size = 1
 
-subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14]  # 
-testSubjects = [9] # [9, 18, 21, 24] # 
-trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [1] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 32
-lstm_dropout = 0.25
+lstm_nodes = 10
+lstm_dropout = 0.0
 lstm_recurrent_dropout = 0.25
-include_vgg_top = False
+include_vgg_top = True 
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
 ######### CONF_ends_Here ###########
 
 def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
                   lstm_recurrent_dropout = lstm_recurrent_dropout, num_outputs = num_outputs, 
-                  lr = learning_rate, include_vgg_top = include_vgg_top, vgg16 = False):
+                  lr = learning_rate, include_vgg_top = include_vgg_top, vgg16 = True):
     if vgg16:
         inp = (224, 224, 3)
         cnn_model = VGG16(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
@@ -65,8 +65,8 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc104'))   # 
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc10'))#
-    """
     rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025'))
+    """
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout))
     modelID = modelID + '_seqLen%d' % timesteps

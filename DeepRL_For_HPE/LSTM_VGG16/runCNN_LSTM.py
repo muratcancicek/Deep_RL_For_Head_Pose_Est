@@ -49,6 +49,7 @@ def trainCNN_LSTM(full_model, modelID, out_epochs, subjectList, timesteps, outpu
 def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles = angles, batch_size = test_batch_size, stateful = False, record = False):
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
+    full_model.reset_states()
     predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
     #kerasEval = full_model.evaluate_generator(test_gen)
     predictions = predictions * label_rescaling_factor
@@ -60,8 +61,9 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_o
             matrix = numpy.concatenate((test_labels[start_index:, i:i+1], predictions[:, i:i+1]), axis=1)
             differences = (test_labels[start_index:, i:i+1] - predictions[:, i:i+1])
         else:
-            matrix = numpy.concatenate((test_labels[timesteps:, i:i+1], predictions[:, i:i+1]), axis=1)
-            differences = (test_labels[timesteps:, i:i+1] - predictions[:, i:i+1])
+            print(test_labels[:, i:i+1].shape, predictions[:, i:i+1].shape)
+            matrix = numpy.concatenate((test_labels[:, i:i+1], predictions[:, i:i+1]), axis=1)
+            differences = (test_labels[:, i:i+1] - predictions[:, i:i+1])
         absolute_mean_error = np.abs(differences).mean()
         printLog("\tThe absolute mean error on %s angle estimation: %.2f Degree" % (angles[i], absolute_mean_error), record = record)
         outputs.append((matrix, absolute_mean_error))
