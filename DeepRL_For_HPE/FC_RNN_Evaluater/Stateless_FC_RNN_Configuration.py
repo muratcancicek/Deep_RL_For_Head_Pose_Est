@@ -1,13 +1,11 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 
-#Dirty importing that allows the main author to switch environments easily
-if '.' in __name__:
-    from Core.NeighborFolderimporter import *
-    from LSTM_VGG16.LSTM_VGG16Helper import *
-else:
-    from NeighborFolderimporter import *
-    from LSTM_VGG16Helper import *
-    
+from keras.optimizers import Adam
+from keras.models import Sequential
+from keras.applications.vgg16 import VGG16
+from keras.applications.nasnet import NASNetLarge
+from keras.layers import TimeDistributed, LSTM, Dense, Dropout
+
 ######## CONF_Begins_Here ##########
 confFile = 'CNN_LSTM_Configuration.py'
 RECORD = True # False #

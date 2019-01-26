@@ -17,7 +17,7 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DatasetHandler", "DatasetHa
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ClassificationWithCNN", "ClassificationWithCNN\ClassificationWithCNN.pyproj", "{7A0BA1F7-AF4B-477F-86AC-CC0E0E3507DE}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "LSTM_VGG16", "LSTM_VGG16\LSTM_VGG16.pyproj", "{D6C55E4E-27D2-4A3A-AA2D-CDC7EB42AE0C}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FC_RNN_Evaluater", "FC_RNN_Evaluater\FC_RNN_Evaluater.pyproj", "{D6C55E4E-27D2-4A3A-AA2D-CDC7EB42AE0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

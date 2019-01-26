@@ -2,14 +2,14 @@
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
-    from LSTM_VGG16.EvaluationRecorder import *
+    from FC_RNN_Evaluater.EvaluationRecorder import CURRENT_MODEL
 else:
     from NeighborFolderimporter import *
-    from EvaluationRecorder import *
+    from EvaluationRecorder import CURRENT_MODEL
 
 importNeighborFolders()
+from DatasetHandler.BiwiBrowser import BIWI_Subject_IDs
 import matplotlib.pyplot as plt
-from DatasetHandler.BiwiBrowser import *
 
 def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs, angles):
     if num_outputs == 1: angles = ['Yaw']

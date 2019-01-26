@@ -3,33 +3,14 @@ import os
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
-    from LSTM_VGG16.EvaluationRecorder import *
+    from FC_RNN_Evaluater.EvaluationRecorder import *
 else:
     from NeighborFolderimporter import *
     from EvaluationRecorder import *
 
-from DatasetHandler.BiwiBrowser import *
+from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs
 
-import keras
-import random 
-import numpy as np
-from keras import Model 
-from keras.layers import *
-from keras import optimizers
-import matplotlib.pyplot as plt
-from keras.optimizers import SGD
-from keras.models import Sequential
-from keras.models import load_model
-from keras.constraints import maxnorm
-from keras.applications.nasnet import NASNetLarge
-from keras.applications.vgg16 import VGG16
-from sklearn.preprocessing import MinMaxScaler
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
-from keras.layers.convolutional import MaxPooling2D
-from keras.layers.convolutional import Convolution2D
-from keras.applications.vgg16 import preprocess_input
-from keras.applications.vgg16 import decode_predictions
+import numpy
 from keras.preprocessing.sequence import TimeseriesGenerator
 
 ######### Training Methods ###########
@@ -50,36 +31,28 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
         c += 1
     return model
 
-def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, record = False):
+def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, record = False, preprocess_input = None):
     for e in range(epochs):
         random.Random(4).shuffle(trainingSubjects)
-        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects) #, scaling = False, timesteps = timesteps, overlapping = overlapping
+        trainingBiwi = readBIWIDataset(subjectList = trainingSubjects, preprocess_input = preprocess_input) #, scaling = False, timesteps = timesteps, overlapping = overlapping
         model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs, stateful = stateful, record = record)
         printLog('Epoch %d completed!' % (e+1), record = record)
     return model
 
-def interruptSmoothly(full_model, modelID, record = True):
-    print()
-    printLog('Model %s has been interrupted.' % modelID, record = record)
-    saveKerasModel(full_model, modelID, record = record)
-    completeRecording(modelID, record = record, interrupt = True)
-    printLog('Terminating...', record = record)
-    exit()
-    
 def trainCNN_LSTM(full_model, modelID, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
-                  batch_size, in_epochs, stateful = False, record = False):
+                  batch_size, in_epochs, stateful = False, record = False, preprocess_input = None):
     try:
         full_model = trainImageModelForEpochs(full_model, out_epochs, subjectList, timesteps, False, 
                                           output_begin, num_outputs, batch_size = batch_size, 
-                                          in_epochs = in_epochs, stateful = stateful, record = record)
+                                          in_epochs = in_epochs, stateful = stateful, record = record, preprocess_input = preprocess_input)
     except KeyboardInterrupt:
         interruptSmoothly(full_model, modelID, record = record)
     return full_model
 
 ######### Evaluation Methods ###########
-def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, stateful = False, record = False):
+def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, stateful = False, record = False, preprocess_input = None):
     test_generators, test_labelSets = [], [] 
-    testBiwi = readBIWIDataset(subjectList = testSubjects) #, scaling = False, timesteps = timesteps, overlapping = overlapping
+    testBiwi = readBIWIDataset(subjectList = testSubjects, preprocess_input = preprocess_input) #, scaling = False, timesteps = timesteps, overlapping = overlapping
     for inputMatrix, labels in testBiwi:
         labels = labels[:, output_begin:output_begin+num_outputs]
         if timesteps == None:
@@ -131,10 +104,10 @@ def evaluateAverage(results, angles, num_outputs, record = False):
     return means
 
 def evaluateCNN_LSTM(full_model, label_rescaling_factor, testSubjects, timesteps, output_begin, 
-                     num_outputs, batch_size, angles, stateful = False, record = False):
+                     num_outputs, batch_size, angles, stateful = False, record = False, preprocess_input = None):
     if num_outputs == 1: angles = ['Yaw']
-    test_generators, test_labelSets = getTestBiwiForImageModel(testSubjects, timesteps, False, 
-                                            output_begin, num_outputs, batch_size = batch_size, stateful = stateful, record = record)
+    test_generators, test_labelSets = getTestBiwiForImageModel(testSubjects, timesteps, False, output_begin, num_outputs, 
+                                            batch_size = batch_size, stateful = stateful, record = record, preprocess_input = preprocess_input)
     results = []
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
         full_model, outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)

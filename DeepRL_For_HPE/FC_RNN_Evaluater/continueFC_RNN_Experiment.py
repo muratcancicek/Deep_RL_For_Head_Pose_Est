@@ -3,22 +3,22 @@ STATEFUL = True
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
-    from LSTM_VGG16.LSTM_VGG16Helper import *
-    from LSTM_VGG16.EvaluationRecorder import *
-    from LSTM_VGG16.runCNN_LSTM import *
+    from FC_RNN_Evaluater.FC_RNN_Evaluater import *
+    from FC_RNN_Evaluater.EvaluationRecorder import *
+    from FC_RNN_Evaluater.runFC_RNN__Experiment import *
     if STATEFUL:
-        from LSTM_VGG16.Stateful_CNN_LSTM_Configuration import *
+        from FC_RNN_Evaluater.Stateful_CNN_LSTM_Configuration import *
     else:
-        from LSTM_VGG16.CNN_LSTM_Configuration import *
+        from FC_RNN_Evaluater.CNN_LSTM_Configuration import *
 else:
     from NeighborFolderimporter import *
-    from LSTM_VGG16Helper import *
+    from FC_RNN_Evaluater import *
     from EvaluationRecorder import *
-    from runCNN_LSTM import *
+    from runFC_RNN_Experiment import *
     if STATEFUL:
-        from Stateful_CNN_LSTM_Configuration import *
+        from Stateful_FC_RNN_Configuration import *
     else:
-        from CNN_LSTM_Configuration import *
+        from Stateful_FC_RNN_Configuration import *
 
 importNeighborFolders()
 from DatasetHandler.BiwiBrowser import *
