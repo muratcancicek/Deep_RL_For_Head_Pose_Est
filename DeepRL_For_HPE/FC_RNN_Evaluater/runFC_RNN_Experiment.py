@@ -9,6 +9,7 @@ from EvaluationRecorder import *
 from EstimationPlotter import *
 from FC_RNN_Evaluater import *
 
+import io
 def get_model_summary(model):
     stream = io.StringIO()
     model.summary(print_fn=lambda x: stream.write(x + '\n'))
@@ -32,8 +33,7 @@ def runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs, r
     return full_model, means, results
 
 def runCNN_LSTM(record = False):
-    vgg_model, full_model, modelID, preprocess_input = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, 
-                      lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
+    vgg_model, full_model, modelID, preprocess_input = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
                       num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
     modelStr = modelID
     modelID = 'Exp' + modelStr[-19:]
@@ -52,9 +52,9 @@ def runCNN_LSTM(record = False):
         modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
         full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs % eva_epoch, record = False, preprocess_input = preprocess_input)
         printLog('%s completed!' % (modelID), record = record)
+    modelID = 'Exp' + modelStr[-19:]
    
     figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)         
-    modelID = 'Exp' + modelStr[-19:]
     completeRecording(modelID, record = record)
 
 def main():

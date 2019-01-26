@@ -1,5 +1,6 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-import os
+
+import os, numpy, random
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
@@ -8,9 +9,9 @@ else:
     from NeighborFolderimporter import *
     from EvaluationRecorder import *
 
-from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs
+from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, label_rescaling_factor
 
-import numpy
+
 from keras.preprocessing.sequence import TimeseriesGenerator
 
 ######### Training Methods ###########

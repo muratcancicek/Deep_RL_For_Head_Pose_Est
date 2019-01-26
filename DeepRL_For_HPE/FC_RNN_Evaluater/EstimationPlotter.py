@@ -2,13 +2,13 @@
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
-    from FC_RNN_Evaluater.EvaluationRecorder import CURRENT_MODEL
+    from FC_RNN_Evaluater.EvaluationRecorder import *
 else:
     from NeighborFolderimporter import *
-    from EvaluationRecorder import CURRENT_MODEL
+    from EvaluationRecorder import *
 
 importNeighborFolders()
-from DatasetHandler.BiwiBrowser import BIWI_Subject_IDs
+from DatasetHandler.BiwiBrowser import BIWI_Subject_IDs, label_rescaling_factor
 import matplotlib.pyplot as plt
 
 def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs, angles):

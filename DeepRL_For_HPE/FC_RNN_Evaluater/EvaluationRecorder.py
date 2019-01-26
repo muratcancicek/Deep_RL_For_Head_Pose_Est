@@ -6,8 +6,8 @@ if '.' in __name__:
 else:
     from NeighborFolderimporter import *
 from keras.models import load_model
-import shutil
-import os
+import shutil, os, numpy as np, datetime
+def now(): return str(datetime.datetime.now())
 
 importNeighborFolders()
 from paths import *

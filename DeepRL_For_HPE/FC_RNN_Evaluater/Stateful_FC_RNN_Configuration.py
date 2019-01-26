@@ -1,13 +1,15 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 
+import datetime
 from keras.optimizers import Adam
 from keras.models import Sequential
 from keras.preprocessing import image
 from keras.applications import vgg16, nasnet, inception_v3
 from keras.layers import TimeDistributed, LSTM, Dense, Dropout
+def now(): return str(datetime.datetime.now())
 
 ######## CONF_Begins_Here ##########
-confFile = 'Stateful_CNN_LSTM_Configuration.py'
+confFile = 'Stateful_FC_RNN_Configuration.py'
 RECORD = True # False # 
 
 output_begin = 3
@@ -16,7 +18,7 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
 in_epochs = 1
-out_epochs = 1
+out_epochs = 3
 eva_epoch = 1
 train_batch_size = 1
 test_batch_size = 1
@@ -78,9 +80,11 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     #cnn_model.summary()
     rnn = Sequential()
     rnn.add(TimeDistributed(cnn_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdCNN')) 
-    #rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025_conv'))
-    #rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc1024')) # , activation='relu'
-    #rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025'))
+    """
+    """
+    rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025_conv'))
+    rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc1024')) # , activation='relu'
+    rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025'))
     rnn.add(TimeDistributed(Dense(num_outputs), name = 'fc3'))
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))
@@ -101,4 +105,4 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     modelID = modelID + '_AdamOpt_lr-%f' % lr
     rnn.compile(optimizer=adam, loss='mean_absolute_error') #'mean_squared_error', metrics=['mae']
     modelID = modelID + '_%s' % now()[:-7].replace(' ', '_').replace(':', '-')
-    return cnn_model, rnn, modelID
+    return cnn_model, rnn, modelID, preprocess_input
