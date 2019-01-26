@@ -18,14 +18,14 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
 in_epochs = 1
-out_epochs = 3
-eva_epoch = 1
+out_epochs = 30
+eva_epoch = 5
 train_batch_size = 1
 test_batch_size = 1
 
-subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
-testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
-trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
 
 num_datasets = len(subjectList)
 
@@ -35,17 +35,19 @@ lstm_recurrent_dropout = 0.25
 include_vgg_top = True 
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True
 ######### CONF_ends_Here ###########
 
 def preprocess_input_for_model(imagePath, Target_Frame_Shape, m, modelPackage):
     img = image.load_img(imagePath, target_size = Target_Frame_Shape)
     x = image.img_to_array(img)
     x = x[m[0]:m[1], m[2]:m[3], :]
+    print(x.shape)
     return modelPackage.preprocess_input(x)
 
 def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
                   lstm_recurrent_dropout = lstm_recurrent_dropout, num_outputs = num_outputs, 
-                  lr = learning_rate, include_vgg_top = include_vgg_top, use_vgg16 = True):
+                  lr = learning_rate, include_vgg_top = include_vgg_top, use_vgg16 = use_vgg16):
     if use_vgg16:
         modelID = 'VGG16' 
         inp = (224, 224, 3)
@@ -68,7 +70,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
         Target_Frame_Shape = (360, 480, 3)
         cnn_model = nasnet.NASNetLarge(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
 
-    preprocess_input = lambda imagePath: preprocess_input_for_model(imagePath, Target_Frame_Shape, margins, modelPackage)
+    def preprocess_input(imagePath): return preprocess_input_for_model(imagePath, Target_Frame_Shape, margins, modelPackage)
     
     if include_vgg_top:
         modelID = modelID + '_inc_top'
