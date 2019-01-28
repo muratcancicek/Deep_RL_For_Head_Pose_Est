@@ -17,10 +17,10 @@ def get_model_summary(model):
     stream.close()
     return summary_string
 
-def runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs, record = False, preprocess_input = None):
+def runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs, exp = -1, record = False, preprocess_input = None):
     print('Training model %s' % modelStr)
     full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                  batch_size = train_batch_size, in_epochs = in_epochs, stateful = STATEFUL, record = record, preprocess_input = preprocess_input)
+                  batch_size = train_batch_size, in_epochs = in_epochs, stateful = STATEFUL, exp = exp, record = record, preprocess_input = preprocess_input)
     #if not ((out_epochs + in_epochs + num_datasets) < 10):
     saveKerasModel(full_model, modelID, record = record)        
     
@@ -45,12 +45,12 @@ def runCNN_LSTM(record = False):
     num_experiments = int(out_epochs / eva_epoch) if out_epochs > eva_epoch else 1
     for exp in range(1, num_experiments+1):
         modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
-        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, eva_epoch, record = record)
+        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, eva_epoch, exp = exp, record = record)
         printLog('%s completed!' % (modelID), record = record)
         
     if out_epochs % eva_epoch > 0 and num_experiments > 1:
         modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
-        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs % eva_epoch, record = record, preprocess_input = preprocess_input)
+        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs % eva_epoch, exp = exp, record = record, preprocess_input = preprocess_input)
         printLog('%s completed!' % (modelID), record = record)
     modelID = 'Exp' + modelStr[-19:]
     saveKerasModel(full_model, modelID, record = record)        

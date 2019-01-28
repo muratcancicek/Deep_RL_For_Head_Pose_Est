@@ -18,14 +18,14 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
 in_epochs = 1
-out_epochs = 2
-eva_epoch = 1
+out_epochs = 30
+eva_epoch = 5
 train_batch_size = 1
 test_batch_size = 1
 
-subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
-testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
-trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
 
 num_datasets = len(subjectList)
 
