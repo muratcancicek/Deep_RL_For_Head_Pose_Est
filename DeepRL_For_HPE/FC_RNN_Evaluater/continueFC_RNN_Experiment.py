@@ -5,7 +5,7 @@ if '.' in __name__:
     from Core.NeighborFolderimporter import *
     from FC_RNN_Evaluater.FC_RNN_Evaluater import *
     from FC_RNN_Evaluater.EvaluationRecorder import *
-    from FC_RNN_Evaluater.runFC_RNN__Experiment import *
+    from FC_RNN_Evaluater.runFC_RNN_Experiment import *
     if STATEFUL:
         from FC_RNN_Evaluater.Stateful_CNN_LSTM_Configuration import *
     else:
@@ -51,7 +51,7 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     if trainMore:
         print('Training model %s' % modelStr)
         full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                      batch_size = train_batch_size, in_epochs = in_epochs, stateful = STATEFUL, record = record)
+                      batch_size = train_batch_size, in_epochs = in_epochs, exp = exp, stateful = STATEFUL, record = record)
         if not ((out_epochs + in_epochs + num_datasets) < 10):
             saveKerasModel(full_model, modelID, record = record)
         
@@ -60,7 +60,7 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     printLog('Evaluating model %s' % modelStr, record = record)
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
     full_model, means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
-                     testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
+                     testSubjects = testSubjects, timesteps = timesteps, output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size, stateful = STATEFUL, angles = angles, record = record)
 
     figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)    

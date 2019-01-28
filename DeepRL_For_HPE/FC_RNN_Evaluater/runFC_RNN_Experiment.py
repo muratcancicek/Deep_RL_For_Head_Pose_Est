@@ -45,7 +45,7 @@ def runCNN_LSTM(record = False):
     num_experiments = int(out_epochs / eva_epoch) if out_epochs > eva_epoch else 1
     for exp in range(1, num_experiments+1):
         modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
-        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, eva_epoch, exp = exp, record = record)
+        full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, eva_epoch, exp = exp, record = record, preprocess_input = preprocess_input)
         printLog('%s completed!' % (modelID), record = record)
         
     if out_epochs % eva_epoch > 0 and num_experiments > 1:

@@ -1,4 +1,4 @@
-Model Exp2019-01-27_20-48-31 has been started to be evaluated.
+Model Exp2019-01-27_20-58-30 has been started to be evaluated.
 __________________________________________________________________________________________________
 Layer (type)                    Output Shape         Param #     Connected to                     
 ==================================================================================================
@@ -709,4 +709,20 @@ include_vgg_top = False # True #
 angles = ['Pitch', 'Yaw', 'Roll'] 
 use_vgg16 = False
 ######### CONF_ends_Here ###########
-1. set (Dataset 9) being trained for epoch 1 in Experiment 1 by 2019-01-27 20:48:43.317072!
+1. set (Dataset 9) being trained for epoch 1 in Experiment 1 by 2019-01-27 20:58:43.192836!
+Epoch 1 for Experiment 1 completed!
+The subjects are trained: [(9, 'M03')]
+Evaluating model InceptionV3_seqLen1_stateful_lstm20_output3_BatchSize1_inEpochs1_outEpochs1_AdamOpt_lr-0.000001_2019-01-27_20-58-30
+The subjects will be tested: [(9, 'M03')]
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 17.59 Degree
+	The absolute mean error on Yaw angle estimation: 28.21 Degree
+	The absolute mean error on Roll angle estimation: 13.27 Degree
+On average in 1 test subjects:
+	The absolute mean error on Pitch angle estimations: 17.59 Degree
+	The absolute mean error on Yaw angle estimations: 28.21 Degree
+	The absolute mean error on Roll angle estimations: 13.27 Degree
+Exp2019-01-27_20-58-30_part1 completed!
+Exp2019-01-27_20-58-30.h5 has been saved.
+subject9_Exp2019-01-27_20-58-30.png has been saved by 2019-01-27 21:00:15.706419.
+Model Exp2019-01-27_20-58-30 has been evaluated successfully.
