@@ -109,7 +109,7 @@ def scaleX(arr):
     return new_arr
 
 def scaleY(arr):
-    new_arr = arr/label_rescaling_factor#
+    new_arr = arr/label_rescaling_factor#+100
     return new_arr
 
 def rolling_window(m, timesteps):

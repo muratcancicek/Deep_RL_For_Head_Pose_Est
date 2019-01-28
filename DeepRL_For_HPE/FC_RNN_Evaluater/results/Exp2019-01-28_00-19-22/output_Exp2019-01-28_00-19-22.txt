@@ -1,4 +1,4 @@
-Model Exp2019-01-28_00-36-12 has been started to be evaluated.
+Model Exp2019-01-28_00-19-22 has been started to be evaluated.
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -79,8 +79,8 @@ learning_rate =  0.0001
 in_epochs = 1
 out_epochs = 3
 eva_epoch = 1
-train_batch_size = 15
-test_batch_size = 15
+train_batch_size = 1
+test_batch_size = 1
 
 subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
 testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
@@ -96,9 +96,36 @@ include_vgg_top = True # False #
 angles = ['Pitch', 'Yaw', 'Roll'] 
 use_vgg16 = True # False # 
 ######### CONF_ends_Here ###########
-1. set (Dataset 9) being trained for epoch 1 in Experiment 1 by 2019-01-28 00:36:22.355487!
+1. set (Dataset 9) being trained for epoch 1 in Experiment 1 by 2019-01-28 00:19:31.899058!
 Epoch 1 for Experiment 1 completed!
 The subjects are trained: [(9, 'M03')]
-Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-01-28_00-36-12
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-01-28_00-19-22
 The subjects will be tested: [(9, 'M03')]
 For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 8.01 Degree
+	The absolute mean error on Yaw angle estimation: 12.45 Degree
+	The absolute mean error on Roll angle estimation: 6.02 Degree
+Exp2019-01-28_00-19-22_part1 completed!
+1. set (Dataset 9) being trained for epoch 1 in Experiment 2 by 2019-01-28 00:22:45.504250!
+Epoch 1 for Experiment 2 completed!
+The subjects are trained: [(9, 'M03')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-01-28_00-19-22
+The subjects will be tested: [(9, 'M03')]
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 6.10 Degree
+	The absolute mean error on Yaw angle estimation: 11.06 Degree
+	The absolute mean error on Roll angle estimation: 4.19 Degree
+Exp2019-01-28_00-19-22_part2 completed!
+1. set (Dataset 9) being trained for epoch 1 in Experiment 3 by 2019-01-28 00:25:58.104511!
+Epoch 1 for Experiment 3 completed!
+The subjects are trained: [(9, 'M03')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-01-28_00-19-22
+The subjects will be tested: [(9, 'M03')]
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 7.13 Degree
+	The absolute mean error on Yaw angle estimation: 11.62 Degree
+	The absolute mean error on Roll angle estimation: 4.21 Degree
+Exp2019-01-28_00-19-22_part3 completed!
+Exp2019-01-28_00-19-22.h5 has been saved.
+subject9_Exp2019-01-28_00-19-22.png has been saved by 2019-01-28 00:29:08.076484.
+Model Exp2019-01-28_00-19-22 has been evaluated successfully.

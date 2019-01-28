@@ -103,6 +103,7 @@ def evaluateAverage(results, angles, num_outputs, record = False):
         for an, (matrix, absolute_mean_error) in enumerate(outputs):
             sums[an] += absolute_mean_error
     means = [s/num_testSubjects for s in sums]
+    if num_testSubjects == 1: return means
     printLog('On average in %d test subjects:' % num_testSubjects, record = record)
     for i, avg in enumerate(means):
         printLog("\tThe absolute mean error on %s angle estimations: %.2f Degree" % (angles[i], avg), record = record)

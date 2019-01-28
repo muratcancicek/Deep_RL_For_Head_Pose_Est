@@ -50,10 +50,19 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     
     if trainMore:
         print('Training model %s' % modelStr)
-        full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
-                      batch_size = train_batch_size, in_epochs = in_epochs, exp = exp, stateful = STATEFUL, record = record)
-        if not ((out_epochs + in_epochs + num_datasets) < 10):
-            saveKerasModel(full_model, modelID, record = record)
+        
+        num_experiments = int(out_epochs / eva_epoch) if out_epochs > eva_epoch else 1
+        for exp in range(1, num_experiments+1):
+            modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
+            full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, eva_epoch, exp = exp, record = record, preprocess_input = preprocess_input)
+            printLog('%s completed!' % (modelID), record = record)
+
+        if out_epochs % eva_epoch > 0 and num_experiments > 1:
+            modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp
+            full_model, means, results = runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs % eva_epoch, exp = exp, record = record, preprocess_input = preprocess_input)
+            printLog('%s completed!' % (modelID), record = record)
+        modelID = 'Exp' + modelStr[-19:]
+        saveKerasModel(full_model, modelID, record = record)   
         
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     
