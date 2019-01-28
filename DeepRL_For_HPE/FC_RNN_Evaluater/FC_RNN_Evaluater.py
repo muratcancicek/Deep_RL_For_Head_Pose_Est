@@ -19,8 +19,8 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
     c = 0
     for inputMatrix, labels in set_gen:
         subj = trainingSubjects[c]
-        exp = ' in Experiment %d' % (exp) if exp != -1 else '' 
-        printLog('%d. set (Dataset %d) being trained for epoch %d%s by %s!' % (c+1, trainingSubjects[c], epoch+1, exp, now()), record = record)
+        expStr = ' in Experiment %d' % (exp) if exp != -1 else '' 
+        printLog('%d. set (Dataset %d) being trained for epoch %d%s by %s!' % (c+1, trainingSubjects[c], epoch+1, expStr, now()), record = record)
         labels = labels[:, output_begin:output_begin+num_outputs]
         if timesteps == None:
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
@@ -38,8 +38,8 @@ def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlap
         random.Random(4).shuffle(trainingSubjects)
         trainingBiwi = readBIWIDataset(subjectList = trainingSubjects, preprocess_input = preprocess_input) #, scaling = False, timesteps = timesteps, overlapping = overlapping
         model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs, exp = exp, stateful = stateful, record = record)
-        exp = ' for Experiment %d' % (exp) if exp != -1 else '' 
-        printLog('Epoch %d%s completed!' % (e+1, exp), record = record)
+        expStr = ' for Experiment %d' % (exp) if exp != -1 else '' 
+        printLog('Epoch %d%s completed!' % (e+1, expStr), record = record)
     return model
 
 def trainCNN_LSTM(full_model, modelID, out_epochs, subjectList, timesteps, output_begin, num_outputs, 

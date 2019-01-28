@@ -21,8 +21,8 @@ def runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs, e
     print('Training model %s' % modelStr)
     full_model = trainCNN_LSTM(full_model, modelID, out_epochs, trainingSubjects, timesteps, output_begin, num_outputs, 
                   batch_size = train_batch_size, in_epochs = in_epochs, stateful = STATEFUL, exp = exp, record = record, preprocess_input = preprocess_input)
-    #if not ((out_epochs + in_epochs + num_datasets) < 10):
-    saveKerasModel(full_model, modelID, record = record)        
+    if not ((out_epochs + in_epochs + num_datasets) < 10):
+        saveKerasModel(full_model, modelID, record = record)        
     
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     printLog('Evaluating model %s' % modelStr, record = record)
