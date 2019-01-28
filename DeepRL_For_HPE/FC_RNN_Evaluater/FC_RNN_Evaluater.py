@@ -75,6 +75,8 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_o
     predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
     full_model.reset_states()
     #kerasEval = full_model.evaluate_generator(test_gen)
+    """
+    """
     predictions = predictions * label_rescaling_factor
     test_labels = test_labels * label_rescaling_factor
     outputs = []

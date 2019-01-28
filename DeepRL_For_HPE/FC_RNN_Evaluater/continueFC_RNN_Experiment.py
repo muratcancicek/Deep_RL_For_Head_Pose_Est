@@ -59,9 +59,9 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     
     printLog('Evaluating model %s' % modelStr, record = record)
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
-    means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
+    full_model, means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                    num_outputs = num_outputs, batch_size = test_batch_size, stateful = STATEFUL, record = record)
+                    num_outputs = num_outputs, batch_size = test_batch_size, stateful = STATEFUL, angles = angles, record = record)
 
     figures = drawResults(results, modelStr, modelID, num_outputs = num_outputs, angles = angles, save = record)    
     
