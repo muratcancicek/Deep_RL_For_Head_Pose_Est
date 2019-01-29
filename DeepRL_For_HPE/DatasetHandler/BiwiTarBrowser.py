@@ -9,7 +9,7 @@ else:
 import matplotlib
 matplotlib.use('agg')
 
-from keras.preprocessing.image import img_to_array
+#from keras.preprocessing.image import img_to_array
 from matplotlib import pyplot
 from operator import itemgetter
 from os import listdir
@@ -179,23 +179,56 @@ def printSampleAnnosForSubj(subjective, count = 10):
 
 def printSampleAnnos(count = 10):
     biwiAnnos = readBIWI_Annos(tarFile = BIWI_Lebels_file_Local)
-    biwiAnnos = getAllAnnosForSubj(1, tarFile = BIWI_Lebels_file_Local)
-    for subj, annos in biwiAnnos:
-        for name, anno in annos[:count]:
+    #biwiAnnos = getAllAnnosForSubj(1, tarFile = BIWI_Lebels_file_Local)
+    for subj, annos in biwiAnnos.items():
+        for name, anno in list(annos.items())[:count]:
             print(anno)
-    
+
+def getMaxMinValuesOfAnnos(biwiAnnos = None, tarFile = BIWI_Lebels_file):
+    if biwiAnnos == None: biwiAnnos = readBIWI_Annos(tarFile = tarFile)
+    maxs = numpy.array([float('-inf') for i in range(6)])
+    mins = numpy.array([float('inf') for i in range(6)])
+    for subj, annos in biwiAnnos.items():
+        for name, anno in annos.items():
+            #anno = anno + (-1 * numpy.array([-92.04399871826172, -87.70659637451172, 754.1820068359375, -84.35343170166016, -66.95036315917969, -69.62425994873047]))
+            #anno = anno - (numpy.array([323.39600372314453, 334.3906021118164, 543.2679443359375, 137.90052795410156, 143.84380340576172, 132.99221801757812]) / 2)
+            #anno = anno / (numpy.array([323.39600372314453, 334.3906021118164, 543.2679443359375, 137.90052795410156, 143.84380340576172, 132.99221801757812]) / 2)
+            for i in range(6):
+                if anno[i] > maxs[i]:
+                    maxs[i] = anno[i]
+                if anno[i] < mins[i]:
+                    mins[i] = anno[i]
+    #print('Mins:', mins)
+    #print('Maxs:', maxs)
+    return [mins, maxs]
+
+def getAnnoScalers(biwiAnnos = None, tarFile = BIWI_Lebels_file):
+    mins, maxs = getMaxMinValuesOfAnnos(biwiAnnos = biwiAnnos, tarFile = tarFile)
+    maxs = maxs / 2
+    return [mins, maxs]
+
+def scaleAnnoByScalers(labels, scalers):
+    return ((labels - scalers[0]) - scalers[1]) / scalers[1]
+
+def unscaleAnnoByScalers(labels, scalers):
+    print(scalers[0], scalers[1])
+    labels = (labels * scalers[1])
+    return ((labels) - scalers[1]) + scalers[0]
+
 #################### Merging ####################
-def labelFramesForSubj(frames, annos):
+def labelFramesForSubj(frames, annos, scalers = None):
     keys = sorted(frames.keys() & annos.keys())
     inputMatrix = numpy.stack(itemgetter(*keys)(frames))
     labels = numpy.stack(itemgetter(*keys)(annos))
+    if scalers != None: labels = scaleAnnoByScalers(labels, scalers)
     return inputMatrix, labels
 
 def readBIWIDatasetTar(frameTarFile = BIWI_Data_file, labelsTarFile = BIWI_Lebels_file, subjectList = None):
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(tarFile = frameTarFile, subjectList = subjectList)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
-    biwi = (labelFramesForSubj(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
+    scalers = getAnnoScalers(biwiAnnos, tarFile = tarFile, subjectList = subjectList)
+    biwi = (labelFramesForSubj(frames, biwiAnnos[subj], scalers) for subj, frames in biwiFrames.items())
     #biwi = {}
     #for subj, frames in biwiFrames.items():
     #    biwi[subj] = labelFramesForSubj(frames, biwiAnnos[subj])
@@ -211,9 +244,10 @@ def main():
     #showSampleFrames(1)
     #printSampleAnnos(count = -1)
     #printSampleAnnosForSubj(1, count = -1)
-    printSamplesFromBIWIDatasetTar(frameTarFile = BIWI_SnippedData_file, 
-                                labelsTarFile = BIWI_Lebels_file_Local, 
-                                subjectList = [1])
+    getMaxMinValuesOfAnnos()
+    #printSamplesFromBIWIDatasetTar(frameTarFile = BIWI_SnippedData_file, 
+                                #labelsTarFile = BIWI_Lebels_file_Local, 
+                                #subjectList = [1])
    # readBIWIDataset(frameTarFile = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
    
 if __name__ == "__main__":

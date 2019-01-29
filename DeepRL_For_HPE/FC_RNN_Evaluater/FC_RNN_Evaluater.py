@@ -9,7 +9,7 @@ else:
     from NeighborFolderimporter import *
     from EvaluationRecorder import *
 
-from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, label_rescaling_factor
+from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, label_rescaling_factor, BIWI_Lebel_Scalers, unscaleAnnoByScalers
 
 
 from keras.preprocessing.sequence import TimeseriesGenerator
@@ -71,16 +71,21 @@ def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin,
         test_labelSets.append(labels)
     return test_generators, test_labelSets
 
-def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, batch_size, stateful = False, record = False):
+def unscaleEstimations(test_labels, predictions, scalers, output_begin, num_outputs):
+    """* label_rescaling_factor * label_rescaling_factor
+    """
+    sclrs = [scalers[0][output_begin:output_begin+num_outputs], scalers[1][output_begin:output_begin+num_outputs]]
+    test_labels = unscaleAnnoByScalers(test_labels, sclrs)
+    predictions = unscaleAnnoByScalers(predictions, sclrs)
+    return test_labels, predictions
+
+def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size, stateful = False, record = False):
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
     predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
+    #kerasEval = full_model.evaluate_generator(test_gen) 
+    unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
     full_model.reset_states()
-    #kerasEval = full_model.evaluate_generator(test_gen)
-    """
-    """
-    predictions = predictions * label_rescaling_factor
-    test_labels = test_labels * label_rescaling_factor
     outputs = []
     for i in range(num_outputs):
         if stateful:
@@ -116,7 +121,7 @@ def evaluateCNN_LSTM(full_model, label_rescaling_factor, testSubjects, timesteps
                                             batch_size = batch_size, stateful = stateful, record = record, preprocess_input = preprocess_input)
     results = []
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
-        full_model, outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)
+        full_model, outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)
         results.append((subject, outputs))
     means = evaluateAverage(results, angles, num_outputs, record = record)
     return full_model, means, results 

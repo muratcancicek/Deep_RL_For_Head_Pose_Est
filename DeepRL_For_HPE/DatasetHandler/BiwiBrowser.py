@@ -40,6 +40,7 @@ Target_Frame_Shape_VGG16 = (240, 320, 3)
 def now(): return str(datetime.datetime.now())
 label_rescaling_factor = 100
 BIWI_Subject_IDs = ['XX', 'F01', 'F02', 'F03', 'F04', 'F05', 'F06', 'M01', 'M02', 'M03', 'M04', 'M05', 'M06', 'M07', 'M08', 'F03', 'M09', 'M10', 'F05', 'M11', 'M12', 'F02', 'M01', 'M13', 'M14']
+BIWI_Lebel_Scalers = getAnnoScalers(tarFile = BIWI_Lebels_file)
 #################### Frame Reading ####################
 def getRGBpngFileName(subject, frame):
     return str(subject).zfill(2) + '/frame_' + str(frame).zfill(5) + '_rgb.png'
@@ -129,13 +130,14 @@ def reshaper(m, l, timesteps, overlapping):
         l = l[:, -1, :]
     return m, l
 
-def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False, scaling = True):
+def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False, scaling = True, scalers = None):
     frames = {n: f for n, f in frames}
     keys = sorted(frames & annos.keys())
     inputMatrix = numpy.stack(itemgetter(*keys)(frames))
     labels = numpy.stack(itemgetter(*keys)(annos))
     if scaling: # scaleX()
-        inputMatrix, labels = inputMatrix, scaleY(labels)
+        #inputMatrix, labels = inputMatrix, scaleY(labels)
+        if scalers != None: labels = scaleAnnoByScalers(labels, scalers)
     if timesteps != None:
         inputMatrix, labels = reshaper(inputMatrix, labels, timesteps, overlapping)
     return inputMatrix, labels
@@ -144,7 +146,8 @@ def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_f
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList, preprocess_input = preprocess_input)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
-    labeledFrames = lambda frames, labels: labelFramesForSubj(frames, labels, timesteps, overlapping, scaling)
+    scalers = BIWI_Lebel_Scalers #getAnnoScalers(biwiAnnos, tarFile = labelsTarFile, subjectList = subjectList)
+    labeledFrames = lambda frames, labels: labelFramesForSubj(frames, labels, timesteps, overlapping, scaling, scalers)
     biwi = (labeledFrames(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
     print('All frames and annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
     return biwi   

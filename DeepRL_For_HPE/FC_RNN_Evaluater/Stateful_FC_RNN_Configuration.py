@@ -19,21 +19,21 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
 in_epochs = 1
-out_epochs = 50
-eva_epoch = 5
+out_epochs = 1
+eva_epoch = 1
 train_batch_size = 1
 test_batch_size = 1
 
-subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
-testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
-trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
+testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
 
 num_datasets = len(subjectList)
 
 lstm_nodes = 64
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
-include_vgg_top = True # False # 
+include_vgg_top = False # True # 
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
 use_vgg16 = True # False # 
@@ -82,13 +82,14 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     #cnn_model.summary()
     rnn = Sequential()
     rnn.add(TimeDistributed(cnn_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdCNN')) 
+    if not include_vgg_top:
+        rnn.add(TimeDistributed(Flatten()))
     """
-    rnn.add(TimeDistributed(Flatten()))
+    """
     rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025_conv'))
-    rnn.add(TimeDistributed(Dense(1024, activation='relu'), name = 'fc1024')) # , activation='relu'
+    rnn.add(TimeDistributed(Dense(1024), name = 'fc1024')) # , activation='relu', activation='relu', kernel_regularizer=regularizers.l2(0.001)
     rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025'))
-    rnn.add(TimeDistributed(Dense(num_outputs), name = 'fc3')), kernel_regularizer=regularizers.l2(0.001)
-    """
+    rnn.add(TimeDistributed(Dense(num_outputs), name = 'fc3'))
 
     rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))#, activation='relu'
     modelID = modelID + '_seqLen%d' % timesteps
