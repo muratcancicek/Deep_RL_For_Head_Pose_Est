@@ -190,9 +190,8 @@ def getMaxMinValuesOfAnnos(biwiAnnos = None, tarFile = BIWI_Lebels_file):
     mins = numpy.array([float('inf') for i in range(6)])
     for subj, annos in biwiAnnos.items():
         for name, anno in annos.items():
-            #anno = anno + (-1 * numpy.array([-92.04399871826172, -87.70659637451172, 754.1820068359375, -84.35343170166016, -66.95036315917969, -69.62425994873047]))
-            #anno = anno - (numpy.array([323.39600372314453, 334.3906021118164, 543.2679443359375, 137.90052795410156, 143.84380340576172, 132.99221801757812]) / 2)
-            #anno = anno / (numpy.array([323.39600372314453, 334.3906021118164, 543.2679443359375, 137.90052795410156, 143.84380340576172, 132.99221801757812]) / 2)
+#            Mins: [-92.04399872 -87.70659637 754.18200684 -84.3534317  -66.95036316   -69.62425995]
+#            Maxs: [ 231.352005    246.68400574 1297.44995117   53.54709625   76.89344025   63.36795807]
             for i in range(6):
                 if anno[i] > maxs[i]:
                     maxs[i] = anno[i]
@@ -204,16 +203,13 @@ def getMaxMinValuesOfAnnos(biwiAnnos = None, tarFile = BIWI_Lebels_file):
 
 def getAnnoScalers(biwiAnnos = None, tarFile = BIWI_Lebels_file):
     mins, maxs = getMaxMinValuesOfAnnos(biwiAnnos = biwiAnnos, tarFile = tarFile)
-    maxs = maxs / 2
     return [mins, maxs]
 
 def scaleAnnoByScalers(labels, scalers):
-    return ((labels - scalers[0]) - scalers[1]) / scalers[1]
+    return ((labels - scalers[0]) - ((scalers[1]-scalers[0])/2)) / ((scalers[1]-scalers[0])/2)
 
 def unscaleAnnoByScalers(labels, scalers):
-    print(scalers[0], scalers[1])
-    labels = (labels * scalers[1])
-    return ((labels) - scalers[1]) + scalers[0]
+    return (labels * (scalers[1]-scalers[0])/2) + ((scalers[1]-scalers[0])/2) + scalers[0]
 
 #################### Merging ####################
 def labelFramesForSubj(frames, annos, scalers = None):

@@ -29,7 +29,7 @@ def drawPlotsForSubj(outputs, subj, subjID, modelID, num_outputs, angles):
         l2 = cell.plot(matrix[:, 1], colors[-1], label='Estimation')
         cell.set_facecolor(red if 'F' in subjID else blue)
         #cell.set_xlim([0, 1000])
-        cell.set_ylim([BIWI_Lebel_Scalers[0][3+i], BIWI_Lebel_Scalers[1][3+i]])
+        cell.set_ylim([BIWI_Lebel_Scalers[0][3+i]-10, BIWI_Lebel_Scalers[1][3+i]+10])
         cell.set_ylabel('%s Angle\nAbsolute Mean Error: %.2f' % (angles[i], absolute_mean_error))
     f.subplots_adjust(top=0.93, hspace=0, wspace=0)
     return f

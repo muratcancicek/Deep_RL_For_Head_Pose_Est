@@ -1,13 +1,21 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-
 STATEFUL = True # False # 
-if STATEFUL:
-    from Stateful_FC_RNN_Configuration import *
+#Dirty importing that allows the main author to switch environments easily
+if '.' in __name__:
+    from Core.NeighborFolderimporter import *
+    from FC_RNN_Evaluater.FC_RNN_Evaluater import *
+    from FC_RNN_Evaluater.EvaluationRecorder import *
+    if STATEFUL:
+        from FC_RNN_Evaluater.Stateful_FC_RNN_Configuration import *
+    else:
+        from FC_RNN_Evaluater.FC_RNN_Configuration import *
 else:
-    from Stateless_FC_RNN_Configuration import *
-from EvaluationRecorder import *
-from EstimationPlotter import *
-from FC_RNN_Evaluater import *
+    if STATEFUL:
+        from Stateful_FC_RNN_Configuration import *
+    else:
+        from Stateless_FC_RNN_Configuration import *
+    from EstimationPlotter import *
+    from FC_RNN_Evaluater import *
 
 import io
 def get_model_summary(model):

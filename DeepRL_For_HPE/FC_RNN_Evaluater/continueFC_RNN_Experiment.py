@@ -7,9 +7,9 @@ if '.' in __name__:
     from FC_RNN_Evaluater.EvaluationRecorder import *
     from FC_RNN_Evaluater.runFC_RNN_Experiment import *
     if STATEFUL:
-        from FC_RNN_Evaluater.Stateful_CNN_LSTM_Configuration import *
+        from FC_RNN_Evaluater.Stateful_FC_RNN_Configuration import *
     else:
-        from FC_RNN_Evaluater.CNN_LSTM_Configuration import *
+        from FC_RNN_Evaluater.FC_RNN_Configuration import *
 else:
     from NeighborFolderimporter import *
     from FC_RNN_Evaluater import *
@@ -22,6 +22,7 @@ else:
 
 importNeighborFolders()
 from DatasetHandler.BiwiBrowser import *
+import keras
 
 if not len(sys.argv) in [2, 3]:
     print('Needs modelID argument. Try again...')
@@ -38,6 +39,8 @@ elif sys.argv[2] == 'evaluateOnly':
     trainMore = False
     
 def continueTrainigCNN_LSTM(record = False, modelID = modelID):
+    vgg_model, fake_model, fake_modelID, preprocess_input = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
+                      num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
     full_model = loadKerasModel(modelID, record = record) 
     modelStr = modelID
     modelID = 'Exp' + modelID[-19:]
@@ -49,8 +52,7 @@ def continueTrainigCNN_LSTM(record = False, modelID = modelID):
     saveConfiguration(confFile = confFile, record = record)
     
     if trainMore:
-        print('Training model %s' % modelStr)
-        
+        # keras.backend.clear_session() 
         num_experiments = int(out_epochs / eva_epoch) if out_epochs > eva_epoch else 1
         for exp in range(1, num_experiments+1):
             modelID = 'Exp' + modelStr[-19:] + '_part%d' % exp

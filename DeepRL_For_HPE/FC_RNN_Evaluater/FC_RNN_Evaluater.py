@@ -83,8 +83,8 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, outpu
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
     predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
+    test_labels, predictions = unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
     #kerasEval = full_model.evaluate_generator(test_gen) 
-    unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
     full_model.reset_states()
     outputs = []
     for i in range(num_outputs):
