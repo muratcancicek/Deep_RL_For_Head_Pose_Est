@@ -19,8 +19,8 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
 in_epochs = 1
-out_epochs = 60
-eva_epoch = 6
+out_epochs = 1
+eva_epoch = 1
 train_batch_size = 1
 test_batch_size = 1
 
@@ -30,7 +30,7 @@ trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectLi
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 10
+lstm_nodes = 20
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
 include_vgg_top = True # False # 

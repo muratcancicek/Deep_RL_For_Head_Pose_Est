@@ -5,6 +5,7 @@ from keras.optimizers import Adam
 from keras.models import Sequential
 from keras.preprocessing import image
 from keras.applications import vgg16, nasnet, inception_v3
+from keras import regularizers, Model
 from keras.layers import TimeDistributed, LSTM, Dense, Dropout, Flatten
 def now(): return str(datetime.datetime.now())
 
@@ -23,9 +24,9 @@ eva_epoch = 1
 train_batch_size = 15
 test_batch_size = 15
 
-subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
-testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
-trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
 
 num_datasets = len(subjectList)
 
@@ -73,14 +74,27 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     
     if include_vgg_top:
         modelID = modelID + '_inc_top'
+        #cnn_model = addDropout(cnn_model)
         cnn_model.layers.pop()
         cnn_model.outputs = [cnn_model.layers[-1].output]
         cnn_model.output_layers = [cnn_model.layers[-1]] 
         cnn_model.layers[-1].outbound_nodes = []
+        for layer in cnn_model.layers: 
+            layer.trainable = False
+        x = cnn_model.layers[-1].output
+       # x = Dropout(0.25, name = 'dropout3_025')(x)
+        x = Dense(1024, activation='relu', name='fc1024')(x)
+        x = Dropout(0.25, name = 'dropout_025')(x)
+        x = Dense(num_outputs, name = 'fc3')(x)
+        cnn_model = Model(inputs=cnn_model.input,outputs=x)
+    """
+    """
 
+    #cnn_model.summary()
     rnn = Sequential()
-    rnn.add(TimeDistributed(cnn_model, input_shape=(timesteps, inp[0], inp[1], inp[2]), name = 'tdVGG16')) 
-    rnn.add(TimeDistributed(Flatten()))
+    rnn.add(TimeDistributed(cnn_model, input_shape=(timesteps, inp[0], inp[1], inp[2]), name = 'tdCNN')) 
+    if not include_vgg_top:
+        rnn.add(TimeDistributed(Flatten()))
     """
     rnn.add(TimeDistributed(Dropout(0.25)))#
     rnn.add(TimeDistributed(Dense(4096, activation='relu'), name = 'fc1024'))#, activation='relu'
@@ -98,11 +112,12 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     
     modelID = modelID + '_output%d' % num_outputs
 
+    modelID = modelID + '_BatchSize%d' % train_batch_size
     modelID = modelID + '_inEpochs%d' % in_epochs
     modelID = modelID + '_outEpochs%d' % out_epochs
     
-    for layer in rnn.layers[:1]: 
-        layer.trainable = False
+    #for layer in rnn.layers[:1]: 
+    #    layer.trainable = False
     adam = Adam(lr=lr)
     modelID = modelID + '_AdamOpt_lr-%f' % lr
     rnn.compile(optimizer=adam, loss='mean_absolute_error') #'mean_squared_error', metrics=['mae'])#

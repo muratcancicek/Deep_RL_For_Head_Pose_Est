@@ -28,8 +28,7 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
             start_index = (inputMatrix.shape[0] % batch_size) - 1 if stateful else 0                
             data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
             model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
-        if stateful:
-            model.reset_states()
+        if stateful:  model.reset_states()
         c += 1
     return model
 
@@ -83,9 +82,9 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, outpu
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
     predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
+    if stateful:  model.reset_states()
     test_labels, predictions = unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
     #kerasEval = full_model.evaluate_generator(test_gen) 
-    full_model.reset_states()
     outputs = []
     for i in range(num_outputs):
         if stateful:
@@ -93,9 +92,9 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, outpu
             matrix = numpy.concatenate((test_labels[start_index:, i:i+1], predictions[:, i:i+1]), axis=1)
             differences = (test_labels[start_index:, i:i+1] - predictions[:, i:i+1])
         else:
-            print(test_labels[:, i:i+1].shape, predictions[:, i:i+1].shape)
-            matrix = numpy.concatenate((test_labels[:, i:i+1], predictions[:, i:i+1]), axis=1)
-            differences = (test_labels[:, i:i+1] - predictions[:, i:i+1])
+            print(test_labels[timesteps:, i:i+1].shape, predictions[:, i:i+1].shape)
+            matrix = numpy.concatenate((test_labels[timesteps:, i:i+1], predictions[:, i:i+1]), axis=1)
+            differences = (test_labels[timesteps:, i:i+1] - predictions[:, i:i+1])
         absolute_mean_error = np.abs(differences).mean()
         printLog("\tThe absolute mean error on %s angle estimation: %.2f Degree" % (angles[i], absolute_mean_error), record = record)
         outputs.append((matrix, absolute_mean_error))
