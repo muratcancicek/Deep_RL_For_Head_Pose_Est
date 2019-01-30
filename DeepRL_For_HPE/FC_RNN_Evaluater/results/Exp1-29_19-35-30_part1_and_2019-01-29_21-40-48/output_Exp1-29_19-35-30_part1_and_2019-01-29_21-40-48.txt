@@ -1,0 +1,121 @@
+Terminating...
+Exp2019-01-29_19-35-30_part1.h5 has been saved.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdCNN (TimeDistributed)      (None, 16, 3)             138458947 
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 20)                1920      
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 63        
+=================================================================
+Total params: 138,460,930
+Trainable params: 4,200,386
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateless_FC_RNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 16 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 1
+out_epochs = 3
+eva_epoch = 1
+train_batch_size = 15
+test_batch_size = 12
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 20
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+The subjects are trained: [(1, 'F01'), (2, 'F02'), (4, 'F04'), (6, 'F06'), (7, 'M01'), (8, 'M02'), (10, 'M04'), (11, 'M05'), (12, 'M06'), (13, 'M07'), (15, 'F03'), (16, 'M09'), (17, 'M10'), (18, 'F05'), (19, 'M11'), (20, 'M12'), (21, 'F02'), (22, 'M01'), (23, 'M13'), (24, 'M14')]
+Evaluating model Exp2019-01-29_19-35-30_part1_and_2019-01-29_20-45-28
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+Exp2019-01-29_19-35-30_part1.h5 has been saved.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdCNN (TimeDistributed)      (None, 16, 3)             138458947 
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 20)                1920      
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 63        
+=================================================================
+Total params: 138,460,930
+Trainable params: 4,200,386
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateless_FC_RNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 16 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 1
+out_epochs = 3
+eva_epoch = 1
+train_batch_size = 15
+test_batch_size = 1
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 20
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+The subjects are trained: [(1, 'F01'), (2, 'F02'), (4, 'F04'), (6, 'F06'), (7, 'M01'), (8, 'M02'), (10, 'M04'), (11, 'M05'), (12, 'M06'), (13, 'M07'), (15, 'F03'), (16, 'M09'), (17, 'M10'), (18, 'F05'), (19, 'M11'), (20, 'M12'), (21, 'F02'), (22, 'M01'), (23, 'M13'), (24, 'M14')]
+Evaluating model Exp2019-01-29_19-35-30_part1_and_2019-01-29_21-40-48
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 12.39 Degree
+	The absolute mean error on Yaw angle estimation: 33.29 Degree
+	The absolute mean error on Roll angle estimation: 6.88 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 23.06 Degree
+	The absolute mean error on Yaw angle estimation: 29.85 Degree
+	The absolute mean error on Roll angle estimation: 3.94 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 17.30 Degree
+	The absolute mean error on Yaw angle estimation: 26.32 Degree
+	The absolute mean error on Roll angle estimation: 6.81 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 19.83 Degree
+	The absolute mean error on Yaw angle estimation: 36.52 Degree
+	The absolute mean error on Roll angle estimation: 14.43 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 18.14 Degree
+	The absolute mean error on Yaw angle estimations: 31.50 Degree
+	The absolute mean error on Roll angle estimations: 8.01 Degree
+subject3_Exp1-29_19-35-30_part1_and_2019-01-29_21-40-48.png has been saved by 2019-01-29 21:46:30.679811.
+subject5_Exp1-29_19-35-30_part1_and_2019-01-29_21-40-48.png has been saved by 2019-01-29 21:46:30.873301.
+subject9_Exp1-29_19-35-30_part1_and_2019-01-29_21-40-48.png has been saved by 2019-01-29 21:46:31.065556.
+subject14_Exp1-29_19-35-30_part1_and_2019-01-29_21-40-48.png has been saved by 2019-01-29 21:46:31.277702.
+Model Exp1-29_19-35-30_part1_and_2019-01-29_21-40-48 has been evaluated successfully.

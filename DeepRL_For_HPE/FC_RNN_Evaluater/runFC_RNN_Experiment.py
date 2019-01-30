@@ -1,5 +1,5 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-STATEFUL = False # True # 
+STATEFUL = True # False # 
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
@@ -8,7 +8,7 @@ if '.' in __name__:
     if STATEFUL:
         from FC_RNN_Evaluater.Stateful_FC_RNN_Configuration import *
     else:
-        from FC_RNN_Evaluater.FC_RNN_Configuration import *
+        from FC_RNN_Evaluater.Stateless_FC_RNN_Configuration import *
 else:
     if STATEFUL:
         from Stateful_FC_RNN_Configuration import *

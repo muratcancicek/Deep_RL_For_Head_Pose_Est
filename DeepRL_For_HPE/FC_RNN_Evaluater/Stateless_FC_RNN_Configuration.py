@@ -22,7 +22,7 @@ in_epochs = 1
 out_epochs = 3
 eva_epoch = 1
 train_batch_size = 15
-test_batch_size = 15
+test_batch_size = 1
 
 subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
 testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 

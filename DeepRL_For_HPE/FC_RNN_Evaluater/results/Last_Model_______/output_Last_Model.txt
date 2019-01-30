@@ -1,4 +1,4 @@
-Model Exp2019-01-29_19-12-47 has been started to be evaluated.
+Model Exp2019-01-29_17-58-10 has been started to be evaluated.
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -86,9 +86,9 @@ eva_epoch = 1
 train_batch_size = 15
 test_batch_size = 15
 
-subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
-testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
-trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
+testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
 
 num_datasets = len(subjectList)
 
@@ -100,29 +100,9 @@ include_vgg_top = True # False #
 angles = ['Pitch', 'Yaw', 'Roll'] 
 use_vgg16 = True # False # 
 ######### CONF_ends_Here ###########
-1. set (Dataset 22) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:12:58.477790!
-2. set (Dataset 24) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:13:52.277637!
-3. set (Dataset 15) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:14:32.427663!
-4. set (Dataset 19) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:15:22.672957!
-5. set (Dataset 8) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:16:04.983609!
-6. set (Dataset 23) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:16:59.812289!
-7. set (Dataset 21) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:17:45.848563!
-8. set (Dataset 16) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:18:36.737475!
-9. set (Dataset 7) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:19:45.071558!
-10. set (Dataset 12) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:20:44.450819!
-11. set (Dataset 10) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:21:40.129567!
-12. set (Dataset 1) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:22:34.679168!
-13. set (Dataset 18) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:23:14.224620!
-14. set (Dataset 2) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:23:59.674213!
-15. set (Dataset 4) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:24:40.376709!
-16. set (Dataset 20) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:25:35.130553!
-17. set (Dataset 17) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:26:15.158616!
-18. set (Dataset 6) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:26:45.900531!
-19. set (Dataset 13) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:27:26.553026!
-20. set (Dataset 11) being trained for epoch 1 in Experiment 1 by 2019-01-29 19:28:03.851536!
+1. set (Dataset 9) being trained for epoch 1 in Experiment 1 by 2019-01-29 17:58:20.615931!
 Epoch 1 for Experiment 1 completed!
-Exp2019-01-29_19-12-47_part1.h5 has been saved.
-The subjects are trained: [(22, 'M01'), (24, 'M14'), (15, 'F03'), (19, 'M11'), (8, 'M02'), (23, 'M13'), (21, 'F02'), (16, 'M09'), (7, 'M01'), (12, 'M06'), (10, 'M04'), (1, 'F01'), (18, 'F05'), (2, 'F02'), (4, 'F04'), (20, 'M12'), (17, 'M10'), (6, 'F06'), (13, 'M07'), (11, 'M05')]
-Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize15_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-01-29_19-12-47
-The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
-For the Subject 3 (F03):
+The subjects are trained: [(9, 'M03')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize15_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-01-29_17-58-10
+The subjects will be tested: [(9, 'M03')]
+For the Subject 9 (M03):
