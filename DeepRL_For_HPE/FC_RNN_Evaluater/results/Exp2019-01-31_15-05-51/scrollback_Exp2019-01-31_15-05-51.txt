@@ -1,0 +1,3042 @@
+654/654 [==============================] - 16s 24ms/step - loss: 0.0848
+Epoch 3 for Experiment 2 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 04:21:50.668284
+1. set (Dataset 18) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:21:56.585088!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1052
+2. set (Dataset 15) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:22:17.718174!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0820
+3. set (Dataset 16) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:22:41.669482!
+Epoch 1/1
+914/914 [==============================] - 22s 24ms/step - loss: 0.0828
+4. set (Dataset 24) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:23:08.338013!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0642
+5. set (Dataset 12) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:23:27.468056!
+Epoch 1/1
+732/732 [==============================] - 16s 22ms/step - loss: 0.0875
+6. set (Dataset 7) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:23:51.193734!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0975
+7. set (Dataset 22) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:24:14.727615!
+Epoch 1/1
+665/665 [==============================] - 16s 24ms/step - loss: 0.0623
+8. set (Dataset 21) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:24:36.763687!
+Epoch 1/1
+634/634 [==============================] - 14s 22ms/step - loss: 0.1340
+9. set (Dataset 13) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:24:55.373063!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0720
+10. set (Dataset 23) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:25:12.075306!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1144
+11. set (Dataset 1) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:25:30.586125!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1236
+12. set (Dataset 17) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:25:46.315212!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0780
+13. set (Dataset 19) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:26:00.629216!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0780
+14. set (Dataset 4) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:26:19.819040!
+Epoch 1/1
+744/744 [==============================] - 17s 22ms/step - loss: 0.1107
+15. set (Dataset 11) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:26:42.177897!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0656
+16. set (Dataset 20) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:27:00.807149!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0767
+17. set (Dataset 6) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:27:19.354296!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1124
+18. set (Dataset 2) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:27:37.133892!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1154
+19. set (Dataset 8) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:27:57.029664!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0992
+20. set (Dataset 10) being trained for epoch 4 in Experiment 2 by 2019-01-30 04:28:22.131505!
+Epoch 1/1
+726/726 [==============================] - 16s 22ms/step - loss: 0.0886
+Epoch 4 for Experiment 2 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 04:28:42.373261
+1. set (Dataset 2) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:28:47.472845!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1052
+2. set (Dataset 10) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:29:07.000971!
+Epoch 1/1
+726/726 [==============================] - 16s 23ms/step - loss: 0.0845
+3. set (Dataset 1) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:29:28.639582!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1071
+4. set (Dataset 11) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:29:45.708393!
+Epoch 1/1
+572/572 [==============================] - 13s 22ms/step - loss: 0.0633
+5. set (Dataset 7) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:30:06.080101!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.0976
+6. set (Dataset 8) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:30:31.619775!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0907
+7. set (Dataset 6) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:30:54.443642!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1172
+8. set (Dataset 17) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:31:10.587009!
+Epoch 1/1
+395/395 [==============================] - 9s 22ms/step - loss: 0.0852
+9. set (Dataset 12) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:31:26.815254!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0830
+10. set (Dataset 13) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:31:48.681032!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0687
+11. set (Dataset 22) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:32:06.201332!
+Epoch 1/1
+665/665 [==============================] - 15s 22ms/step - loss: 0.0658
+12. set (Dataset 18) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:32:27.094999!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1060
+13. set (Dataset 4) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:32:49.250721!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1046
+14. set (Dataset 15) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:33:12.978524!
+Epoch 1/1
+654/654 [==============================] - 16s 24ms/step - loss: 0.0851
+15. set (Dataset 16) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:33:37.492956!
+Epoch 1/1
+914/914 [==============================] - 21s 22ms/step - loss: 0.0814
+16. set (Dataset 20) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:34:03.502361!
+Epoch 1/1
+556/556 [==============================] - 12s 22ms/step - loss: 0.0712
+17. set (Dataset 19) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:34:20.924894!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0791
+18. set (Dataset 24) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:34:37.159593!
+Epoch 1/1
+492/492 [==============================] - 11s 22ms/step - loss: 0.0626
+19. set (Dataset 23) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:34:53.709500!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1155
+20. set (Dataset 21) being trained for epoch 5 in Experiment 2 by 2019-01-30 04:35:12.871388!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1305
+Epoch 5 for Experiment 2 completed!
+Exp2019-01-30_03-25-16_part2.h5 has been saved.
+The subjects are trained: [(2, 'F02'), (10, 'M04'), (1, 'F01'), (11, 'M05'), (7, 'M01'), (8, 'M02'), (6, 'F06'), (17,
+'M10'), (12, 'M06'), (13, 'M07'), (22, 'M01'), (18, 'F05'), (4, 'F04'), (15, 'F03'), (16, 'M09'), (20, 'M12'), (19, 'M
+11'), (24, 'M14'), (23, 'M13'), (21, 'F02')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 04:35:30.012932
+For the Subject 3 (F03):
+730/730 [==============================] - 11s 15ms/step
+        The absolute mean error on Pitch angle estimation: 8.74 Degree
+        The absolute mean error on Yaw angle estimation: 23.04 Degree
+        The absolute mean error on Roll angle estimation: 17.77 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 15s 16ms/step
+        The absolute mean error on Pitch angle estimation: 6.33 Degree
+        The absolute mean error on Yaw angle estimation: 20.66 Degree
+        The absolute mean error on Roll angle estimation: 5.76 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 14s 16ms/step
+        The absolute mean error on Pitch angle estimation: 33.27 Degree
+        The absolute mean error on Yaw angle estimation: 17.09 Degree
+        The absolute mean error on Roll angle estimation: 8.60 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 13.83 Degree
+        The absolute mean error on Yaw angle estimation: 30.34 Degree
+        The absolute mean error on Roll angle estimation: 13.61 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.54 Degree
+        The absolute mean error on Yaw angle estimations: 22.78 Degree
+        The absolute mean error on Roll angle estimations: 11.43 Degree
+Exp2019-01-30_03-25-16_part2 completed!
+Training model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+All frames and annotations from 20 datasets have been read by 2019-01-30 04:37:01.393460
+1. set (Dataset 24) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:37:06.082286!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0615
+2. set (Dataset 21) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:37:23.932305!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1280
+3. set (Dataset 22) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:37:45.169100!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0616
+4. set (Dataset 16) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:38:09.385156!
+Epoch 1/1
+914/914 [==============================] - 22s 24ms/step - loss: 0.0798
+5. set (Dataset 8) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:38:39.262381!
+Epoch 1/1
+772/772 [==============================] - 18s 24ms/step - loss: 0.0954
+6. set (Dataset 23) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:39:03.296243!
+Epoch 1/1
+569/569 [==============================] - 14s 24ms/step - loss: 0.1159
+7. set (Dataset 19) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:39:21.882219!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0717
+8. set (Dataset 18) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:39:39.298452!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1020
+9. set (Dataset 7) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:40:01.066576!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0978
+10. set (Dataset 12) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:40:25.961325!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0854
+11. set (Dataset 6) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:40:48.325903!
+Epoch 1/1
+542/542 [==============================] - 13s 24ms/step - loss: 0.1086
+12. set (Dataset 2) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:41:06.469652!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1099
+13. set (Dataset 15) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:41:24.788861!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0864
+14. set (Dataset 10) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:41:47.249429!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0914
+15. set (Dataset 1) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:42:09.653476!
+Epoch 1/1
+498/498 [==============================] - 11s 21ms/step - loss: 0.1151
+16. set (Dataset 20) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:42:25.845963!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0771
+17. set (Dataset 4) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:42:46.422825!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1043
+18. set (Dataset 11) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:43:09.146576!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0629
+19. set (Dataset 13) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:43:27.375751!
+Epoch 1/1
+485/485 [==============================] - 12s 24ms/step - loss: 0.0709
+20. set (Dataset 17) being trained for epoch 1 in Experiment 3 by 2019-01-30 04:43:42.881622!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0810
+Epoch 1 for Experiment 3 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 04:43:56.742798
+1. set (Dataset 11) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:44:02.498984!
+Epoch 1/1
+572/572 [==============================] - 14s 24ms/step - loss: 0.0640
+2. set (Dataset 17) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:44:19.874843!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0803
+3. set (Dataset 6) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:44:34.306789!
+Epoch 1/1
+542/542 [==============================] - 12s 22ms/step - loss: 0.1089
+4. set (Dataset 1) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:44:51.315784!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1151
+5. set (Dataset 23) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:45:08.224694!
+Epoch 1/1
+569/569 [==============================] - 14s 24ms/step - loss: 0.1173
+6. set (Dataset 13) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:45:26.834777!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0696
+7. set (Dataset 4) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:45:45.088531!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1023
+8. set (Dataset 2) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:46:07.187139!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1070
+9. set (Dataset 8) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:46:27.141878!
+Epoch 1/1
+772/772 [==============================] - 18s 24ms/step - loss: 0.0952
+10. set (Dataset 7) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:46:53.085565!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0969
+11. set (Dataset 19) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:47:15.505688!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0836
+12. set (Dataset 24) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:47:31.690434!
+Epoch 1/1
+492/492 [==============================] - 12s 23ms/step - loss: 0.0652
+13. set (Dataset 10) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:47:50.594508!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0902
+14. set (Dataset 21) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:48:13.736139!
+Epoch 1/1
+634/634 [==============================] - 14s 21ms/step - loss: 0.1339
+15. set (Dataset 22) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:48:33.791408!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0641
+16. set (Dataset 20) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:48:54.652371!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0722
+17. set (Dataset 15) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:49:13.967042!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0825
+18. set (Dataset 16) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:49:37.877048!
+Epoch 1/1
+914/914 [==============================] - 22s 24ms/step - loss: 0.0838
+19. set (Dataset 12) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:50:06.832124!
+Epoch 1/1
+732/732 [==============================] - 18s 24ms/step - loss: 0.0835
+20. set (Dataset 18) being trained for epoch 2 in Experiment 3 by 2019-01-30 04:50:30.331250!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1063
+Epoch 2 for Experiment 3 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 04:50:48.674767
+1. set (Dataset 16) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:50:57.444715!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0816
+2. set (Dataset 18) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:51:24.698087!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1028
+3. set (Dataset 19) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:51:43.774364!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0769
+4. set (Dataset 22) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:52:01.806554!
+Epoch 1/1
+665/665 [==============================] - 16s 24ms/step - loss: 0.0619
+5. set (Dataset 13) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:52:22.632402!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0726
+6. set (Dataset 12) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:52:40.659200!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0878
+7. set (Dataset 15) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:53:03.973902!
+Epoch 1/1
+654/654 [==============================] - 16s 24ms/step - loss: 0.0860
+8. set (Dataset 24) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:53:24.407054!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0655
+9. set (Dataset 23) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:53:41.738463!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1160
+10. set (Dataset 8) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:54:02.926655!
+Epoch 1/1
+772/772 [==============================] - 18s 24ms/step - loss: 0.0938
+11. set (Dataset 4) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:54:28.790508!
+Epoch 1/1
+744/744 [==============================] - 17s 22ms/step - loss: 0.1035
+12. set (Dataset 11) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:54:51.235187!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0663
+13. set (Dataset 21) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:55:10.275937!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1351
+14. set (Dataset 17) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:55:29.268919!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0825
+15. set (Dataset 6) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:55:43.987851!
+Epoch 1/1
+542/542 [==============================] - 13s 24ms/step - loss: 0.1123
+16. set (Dataset 20) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:56:02.318126!
+Epoch 1/1
+556/556 [==============================] - 12s 21ms/step - loss: 0.0718
+17. set (Dataset 10) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:56:21.573974!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0922
+18. set (Dataset 1) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:56:43.577789!
+Epoch 1/1
+498/498 [==============================] - 12s 23ms/step - loss: 0.1139
+19. set (Dataset 7) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:57:02.844014!
+Epoch 1/1
+745/745 [==============================] - 16s 22ms/step - loss: 0.0945
+20. set (Dataset 2) being trained for epoch 3 in Experiment 3 by 2019-01-30 04:57:24.460247!
+Epoch 1/1
+511/511 [==============================] - 11s 22ms/step - loss: 0.1076
+Epoch 3 for Experiment 3 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 04:57:40.116817
+1. set (Dataset 1) being trained for epoch 4 in Experiment 3 by 2019-01-30 04:57:45.183074!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1127
+2. set (Dataset 2) being trained for epoch 4 in Experiment 3 by 2019-01-30 04:58:01.778766!
+Epoch 1/1
+511/511 [==============================] - 11s 22ms/step - loss: 0.1046
+3. set (Dataset 4) being trained for epoch 4 in Experiment 3 by 2019-01-30 04:58:20.415690!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1010
+4. set (Dataset 6) being trained for epoch 4 in Experiment 3 by 2019-01-30 04:58:43.009993!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1154
+5. set (Dataset 12) being trained for epoch 4 in Experiment 3 by 2019-01-30 04:59:02.825693!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0801
+6. set (Dataset 7) being trained for epoch 4 in Experiment 3 by 2019-01-30 04:59:27.932598!
+Epoch 1/1
+745/745 [==============================] - 17s 22ms/step - loss: 0.0988
+7. set (Dataset 10) being trained for epoch 4 in Experiment 3 by 2019-01-30 04:59:51.938679!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0869
+8. set (Dataset 11) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:00:14.547960!
+Epoch 1/1
+572/572 [==============================] - 14s 24ms/step - loss: 0.0640
+9. set (Dataset 13) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:00:33.178334!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0691
+10. set (Dataset 23) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:00:49.646060!
+Epoch 1/1
+569/569 [==============================] - 13s 24ms/step - loss: 0.1206
+11. set (Dataset 15) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:01:09.527633!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0854
+12. set (Dataset 16) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:01:33.511525!
+Epoch 1/1
+914/914 [==============================] - 22s 24ms/step - loss: 0.0842
+13. set (Dataset 17) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:01:59.167734!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0829
+14. set (Dataset 18) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:02:14.618422!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1015
+15. set (Dataset 19) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:02:33.720242!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0750
+16. set (Dataset 20) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:02:50.422996!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0705
+17. set (Dataset 21) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:03:09.572575!
+Epoch 1/1
+634/634 [==============================] - 14s 23ms/step - loss: 0.1314
+18. set (Dataset 22) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:03:30.518217!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0629
+19. set (Dataset 8) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:03:53.612166!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0928
+20. set (Dataset 24) being trained for epoch 4 in Experiment 3 by 2019-01-30 05:04:16.289251!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0639
+Epoch 4 for Experiment 3 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:04:31.970570
+1. set (Dataset 22) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:04:38.391340!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0613
+2. set (Dataset 24) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:04:58.283055!
+Epoch 1/1
+492/492 [==============================] - 12s 23ms/step - loss: 0.0608
+3. set (Dataset 15) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:05:16.315297!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0868
+4. set (Dataset 19) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:05:36.636372!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0751
+5. set (Dataset 7) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:05:55.555782!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.1003
+6. set (Dataset 8) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:06:21.235282!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0898
+7. set (Dataset 21) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:06:45.214639!
+Epoch 1/1
+634/634 [==============================] - 14s 22ms/step - loss: 0.1345
+8. set (Dataset 16) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:07:08.112910!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0838
+9. set (Dataset 12) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:07:36.451307!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0790
+10. set (Dataset 13) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:07:58.223985!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0672
+11. set (Dataset 10) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:08:16.571650!
+Epoch 1/1
+726/726 [==============================] - 16s 23ms/step - loss: 0.0896
+12. set (Dataset 1) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:08:38.109091!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1090
+13. set (Dataset 18) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:08:55.984557!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1055
+14. set (Dataset 2) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:09:15.290539!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1086
+15. set (Dataset 4) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:09:34.871446!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.0997
+16. set (Dataset 20) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:09:57.716987!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0773
+17. set (Dataset 17) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:10:14.681477!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0824
+18. set (Dataset 6) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:10:29.391172!
+Epoch 1/1
+542/542 [==============================] - 12s 22ms/step - loss: 0.1082
+19. set (Dataset 23) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:10:47.129770!
+Epoch 1/1
+569/569 [==============================] - 13s 24ms/step - loss: 0.1154
+20. set (Dataset 11) being trained for epoch 5 in Experiment 3 by 2019-01-30 05:11:06.329162!
+Epoch 1/1
+572/572 [==============================] - 13s 22ms/step - loss: 0.0657
+Epoch 5 for Experiment 3 completed!
+Exp2019-01-30_03-25-16_part3.h5 has been saved.
+The subjects are trained: [(22, 'M01'), (24, 'M14'), (15, 'F03'), (19, 'M11'), (7, 'M01'), (8, 'M02'), (21, 'F02'), (1
+6, 'M09'), (12, 'M06'), (13, 'M07'), (10, 'M04'), (1, 'F01'), (18, 'F05'), (2, 'F02'), (4, 'F04'), (20, 'M12'), (17, '
+M10'), (6, 'F06'), (23, 'M13'), (11, 'M05')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 05:11:21.471491
+For the Subject 3 (F03):
+730/730 [==============================] - 11s 15ms/step
+        The absolute mean error on Pitch angle estimation: 8.36 Degree
+        The absolute mean error on Yaw angle estimation: 23.21 Degree
+        The absolute mean error on Roll angle estimation: 13.32 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 15s 16ms/step
+        The absolute mean error on Pitch angle estimation: 7.53 Degree
+        The absolute mean error on Yaw angle estimation: 19.63 Degree
+        The absolute mean error on Roll angle estimation: 5.00 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 14s 16ms/step
+        The absolute mean error on Pitch angle estimation: 31.44 Degree
+        The absolute mean error on Yaw angle estimation: 19.20 Degree
+        The absolute mean error on Roll angle estimation: 9.38 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 14.16 Degree
+        The absolute mean error on Yaw angle estimation: 29.86 Degree
+        The absolute mean error on Roll angle estimation: 13.18 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.37 Degree
+        The absolute mean error on Yaw angle estimations: 22.97 Degree
+        The absolute mean error on Roll angle estimations: 10.22 Degree
+Exp2019-01-30_03-25-16_part3 completed!
+Training model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:12:54.232039
+1. set (Dataset 6) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:12:59.436466!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1061
+2. set (Dataset 11) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:13:17.719155!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0632
+3. set (Dataset 10) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:13:37.923781!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0895
+4. set (Dataset 4) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:14:02.536218!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1031
+5. set (Dataset 8) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:14:27.594125!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0924
+6. set (Dataset 23) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:14:51.029791!
+Epoch 1/1
+569/569 [==============================] - 14s 24ms/step - loss: 0.1235
+7. set (Dataset 17) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:15:08.508619!
+Epoch 1/1
+395/395 [==============================] - 9s 22ms/step - loss: 0.0803
+8. set (Dataset 1) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:15:22.458948!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1096
+9. set (Dataset 7) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:15:41.281683!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.0947
+10. set (Dataset 12) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:16:06.459947!
+Epoch 1/1
+732/732 [==============================] - 18s 24ms/step - loss: 0.0821
+11. set (Dataset 21) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:16:30.069430!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1363
+12. set (Dataset 22) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:16:51.451936!
+Epoch 1/1
+665/665 [==============================] - 16s 24ms/step - loss: 0.0632
+13. set (Dataset 2) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:17:12.397636!
+Epoch 1/1
+511/511 [==============================] - 11s 22ms/step - loss: 0.1035
+14. set (Dataset 24) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:17:28.310374!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0652
+15. set (Dataset 15) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:17:46.208477!
+Epoch 1/1
+654/654 [==============================] - 15s 22ms/step - loss: 0.0906
+16. set (Dataset 20) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:18:06.258690!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0728
+17. set (Dataset 18) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:18:24.963750!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1025
+18. set (Dataset 19) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:18:44.096840!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0777
+19. set (Dataset 13) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:19:00.631975!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0722
+20. set (Dataset 16) being trained for epoch 1 in Experiment 4 by 2019-01-30 05:19:20.003477!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0849
+Epoch 1 for Experiment 4 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:19:45.466636
+1. set (Dataset 19) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:19:50.361139!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0789
+2. set (Dataset 16) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:20:10.878967!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0831
+3. set (Dataset 21) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:20:37.906586!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1316
+4. set (Dataset 15) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:20:59.371642!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0876
+5. set (Dataset 23) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:21:19.810249!
+Epoch 1/1
+569/569 [==============================] - 14s 24ms/step - loss: 0.1155
+6. set (Dataset 13) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:21:38.318230!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0714
+7. set (Dataset 18) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:21:55.600345!
+Epoch 1/1
+614/614 [==============================] - 14s 22ms/step - loss: 0.1017
+8. set (Dataset 22) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:22:15.752766!
+Epoch 1/1
+665/665 [==============================] - 16s 23ms/step - loss: 0.0630
+9. set (Dataset 8) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:22:39.182372!
+Epoch 1/1
+772/772 [==============================] - 17s 22ms/step - loss: 0.0945
+10. set (Dataset 7) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:23:04.111926!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.0950
+11. set (Dataset 17) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:23:25.534912!
+Epoch 1/1
+395/395 [==============================] - 9s 22ms/step - loss: 0.0804
+12. set (Dataset 6) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:23:39.616318!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1057
+13. set (Dataset 24) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:23:56.728138!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0664
+14. set (Dataset 11) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:24:13.935660!
+Epoch 1/1
+572/572 [==============================] - 13s 24ms/step - loss: 0.0648
+15. set (Dataset 10) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:24:34.771198!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0895
+16. set (Dataset 20) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:24:56.900255!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0783
+17. set (Dataset 2) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:25:14.963100!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1144
+18. set (Dataset 4) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:25:34.675458!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.1018
+19. set (Dataset 12) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:25:59.828978!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0838
+20. set (Dataset 1) being trained for epoch 2 in Experiment 4 by 2019-01-30 05:26:21.704445!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1096
+Epoch 2 for Experiment 4 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:26:37.411779
+1. set (Dataset 4) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:26:44.803581!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.0976
+2. set (Dataset 1) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:27:07.364919!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1065
+3. set (Dataset 17) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:27:22.232962!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0867
+4. set (Dataset 10) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:27:38.952548!
+Epoch 1/1
+726/726 [==============================] - 16s 22ms/step - loss: 0.0858
+5. set (Dataset 13) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:28:00.214009!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0707
+6. set (Dataset 12) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:28:18.272794!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0773
+7. set (Dataset 2) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:28:40.796296!
+Epoch 1/1
+511/511 [==============================] - 11s 21ms/step - loss: 0.1008
+8. set (Dataset 6) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:28:57.023856!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1125
+9. set (Dataset 23) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:29:15.319795!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1175
+10. set (Dataset 8) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:29:36.442071!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0917
+11. set (Dataset 18) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:30:00.008110!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1102
+12. set (Dataset 19) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:30:19.382565!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0787
+13. set (Dataset 11) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:30:36.674237!
+Epoch 1/1
+572/572 [==============================] - 14s 24ms/step - loss: 0.0644
+14. set (Dataset 16) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:30:59.254225!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0830
+15. set (Dataset 21) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:31:26.648906!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1323
+16. set (Dataset 20) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:31:47.294059!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0691
+17. set (Dataset 24) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:32:04.992939!
+Epoch 1/1
+492/492 [==============================] - 12s 23ms/step - loss: 0.0626
+18. set (Dataset 15) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:32:23.014276!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0892
+19. set (Dataset 7) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:32:45.831792!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0979
+20. set (Dataset 22) being trained for epoch 3 in Experiment 4 by 2019-01-30 05:33:09.655917!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0635
+Epoch 3 for Experiment 4 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:33:29.140897
+1. set (Dataset 15) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:33:35.515229!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0823
+2. set (Dataset 22) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:33:57.304084!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0632
+3. set (Dataset 18) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:34:18.512199!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1052
+4. set (Dataset 21) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:34:39.251852!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1348
+5. set (Dataset 12) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:35:01.804150!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0832
+6. set (Dataset 7) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:35:26.706959!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0962
+7. set (Dataset 24) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:35:48.419845!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0628
+8. set (Dataset 19) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:36:04.702946!
+Epoch 1/1
+502/502 [==============================] - 12s 24ms/step - loss: 0.0762
+9. set (Dataset 13) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:36:21.626094!
+Epoch 1/1
+485/485 [==============================] - 10s 21ms/step - loss: 0.0728
+10. set (Dataset 23) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:36:37.566517!
+Epoch 1/1
+569/569 [==============================] - 13s 22ms/step - loss: 0.1160
+11. set (Dataset 2) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:36:55.312119!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1081
+12. set (Dataset 4) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:37:14.886277!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.1074
+13. set (Dataset 16) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:37:41.558132!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0844
+14. set (Dataset 1) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:38:08.025828!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1212
+15. set (Dataset 17) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:38:23.747301!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0819
+16. set (Dataset 20) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:38:38.289364!
+Epoch 1/1
+556/556 [==============================] - 12s 21ms/step - loss: 0.0762
+17. set (Dataset 11) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:38:56.008339!
+Epoch 1/1
+572/572 [==============================] - 14s 24ms/step - loss: 0.0672
+18. set (Dataset 10) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:39:16.926857!
+Epoch 1/1
+726/726 [==============================] - 16s 22ms/step - loss: 0.0864
+19. set (Dataset 8) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:39:41.056532!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0894
+20. set (Dataset 6) being trained for epoch 4 in Experiment 4 by 2019-01-30 05:40:04.035668!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1086
+Epoch 4 for Experiment 4 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:40:21.009361
+1. set (Dataset 10) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:40:28.246163!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0853
+2. set (Dataset 6) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:40:50.320202!
+Epoch 1/1
+542/542 [==============================] - 13s 24ms/step - loss: 0.1121
+3. set (Dataset 2) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:41:08.447539!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1051
+4. set (Dataset 17) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:41:24.522829!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0802
+5. set (Dataset 7) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:41:41.620990!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0951
+6. set (Dataset 8) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:42:06.559761!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0908
+7. set (Dataset 11) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:42:30.324694!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0612
+8. set (Dataset 4) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:42:51.132759!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1020
+9. set (Dataset 12) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:43:15.537984!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0815
+10. set (Dataset 13) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:43:37.729861!
+Epoch 1/1
+485/485 [==============================] - 11s 24ms/step - loss: 0.0669
+11. set (Dataset 24) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:43:53.984128!
+Epoch 1/1
+492/492 [==============================] - 11s 22ms/step - loss: 0.0712
+12. set (Dataset 15) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:44:11.033004!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0884
+13. set (Dataset 1) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:44:31.534291!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1185
+14. set (Dataset 22) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:44:49.010339!
+Epoch 1/1
+665/665 [==============================] - 15s 22ms/step - loss: 0.0650
+15. set (Dataset 18) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:45:09.627949!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1066
+16. set (Dataset 20) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:45:29.027460!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0772
+17. set (Dataset 16) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:45:50.707557!
+Epoch 1/1
+914/914 [==============================] - 20s 22ms/step - loss: 0.0821
+18. set (Dataset 21) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:46:17.330420!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1254
+19. set (Dataset 23) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:46:37.605815!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1129
+20. set (Dataset 19) being trained for epoch 5 in Experiment 4 by 2019-01-30 05:46:55.558515!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0750
+Epoch 5 for Experiment 4 completed!
+Exp2019-01-30_03-25-16_part4.h5 has been saved.
+The subjects are trained: [(10, 'M04'), (6, 'F06'), (2, 'F02'), (17, 'M10'), (7, 'M01'), (8, 'M02'), (11, 'M05'), (4,
+'F04'), (12, 'M06'), (13, 'M07'), (24, 'M14'), (15, 'F03'), (1, 'F01'), (22, 'M01'), (18, 'F05'), (20, 'M12'), (16, 'M
+09'), (21, 'F02'), (23, 'M13'), (19, 'M11')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 05:47:09.356531
+For the Subject 3 (F03):
+730/730 [==============================] - 12s 16ms/step
+        The absolute mean error on Pitch angle estimation: 8.77 Degree
+        The absolute mean error on Yaw angle estimation: 23.30 Degree
+        The absolute mean error on Roll angle estimation: 13.11 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 15s 16ms/step
+        The absolute mean error on Pitch angle estimation: 9.02 Degree
+        The absolute mean error on Yaw angle estimation: 23.59 Degree
+        The absolute mean error on Roll angle estimation: 4.74 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 14s 16ms/step
+        The absolute mean error on Pitch angle estimation: 28.76 Degree
+        The absolute mean error on Yaw angle estimation: 19.73 Degree
+        The absolute mean error on Roll angle estimation: 7.46 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 13.60 Degree
+        The absolute mean error on Yaw angle estimation: 30.65 Degree
+        The absolute mean error on Roll angle estimation: 12.80 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.04 Degree
+        The absolute mean error on Yaw angle estimations: 24.32 Degree
+        The absolute mean error on Roll angle estimations: 9.53 Degree
+Exp2019-01-30_03-25-16_part4 completed!
+Training model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:48:41.484711
+1. set (Dataset 21) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:48:47.505677!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1301
+2. set (Dataset 19) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:49:07.426991!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0741
+3. set (Dataset 24) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:49:23.347133!
+Epoch 1/1
+492/492 [==============================] - 11s 22ms/step - loss: 0.0622
+4. set (Dataset 18) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:49:40.210107!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1001
+5. set (Dataset 8) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:50:02.732903!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0957
+6. set (Dataset 23) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:50:26.478832!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1151
+7. set (Dataset 16) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:50:48.171093!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0786
+8. set (Dataset 15) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:51:15.755866!
+Epoch 1/1
+654/654 [==============================] - 15s 24ms/step - loss: 0.0827
+9. set (Dataset 7) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:51:38.857663!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.0979
+10. set (Dataset 12) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:52:03.981001!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0828
+11. set (Dataset 11) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:52:26.950068!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0644
+12. set (Dataset 10) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:52:47.198299!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0860
+13. set (Dataset 22) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:53:10.492913!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0624
+14. set (Dataset 6) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:53:31.042944!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1126
+15. set (Dataset 2) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:53:48.667374!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1135
+16. set (Dataset 20) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:54:06.381877!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0761
+17. set (Dataset 1) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:54:24.219002!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1209
+18. set (Dataset 17) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:54:39.524255!
+Epoch 1/1
+395/395 [==============================] - 9s 22ms/step - loss: 0.0822
+19. set (Dataset 13) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:54:53.199881!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0649
+20. set (Dataset 4) being trained for epoch 1 in Experiment 5 by 2019-01-30 05:55:11.576986!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1066
+Epoch 1 for Experiment 5 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 05:55:33.161876
+1. set (Dataset 17) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:55:36.923583!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0801
+2. set (Dataset 4) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:55:53.440773!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.0995
+3. set (Dataset 11) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:56:17.049222!
+Epoch 1/1
+572/572 [==============================] - 14s 24ms/step - loss: 0.0677
+4. set (Dataset 2) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:56:35.914105!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1083
+5. set (Dataset 23) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:56:53.612923!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1186
+6. set (Dataset 13) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:57:11.536141!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0649
+7. set (Dataset 1) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:57:27.670987!
+Epoch 1/1
+498/498 [==============================] - 12s 23ms/step - loss: 0.1168
+8. set (Dataset 10) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:57:46.629857!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0864
+9. set (Dataset 8) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:58:11.402114!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0883
+10. set (Dataset 7) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:58:36.859246!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.0966
+11. set (Dataset 16) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:59:03.314434!
+Epoch 1/1
+914/914 [==============================] - 21s 22ms/step - loss: 0.0883
+12. set (Dataset 21) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:59:30.001965!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1399
+13. set (Dataset 6) being trained for epoch 2 in Experiment 5 by 2019-01-30 05:59:50.278501!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1104
+14. set (Dataset 19) being trained for epoch 2 in Experiment 5 by 2019-01-30 06:00:07.655861!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0772
+15. set (Dataset 24) being trained for epoch 2 in Experiment 5 by 2019-01-30 06:00:23.490326!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0618
+16. set (Dataset 20) being trained for epoch 2 in Experiment 5 by 2019-01-30 06:00:40.406426!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0707
+17. set (Dataset 22) being trained for epoch 2 in Experiment 5 by 2019-01-30 06:00:59.997841!
+Epoch 1/1
+665/665 [==============================] - 16s 23ms/step - loss: 0.0608
+18. set (Dataset 18) being trained for epoch 2 in Experiment 5 by 2019-01-30 06:01:21.551547!
+Epoch 1/1
+614/614 [==============================] - 14s 22ms/step - loss: 0.1019
+19. set (Dataset 12) being trained for epoch 2 in Experiment 5 by 2019-01-30 06:01:42.728534!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0841
+20. set (Dataset 15) being trained for epoch 2 in Experiment 5 by 2019-01-30 06:02:06.668866!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0848
+Epoch 2 for Experiment 5 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:02:26.252799
+1. set (Dataset 18) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:02:32.146585!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1041
+2. set (Dataset 15) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:02:52.779692!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0841
+3. set (Dataset 16) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:03:16.765431!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0812
+4. set (Dataset 24) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:03:42.644385!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0643
+5. set (Dataset 13) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:03:58.862904!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0752
+6. set (Dataset 12) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:04:17.036186!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0856
+7. set (Dataset 22) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:04:40.478750!
+Epoch 1/1
+665/665 [==============================] - 16s 24ms/step - loss: 0.0602
+8. set (Dataset 21) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:05:02.269506!
+Epoch 1/1
+634/634 [==============================] - 14s 21ms/step - loss: 0.1329
+9. set (Dataset 23) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:05:21.386969!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1141
+10. set (Dataset 8) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:05:42.293318!
+Epoch 1/1
+772/772 [==============================] - 18s 24ms/step - loss: 0.1002
+11. set (Dataset 1) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:06:05.697897!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1150
+12. set (Dataset 17) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:06:21.033262!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0818
+13. set (Dataset 19) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:06:35.408330!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0784
+14. set (Dataset 4) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:06:54.285951!
+Epoch 1/1
+744/744 [==============================] - 17s 22ms/step - loss: 0.1081
+15. set (Dataset 11) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:07:16.685074!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0663
+16. set (Dataset 20) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:07:35.342734!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0770
+17. set (Dataset 6) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:07:53.921167!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1087
+18. set (Dataset 2) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:08:11.835385!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1097
+19. set (Dataset 7) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:08:31.723363!
+Epoch 1/1
+745/745 [==============================] - 17s 22ms/step - loss: 0.0959
+20. set (Dataset 10) being trained for epoch 3 in Experiment 5 by 2019-01-30 06:08:55.806528!
+Epoch 1/1
+726/726 [==============================] - 16s 22ms/step - loss: 0.0866
+Epoch 3 for Experiment 5 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:09:16.186361
+1. set (Dataset 2) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:09:21.277386!
+Epoch 1/1
+511/511 [==============================] - 11s 22ms/step - loss: 0.1058
+2. set (Dataset 10) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:09:40.097408!
+Epoch 1/1
+726/726 [==============================] - 16s 22ms/step - loss: 0.0877
+3. set (Dataset 1) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:10:01.550455!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1168
+4. set (Dataset 11) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:10:19.254642!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0637
+5. set (Dataset 12) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:10:39.676489!
+Epoch 1/1
+732/732 [==============================] - 16s 22ms/step - loss: 0.0819
+6. set (Dataset 7) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:11:03.221034!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0926
+7. set (Dataset 6) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:11:25.886097!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1126
+8. set (Dataset 17) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:11:42.064176!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0803
+9. set (Dataset 13) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:11:56.381397!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0643
+10. set (Dataset 23) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:12:12.941105!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1151
+11. set (Dataset 22) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:12:32.777409!
+Epoch 1/1
+665/665 [==============================] - 15s 22ms/step - loss: 0.0592
+12. set (Dataset 18) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:12:53.708955!
+Epoch 1/1
+614/614 [==============================] - 14s 22ms/step - loss: 0.1024
+13. set (Dataset 4) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:13:14.917552!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1072
+14. set (Dataset 15) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:13:38.438774!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0879
+15. set (Dataset 16) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:14:02.652453!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0822
+16. set (Dataset 20) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:14:29.127627!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0718
+17. set (Dataset 19) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:14:46.738928!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0768
+18. set (Dataset 24) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:15:03.281197!
+Epoch 1/1
+492/492 [==============================] - 11s 22ms/step - loss: 0.0606
+19. set (Dataset 8) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:15:22.161888!
+Epoch 1/1
+772/772 [==============================] - 18s 24ms/step - loss: 0.0976
+20. set (Dataset 21) being trained for epoch 4 in Experiment 5 by 2019-01-30 06:15:46.728120!
+Epoch 1/1
+634/634 [==============================] - 14s 23ms/step - loss: 0.1319
+Epoch 4 for Experiment 5 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:16:05.719480
+1. set (Dataset 24) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:16:10.409585!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0596
+2. set (Dataset 21) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:16:28.022398!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1272
+3. set (Dataset 22) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:16:49.260321!
+Epoch 1/1
+665/665 [==============================] - 13s 19ms/step - loss: 0.0612
+4. set (Dataset 16) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:17:10.721315!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0813
+5. set (Dataset 7) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:17:39.527816!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.1027
+6. set (Dataset 8) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:18:04.553949!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0926
+7. set (Dataset 19) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:18:27.252885!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0741
+8. set (Dataset 18) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:18:44.449383!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1076
+9. set (Dataset 12) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:19:05.738941!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0830
+10. set (Dataset 13) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:19:27.228721!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0681
+11. set (Dataset 6) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:19:43.354683!
+Epoch 1/1
+542/542 [==============================] - 13s 24ms/step - loss: 0.1088
+12. set (Dataset 2) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:20:01.514040!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1041
+13. set (Dataset 15) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:20:20.166696!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0879
+14. set (Dataset 10) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:20:42.764950!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0938
+15. set (Dataset 1) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:21:04.788356!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1157
+16. set (Dataset 20) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:21:21.370211!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0771
+17. set (Dataset 4) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:21:42.154128!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.1012
+18. set (Dataset 11) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:22:05.567304!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0656
+19. set (Dataset 23) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:22:24.260648!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1224
+20. set (Dataset 17) being trained for epoch 5 in Experiment 5 by 2019-01-30 06:22:41.169597!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0802
+Epoch 5 for Experiment 5 completed!
+Exp2019-01-30_03-25-16_part5.h5 has been saved.
+The subjects are trained: [(24, 'M14'), (21, 'F02'), (22, 'M01'), (16, 'M09'), (7, 'M01'), (8, 'M02'), (19, 'M11'), (1
+8, 'F05'), (12, 'M06'), (13, 'M07'), (6, 'F06'), (2, 'F02'), (15, 'F03'), (10, 'M04'), (1, 'F01'), (20, 'M12'), (4, 'F
+04'), (11, 'M05'), (23, 'M13'), (17, 'M10')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 06:22:52.864333
+For the Subject 3 (F03):
+730/730 [==============================] - 12s 16ms/step
+        The absolute mean error on Pitch angle estimation: 8.64 Degree
+        The absolute mean error on Yaw angle estimation: 23.18 Degree
+        The absolute mean error on Roll angle estimation: 10.85 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 15s 16ms/step
+        The absolute mean error on Pitch angle estimation: 8.04 Degree
+        The absolute mean error on Yaw angle estimation: 19.57 Degree
+        The absolute mean error on Roll angle estimation: 3.86 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 14s 16ms/step
+        The absolute mean error on Pitch angle estimation: 29.83 Degree
+        The absolute mean error on Yaw angle estimation: 15.89 Degree
+        The absolute mean error on Roll angle estimation: 8.00 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 13.42 Degree
+        The absolute mean error on Yaw angle estimation: 32.09 Degree
+        The absolute mean error on Roll angle estimation: 12.78 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 14.98 Degree
+        The absolute mean error on Yaw angle estimations: 22.68 Degree
+        The absolute mean error on Roll angle estimations: 8.87 Degree
+Exp2019-01-30_03-25-16_part5 completed!
+Training model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:24:24.908092
+1. set (Dataset 11) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:24:30.641457!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0626
+2. set (Dataset 17) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:24:47.572520!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0799
+3. set (Dataset 6) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:25:02.215559!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1034
+4. set (Dataset 1) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:25:19.925613!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1175
+5. set (Dataset 8) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:25:39.675796!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0936
+6. set (Dataset 23) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:26:03.037816!
+Epoch 1/1
+569/569 [==============================] - 13s 24ms/step - loss: 0.1174
+7. set (Dataset 4) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:26:23.948871!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1040
+8. set (Dataset 2) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:26:46.526980!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1089
+9. set (Dataset 7) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:27:05.888831!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0934
+10. set (Dataset 12) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:27:30.292754!
+Epoch 1/1
+732/732 [==============================] - 16s 22ms/step - loss: 0.0823
+11. set (Dataset 19) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:27:51.623960!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0810
+12. set (Dataset 24) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:28:08.186902!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0667
+13. set (Dataset 10) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:28:27.234911!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0879
+14. set (Dataset 21) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:28:50.725314!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1358
+15. set (Dataset 22) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:29:11.984990!
+Epoch 1/1
+665/665 [==============================] - 16s 24ms/step - loss: 0.0627
+16. set (Dataset 20) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:29:33.339856!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0725
+17. set (Dataset 15) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:29:52.448360!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0868
+18. set (Dataset 16) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:30:16.299196!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0840
+19. set (Dataset 13) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:30:42.603101!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0689
+20. set (Dataset 18) being trained for epoch 1 in Experiment 6 by 2019-01-30 06:30:59.260850!
+Epoch 1/1
+614/614 [==============================] - 13s 21ms/step - loss: 0.1039
+Epoch 1 for Experiment 6 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:31:16.847125
+1. set (Dataset 16) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:31:25.602164!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0821
+2. set (Dataset 18) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:31:52.926260!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1040
+3. set (Dataset 19) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:32:12.636686!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0739
+4. set (Dataset 22) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:32:30.409792!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0633
+5. set (Dataset 23) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:32:51.047528!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1149
+6. set (Dataset 13) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:33:09.289135!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0715
+7. set (Dataset 15) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:33:26.715875!
+Epoch 1/1
+654/654 [==============================] - 14s 22ms/step - loss: 0.0844
+8. set (Dataset 24) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:33:45.928559!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0633
+9. set (Dataset 8) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:34:05.400013!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0966
+10. set (Dataset 7) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:34:30.968483!
+Epoch 1/1
+745/745 [==============================] - 17s 22ms/step - loss: 0.0970
+11. set (Dataset 4) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:34:55.123963!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1001
+12. set (Dataset 11) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:35:17.729499!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0671
+13. set (Dataset 21) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:35:37.075460!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1348
+14. set (Dataset 17) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:35:56.120476!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0830
+15. set (Dataset 6) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:36:10.508044!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1083
+16. set (Dataset 20) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:36:28.244807!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0721
+17. set (Dataset 10) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:36:48.394782!
+Epoch 1/1
+726/726 [==============================] - 16s 22ms/step - loss: 0.0942
+18. set (Dataset 1) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:37:09.735237!
+Epoch 1/1
+498/498 [==============================] - 12s 23ms/step - loss: 0.1127
+19. set (Dataset 12) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:37:28.733405!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0816
+20. set (Dataset 2) being trained for epoch 2 in Experiment 6 by 2019-01-30 06:37:51.347325!
+Epoch 1/1
+511/511 [==============================] - 10s 19ms/step - loss: 0.1017
+Epoch 2 for Experiment 6 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:38:05.454374
+1. set (Dataset 1) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:38:10.538054!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1131
+2. set (Dataset 2) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:38:26.971450!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1021
+3. set (Dataset 4) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:38:46.350106!
+Epoch 1/1
+744/744 [==============================] - 16s 22ms/step - loss: 0.0963
+4. set (Dataset 6) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:39:07.887237!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1136
+5. set (Dataset 13) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:39:25.521733!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0675
+6. set (Dataset 12) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:39:43.961700!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0795
+7. set (Dataset 10) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:40:07.941473!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0873
+8. set (Dataset 11) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:40:30.287470!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0616
+9. set (Dataset 23) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:40:48.832595!
+Epoch 1/1
+569/569 [==============================] - 12s 22ms/step - loss: 0.1192
+10. set (Dataset 8) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:41:09.156017!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0913
+11. set (Dataset 15) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:41:33.198113!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0900
+12. set (Dataset 16) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:41:57.021442!
+Epoch 1/1
+914/914 [==============================] - 20s 22ms/step - loss: 0.0852
+13. set (Dataset 17) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:42:21.280159!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0807
+14. set (Dataset 18) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:42:36.427479!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1020
+15. set (Dataset 19) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:42:56.091642!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0742
+16. set (Dataset 20) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:43:13.222020!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0700
+17. set (Dataset 21) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:43:32.615024!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1319
+18. set (Dataset 22) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:43:53.879056!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0626
+19. set (Dataset 7) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:44:16.582257!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0985
+20. set (Dataset 24) being trained for epoch 3 in Experiment 6 by 2019-01-30 06:44:38.514621!
+Epoch 1/1
+492/492 [==============================] - 11s 22ms/step - loss: 0.0650
+Epoch 3 for Experiment 6 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:44:54.045608
+1. set (Dataset 22) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:45:00.448880!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0577
+2. set (Dataset 24) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:45:20.590192!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0607
+3. set (Dataset 15) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:45:38.204278!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0859
+4. set (Dataset 19) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:45:58.063505!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0749
+5. set (Dataset 12) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:46:17.077892!
+Epoch 1/1
+732/732 [==============================] - 16s 22ms/step - loss: 0.0860
+6. set (Dataset 7) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:46:41.063959!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0967
+7. set (Dataset 21) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:47:04.488157!
+Epoch 1/1
+634/634 [==============================] - 14s 23ms/step - loss: 0.1384
+8. set (Dataset 16) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:47:27.702179!
+Epoch 1/1
+914/914 [==============================] - 21s 22ms/step - loss: 0.0808
+9. set (Dataset 13) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:47:53.149566!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0683
+10. set (Dataset 23) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:48:09.467314!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1166
+11. set (Dataset 10) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:48:29.913952!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0946
+12. set (Dataset 1) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:48:52.272790!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1115
+13. set (Dataset 18) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:49:09.063164!
+Epoch 1/1
+614/614 [==============================] - 14s 22ms/step - loss: 0.1060
+14. set (Dataset 2) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:49:27.987974!
+Epoch 1/1
+511/511 [==============================] - 11s 22ms/step - loss: 0.1049
+15. set (Dataset 4) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:49:46.819759!
+Epoch 1/1
+744/744 [==============================] - 17s 22ms/step - loss: 0.1005
+16. set (Dataset 20) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:50:08.942626!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0759
+17. set (Dataset 17) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:50:25.507674!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0805
+18. set (Dataset 6) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:50:39.807549!
+Epoch 1/1
+542/542 [==============================] - 12s 22ms/step - loss: 0.1067
+19. set (Dataset 8) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:50:59.352860!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0926
+20. set (Dataset 11) being trained for epoch 4 in Experiment 6 by 2019-01-30 06:51:23.063815!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0615
+Epoch 4 for Experiment 6 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 06:51:40.760017
+1. set (Dataset 6) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:51:45.963281!
+Epoch 1/1
+542/542 [==============================] - 12s 22ms/step - loss: 0.1055
+2. set (Dataset 11) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:52:03.805346!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0643
+3. set (Dataset 10) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:52:24.069741!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0897
+4. set (Dataset 4) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:52:48.642298!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1028
+5. set (Dataset 7) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:53:13.644459!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0917
+6. set (Dataset 8) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:53:38.877696!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0927
+7. set (Dataset 17) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:54:00.624313!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0831
+8. set (Dataset 1) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:54:14.759232!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1122
+9. set (Dataset 12) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:54:33.319871!
+Epoch 1/1
+732/732 [==============================] - 16s 22ms/step - loss: 0.0807
+10. set (Dataset 13) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:54:54.379747!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0682
+11. set (Dataset 21) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:55:11.687146!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1438
+12. set (Dataset 22) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:55:33.233993!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0596
+13. set (Dataset 2) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:55:53.924062!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1026
+14. set (Dataset 24) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:56:10.935211!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0689
+15. set (Dataset 15) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:56:29.070540!
+Epoch 1/1
+654/654 [==============================] - 16s 24ms/step - loss: 0.0917
+16. set (Dataset 20) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:56:50.154279!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0732
+17. set (Dataset 18) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:57:08.791813!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1068
+18. set (Dataset 19) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:57:27.774769!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0740
+19. set (Dataset 23) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:57:44.652634!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1116
+20. set (Dataset 16) being trained for epoch 5 in Experiment 6 by 2019-01-30 06:58:06.691031!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0783
+Epoch 5 for Experiment 6 completed!
+Exp2019-01-30_03-25-16_part6.h5 has been saved.
+The subjects are trained: [(6, 'F06'), (11, 'M05'), (10, 'M04'), (4, 'F04'), (7, 'M01'), (8, 'M02'), (17, 'M10'), (1,
+'F01'), (12, 'M06'), (13, 'M07'), (21, 'F02'), (22, 'M01'), (2, 'F02'), (24, 'M14'), (15, 'F03'), (20, 'M12'), (18, 'F
+05'), (19, 'M11'), (23, 'M13'), (16, 'M09')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 06:58:29.716123
+For the Subject 3 (F03):
+730/730 [==============================] - 11s 15ms/step
+        The absolute mean error on Pitch angle estimation: 8.84 Degree
+        The absolute mean error on Yaw angle estimation: 22.90 Degree
+        The absolute mean error on Roll angle estimation: 13.49 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 15s 16ms/step
+        The absolute mean error on Pitch angle estimation: 8.00 Degree
+        The absolute mean error on Yaw angle estimation: 21.40 Degree
+        The absolute mean error on Roll angle estimation: 4.73 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 14s 16ms/step
+        The absolute mean error on Pitch angle estimation: 30.47 Degree
+        The absolute mean error on Yaw angle estimation: 19.48 Degree
+        The absolute mean error on Roll angle estimation: 7.46 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 12.79 Degree
+        The absolute mean error on Yaw angle estimation: 30.16 Degree
+        The absolute mean error on Roll angle estimation: 12.59 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.02 Degree
+        The absolute mean error on Yaw angle estimations: 23.48 Degree
+        The absolute mean error on Roll angle estimations: 9.57 Degree
+Exp2019-01-30_03-25-16_part6 completed!
+Training model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:00:01.083695
+1. set (Dataset 19) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:00:06.017533!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0722
+2. set (Dataset 16) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:00:26.197086!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0812
+3. set (Dataset 21) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:00:53.288959!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1304
+4. set (Dataset 15) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:01:14.460583!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0904
+5. set (Dataset 8) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:01:37.201387!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0954
+6. set (Dataset 23) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:02:00.568639!
+Epoch 1/1
+569/569 [==============================] - 14s 24ms/step - loss: 0.1151
+7. set (Dataset 18) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:02:20.178197!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1027
+8. set (Dataset 22) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:02:41.288537!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0590
+9. set (Dataset 7) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:03:04.342133!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.1010
+10. set (Dataset 12) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:03:29.050741!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0844
+11. set (Dataset 17) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:03:49.794629!
+Epoch 1/1
+395/395 [==============================] - 9s 22ms/step - loss: 0.0793
+12. set (Dataset 6) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:04:03.663332!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1121
+13. set (Dataset 24) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:04:20.687812!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0603
+14. set (Dataset 11) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:04:37.815138!
+Epoch 1/1
+572/572 [==============================] - 12s 22ms/step - loss: 0.0641
+15. set (Dataset 10) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:04:57.497981!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0852
+16. set (Dataset 20) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:05:20.229812!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0768
+17. set (Dataset 2) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:05:38.600230!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1086
+18. set (Dataset 4) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:05:57.798945!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1024
+19. set (Dataset 13) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:06:19.675815!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0663
+20. set (Dataset 1) being trained for epoch 1 in Experiment 7 by 2019-01-30 07:06:35.551603!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1089
+Epoch 1 for Experiment 7 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:06:51.884385
+1. set (Dataset 4) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:06:59.296480!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.1003
+2. set (Dataset 1) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:07:22.216766!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1112
+3. set (Dataset 17) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:07:37.285767!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0825
+4. set (Dataset 10) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:07:53.970458!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0860
+5. set (Dataset 23) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:08:16.661485!
+Epoch 1/1
+569/569 [==============================] - 13s 22ms/step - loss: 0.1209
+6. set (Dataset 13) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:08:34.194618!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0648
+7. set (Dataset 2) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:08:50.740716!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1055
+8. set (Dataset 6) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:09:08.152090!
+Epoch 1/1
+542/542 [==============================] - 13s 24ms/step - loss: 0.1106
+9. set (Dataset 8) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:09:28.906438!
+Epoch 1/1
+772/772 [==============================] - 17s 22ms/step - loss: 0.0933
+10. set (Dataset 7) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:09:53.439647!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0954
+11. set (Dataset 18) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:10:16.795882!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1083
+12. set (Dataset 19) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:10:36.086478!
+Epoch 1/1
+502/502 [==============================] - 12s 24ms/step - loss: 0.0773
+13. set (Dataset 11) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:10:53.783130!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0652
+14. set (Dataset 16) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:11:15.878021!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0814
+15. set (Dataset 21) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:11:42.996115!
+Epoch 1/1
+634/634 [==============================] - 14s 21ms/step - loss: 0.1291
+16. set (Dataset 20) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:12:02.086195!
+Epoch 1/1
+556/556 [==============================] - 12s 21ms/step - loss: 0.0721
+17. set (Dataset 24) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:12:18.739502!
+Epoch 1/1
+492/492 [==============================] - 11s 22ms/step - loss: 0.0600
+18. set (Dataset 15) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:12:36.166950!
+Epoch 1/1
+654/654 [==============================] - 15s 22ms/step - loss: 0.0858
+19. set (Dataset 12) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:12:58.274144!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0863
+20. set (Dataset 22) being trained for epoch 2 in Experiment 7 by 2019-01-30 07:13:22.145038!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0625
+Epoch 2 for Experiment 7 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:13:41.709706
+1. set (Dataset 15) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:13:48.094480!
+Epoch 1/1
+654/654 [==============================] - 15s 22ms/step - loss: 0.0799
+2. set (Dataset 22) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:14:09.251627!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0598
+3. set (Dataset 18) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:14:30.272526!
+Epoch 1/1
+614/614 [==============================] - 14s 22ms/step - loss: 0.1026
+4. set (Dataset 21) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:14:50.189940!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1301
+5. set (Dataset 13) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:15:10.220531!
+Epoch 1/1
+485/485 [==============================] - 12s 24ms/step - loss: 0.0776
+6. set (Dataset 12) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:15:29.149362!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0866
+7. set (Dataset 24) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:15:50.669974!
+Epoch 1/1
+492/492 [==============================] - 12s 23ms/step - loss: 0.0622
+8. set (Dataset 19) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:16:07.227952!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0740
+9. set (Dataset 23) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:16:23.975438!
+Epoch 1/1
+569/569 [==============================] - 14s 24ms/step - loss: 0.1149
+10. set (Dataset 8) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:16:45.392261!
+Epoch 1/1
+772/772 [==============================] - 17s 22ms/step - loss: 0.0930
+11. set (Dataset 2) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:17:07.523948!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1120
+12. set (Dataset 4) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:17:26.983838!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1040
+13. set (Dataset 16) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:17:52.976814!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0851
+14. set (Dataset 1) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:18:19.514230!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1170
+15. set (Dataset 17) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:18:34.727463!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0805
+16. set (Dataset 20) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:18:49.632642!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0735
+17. set (Dataset 11) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:19:08.348340!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0648
+18. set (Dataset 10) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:19:29.064343!
+Epoch 1/1
+726/726 [==============================] - 16s 23ms/step - loss: 0.0864
+19. set (Dataset 7) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:19:53.265207!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.0955
+20. set (Dataset 6) being trained for epoch 3 in Experiment 7 by 2019-01-30 07:20:16.307385!
+Epoch 1/1
+542/542 [==============================] - 12s 23ms/step - loss: 0.1120
+Epoch 3 for Experiment 7 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:20:33.224106
+1. set (Dataset 10) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:20:40.467694!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0900
+2. set (Dataset 6) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:21:02.334455!
+Epoch 1/1
+542/542 [==============================] - 12s 22ms/step - loss: 0.1087
+3. set (Dataset 2) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:21:19.513525!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1113
+4. set (Dataset 17) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:21:35.102509!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0809
+5. set (Dataset 12) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:21:51.967468!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0784
+6. set (Dataset 7) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:22:16.208053!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0890
+7. set (Dataset 11) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:22:39.336231!
+Epoch 1/1
+572/572 [==============================] - 13s 24ms/step - loss: 0.0661
+8. set (Dataset 4) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:23:00.354814!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1049
+9. set (Dataset 13) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:23:22.058842!
+Epoch 1/1
+485/485 [==============================] - 10s 21ms/step - loss: 0.0634
+10. set (Dataset 23) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:23:37.993590!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1208
+11. set (Dataset 24) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:23:55.924086!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0667
+12. set (Dataset 15) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:24:13.723753!
+Epoch 1/1
+654/654 [==============================] - 16s 24ms/step - loss: 0.0858
+13. set (Dataset 1) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:24:34.447969!
+Epoch 1/1
+498/498 [==============================] - 12s 23ms/step - loss: 0.1157
+14. set (Dataset 22) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:24:52.499620!
+Epoch 1/1
+665/665 [==============================] - 16s 24ms/step - loss: 0.0625
+15. set (Dataset 18) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:25:14.416967!
+Epoch 1/1
+614/614 [==============================] - 14s 22ms/step - loss: 0.1028
+16. set (Dataset 20) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:25:33.577663!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0711
+17. set (Dataset 16) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:25:55.115315!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0830
+18. set (Dataset 21) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:26:22.371779!
+Epoch 1/1
+634/634 [==============================] - 14s 22ms/step - loss: 0.1277
+19. set (Dataset 8) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:26:44.292288!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0980
+20. set (Dataset 19) being trained for epoch 4 in Experiment 7 by 2019-01-30 07:27:06.945684!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0753
+Epoch 4 for Experiment 7 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:27:22.685731
+1. set (Dataset 21) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:27:28.717816!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1267
+2. set (Dataset 19) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:27:48.533507!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0744
+3. set (Dataset 24) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:28:04.820308!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0630
+4. set (Dataset 18) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:28:22.582947!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1005
+5. set (Dataset 7) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:28:44.320509!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.1016
+6. set (Dataset 8) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:29:09.366815!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0952
+7. set (Dataset 16) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:29:35.844629!
+Epoch 1/1
+914/914 [==============================] - 19s 21ms/step - loss: 0.0794
+8. set (Dataset 15) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:30:01.387978!
+Epoch 1/1
+654/654 [==============================] - 15s 24ms/step - loss: 0.0821
+9. set (Dataset 12) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:30:24.245402!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0859
+10. set (Dataset 13) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:30:46.382611!
+Epoch 1/1
+485/485 [==============================] - 10s 22ms/step - loss: 0.0684
+11. set (Dataset 11) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:31:02.696875!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0672
+12. set (Dataset 10) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:31:23.251327!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0868
+13. set (Dataset 22) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:31:46.768389!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0640
+14. set (Dataset 6) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:32:07.394616!
+Epoch 1/1
+542/542 [==============================] - 13s 24ms/step - loss: 0.1074
+15. set (Dataset 2) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:32:25.450957!
+Epoch 1/1
+511/511 [==============================] - 11s 22ms/step - loss: 0.1074
+16. set (Dataset 20) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:32:42.255434!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0738
+17. set (Dataset 1) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:33:00.076981!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1128
+18. set (Dataset 17) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:33:15.674442!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0781
+19. set (Dataset 23) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:33:30.662845!
+Epoch 1/1
+569/569 [==============================] - 13s 22ms/step - loss: 0.1143
+20. set (Dataset 4) being trained for epoch 5 in Experiment 7 by 2019-01-30 07:33:50.968922!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.1032
+Epoch 5 for Experiment 7 completed!
+Exp2019-01-30_03-25-16_part7.h5 has been saved.
+The subjects are trained: [(21, 'F02'), (19, 'M11'), (24, 'M14'), (18, 'F05'), (7, 'M01'), (8, 'M02'), (16, 'M09'), (1
+5, 'F03'), (12, 'M06'), (13, 'M07'), (11, 'M05'), (10, 'M04'), (22, 'M01'), (6, 'F06'), (2, 'F02'), (20, 'M12'), (1, '
+F01'), (17, 'M10'), (23, 'M13'), (4, 'F04')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 07:34:11.119747
+For the Subject 3 (F03):
+730/730 [==============================] - 12s 16ms/step
+        The absolute mean error on Pitch angle estimation: 8.76 Degree
+        The absolute mean error on Yaw angle estimation: 21.75 Degree
+        The absolute mean error on Roll angle estimation: 8.16 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 14s 15ms/step
+        The absolute mean error on Pitch angle estimation: 6.72 Degree
+        The absolute mean error on Yaw angle estimation: 19.27 Degree
+        The absolute mean error on Roll angle estimation: 3.47 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 13s 15ms/step
+        The absolute mean error on Pitch angle estimation: 33.21 Degree
+        The absolute mean error on Yaw angle estimation: 11.42 Degree
+        The absolute mean error on Roll angle estimation: 7.80 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 13.86 Degree
+        The absolute mean error on Yaw angle estimation: 30.07 Degree
+        The absolute mean error on Roll angle estimation: 13.53 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.64 Degree
+        The absolute mean error on Yaw angle estimations: 20.63 Degree
+        The absolute mean error on Roll angle estimations: 8.24 Degree
+Exp2019-01-30_03-25-16_part7 completed!
+Training model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:35:41.443999
+1. set (Dataset 17) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:35:45.211341!
+Epoch 1/1
+395/395 [==============================] - 8s 21ms/step - loss: 0.0813
+2. set (Dataset 4) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:36:01.072844!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.0988
+3. set (Dataset 11) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:36:24.642166!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0669
+4. set (Dataset 2) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:36:43.226691!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1059
+5. set (Dataset 8) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:37:02.626526!
+Epoch 1/1
+772/772 [==============================] - 17s 23ms/step - loss: 0.0871
+6. set (Dataset 23) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:37:25.651913!
+Epoch 1/1
+569/569 [==============================] - 13s 22ms/step - loss: 0.1177
+7. set (Dataset 1) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:37:43.413641!
+Epoch 1/1
+498/498 [==============================] - 12s 24ms/step - loss: 0.1095
+8. set (Dataset 10) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:38:02.588717!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0871
+9. set (Dataset 7) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:38:27.030356!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0938
+10. set (Dataset 12) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:38:51.540644!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0743
+11. set (Dataset 16) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:39:17.726646!
+Epoch 1/1
+914/914 [==============================] - 20s 22ms/step - loss: 0.0821
+12. set (Dataset 21) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:39:44.285319!
+Epoch 1/1
+634/634 [==============================] - 14s 23ms/step - loss: 0.1320
+13. set (Dataset 6) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:40:03.962115!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1042
+14. set (Dataset 19) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:40:21.547370!
+Epoch 1/1
+502/502 [==============================] - 11s 22ms/step - loss: 0.0743
+15. set (Dataset 24) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:40:37.486535!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0624
+16. set (Dataset 20) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:40:54.392910!
+Epoch 1/1
+556/556 [==============================] - 12s 22ms/step - loss: 0.0678
+17. set (Dataset 22) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:41:12.921229!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0607
+18. set (Dataset 18) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:41:33.896143!
+Epoch 1/1
+614/614 [==============================] - 13s 22ms/step - loss: 0.1039
+19. set (Dataset 13) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:41:52.224294!
+Epoch 1/1
+485/485 [==============================] - 11s 24ms/step - loss: 0.0696
+20. set (Dataset 15) being trained for epoch 1 in Experiment 8 by 2019-01-30 07:42:10.183198!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0844
+Epoch 1 for Experiment 8 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:42:29.619805
+1. set (Dataset 18) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:42:35.520413!
+Epoch 1/1
+614/614 [==============================] - 15s 24ms/step - loss: 0.1001
+2. set (Dataset 15) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:42:56.792724!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0808
+3. set (Dataset 16) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:43:20.586074!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0795
+4. set (Dataset 24) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:43:45.983834!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0603
+5. set (Dataset 23) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:44:03.273622!
+Epoch 1/1
+569/569 [==============================] - 13s 24ms/step - loss: 0.1116
+6. set (Dataset 13) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:44:21.649824!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0759
+7. set (Dataset 22) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:44:39.451552!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0595
+8. set (Dataset 21) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:45:00.983325!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1275
+9. set (Dataset 8) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:45:23.996573!
+Epoch 1/1
+772/772 [==============================] - 18s 24ms/step - loss: 0.0943
+10. set (Dataset 7) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:45:50.093069!
+Epoch 1/1
+745/745 [==============================] - 17s 22ms/step - loss: 0.0952
+11. set (Dataset 1) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:46:11.832861!
+Epoch 1/1
+498/498 [==============================] - 12s 23ms/step - loss: 0.1175
+12. set (Dataset 17) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:46:27.269068!
+Epoch 1/1
+395/395 [==============================] - 9s 24ms/step - loss: 0.0790
+13. set (Dataset 19) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:46:41.704927!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0763
+14. set (Dataset 4) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:47:00.776417!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1034
+15. set (Dataset 11) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:47:23.743312!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0660
+16. set (Dataset 20) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:47:42.340870!
+Epoch 1/1
+556/556 [==============================] - 13s 24ms/step - loss: 0.0769
+17. set (Dataset 6) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:48:00.946770!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1092
+18. set (Dataset 2) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:48:18.853623!
+Epoch 1/1
+511/511 [==============================] - 11s 22ms/step - loss: 0.1054
+19. set (Dataset 12) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:48:37.690330!
+Epoch 1/1
+732/732 [==============================] - 17s 24ms/step - loss: 0.0826
+20. set (Dataset 10) being trained for epoch 2 in Experiment 8 by 2019-01-30 07:49:02.277328!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0883
+Epoch 2 for Experiment 8 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:49:24.189496
+1. set (Dataset 2) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:49:29.288525!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1073
+2. set (Dataset 10) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:49:48.344138!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0856
+3. set (Dataset 1) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:50:10.258192!
+Epoch 1/1
+498/498 [==============================] - 11s 21ms/step - loss: 0.1070
+4. set (Dataset 11) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:50:26.712466!
+Epoch 1/1
+572/572 [==============================] - 12s 21ms/step - loss: 0.0631
+5. set (Dataset 13) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:50:43.923083!
+Epoch 1/1
+485/485 [==============================] - 11s 23ms/step - loss: 0.0648
+6. set (Dataset 12) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:51:02.441899!
+Epoch 1/1
+732/732 [==============================] - 16s 22ms/step - loss: 0.0791
+7. set (Dataset 6) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:51:24.002679!
+Epoch 1/1
+542/542 [==============================] - 12s 22ms/step - loss: 0.1127
+8. set (Dataset 17) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:51:40.003391!
+Epoch 1/1
+395/395 [==============================] - 9s 22ms/step - loss: 0.0808
+9. set (Dataset 23) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:51:54.363740!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1143
+10. set (Dataset 8) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:52:15.417094!
+Epoch 1/1
+772/772 [==============================] - 17s 22ms/step - loss: 0.0947
+11. set (Dataset 22) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:52:39.277079!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0616
+12. set (Dataset 18) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:53:00.558877!
+Epoch 1/1
+614/614 [==============================] - 14s 23ms/step - loss: 0.1080
+13. set (Dataset 4) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:53:22.359867!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1058
+14. set (Dataset 15) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:53:45.827339!
+Epoch 1/1
+654/654 [==============================] - 14s 22ms/step - loss: 0.0826
+15. set (Dataset 16) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:54:09.167653!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0826
+16. set (Dataset 20) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:54:35.726766!
+Epoch 1/1
+556/556 [==============================] - 13s 23ms/step - loss: 0.0722
+17. set (Dataset 19) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:54:53.687499!
+Epoch 1/1
+502/502 [==============================] - 12s 23ms/step - loss: 0.0764
+18. set (Dataset 24) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:55:10.092595!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0606
+19. set (Dataset 7) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:55:29.012650!
+Epoch 1/1
+745/745 [==============================] - 18s 24ms/step - loss: 0.0986
+20. set (Dataset 21) being trained for epoch 3 in Experiment 8 by 2019-01-30 07:55:52.915009!
+Epoch 1/1
+634/634 [==============================] - 14s 22ms/step - loss: 0.1316
+Epoch 3 for Experiment 8 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 07:56:11.577795
+1. set (Dataset 24) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:56:16.269795!
+Epoch 1/1
+492/492 [==============================] - 11s 23ms/step - loss: 0.0604
+2. set (Dataset 21) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:56:33.501993!
+Epoch 1/1
+634/634 [==============================] - 15s 24ms/step - loss: 0.1279
+3. set (Dataset 22) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:56:55.123937!
+Epoch 1/1
+665/665 [==============================] - 16s 24ms/step - loss: 0.0608
+4. set (Dataset 16) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:57:19.904177!
+Epoch 1/1
+914/914 [==============================] - 21s 23ms/step - loss: 0.0777
+5. set (Dataset 12) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:57:47.909180!
+Epoch 1/1
+732/732 [==============================] - 16s 22ms/step - loss: 0.0883
+6. set (Dataset 7) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:58:11.399096!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0977
+7. set (Dataset 19) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:58:33.268856!
+Epoch 1/1
+502/502 [==============================] - 11s 23ms/step - loss: 0.0770
+8. set (Dataset 18) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:58:50.625563!
+Epoch 1/1
+614/614 [==============================] - 14s 22ms/step - loss: 0.1059
+9. set (Dataset 13) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:59:09.154903!
+Epoch 1/1
+485/485 [==============================] - 12s 24ms/step - loss: 0.0645
+10. set (Dataset 23) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:59:26.251144!
+Epoch 1/1
+569/569 [==============================] - 13s 23ms/step - loss: 0.1144
+11. set (Dataset 6) being trained for epoch 4 in Experiment 8 by 2019-01-30 07:59:44.634376!
+Epoch 1/1
+542/542 [==============================] - 13s 23ms/step - loss: 0.1047
+12. set (Dataset 2) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:00:02.514346!
+Epoch 1/1
+511/511 [==============================] - 12s 23ms/step - loss: 0.1124
+13. set (Dataset 15) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:00:20.931625!
+Epoch 1/1
+654/654 [==============================] - 15s 23ms/step - loss: 0.0859
+14. set (Dataset 10) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:00:43.286708!
+Epoch 1/1
+726/726 [==============================] - 17s 23ms/step - loss: 0.0947
+15. set (Dataset 1) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:01:05.279303!
+Epoch 1/1
+498/498 [==============================] - 11s 22ms/step - loss: 0.1126
+16. set (Dataset 20) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:01:21.555604!
+Epoch 1/1
+556/556 [==============================] - 12s 22ms/step - loss: 0.0761
+17. set (Dataset 4) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:01:41.194031!
+Epoch 1/1
+744/744 [==============================] - 18s 24ms/step - loss: 0.1066
+18. set (Dataset 11) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:02:04.639164!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0667
+19. set (Dataset 8) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:02:25.846804!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0907
+20. set (Dataset 17) being trained for epoch 4 in Experiment 8 by 2019-01-30 08:02:47.798258!
+Epoch 1/1
+395/395 [==============================] - 9s 23ms/step - loss: 0.0856
+Epoch 4 for Experiment 8 completed!
+All frames and annotations from 20 datasets have been read by 2019-01-30 08:03:01.161143
+1. set (Dataset 11) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:03:06.879053!
+Epoch 1/1
+572/572 [==============================] - 13s 23ms/step - loss: 0.0603
+2. set (Dataset 17) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:03:23.838673!
+Epoch 1/1
+395/395 [==============================] - 9s 22ms/step - loss: 0.0800
+3. set (Dataset 6) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:03:37.677318!
+Epoch 1/1
+542/542 [==============================] - 13s 24ms/step - loss: 0.1084
+4. set (Dataset 1) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:03:55.678026!
+Epoch 1/1
+498/498 [==============================] - 11s 23ms/step - loss: 0.1151
+5. set (Dataset 7) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:04:14.828926!
+Epoch 1/1
+745/745 [==============================] - 17s 23ms/step - loss: 0.0913
+6. set (Dataset 8) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:04:39.594230!
+Epoch 1/1
+772/772 [==============================] - 18s 23ms/step - loss: 0.0877
+7. set (Dataset 4) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:05:04.955005!
+Epoch 1/1
+744/744 [==============================] - 17s 23ms/step - loss: 0.1056
+8. set (Dataset 2) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:05:27.581774!
+Epoch 1/1
+511/511 [==============================] - 12s 24ms/step - loss: 0.1050
+9. set (Dataset 12) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:05:47.020347!
+Epoch 1/1
+732/732 [==============================] - 17s 23ms/step - loss: 0.0789
+10. set (Dataset 13) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:06:08.910188!
+Epoch 1/1
+485/485 [==============================] - 11s 22ms/step - loss: 0.0638
+11. set (Dataset 19) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:06:24.782824!
+Epoch 1/1
+502/502 [==============================] - 12s 24ms/step - loss: 0.0834
+12. set (Dataset 24) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:06:41.408428!
+Epoch 1/1
+492/492 [==============================] - 12s 24ms/step - loss: 0.0628
+13. set (Dataset 10) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:07:00.339558!
+Epoch 1/1
+726/726 [==============================] - 17s 24ms/step - loss: 0.0906
+14. set (Dataset 21) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:07:23.774321!
+Epoch 1/1
+634/634 [==============================] - 15s 23ms/step - loss: 0.1337
+15. set (Dataset 22) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:07:45.000796!
+Epoch 1/1
+665/665 [==============================] - 15s 23ms/step - loss: 0.0612
+16. set (Dataset 20) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:08:05.771661!
+Epoch 1/1
+556/556 [==============================] - 12s 22ms/step - loss: 0.0704
+17. set (Dataset 15) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:08:24.366460!
+Epoch 1/1
+654/654 [==============================] - 16s 24ms/step - loss: 0.0848
+18. set (Dataset 16) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:08:48.801214!
+Epoch 1/1
+914/914 [==============================] - 20s 22ms/step - loss: 0.0809
+19. set (Dataset 23) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:09:14.683721!
+Epoch 1/1
+569/569 [==============================] - 14s 24ms/step - loss: 0.1154
+20. set (Dataset 18) being trained for epoch 5 in Experiment 8 by 2019-01-30 08:09:34.251722!
+Epoch 1/1
+614/614 [==============================] - 13s 22ms/step - loss: 0.0996
+Epoch 5 for Experiment 8 completed!
+Exp2019-01-30_03-25-16_part8.h5 has been saved.
+The subjects are trained: [(11, 'M05'), (17, 'M10'), (6, 'F06'), (1, 'F01'), (7, 'M01'), (8, 'M02'), (4, 'F04'), (2, '
+F02'), (12, 'M06'), (13, 'M07'), (19, 'M11'), (24, 'M14'), (10, 'M04'), (21, 'F02'), (22, 'M01'), (20, 'M12'), (15, 'F
+03'), (16, 'M09'), (23, 'M13'), (18, 'F05')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 08:09:49.994637
+For the Subject 3 (F03):
+730/730 [==============================] - 11s 15ms/step
+        The absolute mean error on Pitch angle estimation: 9.13 Degree
+        The absolute mean error on Yaw angle estimation: 23.28 Degree
+        The absolute mean error on Roll angle estimation: 13.14 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 15s 16ms/step
+        The absolute mean error on Pitch angle estimation: 8.47 Degree
+        The absolute mean error on Yaw angle estimation: 24.86 Degree
+        The absolute mean error on Roll angle estimation: 5.02 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 14s 16ms/step
+        The absolute mean error on Pitch angle estimation: 29.58 Degree
+        The absolute mean error on Yaw angle estimation: 15.11 Degree
+        The absolute mean error on Roll angle estimation: 6.36 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 14.41 Degree
+        The absolute mean error on Yaw angle estimation: 29.84 Degree
+        The absolute mean error on Roll angle estimation: 11.93 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.40 Degree
+        The absolute mean error on Yaw angle estimations: 23.27 Degree
+        The absolute mean error on Roll angle estimations: 9.11 Degree
+Exp2019-01-30_03-25-16_part8 completed!
+Exp2019-01-30_03-25-16.h5 has been saved.
+The subjects are trained: [(11, 'M05'), (17, 'M10'), (6, 'F06'), (1, 'F01'), (7, 'M01'), (8, 'M02'), (4, 'F04'), (2, '
+F02'), (12, 'M06'), (13, 'M07'), (19, 'M11'), (24, 'M14'), (10, 'M04'), (21, 'F02'), (22, 'M01'), (20, 'M12'), (15, 'F
+03'), (16, 'M09'), (23, 'M13'), (18, 'F05')]
+Evaluating model Exp2019-01-29_13-03-34_part6_and_2019-01-30_03-25-16
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-30 08:11:19.367720
+For the Subject 3 (F03):
+730/730 [==============================] - 12s 16ms/step
+        The absolute mean error on Pitch angle estimation: 9.13 Degree
+        The absolute mean error on Yaw angle estimation: 23.28 Degree
+        The absolute mean error on Roll angle estimation: 13.14 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 15s 16ms/step
+        The absolute mean error on Pitch angle estimation: 8.47 Degree
+        The absolute mean error on Yaw angle estimation: 24.86 Degree
+        The absolute mean error on Roll angle estimation: 5.02 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 14s 16ms/step
+        The absolute mean error on Pitch angle estimation: 29.58 Degree
+        The absolute mean error on Yaw angle estimation: 15.11 Degree
+        The absolute mean error on Roll angle estimation: 6.36 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 13s 16ms/step
+        The absolute mean error on Pitch angle estimation: 14.41 Degree
+        The absolute mean error on Yaw angle estimation: 29.84 Degree
+        The absolute mean error on Roll angle estimation: 11.93 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.40 Degree
+        The absolute mean error on Yaw angle estimations: 23.27 Degree
+        The absolute mean error on Roll angle estimations: 9.11 Degree
+subject3_Exp2019-01-30_03-25-16.png has been saved by 2019-01-30 08:12:47.225708.
+subject5_Exp2019-01-30_03-25-16.png has been saved by 2019-01-30 08:12:47.423035.
+subject9_Exp2019-01-30_03-25-16.png has been saved by 2019-01-30 08:12:47.620516.
+subject14_Exp2019-01-30_03-25-16.png has been saved by 2019-01-30 08:12:47.843804.
+Model Exp2019-01-30_03-25-16 has been evaluated successfully.
+Model Exp2019-01-30_03-25-16 has been recorded successfully.
+Done
+mcicek@harsimran:~/Projects/deep_rl_for_head_pose_est/DeepRL_For_HPE/FC_RNN_Evaluater$ python runFC_RNN_Experiment.py
+
+/home/mcicek/anaconda3/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argume
+nt of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype
+(float).type`.
+  from ._conv import register_converters as _register_converters
+Using TensorFlow backend.
+2019-01-31 15:05:50.966333: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that t
+his TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-01-31 15:05:51.063841: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:898] successful NUMA node read from
+ SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2019-01-31 15:05:51.064100: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1344] Found device 0 with properties:
+name: GeForce GTX TITAN X major: 5 minor: 2 memoryClockRate(GHz): 1.2155
+pciBusID: 0000:01:00.0
+totalMemory: 11.92GiB freeMemory: 10.80GiB
+2019-01-31 15:05:51.064111: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1423] Adding visible gpu devices: 0
+2019-01-31 15:05:51.218448: I tensorflow/core/common_runtime/gpu/gpu_device.cc:911] Device interconnect StreamExecutor
+ with strength 1 edge matrix:
+2019-01-31 15:05:51.218473: I tensorflow/core/common_runtime/gpu/gpu_device.cc:917]      0
+2019-01-31 15:05:51.218478: I tensorflow/core/common_runtime/gpu/gpu_device.cc:930] 0:   N
+2019-01-31 15:05:51.218621: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1041] Created TensorFlow device (/job:l
+ocalhost/replica:0/task:0/device:GPU:0 with 10453 MB memory) -> physical GPU (device: 0, name: GeForce GTX TITAN X, pc
+i bus id: 0000:01:00.0, compute capability: 5.2)
+Model Exp2019-01-31_15-05-51 has been started to be evaluated.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+input_1 (InputLayer)         (None, 224, 224, 3)       0
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0
+_________________________________________________________________
+fc1 (Dense)                  (None, 4096)              102764544
+_________________________________________________________________
+fc2 (Dense)                  (None, 4096)              16781312
+_________________________________________________________________
+fc1024 (Dense)               (None, 1024)              4195328
+_________________________________________________________________
+dropout_025 (Dropout)        (None, 1024)              0
+_________________________________________________________________
+fc3 (Dense)                  (None, 3)                 3075
+=================================================================
+Total params: 138,458,947
+Trainable params: 4,198,403
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+tdCNN (TimeDistributed)      (None, 16, 3)             138458947
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 20)                1920
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 63
+=================================================================
+Total params: 138,460,930
+Trainable params: 4,200,386
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateless_FC_RNN_Configuration.py'
+RECORD = True # False #
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 16 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 1
+out_epochs = 6
+eva_epoch = 1
+train_batch_size = 1
+test_batch_size = 1
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] #
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] #
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList #
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 20
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True # False #
+
+angles = ['Pitch', 'Yaw', 'Roll']
+use_vgg16 = True # False #
+######### CONF_ends_Here ###########
+Training model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_15
+-05-51
+All frames and annotations from 20 datasets have been read by 2019-01-31 15:05:56.204630
+1. set (Dataset 22) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:06:02.792447!
+Epoch 1/1
+649/649 [==============================] - 77s 119ms/step - loss: 0.3628
+2. set (Dataset 24) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:07:25.390131!
+Epoch 1/1
+476/476 [==============================] - 57s 119ms/step - loss: 0.2141
+3. set (Dataset 15) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:08:28.335102!
+Epoch 1/1
+638/638 [==============================] - 75s 118ms/step - loss: 0.2442
+4. set (Dataset 19) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:09:48.639869!
+Epoch 1/1
+486/486 [==============================] - 58s 119ms/step - loss: 0.2081
+5. set (Dataset 8) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:10:54.477076!
+Epoch 1/1
+756/756 [==============================] - 89s 118ms/step - loss: 0.3007
+6. set (Dataset 23) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:12:29.342484!
+Epoch 1/1
+553/553 [==============================] - 66s 120ms/step - loss: 0.2855
+7. set (Dataset 21) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:13:41.550609!
+Epoch 1/1
+618/618 [==============================] - 73s 119ms/step - loss: 0.2653
+8. set (Dataset 16) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:15:03.598875!
+Epoch 1/1
+898/898 [==============================] - 108s 120ms/step - loss: 0.2105
+9. set (Dataset 7) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:16:58.820810!
+Epoch 1/1
+729/729 [==============================] - 87s 120ms/step - loss: 0.3225
+10. set (Dataset 12) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:18:33.359181!
+Epoch 1/1
+716/716 [==============================] - 86s 119ms/step - loss: 0.2595
+11. set (Dataset 10) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:20:06.157392!
+Epoch 1/1
+710/710 [==============================] - 84s 118ms/step - loss: 0.2504
+12. set (Dataset 1) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:21:35.260864!
+Epoch 1/1
+482/482 [==============================] - 58s 120ms/step - loss: 0.2802
+13. set (Dataset 18) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:22:38.865195!
+Epoch 1/1
+598/598 [==============================] - 71s 119ms/step - loss: 0.2761
+14. set (Dataset 2) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:23:55.282000!
+Epoch 1/1
+495/495 [==============================] - 59s 120ms/step - loss: 0.3002
+15. set (Dataset 4) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:25:02.003557!
+Epoch 1/1
+728/728 [==============================] - 86s 118ms/step - loss: 0.2821
+16. set (Dataset 20) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:26:33.583010!
+Epoch 1/1
+540/540 [==============================] - 65s 120ms/step - loss: 0.2044
+17. set (Dataset 17) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:27:41.905580!
+Epoch 1/1
+379/379 [==============================] - 45s 119ms/step - loss: 0.1713
+18. set (Dataset 6) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:28:32.395619!
+Epoch 1/1
+526/526 [==============================] - 63s 119ms/step - loss: 0.2506
+19. set (Dataset 13) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:29:39.876710!
+Epoch 1/1
+469/469 [==============================] - 56s 118ms/step - loss: 0.1972
+20. set (Dataset 11) being trained for epoch 1 in Experiment 1 by 2019-01-31 15:30:41.170675!
+Epoch 1/1
+556/556 [==============================] - 67s 121ms/step - loss: 0.1856
+Epoch 1 for Experiment 1 completed!
+Exp2019-01-31_15-05-51_part1.h5 has been saved.
+The subjects are trained: [(22, 'M01'), (24, 'M14'), (15, 'F03'), (19, 'M11'), (8, 'M02'), (23, 'M13'), (21, 'F02'), (
+16, 'M09'), (7, 'M01'), (12, 'M06'), (10, 'M04'), (1, 'F01'), (18, 'F05'), (2, 'F02'), (4, 'F04'), (20, 'M12'), (17, '
+M10'), (6, 'F06'), (13, 'M07'), (11, 'M05')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_
+15-05-51
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-31 15:31:50.504414
+For the Subject 3 (F03):
+730/730 [==============================] - 67s 92ms/step
+(730, 1) (730, 1)
+        The absolute mean error on Pitch angle estimation: 18.85 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Yaw angle estimation: 30.61 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Roll angle estimation: 9.30 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 88s 93ms/step
+(946, 1) (946, 1)
+        The absolute mean error on Pitch angle estimation: 23.20 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Yaw angle estimation: 29.76 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Roll angle estimation: 5.49 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 83s 94ms/step
+(882, 1) (882, 1)
+        The absolute mean error on Pitch angle estimation: 16.92 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Yaw angle estimation: 25.46 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Roll angle estimation: 9.44 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 74s 93ms/step
+(797, 1) (797, 1)
+        The absolute mean error on Pitch angle estimation: 19.93 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Yaw angle estimation: 34.56 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Roll angle estimation: 14.50 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 19.72 Degree
+        The absolute mean error on Yaw angle estimations: 30.10 Degree
+        The absolute mean error on Roll angle estimations: 9.68 Degree
+Exp2019-01-31_15-05-51_part1 completed!
+Training model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_15
+-05-51
+All frames and annotations from 20 datasets have been read by 2019-01-31 15:37:41.563328
+1. set (Dataset 6) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:37:46.768427!
+Epoch 1/1
+526/526 [==============================] - 63s 119ms/step - loss: 0.2497
+2. set (Dataset 11) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:38:55.210181!
+Epoch 1/1
+556/556 [==============================] - 66s 119ms/step - loss: 0.1709
+3. set (Dataset 10) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:40:08.688368!
+Epoch 1/1
+710/710 [==============================] - 85s 120ms/step - loss: 0.2122
+4. set (Dataset 4) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:41:41.351346!
+Epoch 1/1
+728/728 [==============================] - 86s 119ms/step - loss: 0.2599
+5. set (Dataset 23) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:43:13.264133!
+Epoch 1/1
+553/553 [==============================] - 66s 120ms/step - loss: 0.2581
+6. set (Dataset 13) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:44:24.551746!
+Epoch 1/1
+469/469 [==============================] - 56s 119ms/step - loss: 0.1755
+7. set (Dataset 17) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:45:24.336505!
+Epoch 1/1
+379/379 [==============================] - 46s 120ms/step - loss: 0.1610
+8. set (Dataset 1) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:46:14.982019!
+Epoch 1/1
+482/482 [==============================] - 58s 120ms/step - loss: 0.2514
+9. set (Dataset 8) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:47:20.660765!
+Epoch 1/1
+756/756 [==============================] - 91s 120ms/step - loss: 0.2220
+10. set (Dataset 7) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:48:58.903778!
+Epoch 1/1
+729/729 [==============================] - 87s 119ms/step - loss: 0.2302
+11. set (Dataset 21) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:50:31.522533!
+Epoch 1/1
+618/618 [==============================] - 74s 120ms/step - loss: 0.2434
+12. set (Dataset 22) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:51:52.251813!
+Epoch 1/1
+649/649 [==============================] - 77s 119ms/step - loss: 0.1486
+13. set (Dataset 2) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:53:14.424713!
+Epoch 1/1
+495/495 [==============================] - 59s 120ms/step - loss: 0.2440
+14. set (Dataset 24) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:54:18.455686!
+Epoch 1/1
+476/476 [==============================] - 57s 120ms/step - loss: 0.1509
+15. set (Dataset 15) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:55:22.129504!
+Epoch 1/1
+638/638 [==============================] - 76s 120ms/step - loss: 0.1903
+16. set (Dataset 20) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:56:43.878140!
+Epoch 1/1
+540/540 [==============================] - 65s 120ms/step - loss: 0.1523
+17. set (Dataset 18) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:57:54.598968!
+Epoch 1/1
+598/598 [==============================] - 72s 120ms/step - loss: 0.2071
+18. set (Dataset 19) being trained for epoch 1 in Experiment 2 by 2019-01-31 15:59:11.279742!
+Epoch 1/1
+486/486 [==============================] - 57s 118ms/step - loss: 0.1511
+19. set (Dataset 12) being trained for epoch 1 in Experiment 2 by 2019-01-31 16:00:15.988396!
+Epoch 1/1
+716/716 [==============================] - 86s 120ms/step - loss: 0.1658
+20. set (Dataset 16) being trained for epoch 1 in Experiment 2 by 2019-01-31 16:01:50.887204!
+Epoch 1/1
+898/898 [==============================] - 107s 119ms/step - loss: 0.1543
+Epoch 1 for Experiment 2 completed!
+Exp2019-01-31_15-05-51_part2.h5 has been saved.
+The subjects are trained: [(6, 'F06'), (11, 'M05'), (10, 'M04'), (4, 'F04'), (23, 'M13'), (13, 'M07'), (17, 'M10'), (1
+, 'F01'), (8, 'M02'), (7, 'M01'), (21, 'F02'), (22, 'M01'), (2, 'F02'), (24, 'M14'), (15, 'F03'), (20, 'M12'), (18, 'F
+05'), (19, 'M11'), (12, 'M06'), (16, 'M09')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_
+15-05-51
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-31 16:03:40.013221
+For the Subject 3 (F03):
+730/730 [==============================] - 67s 92ms/step
+(730, 1) (730, 1)
+        The absolute mean error on Pitch angle estimation: 16.58 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Yaw angle estimation: 31.16 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Roll angle estimation: 14.95 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 89s 94ms/step
+(946, 1) (946, 1)
+        The absolute mean error on Pitch angle estimation: 13.81 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Yaw angle estimation: 28.89 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Roll angle estimation: 3.82 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 82s 93ms/step
+(882, 1) (882, 1)
+        The absolute mean error on Pitch angle estimation: 16.36 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Yaw angle estimation: 27.09 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Roll angle estimation: 7.11 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 75s 94ms/step
+(797, 1) (797, 1)
+        The absolute mean error on Pitch angle estimation: 15.42 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Yaw angle estimation: 33.21 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Roll angle estimation: 13.90 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.54 Degree
+        The absolute mean error on Yaw angle estimations: 30.09 Degree
+        The absolute mean error on Roll angle estimations: 9.95 Degree
+Exp2019-01-31_15-05-51_part2 completed!
+Training model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_15
+-05-51
+All frames and annotations from 20 datasets have been read by 2019-01-31 16:09:31.004987
+1. set (Dataset 19) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:09:35.911009!
+Epoch 1/1
+486/486 [==============================] - 58s 120ms/step - loss: 0.1304
+2. set (Dataset 16) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:10:42.789025!
+Epoch 1/1
+898/898 [==============================] - 108s 120ms/step - loss: 0.1329
+3. set (Dataset 21) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:12:36.972678!
+Epoch 1/1
+618/618 [==============================] - 74s 120ms/step - loss: 0.2074
+4. set (Dataset 15) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:13:57.751330!
+Epoch 1/1
+638/638 [==============================] - 77s 120ms/step - loss: 0.1460
+5. set (Dataset 13) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:15:19.315666!
+Epoch 1/1
+469/469 [==============================] - 56s 120ms/step - loss: 0.1429
+6. set (Dataset 12) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:16:22.797813!
+Epoch 1/1
+716/716 [==============================] - 86s 120ms/step - loss: 0.1534
+7. set (Dataset 18) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:17:54.708681!
+Epoch 1/1
+598/598 [==============================] - 72s 120ms/step - loss: 0.1809
+8. set (Dataset 22) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:19:12.946730!
+Epoch 1/1
+649/649 [==============================] - 77s 118ms/step - loss: 0.1172
+9. set (Dataset 23) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:20:34.972287!
+Epoch 1/1
+553/553 [==============================] - 67s 120ms/step - loss: 0.1852
+10. set (Dataset 8) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:21:49.345322!
+Epoch 1/1
+756/756 [==============================] - 90s 119ms/step - loss: 0.1852
+11. set (Dataset 17) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:23:22.894190!
+Epoch 1/1
+379/379 [==============================] - 45s 120ms/step - loss: 0.1379
+12. set (Dataset 6) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:24:13.485352!
+Epoch 1/1
+526/526 [==============================] - 62s 118ms/step - loss: 0.2020
+13. set (Dataset 24) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:25:20.449976!
+Epoch 1/1
+476/476 [==============================] - 57s 120ms/step - loss: 0.1087
+14. set (Dataset 11) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:26:23.242354!
+Epoch 1/1
+556/556 [==============================] - 67s 120ms/step - loss: 0.1420
+15. set (Dataset 10) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:27:37.080752!
+Epoch 1/1
+710/710 [==============================] - 85s 120ms/step - loss: 0.1539
+16. set (Dataset 20) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:29:07.655139!
+Epoch 1/1
+540/540 [==============================] - 64s 119ms/step - loss: 0.1213
+17. set (Dataset 2) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:30:16.790574!
+Epoch 1/1
+495/495 [==============================] - 60s 120ms/step - loss: 0.1843
+18. set (Dataset 4) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:31:23.786816!
+Epoch 1/1
+728/728 [==============================] - 87s 119ms/step - loss: 0.1689
+19. set (Dataset 7) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:32:58.046886!
+Epoch 1/1
+729/729 [==============================] - 88s 120ms/step - loss: 0.1551
+20. set (Dataset 1) being trained for epoch 1 in Experiment 3 by 2019-01-31 16:34:30.728429!
+Epoch 1/1
+482/482 [==============================] - 58s 119ms/step - loss: 0.1994
+Epoch 1 for Experiment 3 completed!
+Exp2019-01-31_15-05-51_part3.h5 has been saved.
+The subjects are trained: [(19, 'M11'), (16, 'M09'), (21, 'F02'), (15, 'F03'), (13, 'M07'), (12, 'M06'), (18, 'F05'),
+(22, 'M01'), (23, 'M13'), (8, 'M02'), (17, 'M10'), (6, 'F06'), (24, 'M14'), (11, 'M05'), (10, 'M04'), (20, 'M12'), (2,
+ 'F02'), (4, 'F04'), (7, 'M01'), (1, 'F01')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_
+15-05-51
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-31 16:35:30.548975
+For the Subject 3 (F03):
+730/730 [==============================] - 67s 91ms/step
+(730, 1) (730, 1)
+        The absolute mean error on Pitch angle estimation: 14.71 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Yaw angle estimation: 49.91 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Roll angle estimation: 11.11 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 88s 93ms/step
+(946, 1) (946, 1)
+        The absolute mean error on Pitch angle estimation: 9.47 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Yaw angle estimation: 25.24 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Roll angle estimation: 4.12 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 81s 92ms/step
+(882, 1) (882, 1)
+        The absolute mean error on Pitch angle estimation: 18.67 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Yaw angle estimation: 32.56 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Roll angle estimation: 7.35 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 75s 94ms/step
+(797, 1) (797, 1)
+        The absolute mean error on Pitch angle estimation: 13.99 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Yaw angle estimation: 44.61 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Roll angle estimation: 13.57 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 14.21 Degree
+        The absolute mean error on Yaw angle estimations: 38.08 Degree
+        The absolute mean error on Roll angle estimations: 9.04 Degree
+Exp2019-01-31_15-05-51_part3 completed!
+Training model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_15
+-05-51
+All frames and annotations from 20 datasets have been read by 2019-01-31 16:41:19.280443
+1. set (Dataset 4) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:41:26.700171!
+Epoch 1/1
+728/728 [==============================] - 86s 118ms/step - loss: 0.1400
+2. set (Dataset 1) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:42:58.002243!
+Epoch 1/1
+482/482 [==============================] - 58s 120ms/step - loss: 0.1802
+3. set (Dataset 17) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:43:59.615905!
+Epoch 1/1
+379/379 [==============================] - 45s 118ms/step - loss: 0.1362
+4. set (Dataset 10) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:44:51.664222!
+Epoch 1/1
+710/710 [==============================] - 84s 118ms/step - loss: 0.1287
+5. set (Dataset 12) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:46:23.051931!
+Epoch 1/1
+716/716 [==============================] - 86s 120ms/step - loss: 0.1211
+6. set (Dataset 7) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:47:56.596440!
+Epoch 1/1
+729/729 [==============================] - 88s 120ms/step - loss: 0.1242
+7. set (Dataset 2) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:49:29.271421!
+Epoch 1/1
+495/495 [==============================] - 59s 119ms/step - loss: 0.1428
+8. set (Dataset 6) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:50:33.535727!
+Epoch 1/1
+526/526 [==============================] - 62s 119ms/step - loss: 0.1996
+9. set (Dataset 13) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:51:40.737802!
+Epoch 1/1
+469/469 [==============================] - 55s 118ms/step - loss: 0.1100
+10. set (Dataset 23) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:52:41.696121!
+Epoch 1/1
+553/553 [==============================] - 66s 119ms/step - loss: 0.1791
+11. set (Dataset 18) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:53:53.220600!
+Epoch 1/1
+598/598 [==============================] - 71s 119ms/step - loss: 0.1717
+12. set (Dataset 19) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:55:09.464059!
+Epoch 1/1
+486/486 [==============================] - 58s 119ms/step - loss: 0.1226
+13. set (Dataset 11) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:56:12.845582!
+Epoch 1/1
+556/556 [==============================] - 67s 120ms/step - loss: 0.0985
+14. set (Dataset 16) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:57:28.259800!
+Epoch 1/1
+898/898 [==============================] - 107s 119ms/step - loss: 0.1272
+15. set (Dataset 21) being trained for epoch 1 in Experiment 4 by 2019-01-31 16:59:20.894353!
+Epoch 1/1
+618/618 [==============================] - 74s 120ms/step - loss: 0.1865
+16. set (Dataset 20) being trained for epoch 1 in Experiment 4 by 2019-01-31 17:00:40.228298!
+Epoch 1/1
+540/540 [==============================] - 65s 120ms/step - loss: 0.1093
+17. set (Dataset 24) being trained for epoch 1 in Experiment 4 by 2019-01-31 17:01:49.891447!
+Epoch 1/1
+476/476 [==============================] - 56s 119ms/step - loss: 0.0995
+18. set (Dataset 15) being trained for epoch 1 in Experiment 4 by 2019-01-31 17:02:52.734879!
+Epoch 1/1
+638/638 [==============================] - 76s 119ms/step - loss: 0.1254
+19. set (Dataset 8) being trained for epoch 1 in Experiment 4 by 2019-01-31 17:04:16.687143!
+Epoch 1/1
+756/756 [==============================] - 90s 119ms/step - loss: 0.1476
+20. set (Dataset 22) being trained for epoch 1 in Experiment 4 by 2019-01-31 17:05:52.728725!
+Epoch 1/1
+649/649 [==============================] - 78s 120ms/step - loss: 0.0968
+Epoch 1 for Experiment 4 completed!
+Exp2019-01-31_15-05-51_part4.h5 has been saved.
+The subjects are trained: [(4, 'F04'), (1, 'F01'), (17, 'M10'), (10, 'M04'), (12, 'M06'), (7, 'M01'), (2, 'F02'), (6,
+'F06'), (13, 'M07'), (23, 'M13'), (18, 'F05'), (19, 'M11'), (11, 'M05'), (16, 'M09'), (21, 'F02'), (20, 'M12'), (24, '
+M14'), (15, 'F03'), (8, 'M02'), (22, 'M01')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_
+15-05-51
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-31 17:07:13.081337
+For the Subject 3 (F03):
+730/730 [==============================] - 67s 91ms/step
+(730, 1) (730, 1)
+        The absolute mean error on Pitch angle estimation: 9.52 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Yaw angle estimation: 40.33 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Roll angle estimation: 17.39 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 88s 93ms/step
+(946, 1) (946, 1)
+        The absolute mean error on Pitch angle estimation: 10.03 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Yaw angle estimation: 25.22 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Roll angle estimation: 4.99 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 83s 94ms/step
+(882, 1) (882, 1)
+        The absolute mean error on Pitch angle estimation: 26.69 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Yaw angle estimation: 29.38 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Roll angle estimation: 7.54 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 74s 93ms/step
+(797, 1) (797, 1)
+        The absolute mean error on Pitch angle estimation: 20.93 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Yaw angle estimation: 42.74 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Roll angle estimation: 14.02 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 16.79 Degree
+        The absolute mean error on Yaw angle estimations: 34.41 Degree
+        The absolute mean error on Roll angle estimations: 10.99 Degree
+Exp2019-01-31_15-05-51_part4 completed!
+Training model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_15
+-05-51
+All frames and annotations from 20 datasets have been read by 2019-01-31 17:13:02.877212
+1. set (Dataset 15) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:13:09.257328!
+Epoch 1/1
+638/638 [==============================] - 77s 120ms/step - loss: 0.1170
+2. set (Dataset 22) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:14:32.230747!
+Epoch 1/1
+649/649 [==============================] - 78s 120ms/step - loss: 0.0936
+3. set (Dataset 18) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:15:56.014683!
+Epoch 1/1
+598/598 [==============================] - 72s 120ms/step - loss: 0.1458
+4. set (Dataset 21) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:17:14.056664!
+Epoch 1/1
+618/618 [==============================] - 74s 120ms/step - loss: 0.1710
+5. set (Dataset 7) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:18:35.877877!
+Epoch 1/1
+729/729 [==============================] - 86s 118ms/step - loss: 0.1269
+6. set (Dataset 8) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:20:09.844072!
+Epoch 1/1
+756/756 [==============================] - 90s 120ms/step - loss: 0.1247
+7. set (Dataset 24) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:21:44.975438!
+Epoch 1/1
+476/476 [==============================] - 57s 121ms/step - loss: 0.1104
+8. set (Dataset 19) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:22:47.259691!
+Epoch 1/1
+486/486 [==============================] - 58s 119ms/step - loss: 0.1203
+9. set (Dataset 12) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:23:52.235249!
+Epoch 1/1
+716/716 [==============================] - 84s 118ms/step - loss: 0.1126
+10. set (Dataset 13) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:25:21.416841!
+Epoch 1/1
+469/469 [==============================] - 56s 119ms/step - loss: 0.0980
+11. set (Dataset 2) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:26:22.491301!
+Epoch 1/1
+495/495 [==============================] - 59s 120ms/step - loss: 0.1252
+12. set (Dataset 4) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:27:29.406787!
+Epoch 1/1
+728/728 [==============================] - 87s 120ms/step - loss: 0.1246
+13. set (Dataset 16) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:29:05.647280!
+Epoch 1/1
+898/898 [==============================] - 108s 120ms/step - loss: 0.1195
+14. set (Dataset 1) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:30:58.747174!
+Epoch 1/1
+482/482 [==============================] - 58s 120ms/step - loss: 0.1633
+15. set (Dataset 17) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:32:00.408784!
+Epoch 1/1
+379/379 [==============================] - 45s 120ms/step - loss: 0.1279
+16. set (Dataset 20) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:32:51.213708!
+Epoch 1/1
+540/540 [==============================] - 65s 120ms/step - loss: 0.1140
+17. set (Dataset 11) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:34:01.832228!
+Epoch 1/1
+556/556 [==============================] - 66s 119ms/step - loss: 0.0870
+18. set (Dataset 10) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:35:15.503673!
+Epoch 1/1
+710/710 [==============================] - 85s 120ms/step - loss: 0.1158
+19. set (Dataset 23) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:36:46.358682!
+Epoch 1/1
+553/553 [==============================] - 66s 120ms/step - loss: 0.1608
+20. set (Dataset 6) being trained for epoch 1 in Experiment 5 by 2019-01-31 17:37:57.880497!
+Epoch 1/1
+526/526 [==============================] - 63s 120ms/step - loss: 0.1705
+Epoch 1 for Experiment 5 completed!
+Exp2019-01-31_15-05-51_part5.h5 has been saved.
+The subjects are trained: [(15, 'F03'), (22, 'M01'), (18, 'F05'), (21, 'F02'), (7, 'M01'), (8, 'M02'), (24, 'M14'), (1
+9, 'M11'), (12, 'M06'), (13, 'M07'), (2, 'F02'), (4, 'F04'), (16, 'M09'), (1, 'F01'), (17, 'M10'), (20, 'M12'), (11, '
+M05'), (10, 'M04'), (23, 'M13'), (6, 'F06')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_
+15-05-51
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-31 17:39:03.383396
+For the Subject 3 (F03):
+730/730 [==============================] - 67s 92ms/step
+(730, 1) (730, 1)
+        The absolute mean error on Pitch angle estimation: 12.43 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Yaw angle estimation: 38.02 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Roll angle estimation: 16.68 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 89s 94ms/step
+(946, 1) (946, 1)
+        The absolute mean error on Pitch angle estimation: 13.35 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Yaw angle estimation: 28.63 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Roll angle estimation: 3.87 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 83s 94ms/step
+(882, 1) (882, 1)
+        The absolute mean error on Pitch angle estimation: 19.55 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Yaw angle estimation: 43.72 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Roll angle estimation: 7.31 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 75s 94ms/step
+(797, 1) (797, 1)
+        The absolute mean error on Pitch angle estimation: 15.95 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Yaw angle estimation: 46.14 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Roll angle estimation: 13.92 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 15.32 Degree
+        The absolute mean error on Yaw angle estimations: 39.13 Degree
+        The absolute mean error on Roll angle estimations: 10.44 Degree
+Exp2019-01-31_15-05-51_part5 completed!
+Training model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_15
+-05-51
+All frames and annotations from 20 datasets have been read by 2019-01-31 17:44:55.392496
+1. set (Dataset 10) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:45:02.680232!
+Epoch 1/1
+710/710 [==============================] - 85s 120ms/step - loss: 0.1104
+2. set (Dataset 6) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:46:33.196931!
+Epoch 1/1
+526/526 [==============================] - 63s 120ms/step - loss: 0.1467
+3. set (Dataset 2) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:47:41.657379!
+Epoch 1/1
+495/495 [==============================] - 59s 118ms/step - loss: 0.1119
+4. set (Dataset 17) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:48:43.998605!
+Epoch 1/1
+379/379 [==============================] - 45s 119ms/step - loss: 0.1234
+5. set (Dataset 8) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:49:36.686183!
+Epoch 1/1
+756/756 [==============================] - 90s 119ms/step - loss: 0.1102
+6. set (Dataset 23) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:51:11.798793!
+Epoch 1/1
+553/553 [==============================] - 66s 120ms/step - loss: 0.1511
+7. set (Dataset 11) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:52:23.957468!
+Epoch 1/1
+556/556 [==============================] - 67s 120ms/step - loss: 0.0894
+8. set (Dataset 4) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:53:38.273381!
+Epoch 1/1
+728/728 [==============================] - 86s 118ms/step - loss: 0.1173
+9. set (Dataset 7) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:55:12.041841!
+Epoch 1/1
+729/729 [==============================] - 88s 120ms/step - loss: 0.1021
+10. set (Dataset 12) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:56:46.984963!
+Epoch 1/1
+716/716 [==============================] - 85s 119ms/step - loss: 0.0981
+11. set (Dataset 24) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:58:16.713253!
+Epoch 1/1
+476/476 [==============================] - 57s 120ms/step - loss: 0.1035
+12. set (Dataset 15) being trained for epoch 1 in Experiment 6 by 2019-01-31 17:59:20.451498!
+Epoch 1/1
+638/638 [==============================] - 77s 120ms/step - loss: 0.1161
+13. set (Dataset 1) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:00:42.212575!
+Epoch 1/1
+482/482 [==============================] - 58s 120ms/step - loss: 0.1469
+14. set (Dataset 22) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:01:46.296533!
+Epoch 1/1
+649/649 [==============================] - 78s 120ms/step - loss: 0.0900
+15. set (Dataset 18) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:03:10.183593!
+Epoch 1/1
+598/598 [==============================] - 72s 120ms/step - loss: 0.1385
+16. set (Dataset 20) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:04:27.130570!
+Epoch 1/1
+540/540 [==============================] - 65s 120ms/step - loss: 0.1047
+17. set (Dataset 16) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:05:40.603007!
+Epoch 1/1
+898/898 [==============================] - 107s 119ms/step - loss: 0.1039
+18. set (Dataset 21) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:07:33.353768!
+Epoch 1/1
+618/618 [==============================] - 74s 119ms/step - loss: 0.1644
+19. set (Dataset 13) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:08:52.060560!
+Epoch 1/1
+469/469 [==============================] - 56s 120ms/step - loss: 0.0925
+20. set (Dataset 19) being trained for epoch 1 in Experiment 6 by 2019-01-31 18:09:53.358976!
+Epoch 1/1
+486/486 [==============================] - 58s 119ms/step - loss: 0.1094
+Epoch 1 for Experiment 6 completed!
+Exp2019-01-31_15-05-51_part6.h5 has been saved.
+The subjects are trained: [(10, 'M04'), (6, 'F06'), (2, 'F02'), (17, 'M10'), (8, 'M02'), (23, 'M13'), (11, 'M05'), (4,
+ 'F04'), (7, 'M01'), (12, 'M06'), (24, 'M14'), (15, 'F03'), (1, 'F01'), (22, 'M01'), (18, 'F05'), (20, 'M12'), (16, 'M
+09'), (21, 'F02'), (13, 'M07'), (19, 'M11')]
+Evaluating model VGG16_inc_top_seqLen16_lstm20_output3_BatchSize1_inEpochs1_outEpochs6_AdamOpt_lr-0.000100_2019-01-31_
+15-05-51
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+All frames and annotations from 4 datasets have been read by 2019-01-31 18:10:53.685747
+For the Subject 3 (F03):
+730/730 [==============================] - 67s 92ms/step
+(730, 1) (730, 1)
+        The absolute mean error on Pitch angle estimation: 13.34 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Yaw angle estimation: 33.14 Degree
+(730, 1) (730, 1)
+        The absolute mean error on Roll angle estimation: 18.12 Degree
+For the Subject 5 (F05):
+946/946 [==============================] - 88s 93ms/step
+(946, 1) (946, 1)
+        The absolute mean error on Pitch angle estimation: 14.35 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Yaw angle estimation: 27.69 Degree
+(946, 1) (946, 1)
+        The absolute mean error on Roll angle estimation: 4.01 Degree
+For the Subject 9 (M03):
+882/882 [==============================] - 83s 94ms/step
+(882, 1) (882, 1)
+        The absolute mean error on Pitch angle estimation: 23.11 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Yaw angle estimation: 29.79 Degree
+(882, 1) (882, 1)
+        The absolute mean error on Roll angle estimation: 7.14 Degree
+For the Subject 14 (M08):
+797/797 [==============================] - 75s 94ms/step
+(797, 1) (797, 1)
+        The absolute mean error on Pitch angle estimation: 16.26 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Yaw angle estimation: 39.81 Degree
+(797, 1) (797, 1)
+        The absolute mean error on Roll angle estimation: 13.77 Degree
+On average in 4 test subjects:
+        The absolute mean error on Pitch angle estimations: 16.76 Degree
+        The absolute mean error on Yaw angle estimations: 32.61 Degree
+        The absolute mean error on Roll angle estimations: 10.76 Degree
+Exp2019-01-31_15-05-51_part6 completed!
+Exp2019-01-31_15-05-51.h5 has been saved.
+subject3_Exp2019-01-31_15-05-51.png has been saved by 2019-01-31 18:16:41.294945.
+subject5_Exp2019-01-31_15-05-51.png has been saved by 2019-01-31 18:16:41.493584.
+subject9_Exp2019-01-31_15-05-51.png has been saved by 2019-01-31 18:16:41.692791.
+subject14_Exp2019-01-31_15-05-51.png has been saved by 2019-01-31 18:16:41.910650.
+Model Exp2019-01-31_15-05-51 has been evaluated successfully.
+Model Exp2019-01-31_15-05-51 has been recorded successfully.
+Done
+mcicek@harsimran:~/Projects/deep_rl_for_head_pose_est/DeepRL_For_HPE/FC_RNN_Evaluater$

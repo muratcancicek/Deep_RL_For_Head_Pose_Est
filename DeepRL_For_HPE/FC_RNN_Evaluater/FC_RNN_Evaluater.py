@@ -27,7 +27,8 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
             start_index = (inputMatrix.shape[0] % batch_size) - 1 if stateful else 0                
             data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
             model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
-        if stateful:  model.reset_states()
+        if stateful: 
+            model.reset_states()
         c += 1
     return model
 
@@ -81,7 +82,8 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, outpu
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
     predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
-    if stateful:  full_model.reset_states()
+    if stateful: 
+        full_model.reset_states()
     test_labels, predictions = unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
     #kerasEval = full_model.evaluate_generator(test_gen) 
     outputs = []

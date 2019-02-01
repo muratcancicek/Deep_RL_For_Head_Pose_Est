@@ -1,5 +1,5 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-STATEFUL = True # False # 
+STATEFUL = False # True # 
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
