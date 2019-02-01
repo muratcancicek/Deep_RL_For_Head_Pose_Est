@@ -190,7 +190,7 @@ def getMaxMinValuesOfAnnos(biwiAnnos = None, tarFile = BIWI_Lebels_file):
     mins = numpy.array([float('inf') for i in range(6)])
     for subj, annos in biwiAnnos.items():
         for name, anno in annos.items():
-#            Mins: [-92.04399872 -87.70659637 754.18200684 -84.3534317  -66.95036316   -69.62425995]
+#            Mins: [-92.04399872 -87.70659637 754.18200684  -84.3534317  -66.95036316   -69.62425995]
 #            Maxs: [ 231.352005    246.68400574 1297.44995117   53.54709625   76.89344025   63.36795807]
             for i in range(6):
                 if anno[i] > maxs[i]:
