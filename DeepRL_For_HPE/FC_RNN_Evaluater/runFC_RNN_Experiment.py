@@ -1,5 +1,6 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
-STATEFUL = True # False # 
+#MODEL_TYPE = 0 # Stateful LSTM # 1 # Stateless LSTM # 2 CNN
+STATEFUL = None # True # False # 
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
@@ -10,6 +11,7 @@ if '.' in __name__:
     else:
         from FC_RNN_Evaluater.Stateless_FC_RNN_Configuration import *
 else:
+    from Core.NeighborFolderimporter import *
     if STATEFUL:
         from Stateful_FC_RNN_Configuration import *
     else:
@@ -35,14 +37,14 @@ def runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs, e
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     printLog('Evaluating model %s' % modelStr, record = record)
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
-    full_model, means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, 
+    full_model, means, results = evaluateCNN(full_model, label_rescaling_factor = label_rescaling_factor, 
                      testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
                     num_outputs = num_outputs, batch_size = test_batch_size, angles = angles, stateful = STATEFUL, record = record, preprocess_input = preprocess_input)
     return full_model, means, results
 
 def runCNN_LSTM(record = False):
     vgg_model, full_model, modelID, preprocess_input = getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout, 
-                      num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top)
+                      num_outputs = num_outputs, lr = learning_rate, include_vgg_top = include_vgg_top, use_vgg16 = use_vgg16)
     modelStr = modelID
     modelID = 'Exp' + modelStr[-19:]
     startRecording(modelID, record = record)

@@ -24,7 +24,7 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
         if timesteps == None:
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
         else:
-            start_index = (inputMatrix.shape[0] % batch_size) - 1 if stateful else 0                
+            start_index = (inputMatrix.shape[0] % batch_size) - 1 if stateful else 0     
             data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
             model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
         if stateful:  model.reset_states()

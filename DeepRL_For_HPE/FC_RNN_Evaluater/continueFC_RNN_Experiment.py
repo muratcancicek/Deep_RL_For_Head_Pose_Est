@@ -6,7 +6,9 @@ if '.' in __name__:
     from FC_RNN_Evaluater.FC_RNN_Evaluater import *
     from FC_RNN_Evaluater.EvaluationRecorder import *
     from FC_RNN_Evaluater.runFC_RNN_Experiment import *
-    if STATEFUL:
+    if STATEFUL is None:
+        from FC_RNN_Evaluater.FCNN_Configuration import *
+    elif STATEFUL:
         from FC_RNN_Evaluater.Stateful_FC_RNN_Configuration import *
     else:
         from FC_RNN_Evaluater.Stateless_FC_RNN_Configuration import *
@@ -15,7 +17,9 @@ else:
     from FC_RNN_Evaluater import *
     from EvaluationRecorder import *
     from runFC_RNN_Experiment import *
-    if STATEFUL:
+    if STATEFUL is None:
+        from FC_RNN_Evaluater.FCNN_Configuration import *
+    elif STATEFUL:
         from Stateful_FC_RNN_Configuration import *
     else:
         from Stateless_FC_RNN_Configuration import *

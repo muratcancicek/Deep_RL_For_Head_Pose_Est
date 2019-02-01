@@ -18,14 +18,16 @@ from sklearn.preprocessing import MinMaxScaler, scale
 from keras.preprocessing import image
 from matplotlib import pyplot
 from os import listdir
+import itertools
 import datetime
 import tarfile
-import cv2
 import struct
+import random
 import numpy
 import png
+import cv2
 import os
-
+random.seed(7)
 importNeighborFolders()
 from paths import *
 
@@ -142,15 +144,87 @@ def labelFramesForSubj(frames, annos, timesteps = None, overlapping = False, sca
         inputMatrix, labels = reshaper(inputMatrix, labels, timesteps, overlapping)
     return inputMatrix, labels
 
-def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False, scaling = True, preprocess_input = None):
+def readBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False, scaling = True, preprocess_input = None, printing = True):
     if subjectList == None: subjectList = [s for s in range(1, 25)]
     biwiFrames = readBIWI_Frames(dataFolder = dataFolder, subjectList = subjectList, preprocess_input = preprocess_input)
     biwiAnnos = readBIWI_Annos(tarFile = labelsTarFile, subjectList = subjectList)
     scalers = BIWI_Lebel_Scalers #getAnnoScalers(biwiAnnos, tarFile = labelsTarFile, subjectList = subjectList)
     labeledFrames = lambda frames, labels: labelFramesForSubj(frames, labels, timesteps, overlapping, scaling, scalers)
     biwi = (labeledFrames(frames, biwiAnnos[subj]) for subj, frames in biwiFrames.items())
-    print('All frames and annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
+    if printing: print('All frames and annotations from ' + str(len(subjectList)) + ' datasets have been read by ' + now())
     return biwi   
+
+#################### GeneratorForBIWIDataset ####################
+def generatorForBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False, scaling = True, preprocess_input = None, shuffle = True):
+    samples_per_epoch = 0
+    if shuffle and subjectList != None: random.shuffle(subjectList)
+    biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList, timesteps, overlapping, scaling, preprocess_input, printing = False)
+    gen = itertools.chain()
+    for inputMatrix, labels in biwi:
+        samples_per_epoch += len(inputMatrix)
+        z = list(zip(inputMatrix, labels))
+        if shuffle: random.shuffle(z)
+        data = ((frame, label) for frame, label in z)
+        gen = itertools.chain(gen, data)
+    return samples_per_epoch, gen
+
+def genBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False, scaling = True, preprocess_input = None, shuffle = True):
+    samples_per_epoch = 0
+    if shuffle and subjectList != None: random.shuffle(subjectList)
+    biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList, timesteps, overlapping, scaling, preprocess_input, printing = False)
+    fr = itertools.chain()
+    lbl = itertools.chain()
+    for inputMatrix, labels in biwi:
+        samples_per_epoch += len(inputMatrix)
+        z = list(zip(inputMatrix, labels))
+        if shuffle: random.shuffle(z)
+        f = (frame for frame, label in z)
+        l = (label for frame, label in z)
+        fr = itertools.chain(fr, f)
+        lbl = itertools.chain(lbl, l)
+    return samples_per_epoch, fr, lbl
+
+
+def batchGeneratorForBIWIDataset(batch_size, output_begin, num_outputs, dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False, scaling = True, preprocess_input = None, shuffle = True):
+    samples_count = 0
+    while True:
+        if samples_count == 0:
+            samples_per_epoch, gen = generatorForBIWIDataset(dataFolder, labelsTarFile, subjectList, timesteps, overlapping, scaling, preprocess_input, shuffle)
+        c = 0
+        frames_batch, labels_batch = numpy.zeros((batch_size, 224, 224, 3)), numpy.zeros((batch_size, num_outputs))
+        for frame, label in gen:
+            if c < batch_size:
+                frames_batch[c], labels_batch[c] = frame, label[output_begin:output_begin+num_outputs]
+                c += 1
+            else:
+                samples_count += batch_size
+                if samples_count == samples_per_epoch:
+                    samples_count = 0
+                yield frames_batch, labels_batch
+
+def getGeneratorsForBIWIDataset(epochs, dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, timesteps = None, overlapping = False, scaling = True, preprocess_input = None, shuffle = True):
+    def generate(): return generatorForBIWIDataset(dataFolder, labelsTarFile, subjectList, timesteps, overlapping, scaling, preprocess_input, shuffle)
+    biwiGenerators = (generate() for e in range(epochs+1))
+    samples_per_epoch, gen = next(biwiGenerators)
+    return samples_per_epoch, biwiGenerators
+
+def batchGeneratorFromBIWIGenerators(gens, batch_size, output_begin, num_outputs):
+    for samples_per_epoch, g in gens:
+        c = 0
+        frames_batch, labels_batch = numpy.zeros((batch_size, 224, 224, 3)), numpy.zeros((batch_size, num_outputs))
+        for frame, label in g:
+                if c < batch_size:
+                    frames_batch[c], labels_batch[c] = frame, label[output_begin:output_begin+num_outputs]
+                    c += 1
+                else:
+                    yield frames_batch, labels_batch
+
+def countGeneratorForBIWIDataset():
+    gen = generatorForBIWIDataset()
+    c, f, l = 0, 0, 0
+    for frame, label in gen:
+        c, f, l = c+1, frame.shape, label.shape
+    print(c, f, l) # 15677 (224, 224, 3) (6,)
 
 def printSamplesFromBIWIDataset(dataFolder = BIWI_Data_folder, labelsTarFile = BIWI_Lebels_file, subjectList = None, preprocess_input = None):
     biwi = readBIWIDataset(dataFolder, labelsTarFile, subjectList = subjectList, timesteps = 10, overlapping = True, preprocess_input = preprocess_input)
@@ -164,7 +238,7 @@ def main():
     #printSampleAnnosForSubj(1, count = -1)
     #printSamplesFromBIWIDataset(subjectList = [1])
    # readBIWIDataset(dataFolder = BIWI_SnippedData_file, labelsTarFile = BIWI_Lebels_file_Local)
-   
+   # countGeneratorForBIWIDataset()
 if __name__ == "__main__":
     main()
     print('Done')
