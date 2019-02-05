@@ -1,17 +1,16 @@
 from NeighborFolderimporter import *
 from FC_RNN_Evaluater.FC_RNN_Evaluater import *
 from DatasetHandler.BiwiBrowser import *
-from CNN_Configuration import *
 from keras.preprocessing.image import ImageDataGenerator
 
 def trainCNN(full_model, modelID, in_epochs, subjectList, output_begin, num_outputs, 
                   batch_size, exp = -1, record = False, preprocess_input = None):
     samples_per_epoch, biwiGenerators = getGeneratorsForBIWIDataset(in_epochs, subjectList = subjectList, preprocess_input = preprocess_input)
     #print(samples_per_epoch, train_batch_size, samples_per_epoch//train_batch_size)
-    gen = batchGeneratorFromBIWIGenerators(biwiGenerators, train_batch_size, output_begin, num_outputs)
+    gen = batchGeneratorFromBIWIGenerators(biwiGenerators, batch_size, output_begin, num_outputs)
     samples_per_epoch -= 1
     try:
-        full_model.fit_generator(gen, steps_per_epoch=samples_per_epoch//train_batch_size, epochs=in_epochs, verbose=1) 
+        full_model.fit_generator(gen, steps_per_epoch=samples_per_epoch//batch_size, epochs=in_epochs, verbose=1) 
     except KeyboardInterrupt:
         interruptSmoothly(full_model, modelID, record = record)
     return full_model

@@ -1,6 +1,6 @@
 # Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
 #MODEL_TYPE = 0 # Stateful LSTM # 1 # Stateless LSTM # 2 CNN
-STATEFUL = None # True # False # 
+STATEFUL = True # False # None # 
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *

@@ -1,0 +1,103 @@
+Model Exp2019-01-31_23-03-55 has been started to be evaluated.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+fc1 (Dense)                  (None, 4096)              102764544 
+_________________________________________________________________
+fc2 (Dense)                  (None, 4096)              16781312  
+_________________________________________________________________
+fc1024 (Dense)               (None, 1024)              4195328   
+=================================================================
+Total params: 138,455,872
+Trainable params: 4,195,328
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+model_1 (Model)              (None, 1024)              138455872 
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 3075      
+=================================================================
+Total params: 138,458,947
+Trainable params: 4,198,403
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'CNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 1 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 5
+out_epochs = 1
+train_batch_size = 10
+test_batch_size = 1
+
+subjectList = [9] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
+testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
+
+num_datasets = len(subjectList)
+
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+The subjects are trained: [(9, 'M03')]
+Evaluating model CNN_VGG16_inc_top_output3_BatchSize10_inEpochs5_outEpochs1_AdamOpt_lr-0.000100_2019-01-31_23-03-55
+The subjects will be tested: [(9, 'M03')]
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 6.85 Degree
+	The absolute mean error on Yaw angle estimation: 13.76 Degree
+	The absolute mean error on Roll angle estimation: 4.83 Degree
+Exp2019-01-31_23-03-55 completed!
+Experiment 1 completed!
+subject9_Exp2019-01-31_23-03-55.png has been saved by 2019-01-31 23:05:01.430358.
+Model Exp2019-01-31_23-03-55 has been evaluated successfully.

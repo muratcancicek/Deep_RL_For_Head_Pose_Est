@@ -18,21 +18,17 @@ num_outputs = 3
 
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
-in_epochs = 1
-out_epochs = 2
-eva_epoch = 1
-train_batch_size = 18
+in_epochs = 10
+out_epochs = 30
+train_batch_size = 10
 test_batch_size = 1
 
-subjectList = [9, 1] # [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
-testSubjects = [9] # [3, 5, 9, 14] # [9, 18, 21, 24] # 
-trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 500
-lstm_dropout = 0.25
-lstm_recurrent_dropout = 0.25
 include_vgg_top = True # False # 
 
 angles = ['Pitch', 'Yaw', 'Roll'] 
@@ -61,7 +57,7 @@ def addDropout(model):
 def getFinalModel(num_outputs = num_outputs, lr = learning_rate, 
                   include_vgg_top = include_vgg_top, use_vgg16 = use_vgg16):
     if use_vgg16:
-        modelID = 'VGG16' 
+        modelID = 'CNN_VGG16' 
         inp = (224, 224, 3)
         modelPackage = vgg16
         margins = (8, 8, 48, 48)
@@ -70,14 +66,14 @@ def getFinalModel(num_outputs = num_outputs, lr = learning_rate,
     elif True:
         inp = (299, 299, 3)
         modelPackage = inception_v3
-        modelID = 'InceptionV3'     
+        modelID = 'CNN_InceptionV3'     
         margins = (0, 1, 51, 50)
         Target_Frame_Shape = (300, 400, 3)
         cnn_model = inception_v3.InceptionV3(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
     else:
         inp = (331, 331, 3)
         modelPackage = nasnet
-        modelID = 'NASNetLarge'     
+        modelID = 'CNN_ASNetLarge'     
         margins = (14, 15, 74, 75)
         Target_Frame_Shape = (360, 480, 3)
         cnn_model = nasnet.NASNetLarge(weights='imagenet', input_shape = inp, include_top=include_vgg_top) 
@@ -94,7 +90,7 @@ def getFinalModel(num_outputs = num_outputs, lr = learning_rate,
         for layer in cnn_model.layers: 
             layer.trainable = False
         x = cnn_model.layers[-1].output
-        x = Dropout(0.25, name = 'dropout3_025')(x)
+        #x = Dropout(0.25, name = 'dropout3_025')(x)
         x = Dense(1024, activation='tanh', name='fc1024')(x)
         #x = Dropout(0.25, name = 'dropout_025')(x)
         #x = Dense(num_outputs, name = 'fc3')(x)

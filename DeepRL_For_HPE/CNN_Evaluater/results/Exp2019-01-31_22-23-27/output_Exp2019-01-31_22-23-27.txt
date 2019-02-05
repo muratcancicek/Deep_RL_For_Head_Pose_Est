@@ -1,0 +1,31 @@
+The subjects are trained: [(2, 'F02'), (24, 'M14'), (19, 'M11'), (21, 'F02'), (11, 'M05'), (1, 'F01'), (20, 'M12'), (6, 'F06'), (15, 'F03'), (12, 'M06'), (4, 'F04'), (17, 'M10'), (10, 'M04'), (8, 'M02'), (23, 'M13'), (16, 'M09'), (22, 'M01'), (13, 'M07'), (18, 'F05'), (7, 'M01')]
+Evaluating model CNN_VGG16_inc_top_output3_BatchSize10_inEpochs2_outEpochs1_AdamOpt_lr-0.000100_2019-01-31_22-23-27
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 35.81 Degree
+	The absolute mean error on Yaw angle estimation: 32.04 Degree
+	The absolute mean error on Roll angle estimation: 48.81 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 16.41 Degree
+	The absolute mean error on Yaw angle estimation: 31.20 Degree
+	The absolute mean error on Roll angle estimation: 45.29 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 53.53 Degree
+	The absolute mean error on Yaw angle estimation: 54.34 Degree
+	The absolute mean error on Roll angle estimation: 19.26 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 25.34 Degree
+	The absolute mean error on Yaw angle estimation: 53.40 Degree
+	The absolute mean error on Roll angle estimation: 25.03 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 32.77 Degree
+	The absolute mean error on Yaw angle estimations: 42.74 Degree
+	The absolute mean error on Roll angle estimations: 34.59 Degree
+Exp2019-01-31_22-23-27 completed!
+Experiment 1 completed!
+Exp2019-01-31_22-23-27.h5 has been saved.
+subject3_Exp2019-01-31_22-23-27.png has been saved by 2019-01-31 22:30:05.862257.
+subject5_Exp2019-01-31_22-23-27.png has been saved by 2019-01-31 22:30:06.071185.
+subject9_Exp2019-01-31_22-23-27.png has been saved by 2019-01-31 22:30:06.315976.
+subject14_Exp2019-01-31_22-23-27.png has been saved by 2019-01-31 22:30:06.548547.
+Model Exp2019-01-31_22-23-27 has been evaluated successfully.

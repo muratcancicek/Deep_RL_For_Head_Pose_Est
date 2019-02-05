@@ -37,7 +37,7 @@ def runCNN_Evaluater(record = False):
     printLog(get_model_summary(full_model), record = record)
     saveConfiguration(confFile = confFile, record = record)
     for e in range(out_epochs):
-        full_model, means, results = runCNN_ExperimentWithModel(full_model, modelID, modelStr, eva_epoch, record = record, preprocess_input = preprocess_input)
+        full_model, means, results = runCNN_ExperimentWithModel(full_model, modelID, modelStr, in_epochs, record = record, preprocess_input = preprocess_input)
         printLog('%s completed!' % (modelID), record = record)
         printLog('Experiment %d completed!' % (e+1), record = record)
     if not ((out_epochs + in_epochs + num_datasets) < 10):

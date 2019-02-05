@@ -1,0 +1,173 @@
+Model Exp2019-01-31_23-54-13 has been started to be evaluated.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+fc1 (Dense)                  (None, 4096)              102764544 
+_________________________________________________________________
+fc2 (Dense)                  (None, 4096)              16781312  
+_________________________________________________________________
+fc1024 (Dense)               (None, 1024)              4195328   
+=================================================================
+Total params: 138,455,872
+Trainable params: 4,195,328
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+model_1 (Model)              (None, 1024)              138455872 
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 3075      
+=================================================================
+Total params: 138,458,947
+Trainable params: 4,198,403
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'CNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 1 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 10
+out_epochs = 3
+train_batch_size = 100
+test_batch_size = 1
+
+subjectList = [i for i in range(1, 25)] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+The subjects are trained: [(2, 'F02'), (24, 'M14'), (19, 'M11'), (21, 'F02'), (11, 'M05'), (1, 'F01'), (20, 'M12'), (6, 'F06'), (15, 'F03'), (12, 'M06'), (4, 'F04'), (17, 'M10'), (10, 'M04'), (8, 'M02'), (23, 'M13'), (16, 'M09'), (22, 'M01'), (13, 'M07'), (18, 'F05'), (7, 'M01')]
+Evaluating model CNN_VGG16_inc_top_output3_BatchSize100_inEpochs10_outEpochs3_AdamOpt_lr-0.000100_2019-01-31_23-54-13
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 88.97 Degree
+	The absolute mean error on Yaw angle estimation: 54.41 Degree
+	The absolute mean error on Roll angle estimation: 51.62 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 84.43 Degree
+	The absolute mean error on Yaw angle estimation: 70.17 Degree
+	The absolute mean error on Roll angle estimation: 27.57 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 83.99 Degree
+	The absolute mean error on Yaw angle estimation: 36.59 Degree
+	The absolute mean error on Roll angle estimation: 17.98 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 109.12 Degree
+	The absolute mean error on Yaw angle estimation: 101.62 Degree
+	The absolute mean error on Roll angle estimation: 80.21 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 91.63 Degree
+	The absolute mean error on Yaw angle estimations: 65.69 Degree
+	The absolute mean error on Roll angle estimations: 44.34 Degree
+Exp2019-01-31_23-54-13 completed!
+Experiment 1 completed!
+The subjects are trained: [(15, 'F03'), (2, 'F02'), (16, 'M09'), (12, 'M06'), (13, 'M07'), (10, 'M04'), (18, 'F05'), (4, 'F04'), (11, 'M05'), (6, 'F06'), (21, 'F02'), (22, 'M01'), (20, 'M12'), (1, 'F01'), (17, 'M10'), (19, 'M11'), (8, 'M02'), (7, 'M01'), (24, 'M14'), (23, 'M13')]
+Evaluating model CNN_VGG16_inc_top_output3_BatchSize100_inEpochs10_outEpochs3_AdamOpt_lr-0.000100_2019-01-31_23-54-13
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 38.21 Degree
+	The absolute mean error on Yaw angle estimation: 32.59 Degree
+	The absolute mean error on Roll angle estimation: 16.58 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 49.19 Degree
+	The absolute mean error on Yaw angle estimation: 35.03 Degree
+	The absolute mean error on Roll angle estimation: 10.91 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 72.58 Degree
+	The absolute mean error on Yaw angle estimation: 34.98 Degree
+	The absolute mean error on Roll angle estimation: 21.71 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 79.39 Degree
+	The absolute mean error on Yaw angle estimation: 38.26 Degree
+	The absolute mean error on Roll angle estimation: 27.59 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 59.84 Degree
+	The absolute mean error on Yaw angle estimations: 35.21 Degree
+	The absolute mean error on Roll angle estimations: 19.20 Degree
+Exp2019-01-31_23-54-13 completed!
+Experiment 2 completed!
+The subjects are trained: [(13, 'M07'), (19, 'M11'), (8, 'M02'), (2, 'F02'), (12, 'M06'), (22, 'M01'), (10, 'M04'), (11, 'M05'), (6, 'F06'), (7, 'M01'), (21, 'F02'), (4, 'F04'), (17, 'M10'), (24, 'M14'), (18, 'F05'), (20, 'M12'), (15, 'F03'), (1, 'F01'), (23, 'M13'), (16, 'M09')]
+Evaluating model CNN_VGG16_inc_top_output3_BatchSize100_inEpochs10_outEpochs3_AdamOpt_lr-0.000100_2019-01-31_23-54-13
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 18.05 Degree
+	The absolute mean error on Yaw angle estimation: 28.72 Degree
+	The absolute mean error on Roll angle estimation: 26.55 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 10.62 Degree
+	The absolute mean error on Yaw angle estimation: 35.35 Degree
+	The absolute mean error on Roll angle estimation: 12.13 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 46.39 Degree
+	The absolute mean error on Yaw angle estimation: 26.00 Degree
+	The absolute mean error on Roll angle estimation: 27.01 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 28.54 Degree
+	The absolute mean error on Yaw angle estimation: 32.08 Degree
+	The absolute mean error on Roll angle estimation: 13.01 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 25.90 Degree
+	The absolute mean error on Yaw angle estimations: 30.54 Degree
+	The absolute mean error on Roll angle estimations: 19.67 Degree
+Exp2019-01-31_23-54-13 completed!
+Experiment 3 completed!
+Exp2019-01-31_23-54-13.h5 has been saved.
+subject3_Exp2019-01-31_23-54-13.png has been saved by 2019-02-01 00:38:02.906946.
+subject5_Exp2019-01-31_23-54-13.png has been saved by 2019-02-01 00:38:03.115849.
+subject9_Exp2019-01-31_23-54-13.png has been saved by 2019-02-01 00:38:03.325443.
+subject14_Exp2019-01-31_23-54-13.png has been saved by 2019-02-01 00:38:03.549948.
+Model Exp2019-01-31_23-54-13 has been evaluated successfully.
