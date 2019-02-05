@@ -1,0 +1,229 @@
+Model Exp2019-02-05_03-27-47 has been started to be evaluated.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         (None, 224, 224, 3)       0         
+_________________________________________________________________
+block1_conv1 (Conv2D)        (None, 224, 224, 64)      1792      
+_________________________________________________________________
+block1_conv2 (Conv2D)        (None, 224, 224, 64)      36928     
+_________________________________________________________________
+block1_pool (MaxPooling2D)   (None, 112, 112, 64)      0         
+_________________________________________________________________
+block2_conv1 (Conv2D)        (None, 112, 112, 128)     73856     
+_________________________________________________________________
+block2_conv2 (Conv2D)        (None, 112, 112, 128)     147584    
+_________________________________________________________________
+block2_pool (MaxPooling2D)   (None, 56, 56, 128)       0         
+_________________________________________________________________
+block3_conv1 (Conv2D)        (None, 56, 56, 256)       295168    
+_________________________________________________________________
+block3_conv2 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_conv3 (Conv2D)        (None, 56, 56, 256)       590080    
+_________________________________________________________________
+block3_pool (MaxPooling2D)   (None, 28, 28, 256)       0         
+_________________________________________________________________
+block4_conv1 (Conv2D)        (None, 28, 28, 512)       1180160   
+_________________________________________________________________
+block4_conv2 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_conv3 (Conv2D)        (None, 28, 28, 512)       2359808   
+_________________________________________________________________
+block4_pool (MaxPooling2D)   (None, 14, 14, 512)       0         
+_________________________________________________________________
+block5_conv1 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv2 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_conv3 (Conv2D)        (None, 14, 14, 512)       2359808   
+_________________________________________________________________
+block5_pool (MaxPooling2D)   (None, 7, 7, 512)         0         
+_________________________________________________________________
+flatten (Flatten)            (None, 25088)             0         
+_________________________________________________________________
+fc1 (Dense)                  (None, 4096)              102764544 
+_________________________________________________________________
+fc2 (Dense)                  (None, 4096)              16781312  
+_________________________________________________________________
+dropout_025 (Dropout)        (None, 4096)              0         
+=================================================================
+Total params: 134,260,544
+Trainable params: 0
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdCNN (TimeDistributed)      (10, 1, 4096)             134260544 
+_________________________________________________________________
+lstm_1 (LSTM)                (10, 10)                  164280    
+_________________________________________________________________
+dense_1 (Dense)              (10, 3)                   33        
+=================================================================
+Total params: 134,424,857
+Trainable params: 164,313
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateful_FC_RNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 1 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 1
+out_epochs = 1
+eva_epoch = 1
+train_batch_size = 10
+test_batch_size = 10
+
+subjectList = [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [i for i in range(1, 25)] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = subjectList #[s for s in subjectList if not s in testSubjects] #  
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 10
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+1. set (Dataset 12) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:27:58.730617!
+2. set (Dataset 3) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:28:12.264342!
+3. set (Dataset 1) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:28:21.983291!
+4. set (Dataset 11) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:28:30.829986!
+5. set (Dataset 8) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:28:42.255672!
+6. set (Dataset 14) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:28:55.303716!
+7. set (Dataset 7) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:29:07.953742!
+8. set (Dataset 2) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:29:17.770667!
+9. set (Dataset 5) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:29:30.294839!
+10. set (Dataset 4) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:29:43.641171!
+Epoch 1 for Experiment 1 completed!
+Exp2019-02-05_03-27-47_part1.h5 has been saved.
+The subjects are trained: [(12, 'M06'), (3, 'F03'), (1, 'F01'), (11, 'M05'), (8, 'M02'), (14, 'M08'), (7, 'M01'), (2, 'F02'), (5, 'F05'), (4, 'F04')]
+Evaluating model VGG16_inc_top_seqLen1_stateful_lstm10_output3_BatchSize10_inEpochs1_outEpochs1_AdamOpt_lr-0.000100_2019-02-05_03-27-47
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+Exp2019-02-05_03-27-47_part1.h5 has been saved.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdCNN (TimeDistributed)      (10, 1, 4096)             134260544 
+_________________________________________________________________
+lstm_1 (LSTM)                (10, 10)                  164280    
+_________________________________________________________________
+dense_1 (Dense)              (10, 3)                   33        
+=================================================================
+Total params: 134,424,857
+Trainable params: 164,313
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateful_FC_RNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 1 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 1
+out_epochs = 1
+eva_epoch = 1
+train_batch_size = 10
+test_batch_size = 10
+
+subjectList = [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [i for i in range(1, 25)] # [9] # 
+testSubjects = [3, 5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = subjectList #[s for s in subjectList if not s in testSubjects] #  
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 10
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+The subjects are trained: [(1, 'F01'), (2, 'F02'), (3, 'F03'), (4, 'F04'), (5, 'F05'), (7, 'M01'), (8, 'M02'), (11, 'M05'), (12, 'M06'), (14, 'M08')]
+Evaluating model Exp2019-02-05_03-27-47_part1_and_2019-02-05_03-34-48
+The subjects will be tested: [(3, 'F03'), (5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 3 (F03):
+Exp2019-02-05_03-27-47_part1.h5 has been saved.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdCNN (TimeDistributed)      (10, 1, 4096)             134260544 
+_________________________________________________________________
+lstm_1 (LSTM)                (10, 10)                  164280    
+_________________________________________________________________
+dense_1 (Dense)              (10, 3)                   33        
+=================================================================
+Total params: 134,424,857
+Trainable params: 164,313
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateful_FC_RNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 1 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 1
+out_epochs = 1
+eva_epoch = 1
+train_batch_size = 10
+test_batch_size = 10
+
+subjectList = [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [i for i in range(1, 25)] # [9] # 
+testSubjects = [5, 9, 14] # [9, 18, 21, 24] # [9] # 
+trainingSubjects = subjectList #[s for s in subjectList if not s in testSubjects] #  
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 10
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+The subjects are trained: [(1, 'F01'), (2, 'F02'), (3, 'F03'), (4, 'F04'), (5, 'F05'), (7, 'M01'), (8, 'M02'), (11, 'M05'), (12, 'M06'), (14, 'M08')]
+Evaluating model Exp2019-02-05_03-27-47_part1_and_2019-02-05_03-39-59
+The subjects will be tested: [(5, 'F05'), (9, 'M03'), (14, 'M08')]
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 7.84 Degree
+	The absolute mean error on Yaw angle estimation: 27.23 Degree
+	The absolute mean error on Roll angle estimation: 3.24 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 30.31 Degree
+	The absolute mean error on Yaw angle estimation: 25.40 Degree
+	The absolute mean error on Roll angle estimation: 7.16 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 11.51 Degree
+	The absolute mean error on Yaw angle estimation: 26.66 Degree
+	The absolute mean error on Roll angle estimation: 11.24 Degree
+On average in 3 test subjects:
+	The absolute mean error on Pitch angle estimations: 16.55 Degree
+	The absolute mean error on Yaw angle estimations: 26.43 Degree
+	The absolute mean error on Roll angle estimations: 7.21 Degree
+subject5_Exp2-05_03-27-47_part1_and_2019-02-05_03-39-59.png has been saved by 2019-02-05 03:40:43.070023.
+subject9_Exp2-05_03-27-47_part1_and_2019-02-05_03-39-59.png has been saved by 2019-02-05 03:40:43.269589.
+subject14_Exp2-05_03-27-47_part1_and_2019-02-05_03-39-59.png has been saved by 2019-02-05 03:40:43.490136.
+Model Exp2-05_03-27-47_part1_and_2019-02-05_03-39-59 has been evaluated successfully.

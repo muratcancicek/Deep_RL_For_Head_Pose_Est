@@ -11,7 +11,7 @@ if '.' in __name__:
     else:
         from FC_RNN_Evaluater.Stateless_FC_RNN_Configuration import *
 else:
-    from Core.NeighborFolderimporter import *
+    from NeighborFolderimporter import *
     if STATEFUL:
         from Stateful_FC_RNN_Configuration import *
     else:
@@ -37,9 +37,7 @@ def runCNN_LSTM_ExperimentWithModel(full_model, modelID, modelStr, out_epochs, e
     printLog('The subjects are trained:', [(s, BIWI_Subject_IDs[s]) for s in trainingSubjects], record = record)
     printLog('Evaluating model %s' % modelStr, record = record)
     printLog('The subjects will be tested:', [(s, BIWI_Subject_IDs[s]) for s in testSubjects], record = record)
-    full_model, means, results = evaluateCNN(full_model, label_rescaling_factor = label_rescaling_factor, 
-                     testSubjects = testSubjects, timesteps = timesteps,  output_begin = output_begin, 
-                    num_outputs = num_outputs, batch_size = test_batch_size, angles = angles, stateful = STATEFUL, record = record, preprocess_input = preprocess_input)
+    full_model, means, results = evaluateCNN_LSTM(full_model, label_rescaling_factor = label_rescaling_factor, testSubjects = testSubjects, timesteps = timesteps, output_begin = output_begin, num_outputs = num_outputs, batch_size = test_batch_size, angles = angles, stateful = STATEFUL, record = record, preprocess_input = preprocess_input)
     return full_model, means, results
 
 def runCNN_LSTM(record = False):
