@@ -205,11 +205,11 @@ def getAnnoScalers(biwiAnnos = None, tarFile = BIWI_Lebels_file):
     mins, maxs = getMaxMinValuesOfAnnos(biwiAnnos = biwiAnnos, tarFile = tarFile)
     return [mins, maxs]
 
-def scaleAnnoByScalers(labels, scalers):
-    return ((labels - scalers[0]) - ((scalers[1]-scalers[0])/2)) / ((scalers[1]-scalers[0])/2)
+def scaleAnnoByScalers(labels, scalers): #/2#  - ((scalers[1]-scalers[0])/2)
+    return ((labels - scalers[0])  ) / ((scalers[1]-scalers[0]))
 
-def unscaleAnnoByScalers(labels, scalers):
-    return (labels * (scalers[1]-scalers[0])/2) + ((scalers[1]-scalers[0])/2) + scalers[0]
+def unscaleAnnoByScalers(labels, scalers): #/2 + ((scalers[1]-scalers[0])/2)
+    return (labels * (scalers[1]-scalers[0])) + scalers[0]
 
 #################### Merging ####################
 def labelFramesForSubj(frames, annos, scalers = None):

@@ -19,18 +19,18 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.0001
 in_epochs = 1
-out_epochs = 3
-eva_epoch = 3
+out_epochs = 1
+eva_epoch = 1
 train_batch_size = 10
 test_batch_size = 10
 
-subjectList = [i for i in range(1, 25)] # [9] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
-testSubjects = [6, 9, 14, 24] # [9, 18, 21, 24] # [9] # 
-trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+subjectList = [14] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [i for i in range(1, 25)] # 
+testSubjects = [14] # [6, 9, 14, 24] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 320
+lstm_nodes = 500
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
 include_vgg_top = True # False # 
@@ -94,11 +94,11 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
         cnn_model.layers[-1].outbound_nodes = []
         for layer in cnn_model.layers: 
             layer.trainable = False
-        x = cnn_model.layers[-1].output
-        x = Dropout(0.25, name = 'dropout3_025')(x)#
-        x = Dense(1024, activation='relu', name='fc1024')(x)#
-        x = Dropout(0.25, name = 'dropout_025')(x)#
-     #   x = Dense(num_outputs, name = 'fc3')(x)#
+        x = cnn_model.layers[-1].output #
+       # x = Dropout(0.25, name = 'dropout3_025')(x) 
+       # x = Dense(1024, activation='relu', name='fc1024')(x) 
+       # x = Dropout(0.25, name = 'dropout_025')(x) 
+       # x = Dense(num_outputs, name = 'fc3')(x)
         cnn_model = Model(inputs=cnn_model.input,outputs=x)
     """
     """
