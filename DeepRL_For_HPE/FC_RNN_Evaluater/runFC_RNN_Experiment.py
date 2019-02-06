@@ -47,7 +47,7 @@ def runCNN_LSTM(record = False):
     modelID = 'Exp' + modelStr[-19:]
     startRecording(modelID, record = record)
     printLog(get_model_summary(vgg_model), record = record)
-    printLog(get_model_summary(full_model), record = record)
+    #printLog(get_model_summary(full_model), record = record)
     saveConfiguration(confFile = confFile, record = record)
 
     num_experiments = int(out_epochs / eva_epoch) if out_epochs > eva_epoch else 1

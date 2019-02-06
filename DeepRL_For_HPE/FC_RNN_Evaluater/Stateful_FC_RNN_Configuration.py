@@ -6,7 +6,7 @@ from keras.models import Sequential
 from keras.preprocessing import image
 from keras.applications import vgg16, nasnet, inception_v3
 from keras import regularizers, Model
-from keras.layers import concatenate, TimeDistributed, LSTM, Dense, Dropout, Flatten, CuDNNLSTM, Input 
+from keras.layers import concatenate, Concatenate, TimeDistributed, LSTM, Dense, Dropout, Flatten, CuDNNLSTM, Input 
 def now(): return str(datetime.datetime.now())
 
 ######## CONF_Begins_Here ##########
@@ -21,8 +21,8 @@ learning_rate =  0.0001
 in_epochs = 1
 out_epochs = 1
 eva_epoch = 1
-train_batch_size = 10
-test_batch_size = 10
+train_batch_size = 1
+test_batch_size = 1
 
 subjectList = [14] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [i for i in range(1, 25)] # 
 testSubjects = [14] # [6, 9, 14, 24] # [9, 18, 21, 24] # 
@@ -95,9 +95,13 @@ def getCNN_Model(use_vgg16 = use_vgg16):
         x = cnn_model.layers[-1].output #
         x = Dropout(0.25, name = 'dropout3_025')(x) 
         x = Dense(1024, activation='relu', name='fc1024')(x) 
-        x = Dropout(0.25, name = 'dropout_025')(x) 
+        #x = Dropout(0.25, name = 'dropout_025')(x) 
        # x = Dense(num_outputs, name = 'fc3')(x)
-        cnn_model = Model(inputs=cnn_model.input,outputs=x)
+
+        #auxiliary_input = Input(shape=(num_outputs, ), name='aux_input') # train_batch_size, timesteps,inputs=[ auxiliary_input]
+        #x = (Concatenate(axis=1)([x, auxiliary_input]))#TimeDistributed(cnn_model).output
+
+        cnn_model = Model(inputs=cnn_model.input, outputs=x)
     return inp, cnn_model, modelID, preprocess_input
 
 def getLSTM_Model(inp, cnn_model, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, 
@@ -120,16 +124,20 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     #finalModel = getLSTM_Model(inp, cnn_model, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout)
     #finalModel.add(Dense(num_outputs))
 
-    auxiliary_input = TimeDistributed(Input(shape=(num_outputs, ), name='aux_input')) # train_batch_size, timesteps
-    x = (concatenate([TimeDistributed(cnn_model).output, auxiliary_input]))#
-    midModel = Model(inputs=[cnn_model.input, auxiliary_input], outputs=x)
-    lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True)(x.output)
+    fcRNN = Sequential()
+    fcRNN.add(TimeDistributed(cnn_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdCNN')) 
+    
+    a = Input(batch_shape=(train_batch_size, timesteps, num_outputs), name='aux_input')
+    t = TimeDistributed(Dense(3), name = 'tdIN')(a)
+
+    x = (concatenate([fcRNN.output, t], axis = 2))#
+
+    lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True)(x)
     main_output = Dense(num_outputs)(lstm_out)
-    #finalModel = getLSTM_Model(inp, midModel, lstm_nodes = lstm_nodes, lstm_dropout = lstm_dropout, lstm_recurrent_dropout = lstm_recurrent_dropout)
-    finalModel = Model(inputs=midModelmodel.input, outputs=main_output)
+    finalModel = Model(inputs=[fcRNN.input, a], outputs=main_output)
 
     #finalModel = Sequential()
-    #finalModel.add(TimeDistributed(midModel,  input_shape=(train_batch_size, timesteps, 1027), name = 'tdCNN')) 
+    #finalModel.add(TimeDistributed(cnn_model, name = 'tdCNN')) 
     #finalModel.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))#, activation='relu'
     #finalModel.add(Dense(num_outputs))
 

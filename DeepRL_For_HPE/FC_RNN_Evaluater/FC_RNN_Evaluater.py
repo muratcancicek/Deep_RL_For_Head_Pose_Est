@@ -14,6 +14,12 @@ from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, l
 from keras.preprocessing.sequence import TimeseriesGenerator
 
 ######### Training Methods ###########
+def combined_generator(inputMatrix, labels, timesteps, batch_size):
+    img_gen = TimeseriesGenerator(inputMatrix[1:], labels[1:], length=timesteps, batch_size=batch_size)
+    ang_gen = TimeseriesGenerator(labels[:-1], labels[1:], length=timesteps, batch_size=batch_size)
+    for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
+        yield [inputMatrix, inputLabels], outputLabels
+            
 def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, exp = -1, record = False):
     c = 0
     for inputMatrix, labels in set_gen:
@@ -25,10 +31,9 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
         else:
             start_index = (inputMatrix.shape[0] % batch_size) - 1 if stateful else 0     
-            inputMatrix = [(m, labels) for m, l, in zip(inputMatrix[1:], labels[:-1])]
-            labels = labels[1:]
-            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
-            model.fit_generator(data_gen, steps_per_epoch=len(data_gen), epochs=in_epochs, verbose=1) 
+            #data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
+            data_gen = combined_generator(inputMatrix, labels, timesteps, batch_size)
+            model.fit_generator(data_gen, steps_per_epoch=len(labels)-2, epochs=in_epochs, verbose=1) 
         if stateful:  model.reset_states()
         c += 1
     return model
@@ -79,13 +84,7 @@ def unscaleEstimations(test_labels, predictions, scalers, output_begin, num_outp
     predictions = unscaleAnnoByScalers(predictions, sclrs)
     return test_labels, predictions
 
-def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size, stateful = False, record = False):
-    if num_outputs == 1: angles = ['Yaw']
-    printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
-    predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
-    if stateful:  full_model.reset_states()
-    test_labels, predictions = unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
-    #kerasEval = full_model.evaluate_generator(test_gen) 
+def evaluateOutputsForSubject(test_labels, predictions, timesteps, output_begin, num_outputs, angles, batch_size, stateful = False, record = False):
     outputs = []
     for i in range(num_outputs):
         if stateful:
@@ -99,6 +98,46 @@ def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, outpu
         absolute_mean_error = np.abs(differences).mean()
         printLog("\tThe absolute mean error on %s angle estimation: %.2f Degree" % (angles[i], absolute_mean_error), record = record)
         outputs.append((matrix, absolute_mean_error))
+    return outputs
+
+def evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size, stateful = False, record = False):
+    if num_outputs == 1: angles = ['Yaw']
+    printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
+    predictions = full_model.predict_generator(test_gen, steps = int(len(test_labels)/batch_size), verbose = 1)
+    if stateful:  full_model.reset_states()
+    test_labels, predictions = unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
+    #kerasEval = full_model.evaluate_generator(test_gen) 
+    outputs = evaluateOutputsForSubject(test_labels, timesteps, output_begin, num_outputs, angles, batch_size, stateful, record)
+    return full_model, outputs
+
+def slide(m, x):
+        m[0, :-1] = m[0, 1:]
+        m[0, -1] = x
+        return m
+
+def predicter(full_model, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size):
+    cur_pred = np.zeros((len(test_labels)+1, num_outputs))
+    #pred = []
+    c =0
+    for (inputMatrix, inputLabels) in test_gen:
+        im = inputMatrix.reshape(inputMatrix.shape[:1] + (1,) + inputMatrix.shape[1:])
+        #l = inputLabels.reshape(inputLabels.shape[:1] + (1,) + inputLabels.shape[1:])
+        c+=1
+        if c > len(test_labels): break
+        for i in range(len(inputLabels)):#50slide(cur_pred, )
+            p = full_model.predict([im[i], cur_pred[i].reshape((batch_size, timesteps, num_outputs))])
+            #pred.append(p)
+            cur_pred[i+1] = p
+    return cur_pred[1:]
+
+def evaluateSubjectForMultipleInput(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size, stateful = False, record = False):
+    if num_outputs == 1: angles = ['Yaw']
+    printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
+    predictions = predicter(full_model, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size) 
+    if stateful:  full_model.reset_states()
+    test_labels, predictions = unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
+    #kerasEval = full_model.evaluate_generator(test_gen) 
+    outputs = evaluateOutputsForSubject(test_labels, predictions, timesteps, output_begin, num_outputs, angles, batch_size, stateful, record)
     return full_model, outputs
 
 def evaluateAverage(results, angles, num_outputs, record = False):
@@ -121,7 +160,7 @@ def evaluateCNN_LSTM(full_model, label_rescaling_factor, testSubjects, timesteps
                                             batch_size = batch_size, stateful = stateful, record = record, preprocess_input = preprocess_input)
     results = []
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):
-        full_model, outputs = evaluateSubject(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)
+        full_model, outputs = evaluateSubjectForMultipleInput(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size = batch_size, stateful = stateful, record = record)
         results.append((subject, outputs))
     means = evaluateAverage(results, angles, num_outputs, record = record)
     return full_model, means, results 
