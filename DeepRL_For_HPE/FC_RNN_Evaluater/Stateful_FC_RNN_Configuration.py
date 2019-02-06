@@ -24,9 +24,9 @@ eva_epoch = 1
 train_batch_size = 10
 test_batch_size = 10
 
-subjectList = [i for i in range(1, 25)] # [14] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
-testSubjects = [6, 9, 14, 24] # [14] # [9, 18, 21, 24] # 
-trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+subjectList = [14] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [i for i in range(1, 25)] # 
+testSubjects = [14] # [6, 9, 14, 24] # [9, 18, 21, 24] # 
+trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
 
 num_datasets = len(subjectList)
 
