@@ -1,0 +1,203 @@
+Exp2019-02-05_21-29-08.h5 has been saved.
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+tdCNN (TimeDistributed)      (10, 1, 4096)             134260544 
+_________________________________________________________________
+lstm_1 (LSTM)                (10, 500)                 9194000   
+_________________________________________________________________
+dense_1 (Dense)              (10, 3)                   1503      
+=================================================================
+Total params: 143,456,047
+Trainable params: 9,195,503
+Non-trainable params: 134,260,544
+_________________________________________________________________
+
+######## CONF_Begins_Here ##########
+confFile = 'Stateful_FC_RNN_Configuration.py'
+RECORD = True # False # 
+
+output_begin = 3
+num_outputs = 3
+
+timesteps = 1 # TimeseriesGenerator Handles overlapping
+learning_rate =  0.0001
+in_epochs = 1
+out_epochs = 5
+eva_epoch = 5
+train_batch_size = 10
+test_batch_size = 10
+
+subjectList = [i for i in range(1, 25)] # [14] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
+testSubjects = [6, 9, 14, 24] # [14] # [9, 18, 21, 24] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
+
+num_datasets = len(subjectList)
+
+lstm_nodes = 500
+lstm_dropout = 0.25
+lstm_recurrent_dropout = 0.25
+include_vgg_top = True # False # 
+
+angles = ['Pitch', 'Yaw', 'Roll'] 
+use_vgg16 = True # False # 
+######### CONF_ends_Here ###########
+1. set (Dataset 21) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:37:28.340057!
+2. set (Dataset 23) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:37:39.262415!
+3. set (Dataset 13) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:37:47.854803!
+4. set (Dataset 18) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:37:56.957885!
+5. set (Dataset 7) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:38:08.668544!
+6. set (Dataset 22) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:38:20.078206!
+7. set (Dataset 20) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:38:29.948688!
+8. set (Dataset 15) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:38:40.027545!
+9. set (Dataset 5) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:38:53.625503!
+10. set (Dataset 11) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:39:05.760140!
+11. set (Dataset 8) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:39:17.395426!
+12. set (Dataset 1) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:39:27.630913!
+13. set (Dataset 17) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:39:34.704482!
+14. set (Dataset 2) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:39:42.413000!
+15. set (Dataset 3) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:39:53.206241!
+16. set (Dataset 19) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:40:03.043168!
+17. set (Dataset 16) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:40:15.141306!
+18. set (Dataset 4) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:40:28.712750!
+19. set (Dataset 12) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:40:41.028984!
+20. set (Dataset 10) being trained for epoch 1 in Experiment 1 by 2019-02-05 21:40:53.215973!
+Epoch 1 for Experiment 1 completed!
+1. set (Dataset 4) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:41:10.602949!
+2. set (Dataset 10) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:41:22.857191!
+3. set (Dataset 8) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:41:35.503755!
+4. set (Dataset 3) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:41:48.036754!
+5. set (Dataset 22) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:41:59.373036!
+6. set (Dataset 12) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:42:11.116627!
+7. set (Dataset 16) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:42:24.833562!
+8. set (Dataset 1) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:42:36.041813!
+9. set (Dataset 7) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:42:46.937843!
+10. set (Dataset 5) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:43:01.182159!
+11. set (Dataset 20) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:43:13.003177!
+12. set (Dataset 21) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:43:22.742828!
+13. set (Dataset 2) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:43:32.088469!
+14. set (Dataset 23) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:43:41.031840!
+15. set (Dataset 13) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:43:49.671123!
+16. set (Dataset 19) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:43:57.799064!
+17. set (Dataset 17) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:44:04.918993!
+18. set (Dataset 18) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:44:13.440541!
+19. set (Dataset 11) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:44:23.277558!
+20. set (Dataset 15) being trained for epoch 2 in Experiment 1 by 2019-02-05 21:44:33.528002!
+Epoch 2 for Experiment 1 completed!
+1. set (Dataset 18) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:44:48.808856!
+2. set (Dataset 15) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:44:59.293802!
+3. set (Dataset 20) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:45:09.062681!
+4. set (Dataset 13) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:45:17.640862!
+5. set (Dataset 12) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:45:28.183153!
+6. set (Dataset 11) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:45:38.850826!
+7. set (Dataset 17) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:45:46.489189!
+8. set (Dataset 21) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:45:55.147198!
+9. set (Dataset 22) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:46:05.825407!
+10. set (Dataset 7) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:46:17.925858!
+11. set (Dataset 16) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:46:31.707924!
+12. set (Dataset 4) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:46:45.270350!
+13. set (Dataset 23) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:46:55.757553!
+14. set (Dataset 10) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:47:06.822948!
+15. set (Dataset 8) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:47:19.477245!
+16. set (Dataset 19) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:47:29.581699!
+17. set (Dataset 2) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:47:38.039818!
+18. set (Dataset 3) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:47:48.815735!
+19. set (Dataset 5) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:48:03.030295!
+20. set (Dataset 1) being trained for epoch 3 in Experiment 1 by 2019-02-05 21:48:14.450845!
+Epoch 3 for Experiment 1 completed!
+1. set (Dataset 3) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:48:30.135401!
+2. set (Dataset 1) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:48:40.138001!
+3. set (Dataset 16) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:48:52.264775!
+4. set (Dataset 8) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:49:06.196141!
+5. set (Dataset 11) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:49:17.123704!
+6. set (Dataset 5) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:49:30.192479!
+7. set (Dataset 2) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:49:41.702363!
+8. set (Dataset 4) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:49:52.581706!
+9. set (Dataset 12) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:50:04.903774!
+10. set (Dataset 22) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:50:16.250358!
+11. set (Dataset 17) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:50:24.502093!
+12. set (Dataset 18) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:50:33.000556!
+13. set (Dataset 10) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:50:44.397655!
+14. set (Dataset 15) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:50:55.631536!
+15. set (Dataset 20) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:51:05.400405!
+16. set (Dataset 19) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:51:14.027554!
+17. set (Dataset 23) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:51:22.870305!
+18. set (Dataset 13) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:51:31.498886!
+19. set (Dataset 7) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:51:42.336957!
+20. set (Dataset 21) being trained for epoch 4 in Experiment 1 by 2019-02-05 21:51:53.396152!
+Epoch 4 for Experiment 1 completed!
+1. set (Dataset 13) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:52:07.470109!
+2. set (Dataset 21) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:52:16.727530!
+3. set (Dataset 17) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:52:24.739830!
+4. set (Dataset 20) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:52:32.759065!
+5. set (Dataset 5) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:52:45.696236!
+6. set (Dataset 7) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:52:59.669792!
+7. set (Dataset 23) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:53:10.143970!
+8. set (Dataset 18) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:53:19.822523!
+9. set (Dataset 11) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:53:29.650441!
+10. set (Dataset 12) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:53:40.822597!
+11. set (Dataset 2) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:53:50.877030!
+12. set (Dataset 3) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:54:01.638566!
+13. set (Dataset 15) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:54:12.959552!
+14. set (Dataset 1) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:54:22.444098!
+15. set (Dataset 16) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:54:34.500949!
+16. set (Dataset 19) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:54:45.554825!
+17. set (Dataset 10) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:54:56.185906!
+18. set (Dataset 8) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:55:08.860117!
+19. set (Dataset 22) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:55:20.506935!
+20. set (Dataset 4) being trained for epoch 5 in Experiment 1 by 2019-02-05 21:55:32.359268!
+Epoch 5 for Experiment 1 completed!
+Exp2019-02-05_21-37-17_part1.h5 has been saved.
+The subjects are trained: [(13, 'M07'), (21, 'F02'), (17, 'M10'), (20, 'M12'), (5, 'F05'), (7, 'M01'), (23, 'M13'), (18, 'F05'), (11, 'M05'), (12, 'M06'), (2, 'F02'), (3, 'F03'), (15, 'F03'), (1, 'F01'), (16, 'M09'), (19, 'M11'), (10, 'M04'), (8, 'M02'), (22, 'M01'), (4, 'F04')]
+Evaluating model Exp2019-02-05_21-29-08_and_2019-02-05_21-37-17
+The subjects will be tested: [(6, 'F06'), (9, 'M03'), (14, 'M08'), (24, 'M14')]
+For the Subject 6 (F06):
+	The absolute mean error on Pitch angle estimation: 13.45 Degree
+	The absolute mean error on Yaw angle estimation: 27.72 Degree
+	The absolute mean error on Roll angle estimation: 15.13 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 43.01 Degree
+	The absolute mean error on Yaw angle estimation: 24.94 Degree
+	The absolute mean error on Roll angle estimation: 12.91 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 19.58 Degree
+	The absolute mean error on Yaw angle estimation: 28.84 Degree
+	The absolute mean error on Roll angle estimation: 14.87 Degree
+For the Subject 24 (M14):
+	The absolute mean error on Pitch angle estimation: 8.49 Degree
+	The absolute mean error on Yaw angle estimation: 9.79 Degree
+	The absolute mean error on Roll angle estimation: 7.97 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 21.13 Degree
+	The absolute mean error on Yaw angle estimations: 22.82 Degree
+	The absolute mean error on Roll angle estimations: 12.72 Degree
+Exp2019-02-05_21-37-17_part1 completed!
+Exp2019-02-05_21-37-17.h5 has been saved.
+The subjects are trained: [(13, 'M07'), (21, 'F02'), (17, 'M10'), (20, 'M12'), (5, 'F05'), (7, 'M01'), (23, 'M13'), (18, 'F05'), (11, 'M05'), (12, 'M06'), (2, 'F02'), (3, 'F03'), (15, 'F03'), (1, 'F01'), (16, 'M09'), (19, 'M11'), (10, 'M04'), (8, 'M02'), (22, 'M01'), (4, 'F04')]
+Evaluating model Exp2019-02-05_21-29-08_and_2019-02-05_21-37-17
+The subjects will be tested: [(6, 'F06'), (9, 'M03'), (14, 'M08'), (24, 'M14')]
+For the Subject 6 (F06):
+	The absolute mean error on Pitch angle estimation: 13.45 Degree
+	The absolute mean error on Yaw angle estimation: 27.72 Degree
+	The absolute mean error on Roll angle estimation: 15.13 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 43.01 Degree
+	The absolute mean error on Yaw angle estimation: 24.94 Degree
+	The absolute mean error on Roll angle estimation: 12.91 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 19.58 Degree
+	The absolute mean error on Yaw angle estimation: 28.84 Degree
+	The absolute mean error on Roll angle estimation: 14.87 Degree
+For the Subject 24 (M14):
+	The absolute mean error on Pitch angle estimation: 8.49 Degree
+	The absolute mean error on Yaw angle estimation: 9.79 Degree
+	The absolute mean error on Roll angle estimation: 7.97 Degree
+On average in 4 test subjects:
+	The absolute mean error on Pitch angle estimations: 21.13 Degree
+	The absolute mean error on Yaw angle estimations: 22.82 Degree
+	The absolute mean error on Roll angle estimations: 12.72 Degree
+subject6_Exp2019-02-05_21-37-17.png has been saved by 2019-02-05 21:57:05.176867.
+subject9_Exp2019-02-05_21-37-17.png has been saved by 2019-02-05 21:57:05.378093.
+subject14_Exp2019-02-05_21-37-17.png has been saved by 2019-02-05 21:57:05.597724.
+subject24_Exp2019-02-05_21-37-17.png has been saved by 2019-02-05 21:57:05.798205.
+Model Exp2019-02-05_21-37-17 has been evaluated successfully.

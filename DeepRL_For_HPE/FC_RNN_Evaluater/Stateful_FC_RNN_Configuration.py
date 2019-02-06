@@ -6,7 +6,7 @@ from keras.models import Sequential
 from keras.preprocessing import image
 from keras.applications import vgg16, nasnet, inception_v3
 from keras import regularizers, Model
-from keras.layers import TimeDistributed, LSTM, Dense, Dropout, Flatten
+from keras.layers import TimeDistributed, LSTM, Dense, Dropout, Flatten, CuDNNLSTM
 def now(): return str(datetime.datetime.now())
 
 ######## CONF_Begins_Here ##########
@@ -24,13 +24,13 @@ eva_epoch = 1
 train_batch_size = 10
 test_batch_size = 10
 
-subjectList = [14] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # [i for i in range(1, 25)] # 
-testSubjects = [14] # [6, 9, 14, 24] # [9, 18, 21, 24] # 
-trainingSubjects = subjectList # [s for s in subjectList if not s in testSubjects] # 
+subjectList = [i for i in range(1, 25)] # [14] # [1, 2, 3, 4, 5, 7, 8, 11, 12, 14] # 
+testSubjects = [6, 9, 14, 24] # [14] # [9, 18, 21, 24] # 
+trainingSubjects = [s for s in subjectList if not s in testSubjects] # subjectList # 
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 500
+lstm_nodes = 64
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
 include_vgg_top = True # False # 
@@ -112,10 +112,10 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025_conv')) #kernel_regularizer=regularizers.l2(0.001)
     rnn.add(TimeDistributed(Dense(1024), name = 'fc1024')) # , activation='relu', activation='relu', 
     rnn.add(TimeDistributed(Dropout(0.25), name = 'dropout025'))
-    rnn.add(TimeDistributed(Dense(num_outputs), name = 'fc3'))
+    rnn.add(TimeDistributed(Dense(num_outputs), name = 'fc3')), dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, 
 
     """
-    rnn.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))#, activation='relu'
+    rnn.add(CuDNNLSTM(lstm_nodes, stateful=True))#, activation='relu'
     modelID = modelID + '_seqLen%d' % timesteps
     modelID = modelID + '_stateful'
     modelID = modelID + '_lstm%d' % lstm_nodes
