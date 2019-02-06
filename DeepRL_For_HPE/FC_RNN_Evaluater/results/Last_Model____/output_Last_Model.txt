@@ -1,4 +1,4 @@
-Model Exp2019-02-05_02-59-22 has been started to be evaluated.
+Model Exp2019-02-05_03-02-53 has been started to be evaluated.
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -100,8 +100,9 @@ include_vgg_top = True # False #
 angles = ['Pitch', 'Yaw', 'Roll'] 
 use_vgg16 = True # False # 
 ######### CONF_ends_Here ###########
-1. set (Dataset 9) being trained for epoch 1 in Experiment 1 by 2019-02-05 02:59:32.642392!
+1. set (Dataset 9) being trained for epoch 1 in Experiment 1 by 2019-02-05 03:03:03.176686!
 Epoch 1 for Experiment 1 completed!
 The subjects are trained: [(9, 'M03')]
-Evaluating model VGG16_inc_top_seqLen1_stateful_lstm10_output3_BatchSize10_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-02-05_02-59-22
+Evaluating model VGG16_inc_top_seqLen1_stateful_lstm10_output3_BatchSize10_inEpochs1_outEpochs3_AdamOpt_lr-0.000100_2019-02-05_03-02-53
 The subjects will be tested: [(9, 'M03')]
+For the Subject 9 (M03):
