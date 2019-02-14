@@ -19,12 +19,15 @@ vi ~/.jupyter/jupyter_notebook_config.py
 http://localhost:1268
 tmux attach -t 
 jupyter notebook --port=3900 --no-browser
+jupyter notebook --port=3000 --no-browser
 
 ssh cicekm@citrisdance.soe.ucsc.edu
 
 ssh mcicek@cvlabgpu.soe.ucsc.edu
 
 ssh -N -f -L 7677:localhost:3900 mcicek@cvlabgpu.soe.ucsc.edu
+
+ssh -N -f -L 7670:localhost:3000 mcicek@cvlabgpu.soe.ucsc.edu
 
 cvlab
 

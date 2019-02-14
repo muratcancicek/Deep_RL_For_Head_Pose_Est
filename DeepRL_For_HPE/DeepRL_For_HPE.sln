@@ -21,6 +21,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FC_RNN_Evaluater", "FC_RNN_
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CNN_Evaluater", "CNN_Evaluater\CNN_Evaluater.pyproj", "{EA99BE7D-DBFC-4840-B3F5-020FC64B2BDF}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "TF_RNN", "TF_RNN\TF_RNN.pyproj", "{88B34567-6F25-44D6-AE22-31DE04703FE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,8 @@ Global
 		{D6C55E4E-27D2-4A3A-AA2D-CDC7EB42AE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA99BE7D-DBFC-4840-B3F5-020FC64B2BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EA99BE7D-DBFC-4840-B3F5-020FC64B2BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B34567-6F25-44D6-AE22-31DE04703FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B34567-6F25-44D6-AE22-31DE04703FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
