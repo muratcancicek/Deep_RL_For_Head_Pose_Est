@@ -16,11 +16,11 @@ RECORD = True # False #
 output_begin = 3
 num_outputs = 3
 
-timesteps = 1 # TimeseriesGenerator Handles overlapping
+timesteps = 10 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
 in_epochs = 1
-out_epochs = 2
-eva_epoch = 2
+out_epochs = 3
+eva_epoch = 3
 train_batch_size = 1
 test_batch_size = 1
 
@@ -93,10 +93,12 @@ def getCNN_Model(use_vgg16 = use_vgg16):
         for layer in cnn_model.layers: 
             layer.trainable = False
         x = cnn_model.layers[-1].output #
-       # x = Dropout(0.25, name = 'dropout3_025')(x) 
-       # x = Dense(1024, activation='relu', name='fc1024')(x) 
-        #x = Dropout(0.25, name = 'dropout_025')(x) 
-        #x = Dense(num_outputs, name = 'fc3')(x)
+        """
+        x = Dropout(0.25, name = 'dropout3_025')(x) #
+        x = Dense(1024, activation='relu', name='fc1024')(x) #
+        x = Dropout(0.25, name = 'dropout_025')(x) #
+        x = Dense(num_outputs, name = 'fc3')(x) #
+        """
 
         #a = Input(shape=(num_outputs, ), name='aux_input0')
         
@@ -132,11 +134,12 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
 
     x = (concatenate([fcRNN.output, a], axis = 2))
 
-    lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True)(x)
-    main_output = Dense(num_outputs)(lstm_out)
+    lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, return_sequences=True, stateful=True)(x)
+    main_output = TimeDistributed(Dense(num_outputs))(lstm_out) #
     finalModel = Model(inputs=[fcRNN.input, a], outputs=main_output)
 
     #finalModel = Sequential()
+    #finalModel.add(finalModel1)
     #finalModel.add(TimeDistributed(cnn_model, name = 'tdCNN')) 
     #finalModel.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))#, activation='relu'
     #finalModel.add(Dense(num_outputs))

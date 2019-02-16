@@ -15,10 +15,11 @@ from keras.preprocessing.sequence import TimeseriesGenerator
 
 ######### Training Methods ###########
 def combined_generator(inputMatrix, labels, timesteps, batch_size):
-    img_gen = TimeseriesGenerator(inputMatrix[1:], labels[1:], length=timesteps, batch_size=batch_size)
-    ang_gen = TimeseriesGenerator(labels[:-1], labels[1:], length=timesteps, batch_size=batch_size)
+    img_gen = TimeseriesGenerator(inputMatrix[1:], labels[1:], length=timesteps, batch_size=batch_size, stride=timesteps)
+    targets = [labels[i:i+timesteps] for i in range(1, len(labels)-timesteps, timesteps)]
+    ang_gen = TimeseriesGenerator(labels[:-1], targets, length=timesteps, batch_size=batch_size, stride=timesteps)
     for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
-        yield [inputMatrix, inputLabels], outputLabels
+        yield [inputMatrix, inputLabels], outputLabels[np.newaxis, ...]
             
 def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, exp = -1, record = False):
     c = 0
