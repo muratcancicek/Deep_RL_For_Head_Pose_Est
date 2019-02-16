@@ -17,7 +17,7 @@ output_begin = 3
 num_outputs = 3
 
 timesteps = 1 # TimeseriesGenerator Handles overlapping
-learning_rate =  0.0001
+learning_rate =  0.000001
 in_epochs = 1
 out_epochs = 1
 eva_epoch = 1
@@ -98,8 +98,9 @@ def getCNN_Model(use_vgg16 = use_vgg16):
         #x = Dropout(0.25, name = 'dropout_025')(x) 
        # x = Dense(num_outputs, name = 'fc3')(x)
 
-        #auxiliary_input = Input(shape=(num_outputs, ), name='aux_input') # train_batch_size, timesteps,inputs=[ auxiliary_input]
-        #x = (Concatenate(axis=1)([x, auxiliary_input]))#TimeDistributed(cnn_model).output
+        #a = Input(shape=(num_outputs, ), name='aux_input0')
+        
+        #x = (concatenate([x, a], axis = 1))#
 
         cnn_model = Model(inputs=cnn_model.input, outputs=x)
     return inp, cnn_model, modelID, preprocess_input
@@ -128,9 +129,8 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     fcRNN.add(TimeDistributed(cnn_model, batch_input_shape=(train_batch_size, timesteps, inp[0], inp[1], inp[2]), name = 'tdCNN')) 
     
     a = Input(batch_shape=(train_batch_size, timesteps, num_outputs), name='aux_input')
-    t = TimeDistributed(Dense(3), name = 'tdIN')(a)
 
-    x = (concatenate([fcRNN.output, t], axis = 2))#
+    x = (concatenate([fcRNN.output, a], axis = 2))#
 
     lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True)(x)
     main_output = Dense(num_outputs)(lstm_out)
