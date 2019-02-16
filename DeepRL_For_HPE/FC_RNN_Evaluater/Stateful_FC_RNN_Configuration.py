@@ -19,8 +19,8 @@ num_outputs = 3
 timesteps = 1 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
 in_epochs = 1
-out_epochs = 1
-eva_epoch = 1
+out_epochs = 2
+eva_epoch = 2
 train_batch_size = 1
 test_batch_size = 1
 
@@ -30,7 +30,7 @@ trainingSubjects = subjectList # [s for s in subjectList if not s in testSubject
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 64
+lstm_nodes = 1024
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
 include_vgg_top = True # False # 
@@ -93,10 +93,10 @@ def getCNN_Model(use_vgg16 = use_vgg16):
         for layer in cnn_model.layers: 
             layer.trainable = False
         x = cnn_model.layers[-1].output #
-        x = Dropout(0.25, name = 'dropout3_025')(x) 
-        x = Dense(1024, activation='relu', name='fc1024')(x) 
+       # x = Dropout(0.25, name = 'dropout3_025')(x) 
+       # x = Dense(1024, activation='relu', name='fc1024')(x) 
         #x = Dropout(0.25, name = 'dropout_025')(x) 
-       # x = Dense(num_outputs, name = 'fc3')(x)
+        #x = Dense(num_outputs, name = 'fc3')(x)
 
         #a = Input(shape=(num_outputs, ), name='aux_input0')
         
@@ -130,7 +130,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     
     a = Input(batch_shape=(train_batch_size, timesteps, num_outputs), name='aux_input')
 
-    x = (concatenate([fcRNN.output, a], axis = 2))#
+    x = (concatenate([fcRNN.output, a], axis = 2))
 
     lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True)(x)
     main_output = Dense(num_outputs)(lstm_out)
@@ -142,7 +142,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     #finalModel.add(Dense(num_outputs))
 
     adam = Adam(lr=lr)
-    finalModel.compile(optimizer=adam, loss='mean_absolute_error') #'mean_squared_error', metrics=['mae'])# 
+    finalModel.compile(optimizer=adam, loss='mean_squared_error', metrics=['mae']) #)# 'mean_absolute_error'
 
     modelID = modelID + '_seqLen%d' % timesteps; modelID = modelID + '_stateful'; modelID = modelID + '_lstm%d' % lstm_nodes
     modelID = modelID + '_output%d' % num_outputs; modelID = modelID + '_BatchSize%d' % train_batch_size

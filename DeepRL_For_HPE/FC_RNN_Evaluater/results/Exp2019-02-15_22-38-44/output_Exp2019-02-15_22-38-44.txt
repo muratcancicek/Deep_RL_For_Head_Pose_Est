@@ -1,4 +1,4 @@
-Model Exp2019-02-06_04-29-26 has been started to be evaluated.
+Model Exp2019-02-15_22-38-44 has been started to be evaluated.
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -45,13 +45,9 @@ _________________________________________________________________
 fc1 (Dense)                  (None, 4096)              102764544 
 _________________________________________________________________
 fc2 (Dense)                  (None, 4096)              16781312  
-_________________________________________________________________
-dropout3_025 (Dropout)       (None, 4096)              0         
-_________________________________________________________________
-fc1024 (Dense)               (None, 1024)              4195328   
 =================================================================
-Total params: 138,455,872
-Trainable params: 4,195,328
+Total params: 134,260,544
+Trainable params: 0
 Non-trainable params: 134,260,544
 _________________________________________________________________
 
@@ -63,10 +59,10 @@ output_begin = 3
 num_outputs = 3
 
 timesteps = 1 # TimeseriesGenerator Handles overlapping
-learning_rate =  0.0001
+learning_rate =  0.000001
 in_epochs = 1
-out_epochs = 1
-eva_epoch = 1
+out_epochs = 5
+eva_epoch = 5
 train_batch_size = 1
 test_batch_size = 1
 
@@ -76,7 +72,7 @@ trainingSubjects = subjectList # [s for s in subjectList if not s in testSubject
 
 num_datasets = len(subjectList)
 
-lstm_nodes = 64
+lstm_nodes = 1024
 lstm_dropout = 0.25
 lstm_recurrent_dropout = 0.25
 include_vgg_top = True # False # 
@@ -84,16 +80,25 @@ include_vgg_top = True # False #
 angles = ['Pitch', 'Yaw', 'Roll'] 
 use_vgg16 = True # False # 
 ######### CONF_ends_Here ###########
-1. set (Dataset 14) being trained for epoch 1 in Experiment 1 by 2019-02-06 04:29:36.572178!
+1. set (Dataset 14) being trained for epoch 1 in Experiment 1 by 2019-02-15 22:38:53.299557!
 Epoch 1 for Experiment 1 completed!
+1. set (Dataset 14) being trained for epoch 2 in Experiment 1 by 2019-02-15 22:39:28.042797!
+Epoch 2 for Experiment 1 completed!
+1. set (Dataset 14) being trained for epoch 3 in Experiment 1 by 2019-02-15 22:40:00.945310!
+Epoch 3 for Experiment 1 completed!
+1. set (Dataset 14) being trained for epoch 4 in Experiment 1 by 2019-02-15 22:40:33.743001!
+Epoch 4 for Experiment 1 completed!
+1. set (Dataset 14) being trained for epoch 5 in Experiment 1 by 2019-02-15 22:41:06.634559!
+Epoch 5 for Experiment 1 completed!
 The subjects are trained: [(14, 'M08')]
-Evaluating model VGG16_inc_top_seqLen1_stateful_lstm64_output3_BatchSize1_inEpochs1_outEpochs1_AdamOpt_lr-0.000100_2019-02-06_04-29-26
+Evaluating model VGG16_inc_top_seqLen1_stateful_lstm1024_output3_BatchSize1_inEpochs1_outEpochs5_AdamOpt_lr-0.000001_2019-02-15_22-38-44
 The subjects will be tested: [(14, 'M08')]
 For the Subject 14 (M08):
-	The absolute mean error on Pitch angle estimation: 22.64 Degree
-	The absolute mean error on Yaw angle estimation: 34.86 Degree
-	The absolute mean error on Roll angle estimation: 14.15 Degree
-Exp2019-02-06_04-29-26_part1 completed!
-Exp2019-02-06_04-29-26.h5 has been saved.
-subject14_Exp2019-02-06_04-29-26.png has been saved by 2019-02-06 04:30:19.841639.
-Model Exp2019-02-06_04-29-26 has been evaluated successfully.
+	The absolute mean error on Pitch angle estimation: 15.70 Degree
+	The absolute mean error on Yaw angle estimation: 23.23 Degree
+	The absolute mean error on Roll angle estimation: 10.74 Degree
+	The absolute mean error on average: 16.56 Degree
+Exp2019-02-15_22-38-44_part1 completed!
+Exp2019-02-15_22-38-44.h5 has been saved.
+subject14_Exp2019-02-15_22-38-44.png has been saved by 2019-02-15 22:41:50.389857.
+Model Exp2019-02-15_22-38-44 has been evaluated successfully.
