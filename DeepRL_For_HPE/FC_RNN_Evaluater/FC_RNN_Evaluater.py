@@ -15,11 +15,30 @@ from keras.preprocessing.sequence import TimeseriesGenerator
 
 ######### Training Methods ###########
 def combined_generator(inputMatrix, labels, timesteps, batch_size):
-    img_gen = TimeseriesGenerator(inputMatrix[1:], labels[1:], length=timesteps, batch_size=batch_size, stride=timesteps)
-    targets = [labels[i:i+timesteps] for i in range(1, len(labels)-timesteps, timesteps)]
-    ang_gen = TimeseriesGenerator(labels[:-1], targets, length=timesteps, batch_size=batch_size, stride=timesteps)
+    img_gen = TimeseriesGenerator(inputMatrix[1:], labels[:-1], length=timesteps, batch_size=batch_size)
+    ang_gen = TimeseriesGenerator(labels, labels, length=timesteps, batch_size=batch_size)
     for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
-        yield [inputMatrix, inputLabels], outputLabels[np.newaxis, ...]
+        yield [inputMatrix, inputLabels], outputLabels
+        
+def getSequencesToSequences(inputMatrix, labels, timesteps):
+    offset = labels.shape[0]%timesteps
+    if offset > 0: offset = timesteps - offset
+    npad = ((offset+1, timesteps), (0, 0), (0, 0), (0, 0))
+    inputMatrix = np.pad(inputMatrix[1:], pad_width=npad, mode='constant', constant_values=0)
+    npad = ((offset+1, timesteps), (0, 0))
+    inputLabels = np.pad(labels[:-1], pad_width=npad, mode='constant', constant_values=0)
+    npad = ((timesteps+offset+1, 0), (0, 0))
+    targets = np.pad(labels[1:], pad_width=npad, mode='constant', constant_values=0)
+    outputLabels = np.zeros(targets.shape[:1]+(timesteps,)+targets.shape[1:])
+    for i in range(0, len(targets), timesteps):
+        outputLabels[i] = targets[i:i+timesteps] 
+    return inputMatrix, inputLabels, outputLabels
+
+def combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size):   
+    img_gen = TimeseriesGenerator(inputMatrix, outputLabels, length=timesteps, stride=timesteps, batch_size=batch_size)
+    ang_gen = TimeseriesGenerator(inputLabels, outputLabels, length=timesteps, stride=timesteps, batch_size=batch_size)
+    for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
+        yield [inputMatrix, inputLabels], outputLabels#[np.newaxis, ...]
             
 def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, exp = -1, record = False):
     c = 0
@@ -32,9 +51,11 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
             model.fit(inputMatrix, labels, epochs=in_epochs, verbose=1) 
         else:
             start_index = (inputMatrix.shape[0] % batch_size) - 1 if stateful else 0     
-            #data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
-            data_gen = combined_generator(inputMatrix, labels, timesteps, batch_size)
-            model.fit_generator(data_gen, steps_per_epoch=len(labels)-2, epochs=in_epochs, verbose=1) 
+            #data_gen = TimeseriesGenerator(inputMatrix[1:], labels[:-1], length=timesteps, batch_size=batch_size, start_index=start_index)
+            inputMatrix, inputLabels, outputLabels = getSequencesToSequences(inputMatrix, labels, timesteps) 
+            data_gen = combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size)
+            steps_per_epoch = (inputMatrix.shape[0]/timesteps)-1
+            model.fit_generator(data_gen, steps_per_epoch = steps_per_epoch, epochs=in_epochs, verbose=1) 
         if stateful:  model.reset_states()
         c += 1
     return model
@@ -70,7 +91,7 @@ def getTestBiwiForImageModel(testSubjects, timesteps, overlapping, output_begin,
             start_index = 0
             if stateful:
                 start_index = (inputMatrix.shape[0] % batch_size) - 1 if batch_size > 1 else 0
-            data_gen = TimeseriesGenerator(inputMatrix, labels, length=timesteps, batch_size=batch_size, start_index=start_index)
+            data_gen = TimeseriesGenerator(inputMatrix[1:], labels[:-1], length=timesteps, batch_size=batch_size, start_index=start_index)
             test_generators.append(data_gen)
             if stateful:
                 labels = labels[start_index:]
@@ -132,10 +153,24 @@ def predicter(full_model, test_gen, test_labels, timesteps, output_begin, num_ou
     #print(cur_pred)
     return cur_pred[1:]
 
+def predicter2(full_model, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size):
+    inputMatrix, inputLabels = test_gen
+    inputMatrix, inputLabels, outputLabels = getSequencesToSequences(inputMatrix, inputLabels, timesteps) 
+    predictions = np.zeros((inputMatrix.shape[0], num_outputs))
+    data_gen = combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size)
+    i = 0
+    for (inputMatrix, inputLabels), outputLabels in data_gen:
+        for inputSequence, inputLabels, outputLabels in zip(inputMatrix, inputLabels, outputLabels):
+            predictions[i:i+timesteps] = full_model.predict([inputMatrix, np.zeros_like(inputLabels[np.newaxis, ...])])
+            #])predictions[i-timesteps:i]
+            i += timesteps
+    return predictions[predictions.shape[0]-test_labels.shape[0]:]
+            
+    
 def evaluateSubjectForMultipleInput(full_model, subject, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size, stateful = False, record = False):
     if num_outputs == 1: angles = ['Yaw']
     printLog('For the Subject %d (%s):' % (subject, BIWI_Subject_IDs[subject]), record = record)
-    predictions = predicter(full_model, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size) 
+    predictions = predicter2(full_model, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size) 
     if stateful:  full_model.reset_states()
     test_labels, predictions = unscaleEstimations(test_labels, predictions, BIWI_Lebel_Scalers, output_begin, num_outputs)
     #kerasEval = full_model.evaluate_generator(test_gen) 
@@ -158,7 +193,7 @@ def evaluateAverage(results, angles, num_outputs, record = False):
 def evaluateCNN_LSTM(full_model, label_rescaling_factor, testSubjects, timesteps, output_begin, 
                      num_outputs, batch_size, angles, stateful = False, record = False, preprocess_input = None):
     if num_outputs == 1: angles = ['Yaw']
-    test_generators, test_labelSets = getTestBiwiForImageModel(testSubjects, timesteps, False, output_begin, num_outputs, 
+    test_generators, test_labelSets = getTestBiwiForImageModel(testSubjects, None, False, output_begin, num_outputs, 
                                             batch_size = batch_size, stateful = stateful, record = record, preprocess_input = preprocess_input)
     results = []
     for subject, test_gen, test_labels in zip(testSubjects, test_generators, test_labelSets):

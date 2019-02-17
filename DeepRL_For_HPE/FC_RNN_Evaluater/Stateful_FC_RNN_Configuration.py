@@ -19,8 +19,8 @@ num_outputs = 3
 timesteps = 10 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
 in_epochs = 1
-out_epochs = 3
-eva_epoch = 3
+out_epochs = 1
+eva_epoch = 1
 train_batch_size = 1
 test_batch_size = 1
 
@@ -135,7 +135,8 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     x = (concatenate([fcRNN.output, a], axis = 2))
 
     lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, return_sequences=True, stateful=True)(x)
-    main_output = TimeDistributed(Dense(num_outputs))(lstm_out) #
+   # main_output = Dense(num_outputs)(lstm_out) # 
+    main_output = TimeDistributed(Dense(num_outputs))(lstm_out) #,
     finalModel = Model(inputs=[fcRNN.input, a], outputs=main_output)
 
     #finalModel = Sequential()
