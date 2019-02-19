@@ -39,6 +39,7 @@ xpra start :100
 export DISPLAY=:100
 firefox& 
 
+ export PATH=/home/mcicek/anaconda3/bin:$PATH
 
 conda create -n tf36 pip python=3.6 
 pip install --upgrade tensorflow-gpu
