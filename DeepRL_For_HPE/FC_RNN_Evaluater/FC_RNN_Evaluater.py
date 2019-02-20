@@ -5,9 +5,11 @@ import os, numpy, random
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
     from FC_RNN_Evaluater.EvaluationRecorder import *
+    from FC_RNN_Evaluater.ReinforceAlgorithmForKerasModels import reinforceModel
 else:
     from NeighborFolderimporter import *
     from EvaluationRecorder import *
+    
 
 from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, label_rescaling_factor, BIWI_Lebel_Scalers, unscaleAnnoByScalers
 
