@@ -17,7 +17,7 @@ output_begin = 3
 num_outputs = 3
 
 reinforcement_episodes = 5
-sampling_variance = 0.05
+sampling_variance = 0.01
 
 timesteps = 10 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
