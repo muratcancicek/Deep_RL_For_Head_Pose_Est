@@ -151,10 +151,10 @@ def predicter(full_model, test_gen, test_labels, timesteps, output_begin, num_ou
     cur_pred = np.zeros((len(test_labels)+1, num_outputs))
     #pred = []
     c = 0
-    printProgressBar(c, len(test_labels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
+   # printProgressBar(c, len(test_labels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
     for (inputMatrix, inputLabels) in test_gen:
         c+=1
-        printProgressBar(c, len(test_labels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
+    #    printProgressBar(c, len(test_labels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
         if c > len(test_labels): break
         p = full_model.predict([inputMatrix, cur_pred[c-1].reshape((batch_size, timesteps, num_outputs))])
         #print(p, cur_pred[c-1], inputLabels.reshape((batch_size, timesteps, num_outputs)))
@@ -168,13 +168,13 @@ def predicter2(full_model, test_gen, test_labels, timesteps, output_begin, num_o
     predictions = np.zeros((inputMatrix.shape[0], num_outputs))
     data_gen = combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size)
     i = 0
-    printProgressBar(i, len(inputLabels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
+  #  printProgressBar(i, len(inputLabels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
     for (inputMatrix, inputLabels), outputLabels in data_gen:
         for inputSequence, inputLabels, outputLabels in zip(inputMatrix, inputLabels, outputLabels):
             predictions[i:i+timesteps] = full_model.predict([inputMatrix, np.zeros_like(inputLabels[np.newaxis, ...])])
             #])predictions[i-timesteps:i]
             i += timesteps
-            printProgressBar(i, len(inputLabels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
+  #          printProgressBar(i, len(inputLabels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
     return predictions[predictions.shape[0]-test_labels.shape[0]:]
             
     

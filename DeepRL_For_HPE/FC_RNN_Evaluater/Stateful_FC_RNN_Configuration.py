@@ -22,8 +22,8 @@ sampling_variance = 0.01
 timesteps = 10 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
 in_epochs = 1
-out_epochs = 1
-eva_epoch = 1
+out_epochs = 4
+eva_epoch = 4
 train_batch_size = 1
 test_batch_size = 1
 

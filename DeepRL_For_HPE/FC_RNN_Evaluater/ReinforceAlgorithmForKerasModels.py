@@ -19,16 +19,16 @@ def drawSamples(model, episodes, sigma, outputs, seed=None):
     return distribution(samplesShape)
     
 def getRewardsWithBaselinePerEpisode(samples, targets):
-    duplicated_targets = np.repeat(targets[np.newaxis, ...])
-    duplicated_targets = tf.convert_to_tensor(duplicated_targets, n, axis=0, name='targets', dtype=tf.float32)
-    abs_difference = tf.abs(samples - yy, name='abs_difference')
+    duplicated_targets = np.repeat(targets[np.newaxis, ...], repeats = samples.shape[0], axis=0)
+    duplicated_targets = tf.convert_to_tensor(duplicated_targets, name='targets', dtype=tf.float32)
+    abs_difference = tf.abs(samples - duplicated_targets, name='abs_difference')
     allRewards = - tf.reduce_mean(abs_difference, axis = -1) - tf.reduce_mean(abs_difference, axis = -1)
-    rewardsPerEpisode = tf.reduce_sum(all, axis = -1, name='rewardsPerEpisode')
+    rewardsPerEpisode = tf.reduce_sum(allRewards, axis = -1, name='rewardsPerEpisode')
     baseline = tf.reduce_mean(allRewards, axis = 0, name='baseline')
     allRewardsWithBaseline = allRewards - baseline
     return tf.reduce_sum(allRewardsWithBaseline, axis=-1, name='rewardsWithBaselinePerEpisode')
     
-def getGradientsPerEpisode(samples, targets):
+def getGradientsPerEpisode(model, samples, targets):
     gradients_per_episode = []
     rewards = getRewardsWithBaselinePerEpisode(samples, targets)
     for i in range(samples.shape[0]):
@@ -38,8 +38,8 @@ def getGradientsPerEpisode(samples, targets):
         gradients_per_episode.append(rewardedGradients)
     return gradients_per_episode
 
-def getFinalGradients(samples, targets):
-    gradients_per_episode = getGradientsPerEpisode(samples, targets)
+def getFinalGradients(model, samples, targets):
+    gradients_per_episode = getGradientsPerEpisode(model, samples, targets)
     stacked_gradients = []
     for i in range(len(gradients_per_episode[0])):
         stacked_gradients.append(tf.stack([gradients[i] for gradients in gradients_per_episode])) 
@@ -56,8 +56,8 @@ def reinforceModelForEpoch(model, data_gen, episodes, sigma, steps_per_epoch, ep
     for (inputMatrix_batch, inputLabels_batch), outputLabels_batch in data_gen:
         tracker_outputs = model.predict([inputMatrix_batch, inputLabels_batch])
         samples = drawSamples(model, episodes, sigma, tracker_outputs)
-        final_gradients = getFinalGradients(samples, outputLabels_batch)
-        model = getUpdatedModelWithGradients(model, gradients)
+        final_gradients = getFinalGradients(model, samples, outputLabels_batch)
+        model = getUpdatedModelWithGradients(model, final_gradients)
         i += 1
         if verbose == 1: printProgressBar(i, steps_per_epoch, prefix = epochCount, suffix = 'Complete', length = 50)
     return model
