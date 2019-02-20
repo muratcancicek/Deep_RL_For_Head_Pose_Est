@@ -30,6 +30,10 @@ def getSequencesToSequences(inputMatrix, labels, timesteps):
     npad = ((timesteps+offset+1, 0), (0, 0))
     targets = np.pad(labels[1:], pad_width=npad, mode='constant', constant_values=0)
     outputLabels = np.zeros(targets.shape[:1]+(timesteps,)+targets.shape[1:])
+    il = np.zeros_like(inputLabels)
+    for i in range(0, inputLabels.shape[0], timesteps):
+        il[i] = inputLabels[i]
+    inputLabels = il
     for i in range(0, len(targets), timesteps):
         outputLabels[i] = targets[i:i+timesteps] 
     return inputMatrix, inputLabels, outputLabels
@@ -38,7 +42,7 @@ def combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch
     img_gen = TimeseriesGenerator(inputMatrix, outputLabels, length=timesteps, stride=timesteps, batch_size=batch_size)
     ang_gen = TimeseriesGenerator(inputLabels, outputLabels, length=timesteps, stride=timesteps, batch_size=batch_size)
     for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
-        yield [inputMatrix, inputLabels], outputLabels#[np.newaxis, ...]
+        yield [inputMatrix, inputLabels], outputLabels
             
 def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, exp = -1, record = False):
     c = 0
@@ -54,7 +58,7 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
             #data_gen = TimeseriesGenerator(inputMatrix[1:], labels[:-1], length=timesteps, batch_size=batch_size, start_index=start_index)
             inputMatrix, inputLabels, outputLabels = getSequencesToSequences(inputMatrix, labels, timesteps) 
             data_gen = combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size)
-            steps_per_epoch = (inputMatrix.shape[0]/timesteps)-1
+            steps_per_epoch = ((inputMatrix.shape[0]/timesteps)-1)/batch_size
             model.fit_generator(data_gen, steps_per_epoch = steps_per_epoch, epochs=in_epochs, verbose=1) 
         if stateful:  model.reset_states()
         c += 1
