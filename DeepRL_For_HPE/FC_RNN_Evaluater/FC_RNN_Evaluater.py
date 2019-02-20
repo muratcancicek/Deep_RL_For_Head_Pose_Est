@@ -12,7 +12,7 @@ else:
 from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, label_rescaling_factor, BIWI_Lebel_Scalers, unscaleAnnoByScalers
 
 from keras.preprocessing.sequence import TimeseriesGenerator
-
+        
 ######### Training Methods ###########
 def combined_generator(inputMatrix, labels, timesteps, batch_size):
     img_gen = TimeseriesGenerator(inputMatrix[1:], labels[:-1], length=timesteps, batch_size=batch_size)
@@ -59,7 +59,8 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
             inputMatrix, inputLabels, outputLabels = getSequencesToSequences(inputMatrix, labels, timesteps) 
             data_gen = combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size)
             steps_per_epoch = ((inputMatrix.shape[0]/timesteps)-1)/batch_size
-            model.fit_generator(data_gen, steps_per_epoch = steps_per_epoch, epochs=in_epochs, verbose=1) 
+            #model.fit_generator(data_gen, steps_per_epoch = steps_per_epoch, epochs=in_epochs, verbose=1) 
+            model = reinforceModel(model, data_gen, episodes, sigma, steps_per_epoch, in_epochs, verbose=1)
         if stateful:  model.reset_states()
         c += 1
     return model
@@ -147,9 +148,11 @@ def slide(m, x):
 def predicter(full_model, test_gen, test_labels, timesteps, output_begin, num_outputs, angles, batch_size):
     cur_pred = np.zeros((len(test_labels)+1, num_outputs))
     #pred = []
-    c =0
+    c = 0
+    printProgressBar(c, len(test_labels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
     for (inputMatrix, inputLabels) in test_gen:
         c+=1
+        printProgressBar(c, len(test_labels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
         if c > len(test_labels): break
         p = full_model.predict([inputMatrix, cur_pred[c-1].reshape((batch_size, timesteps, num_outputs))])
         #print(p, cur_pred[c-1], inputLabels.reshape((batch_size, timesteps, num_outputs)))
@@ -163,11 +166,13 @@ def predicter2(full_model, test_gen, test_labels, timesteps, output_begin, num_o
     predictions = np.zeros((inputMatrix.shape[0], num_outputs))
     data_gen = combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size)
     i = 0
+    printProgressBar(i, len(inputLabels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
     for (inputMatrix, inputLabels), outputLabels in data_gen:
         for inputSequence, inputLabels, outputLabels in zip(inputMatrix, inputLabels, outputLabels):
             predictions[i:i+timesteps] = full_model.predict([inputMatrix, np.zeros_like(inputLabels[np.newaxis, ...])])
             #])predictions[i-timesteps:i]
             i += timesteps
+            printProgressBar(i, len(inputLabels), prefix = 'Estimating...', suffix = 'Complete', length = 50)
     return predictions[predictions.shape[0]-test_labels.shape[0]:]
             
     

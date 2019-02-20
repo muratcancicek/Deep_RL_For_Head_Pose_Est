@@ -26,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FC_RNN_Evaluater.py" />
+    <Compile Include="ReinforceAlgorithmForKerasModels.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Stateful_FC_RNN_Configuration.py" />
     <Compile Include="Stateless_FC_RNN_Configuration.py">
       <SubType>Code</SubType>

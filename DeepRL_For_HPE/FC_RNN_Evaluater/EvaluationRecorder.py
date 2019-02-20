@@ -8,7 +8,8 @@ else:
 from keras.models import load_model
 import shutil, os, numpy as np, datetime
 def now(): return str(datetime.datetime.now())
-
+from time import sleep
+        
 importNeighborFolders()
 from paths import *
 
@@ -90,7 +91,39 @@ def interruptSmoothly(full_model, modelID, record = True):
     printLog('Terminating...', record = record)
     exit()
 
+# Print iterations progress
+def printProgressBar(iteration, total, prefix = '', suffix = '', decimals = 1, length = 100, fill = '█'):
+    """
+    Call in a loop to create terminal progress bar
+    @params:
+        iteration   - Required  : current iteration (Int)
+        total       - Required  : total iterations (Int)
+        prefix      - Optional  : prefix string (Str)
+        suffix      - Optional  : suffix string (Str)
+        decimals    - Optional  : positive number of decimals in percent complete (Int)
+        length      - Optional  : character length of bar (Int)
+        fill        - Optional  : bar fill character (Str)
+    """
+    percent = ("{0:." + str(decimals) + "f}").format(100 * (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
+    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
+    # Print New Line on Complete
+    if iteration == total: 
+        print()
+
+def main():
+    epochs = 50
+    epochCount = 'Epoch %d/%d:' % (0, epochs)
+    printProgressBar(0, epochs, prefix = epochCount, suffix = 'Complete', length = 50)
+    for i in range(epochs):
+        sleep(0.1)
+        epochCount = 'Epoch %d/%d:' % (i+1, epochs)
+        printProgressBar(i+1, epochs, prefix = epochCount, suffix = 'Complete', length = 50)
+
+
 if __name__ == "__main__":
-    startRecording('modelID')
-    saveConfiguration()
-    completeRecording('modelID', True)
+    #startRecording('modelID')
+    #saveConfiguration()
+    #completeRecording('modelID', True)
+    main()
