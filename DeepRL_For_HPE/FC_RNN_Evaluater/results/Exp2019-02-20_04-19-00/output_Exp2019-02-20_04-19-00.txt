@@ -1,4 +1,4 @@
-Model Exp2019-02-20_01-46-55 has been started to be evaluated.
+Model Exp2019-02-20_04-19-00 has been started to be evaluated.
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
@@ -64,8 +64,8 @@ sampling_variance = 0.01
 timesteps = 10 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
 in_epochs = 1
-out_epochs = 4
-eva_epoch = 4
+out_epochs = 2
+eva_epoch = 2
 train_batch_size = 1
 test_batch_size = 1
 
@@ -83,10 +83,19 @@ include_vgg_top = True # False #
 angles = ['Pitch', 'Yaw', 'Roll'] 
 use_vgg16 = True # False # 
 ######### CONF_ends_Here ###########
-1. set (Dataset 14) being trained for epoch 1 in Experiment 1 by 2019-02-20 01:47:04.792877!
+1. set (Dataset 14) being trained for epoch 1 in Experiment 1 by 2019-02-20 04:19:09.687078!
 Epoch 1 for Experiment 1 completed!
-1. set (Dataset 14) being trained for epoch 2 in Experiment 1 by 2019-02-20 01:52:06.946654!
+1. set (Dataset 14) being trained for epoch 2 in Experiment 1 by 2019-02-20 04:20:18.092143!
 Epoch 2 for Experiment 1 completed!
-1. set (Dataset 14) being trained for epoch 3 in Experiment 1 by 2019-02-20 02:04:11.692316!
-Epoch 3 for Experiment 1 completed!
-1. set (Dataset 14) being trained for epoch 4 in Experiment 1 by 2019-02-20 02:24:55.579843!
+The subjects are trained: [(14, 'M08')]
+Evaluating model VGG16_inc_top_seqLen10_stateful_lstm1024_output3_BatchSize1_inEpochs1_outEpochs2_AdamOpt_lr-0.000001_2019-02-20_04-19-00
+The subjects will be tested: [(14, 'M08')]
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 39.13 Degree
+	The absolute mean error on Yaw angle estimation: 40.84 Degree
+	The absolute mean error on Roll angle estimation: 13.60 Degree
+	The absolute mean error on average: 31.19 Degree
+Exp2019-02-20_04-19-00_part1 completed!
+Exp2019-02-20_04-19-00.h5 has been saved.
+subject14_Exp2019-02-20_04-19-00.png has been saved by 2019-02-20 04:22:33.294677.
+Model Exp2019-02-20_04-19-00 has been evaluated successfully.

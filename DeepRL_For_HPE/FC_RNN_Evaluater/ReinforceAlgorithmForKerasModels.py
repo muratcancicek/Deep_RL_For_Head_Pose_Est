@@ -14,7 +14,8 @@ import numpy as np
 
 
 def drawSamples(model, episodes, sigma, outputs, seed=None):
-    samplesShape = ((episodes,)+outputs.shape)
+    samplesShape = outputs.shape
+    #samplesShape = ((episodes,)+outputs.shape)
     distribution = RandomNormal(mean=model.outputs, stddev=sigma, seed=seed)
     return distribution(samplesShape)
     
@@ -32,7 +33,7 @@ def getGradientsPerEpisode(model, samples, targets):
     gradients_per_episode = []
     rewards = getRewardsWithBaselinePerEpisode(samples, targets)
     for i in range(samples.shape[0]):
-        loss = losses.mean_squared_error(targets, samples[i])
+        loss = losses.mean_absolute_error(targets, samples[i])
         gradients = k.gradients(loss, model.trainable_weights)
         rewardedGradients = [g*rewards[i] for g in gradients]
         gradients_per_episode.append(rewardedGradients)
@@ -50,12 +51,18 @@ def getUpdatedModelWithGradients(model, gradients):
         tf.assign_sub(model.trainable_weights[i], gradients[i])
     return model
 
+def getOutputTensor(model, inputMatrix_batch, inputLabels_batch):
+    im = tf.convert_to_tensor(inputMatrix_batch, name='im', dtype=tf.float32)
+    il = tf.convert_to_tensor(inputLabels_batch, name='il', dtype=tf.float32)
+    return model([im, il])
+
 def reinforceModelForEpoch(model, data_gen, episodes, sigma, steps_per_epoch, epochCount, verbose=1):
     i = 0
     if verbose == 1: printProgressBar(0, steps_per_epoch, prefix = epochCount, suffix = 'Complete', length = 50)
     for (inputMatrix_batch, inputLabels_batch), outputLabels_batch in data_gen:
         tracker_outputs = model.predict([inputMatrix_batch, inputLabels_batch])
-        samples = drawSamples(model, episodes, sigma, tracker_outputs)
+      #  tracker_outputs = getOutputTensor(model, inputMatrix_batch, inputLabels_batch)
+        samples = drawSamples(model, episodes, sigma, outputLabels_batch)
         final_gradients = getFinalGradients(model, samples, outputLabels_batch)
         model = getUpdatedModelWithGradients(model, final_gradients)
         i += 1
