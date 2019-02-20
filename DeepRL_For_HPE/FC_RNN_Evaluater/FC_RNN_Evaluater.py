@@ -44,7 +44,7 @@ def combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch
     for (inputMatrix, outputLabels0), (inputLabels, outputLabels) in zip(img_gen, ang_gen):
         yield [inputMatrix, inputLabels], outputLabels
             
-def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, exp = -1, record = False):
+def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, output_begin, num_outputs, batch_size, episodes = 5, sigma = 0.05, in_epochs = 1, stateful = False, exp = -1, record = False):
     c = 0
     for inputMatrix, labels in set_gen:
         subj = trainingSubjects[c]
@@ -65,20 +65,20 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
         c += 1
     return model
 
-def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, in_epochs = 1, stateful = False, exp = -1, record = False, preprocess_input = None):
+def trainImageModelForEpochs(model, epochs, trainingSubjects, timesteps, overlapping, output_begin, num_outputs, batch_size, episodes = 5, sigma = 0.05, in_epochs = 1, stateful = False, exp = -1, record = False, preprocess_input = None):
     for e in range(epochs):
         random.Random(4).shuffle(trainingSubjects)
         trainingBiwi = readBIWIDataset(subjectList = trainingSubjects, preprocess_input = preprocess_input) #, scaling = False, timesteps = timesteps, overlapping = overlapping
-        model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, in_epochs, exp = exp, stateful = stateful, record = record)
+        model = trainImageModelOnSets(model, e, trainingSubjects, trainingBiwi, timesteps, output_begin, num_outputs, batch_size, episodes, sigma, in_epochs, exp = exp, stateful = stateful, record = record)
         expStr = ' for Experiment %d' % (exp) if exp != -1 else '' 
         printLog('Epoch %d%s completed!' % (e+1, expStr), record = record)
     return model
 
 def trainCNN_LSTM(full_model, modelID, out_epochs, subjectList, timesteps, output_begin, num_outputs, 
-                  batch_size, in_epochs, exp = -1, stateful = False, record = False, preprocess_input = None):
+                  batch_size, in_epochs, episodes = 5, sigma = 0.05, exp = -1, stateful = False, record = False, preprocess_input = None):
     try:
         full_model = trainImageModelForEpochs(full_model, out_epochs, subjectList, timesteps, False, 
-                                          output_begin, num_outputs, batch_size = batch_size, 
+                                          output_begin, num_outputs, batch_size = batch_size, episodes = episodes, sigma = sigma, 
                                           in_epochs = in_epochs, stateful = stateful, exp = exp, record = record, preprocess_input = preprocess_input)
     except KeyboardInterrupt:
         interruptSmoothly(full_model, modelID, record = record)

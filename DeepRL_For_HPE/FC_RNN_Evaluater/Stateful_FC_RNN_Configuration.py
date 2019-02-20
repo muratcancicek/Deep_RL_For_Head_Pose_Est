@@ -16,6 +16,9 @@ RECORD = True # False #
 output_begin = 3
 num_outputs = 3
 
+reinforcement_episodes = 5
+sampling_variance = 0.05
+
 timesteps = 10 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
 in_epochs = 1
