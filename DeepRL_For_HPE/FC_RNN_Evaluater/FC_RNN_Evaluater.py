@@ -9,7 +9,7 @@ if '.' in __name__:
 else:
     from NeighborFolderimporter import *
     from EvaluationRecorder import *
-    
+    from ReinforceAlgorithmForKerasModels import reinforceModel
 
 from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, label_rescaling_factor, BIWI_Lebel_Scalers, unscaleAnnoByScalers
 
