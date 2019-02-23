@@ -6,7 +6,7 @@ if '.' in __name__:
 else:
     from NeighborFolderimporter import *
 
-from FC_RNN_Evaluater.EvaluationRecorder import printProgressBar
+from helpers import printProgressBar
 from keras.initializers import RandomNormal
 from keras import backend as K
 from keras import losses
