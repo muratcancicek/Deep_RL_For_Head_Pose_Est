@@ -23,7 +23,7 @@ def drawSamples(model, episodes, sigma, outputs, seed=None):
     
 def getRewardsWithBaselinePerEpisode(samples, targets):
     duplicated_targets = np.repeat(targets[np.newaxis, ...], repeats = samples.shape[0], axis=0)
-    duplicated_targets = K.convert_to_tensor(duplicated_targets, name='targets', dtype=K.float32)
+    duplicated_targets = tf.convert_to_tensor(duplicated_targets, name='targets', dtype=K.float32)
     abs_difference = K.abs(samples - duplicated_targets, name='abs_difference')
     allRewards = - K.reduce_mean(abs_difference, axis = -1) - K.reduce_mean(abs_difference, axis = -1)
     rewardsPerEpisode = K.reduce_sum(allRewards, axis = -1, name='rewardsPerEpisode')
@@ -54,8 +54,8 @@ def getUpdatedModelWithGradients(model, gradients):
     return model
 
 def getOutputTensor(model, inputMatrix_batch, inputLabels_batch):
-    im = K.convert_to_tensor(inputMatrix_batch, name='im', dtype=K.float32)
-    il = K.convert_to_tensor(inputLabels_batch, name='il', dtype=K.float32)
+    im = tf.convert_to_tensor(inputMatrix_batch, name='im', dtype=K.float32)
+    il = tf.convert_to_tensor(inputLabels_batch, name='il', dtype=K.float32)
     return model([im, il])
 
 def reinforceModelForEpoch(model, data_gen, episodes, sigma, steps_per_epoch, epochCount, verbose=1):

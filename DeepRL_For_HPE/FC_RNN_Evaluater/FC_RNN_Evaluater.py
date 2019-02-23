@@ -61,8 +61,8 @@ def trainImageModelOnSets(model, epoch, trainingSubjects, set_gen, timesteps, ou
             inputMatrix, inputLabels, outputLabels = getSequencesToSequences(inputMatrix, labels, timesteps) 
             data_gen = combined_generator2(inputMatrix, inputLabels, outputLabels, timesteps, batch_size)
             steps_per_epoch = ((inputMatrix.shape[0]/timesteps)-1)/batch_size
-            #model.fit_generator(data_gen, steps_per_epoch = steps_per_epoch, epochs=in_epochs, verbose=1) 
-            model = reinforceModel(model, data_gen, episodes, sigma, steps_per_epoch, in_epochs, verbose=1)
+            model.fit_generator(data_gen, steps_per_epoch = steps_per_epoch, epochs=in_epochs, verbose=1) 
+            #model = reinforceModel(model, data_gen, episodes, sigma, steps_per_epoch, in_epochs, verbose=1)
         if stateful:  model.reset_states()
         c += 1
     return model
