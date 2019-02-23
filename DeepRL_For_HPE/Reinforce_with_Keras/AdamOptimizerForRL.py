@@ -1,5 +1,13 @@
 from keras.optimizers import *
-from ReinforceAlgorithmForKerasModels import *
+# Author: Muratcan Cicek, https://users.soe.ucsc.edu/~cicekm/
+
+#Dirty importing that allows the main author to switch environments easily
+if '.' in __name__:
+    from Core.NeighborFolderimporter import *
+    from Reinforce_with_Keras.ReinforceAlgorithmForKerasModels import *
+else:
+    from NeighborFolderimporter import *
+    from ReinforceAlgorithmForKerasModels import *
 
 class AdamForRL(Adam):
     
