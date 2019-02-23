@@ -3,10 +3,10 @@
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
-    from FC_RNN_Evaluater.EvaluationRecorder import printProgressBar
+    from Reinforce_with_Keras.helpers import printProgressBar
 else:
     from NeighborFolderimporter import *
-    from FC_RNN_Evaluater.EvaluationRecorder import printProgressBar
+    from helpers import printProgressBar
 
 from keras.initializers import RandomNormal
 from keras import backend as K
