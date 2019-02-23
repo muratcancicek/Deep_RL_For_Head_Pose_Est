@@ -12,7 +12,7 @@ def now(): return str(datetime.datetime.now())
 
 ######## CONF_Begins_Here ##########
 confFile = 'Stateful_FC_RNN_Configuration.py'
-RECORD = True # False # 
+RECORD = False # True # 
 
 output_begin = 3
 num_outputs = 3

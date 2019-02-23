@@ -2,10 +2,11 @@
 
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
-    from FC_RNN_Evaluater.EvaluationRecorder import printProgressBar
+    from Core.NeighborFolderimporter import *
 else:
-    from EvaluationRecorder import printProgressBar
+    from NeighborFolderimporter import *
 
+from FC_RNN_Evaluater.EvaluationRecorder import printProgressBar
 from keras.initializers import RandomNormal
 from keras import backend as K
 from keras import losses
