@@ -455,7 +455,7 @@ class ReinforcementModel(Model):
 
             with K.name_scope('training'):
                 with K.name_scope(self.optimizer.__class__.__name__):
-                    print("Costumized compile method")
+                    print("Costumized _make_train_function method")
                     training_updates = self.optimizer.get_updates(
                         params=self._collected_trainable_weights,
                         loss=self.total_loss)

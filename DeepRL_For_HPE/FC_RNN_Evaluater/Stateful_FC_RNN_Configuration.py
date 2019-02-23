@@ -8,6 +8,7 @@ from keras.applications import vgg16, nasnet, inception_v3
 from keras import regularizers, Model
 from keras.layers import concatenate, Concatenate, TimeDistributed, LSTM, Dense, Dropout, Flatten, CuDNNLSTM, Input 
 from Reinforce_with_Keras.ReinforcementModel import ReinforcementModel
+from Reinforce_with_Keras.AdamOptimizerForRL import AdamForRL
 def now(): return str(datetime.datetime.now())
 
 ######## CONF_Begins_Here ##########
@@ -23,7 +24,7 @@ sampling_variance = 0.01
 timesteps = 10 # TimeseriesGenerator Handles overlapping
 learning_rate =  0.000001
 in_epochs = 1
-out_epochs = 2
+out_epochs = 1
 eva_epoch = 1
 train_batch_size = 1
 test_batch_size = 1
@@ -149,7 +150,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     #finalModel.add(LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, stateful=True))#, activation='relu'
     #finalModel.add(Dense(num_outputs))
 
-    adam = Adam(lr=lr)
+    adam = AdamForRL(lr=lr)
     finalModel.compile(optimizer=adam, loss='mean_squared_error', metrics=['mae']) #)# 'mean_absolute_error'
 
     modelID = modelID + '_seqLen%d' % timesteps; modelID = modelID + '_stateful'; modelID = modelID + '_lstm%d' % lstm_nodes

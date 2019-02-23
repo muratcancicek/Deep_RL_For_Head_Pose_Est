@@ -20,6 +20,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AdamOptimizerForRL.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NeighborFolderimporter.py" />
     <Compile Include="ReinforceAlgorithmForKerasModels.py" />
     <Compile Include="ReinforcementModel.py">
