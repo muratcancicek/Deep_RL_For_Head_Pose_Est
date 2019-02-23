@@ -7,6 +7,7 @@ from keras.preprocessing import image
 from keras.applications import vgg16, nasnet, inception_v3
 from keras import regularizers, Model
 from keras.layers import concatenate, Concatenate, TimeDistributed, LSTM, Dense, Dropout, Flatten, CuDNNLSTM, Input 
+from Reinforce_with_Keras.ReinforcementModel import ReinforcementModel
 def now(): return str(datetime.datetime.now())
 
 ######## CONF_Begins_Here ##########
@@ -140,7 +141,7 @@ def getFinalModel(timesteps = timesteps, lstm_nodes = lstm_nodes, lstm_dropout =
     lstm_out = LSTM(lstm_nodes, dropout=lstm_dropout, recurrent_dropout=lstm_recurrent_dropout, return_sequences=True, stateful=True)(x)
    # main_output = Dense(num_outputs)(lstm_out) # 
     main_output = TimeDistributed(Dense(num_outputs))(lstm_out) #,
-    finalModel = Model(inputs=[fcRNN.input, a], outputs=main_output)
+    finalModel = ReinforcementModel(inputs=[fcRNN.input, a], outputs=main_output)
 
     #finalModel = Sequential()
     #finalModel.add(finalModel1)

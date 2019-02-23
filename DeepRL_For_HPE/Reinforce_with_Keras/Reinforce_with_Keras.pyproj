@@ -2,15 +2,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>d6c55e4e-27d2-4a3a-aa2d-cdc7eb42ae0c</ProjectGuid>
-    <ProjectHome>
-    </ProjectHome>
-    <StartupFile>Quick_Scripts\trainLSTM_VGG16.py</StartupFile>
-    <SearchPath>..\..\DeepRL_For_HPE;..\..\DeepRL_For_HPE;..\..\DeepRL_For_HPE;..\..\DeepRL_For_HPE</SearchPath>
+    <ProjectGuid>33865b0c-81c1-4451-818f-5e9cdd137ef9</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Reinforce_with_Keras.py</StartupFile>
+    <SearchPath>..\..\DeepRL_For_HPE</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>FC_RNN_Evaluater</Name>
-    <RootNamespace>LSTM_VGG16</RootNamespace>
+    <Name>Reinforce_with_Keras</Name>
+    <RootNamespace>Reinforce_with_Keras</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,31 +20,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="continueFC_RNN_Experiment.py" />
-    <Compile Include="EstimationPlotter.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="FC_RNN_Evaluater.py" />
-    <Compile Include="Stateful_FC_RNN_Configuration.py" />
-    <Compile Include="Stateless_FC_RNN_Configuration.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EvaluationRecorder.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Quick_Scripts\LSTM_VGG16Helper.py" />
-    <Compile Include="runFC_RNN_Experiment.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Quick_Scripts\tf_trainLSTM_VGG16.py" />
-    <Compile Include="Quick_Scripts\trainLSTM_VGG16.py" />
     <Compile Include="NeighborFolderimporter.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="VGG_model.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Quick_Scripts\" />
+    <Compile Include="ReinforceAlgorithmForKerasModels.py" />
+    <Compile Include="ReinforcementModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reinforce_with_Keras.py" />
+    <Compile Include="__init__.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

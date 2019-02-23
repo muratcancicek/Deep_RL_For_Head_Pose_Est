@@ -4,12 +4,12 @@ import os, numpy, random
 #Dirty importing that allows the main author to switch environments easily
 if '.' in __name__:
     from Core.NeighborFolderimporter import *
+    from Reinforce_with_Keras.ReinforceAlgorithmForKerasModels import reinforceModel
     from FC_RNN_Evaluater.EvaluationRecorder import *
-    from FC_RNN_Evaluater.ReinforceAlgorithmForKerasModels import reinforceModel
 else:
     from NeighborFolderimporter import *
+    from Reinforce_with_Keras.ReinforceAlgorithmForKerasModels import reinforceModel
     from EvaluationRecorder import *
-    from ReinforceAlgorithmForKerasModels import reinforceModel
 
 from DatasetHandler.BiwiBrowser import readBIWIDataset, BIWI_Subject_IDs, now, label_rescaling_factor, BIWI_Lebel_Scalers, unscaleAnnoByScalers
 
