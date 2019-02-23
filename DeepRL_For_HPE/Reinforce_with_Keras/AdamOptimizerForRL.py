@@ -10,33 +10,38 @@ else:
     from ReinforceAlgorithmForKerasModels import *
 
 class AdamForRL(Adam):
-    
-
+        
     def _drawSamples(self, outputs, episodes = 5, sigma = 0.01, seed=None):
         samplesShape = outputs.shape
+        samplesShape = (episodes, 1, 10, 3)
         #samplesShape = ((episodes,)+outputs.shape)
         distribution = RandomNormal(outputs, stddev=sigma, seed=seed)
         return distribution(samplesShape)
     
-def _getGradientsPerEpisode(samples, targets, params):
-    gradients_per_episode = []
-    rewards = getRewardsWithBaselinePerEpisode(samples, targets)
-    for i in range(samples.shape[0]):
-        loss = losses.mean_absolute_error(targets, samples[i])
-        gradients = K.gradients(loss, params)
-        rewardedGradients = [g*rewards[i] for g in gradients]
-        gradients_per_episode.append(rewardedGradients)
-    return gradients_per_episode
+    def _getGradientsPerEpisode(self, samples, targets, params):
+        gradients_per_episode = []
+        rewards = getRewardsWithBaselinePerEpisode(samples, targets)
+        for i in range(samples.shape[0]):
+            loss = losses.mean_absolute_error(targets, samples[i])
+            gradients = K.gradients(loss, params)
+            print(gradients[0], rewards[0])
+            rewardedGradients = []
+            for g in gradients:
+       #         with tf.Session() as sess:
+       #             print(g, rewards[i].eval())
+                rewardedGradients.append((g * rewards[i][0]))
+            gradients_per_episode.append(rewardedGradients)
+        return gradients_per_episode
 
     def _getFinalGradients(self, outputs, targets, params):
         samples = self._drawSamples(outputs)
         gradients_per_episode = self._getGradientsPerEpisode(samples, targets, params)
         stacked_gradients = []
         for i in range(len(gradients_per_episode[0])):
-            stacked_gradients.append(K.stack([gradients[i] for gradients in gradients_per_episode])) 
-        return [K.reduce_mean(g, axis=0) for g in stacked_gradients]
+            stacked_gradients.append(tf.stack([gradients[i] for gradients in gradients_per_episode])) 
+        return [tf.reduce_mean(g, axis=0) for g in stacked_gradients]
     
-    def get_gradients(self, targets, outputs, loss, params):
+    def get_gradients(self, targets, outputs, params):
 
         print("Costumized AdamForRL(Adam) get_gradients method")
         #grads = K.gradients(loss, params)
@@ -54,10 +59,11 @@ def _getGradientsPerEpisode(samples, targets, params):
             grads = [K.clip(g, -self.clipvalue, self.clipvalue) for g in grads]
         return grads
     
-    @interfaces.legacy_get_updates_support
-    def get_updates(self, targets, outputs, loss, params):
-
-        grads = self.get_gradients(loss, targets, outputs, params)
+    @interfaces.legacy_get_updates_support#, targets, outputs,
+    def get_updates(self, loss, params):
+        print(loss)
+        (targets, outputs) = loss
+        grads = self.get_gradients(targets, outputs, params)
         self.updates = [K.update_add(self.iterations, 1)]
 
         lr = self.lr
