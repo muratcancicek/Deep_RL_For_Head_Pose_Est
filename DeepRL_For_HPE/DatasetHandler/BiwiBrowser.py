@@ -50,8 +50,8 @@ def getRGBpngFileName(subject, frame):
 def pngObjToNpArr(imagePath):
     img = image.load_img(imagePath, target_size = Target_Frame_Shape_VGG16)
     x = image.img_to_array(img)
-    x = x[8:-8, 48:-48, :]#[14:-15, 74:-75, :]
-    return vgg16.preprocess_input(x)
+    x = x[8:-8, 48:-48, :].astype(numpy.int32)#[14:-15, 74:-75, :]
+    return x#vgg16.preprocess_input()
 
 def getBIWIFrameAsNpArr(subject, frame, dataFolder = BIWI_Data_folder, preprocess_input = None):
     imagePath = dataFolder + getRGBpngFileName(subject, frame)
@@ -103,7 +103,7 @@ def showSampleFrames(count = 10, preprocess_input = None):
         frames = [(n, f) for n, f in sorted(frames, key=lambda x: x[0])]
         for name, frame in frames[:count]:
             print(frame.shape)
-            pyplot.imshow(numpy.rollaxis(frame, 0, 3))
+            pyplot.imshow(frame)#numpy.rollaxis(, 0, 3)
             pyplot.title(name)
             pyplot.show()
     
