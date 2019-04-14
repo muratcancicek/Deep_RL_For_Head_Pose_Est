@@ -48,9 +48,9 @@ def getRGBpngFileName(subject, frame):
     return str(subject).zfill(2) + '/frame_' + str(frame).zfill(5) + '_rgb.png'
 
 def pngObjToNpArr(imagePath):
-    img = image.load_img(imagePath, target_size = Target_Frame_Shape_VGG16)
-    x = image.img_to_array(img)
-    x = x[8:-8, 48:-48, :].astype(numpy.int32)#[14:-15, 74:-75, :]
+    img = image.load_img(imagePath, target_size = BIWI_Frame_Shape)#Target_VGG16
+    x = image.img_to_array(img).astype(numpy.uint8)
+    #x = x[8:-8, 48:-48, :]#[14:-15, 74:-75, :]
     return x#vgg16.preprocess_input()
 
 def getBIWIFrameAsNpArr(subject, frame, dataFolder = BIWI_Data_folder, preprocess_input = None):

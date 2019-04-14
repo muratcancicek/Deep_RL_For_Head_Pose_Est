@@ -1,0 +1,130 @@
+For the Subject 1 (F01):
+	The absolute mean error on Pitch angle estimation: 14.67 Degree
+	The absolute mean error on Yaw angle estimation: 13.76 Degree
+	The absolute mean error on Roll angle estimation: 4.78 Degree
+	The absolute mean error on average: 11.07 Degree
+For the Subject 2 (F02):
+	The absolute mean error on Pitch angle estimation: 12.23 Degree
+	The absolute mean error on Yaw angle estimation: 15.92 Degree
+	The absolute mean error on Roll angle estimation: 3.21 Degree
+	The absolute mean error on average: 10.45 Degree
+For the Subject 3 (F03):
+	The absolute mean error on Pitch angle estimation: 7.55 Degree
+	The absolute mean error on Yaw angle estimation: 11.28 Degree
+	The absolute mean error on Roll angle estimation: 15.03 Degree
+	The absolute mean error on average: 11.29 Degree
+For the Subject 4 (F04):
+	The absolute mean error on Pitch angle estimation: 10.76 Degree
+	The absolute mean error on Yaw angle estimation: 11.51 Degree
+	The absolute mean error on Roll angle estimation: 6.62 Degree
+	The absolute mean error on average: 9.63 Degree
+For the Subject 5 (F05):
+	The absolute mean error on Pitch angle estimation: 13.77 Degree
+	The absolute mean error on Yaw angle estimation: 8.17 Degree
+	The absolute mean error on Roll angle estimation: 4.32 Degree
+	The absolute mean error on average: 8.75 Degree
+For the Subject 6 (F06):
+	The absolute mean error on Pitch angle estimation: 16.85 Degree
+	The absolute mean error on Yaw angle estimation: 10.98 Degree
+	The absolute mean error on Roll angle estimation: 11.77 Degree
+	The absolute mean error on average: 13.20 Degree
+For the Subject 7 (M01):
+	The absolute mean error on Pitch angle estimation: 11.89 Degree
+	The absolute mean error on Yaw angle estimation: 11.28 Degree
+	The absolute mean error on Roll angle estimation: 9.99 Degree
+	The absolute mean error on average: 11.05 Degree
+For the Subject 8 (M02):
+	The absolute mean error on Pitch angle estimation: 7.06 Degree
+	The absolute mean error on Yaw angle estimation: 11.90 Degree
+	The absolute mean error on Roll angle estimation: 4.44 Degree
+	The absolute mean error on average: 7.80 Degree
+For the Subject 9 (M03):
+	The absolute mean error on Pitch angle estimation: 7.86 Degree
+	The absolute mean error on Yaw angle estimation: 10.57 Degree
+	The absolute mean error on Roll angle estimation: 4.57 Degree
+	The absolute mean error on average: 7.67 Degree
+For the Subject 10 (M04):
+	The absolute mean error on Pitch angle estimation: 7.01 Degree
+	The absolute mean error on Yaw angle estimation: 4.95 Degree
+	The absolute mean error on Roll angle estimation: 4.87 Degree
+	The absolute mean error on average: 5.61 Degree
+For the Subject 11 (M05):
+	The absolute mean error on Pitch angle estimation: 3.71 Degree
+	The absolute mean error on Yaw angle estimation: 4.26 Degree
+	The absolute mean error on Roll angle estimation: 2.91 Degree
+	The absolute mean error on average: 3.63 Degree
+For the Subject 12 (M06):
+	The absolute mean error on Pitch angle estimation: 9.11 Degree
+	The absolute mean error on Yaw angle estimation: 9.55 Degree
+	The absolute mean error on Roll angle estimation: 3.64 Degree
+	The absolute mean error on average: 7.43 Degree
+For the Subject 13 (M07):
+	The absolute mean error on Pitch angle estimation: 5.97 Degree
+	The absolute mean error on Yaw angle estimation: 3.78 Degree
+	The absolute mean error on Roll angle estimation: 2.61 Degree
+	The absolute mean error on average: 4.12 Degree
+For the Subject 14 (M08):
+	The absolute mean error on Pitch angle estimation: 30.27 Degree
+	The absolute mean error on Yaw angle estimation: 27.28 Degree
+	The absolute mean error on Roll angle estimation: 15.79 Degree
+	The absolute mean error on average: 24.45 Degree
+For the Subject 15 (F03):
+	The absolute mean error on Pitch angle estimation: 10.78 Degree
+	The absolute mean error on Yaw angle estimation: 7.29 Degree
+	The absolute mean error on Roll angle estimation: 10.10 Degree
+	The absolute mean error on average: 9.39 Degree
+For the Subject 16 (M09):
+	The absolute mean error on Pitch angle estimation: 14.85 Degree
+	The absolute mean error on Yaw angle estimation: 8.47 Degree
+	The absolute mean error on Roll angle estimation: 8.76 Degree
+	The absolute mean error on average: 10.70 Degree
+For the Subject 17 (M10):
+	The absolute mean error on Pitch angle estimation: 9.28 Degree
+	The absolute mean error on Yaw angle estimation: 9.33 Degree
+	The absolute mean error on Roll angle estimation: 2.48 Degree
+	The absolute mean error on average: 7.03 Degree
+For the Subject 18 (F05):
+	The absolute mean error on Pitch angle estimation: 16.96 Degree
+	The absolute mean error on Yaw angle estimation: 11.68 Degree
+	The absolute mean error on Roll angle estimation: 7.78 Degree
+	The absolute mean error on average: 12.14 Degree
+For the Subject 19 (M11):
+	The absolute mean error on Pitch angle estimation: 9.53 Degree
+	The absolute mean error on Yaw angle estimation: 9.62 Degree
+	The absolute mean error on Roll angle estimation: 4.32 Degree
+	The absolute mean error on average: 7.82 Degree
+For the Subject 20 (M12):
+	The absolute mean error on Pitch angle estimation: 8.71 Degree
+	The absolute mean error on Yaw angle estimation: 4.36 Degree
+	The absolute mean error on Roll angle estimation: 7.17 Degree
+	The absolute mean error on average: 6.75 Degree
+For the Subject 21 (F02):
+	The absolute mean error on Pitch angle estimation: 17.30 Degree
+	The absolute mean error on Yaw angle estimation: 9.14 Degree
+	The absolute mean error on Roll angle estimation: 10.83 Degree
+	The absolute mean error on average: 12.42 Degree
+For the Subject 22 (M01):
+	The absolute mean error on Pitch angle estimation: 7.86 Degree
+	The absolute mean error on Yaw angle estimation: 9.38 Degree
+	The absolute mean error on Roll angle estimation: 2.86 Degree
+	The absolute mean error on average: 6.70 Degree
+For the Subject 23 (M13):
+	The absolute mean error on Pitch angle estimation: 17.13 Degree
+	The absolute mean error on Yaw angle estimation: 10.59 Degree
+	The absolute mean error on Roll angle estimation: 9.58 Degree
+	The absolute mean error on average: 12.43 Degree
+For the Subject 24 (M14):
+	The absolute mean error on Pitch angle estimation: 12.61 Degree
+	The absolute mean error on Yaw angle estimation: 6.69 Degree
+	The absolute mean error on Roll angle estimation: 4.44 Degree
+	The absolute mean error on average: 7.91 Degree
+
+Average on the all Subjects:
+	The absolute mean error on Pitch angle estimation: 11.82 Degree
+	The absolute mean error on Yaw angle estimation: 10.07 Degree
+	The absolute mean error on Roll angle estimation: 6.79 Degree
+	The absolute mean error on average: 9.56 Degree
+	
+
+
+
